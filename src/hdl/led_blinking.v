@@ -24,12 +24,12 @@ module led_blinking(
     clk,
     led
     );
-input   clk;
-output  led;
+input       clk;
+output [3:0]led;
 
-reg  [15:0] prescaler;
+reg  [23:0] prescaler;
 
-assign led = prescaler[15];
+assign led[0] = prescaler[23];
 
 always @(posedge clk) begin
     prescaler <= prescaler + 1;
