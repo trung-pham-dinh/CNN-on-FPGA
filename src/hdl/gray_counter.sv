@@ -1,3 +1,6 @@
+`timescale 1ns/10ps
+
+// count in gray code on every posedge clock, synchronous reset
 module gray_counter #(
     parameter NUM_BITS = 4  // width of FIFO address
 ) (
