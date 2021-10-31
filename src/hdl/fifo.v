@@ -67,19 +67,12 @@ assign empty = (cnt == 0);
 assign almost_full = (cnt == DEPTH-1);
 assign full = (cnt == DEPTH);
 
-genvar bit;
-// binary to gray converter
-assign gray_cnt[ADDR_BIT] = cnt[ADDR_BIT];
-generate 
-for (bit = 0; bit < ADDR_BIT; bit = bit+1) begin
-    assign gray_cnt[bit] = cnt[bit+1] ^ cnt[bit];
-end
-endgenerate
+bin_to_gray #(.WIDTH(ADDR_BIT+1))cvt(cnt, gray_cnt);
 
 ////////////////////////////////////////////////////////////////////////////////
 
 // counter control
-always @(posedge clk, posedge rst) begin
+always @(posedge clk) begin
     if(rst) begin
         cnt <= 0;
     end
@@ -95,7 +88,7 @@ always @(posedge clk, posedge rst) begin
 end
 
 // write to rear
-always @(posedge clk, posedge rst) begin
+always @(posedge clk) begin
     if(rst) begin
         for(i = 0; i < DEPTH; i = i + 1) begin
             mem[i] <= 0;
@@ -113,7 +106,7 @@ always @(posedge clk, posedge rst) begin
 end
 
 // read from front
-always @(posedge clk, posedge rst) begin
+always @(posedge clk) begin
     if(rst) begin
         out <= 0;
         frontAddr <=0;
