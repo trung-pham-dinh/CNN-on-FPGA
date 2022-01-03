@@ -27,6 +27,7 @@ module ConvoFIFO(
     wen,
     in,
     row_len,
+    stride,
     out2,
     out1,
     out0,
@@ -51,6 +52,7 @@ input   wire                    ren;
 input   wire                    wen;
 input   wire    [WIDTH-1:0]     in;
 input   wire    [ADDR_BIT-1:0]  row_len;
+input   wire    [2:0]           stride;
 output  reg     [3*WIDTH-1:0]   out2;
 output  reg     [3*WIDTH-1:0]   out1;
 output  reg     [3*WIDTH-1:0]   out0;
@@ -78,6 +80,7 @@ wire [ADDR_BIT-1:0]  outAddr00;
 reg [ADDR_BIT:0]   inAddr;
 
 
+
 integer i;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -94,13 +97,13 @@ always @(posedge clk) begin
         cnt <= 0;
     end
 	else if((!empty && ren)&&(!full && wen)) begin
-		cnt <= cnt;
+		cnt <= (cnt>=stride)? cnt-stride+1 : 1;
 	end
     else if(!empty && ren) begin
-        cnt <= cnt - 1;
+        cnt <= (cnt>=stride)? cnt-stride : 0;
     end
     else if(!full && wen) begin
-        cnt <= cnt + 1;
+        cnt <= cnt+1;
     end
 end
 
@@ -140,7 +143,7 @@ always @(posedge clk) begin
     end
     else begin
         if(!empty && ren) begin
-            outAddr22 <= outAddr22 + 1;
+            outAddr22 <= (inAddr - outAddr22 >= stride)? (outAddr22 + stride) : inAddr;
             
             out2[3*WIDTH-1:2*WIDTH] <= mem[outAddr22[ADDR_BIT-1:0]];
             out2[2*WIDTH-1:1*WIDTH] <= mem[outAddr21];

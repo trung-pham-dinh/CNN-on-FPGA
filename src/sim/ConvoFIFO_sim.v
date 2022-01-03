@@ -34,6 +34,7 @@ reg                    ren;
 reg                    wen;
 reg    [WIDTH-1:0]     in;
 reg    [ADDR_BIT-1:0]  row_len;
+reg    [2:0]           stride;
 wire   [3*WIDTH-1:0]   out2;
 wire   [3*WIDTH-1:0]   out1;
 wire   [3*WIDTH-1:0]   out0;
@@ -71,6 +72,7 @@ ConvoFIFO #(.WIDTH(8), .ADDR_BIT(5))uut(
     wen,
     in,
     row_len,
+    stride,
     out2,
     out1,
     out0,
@@ -91,12 +93,13 @@ ConvoFIFO #(.WIDTH(8), .ADDR_BIT(5))uut(
         wen = 0;
         in = 0;
         row_len = 8;
-        rst <= 1;
+        stride = 2;
+        rst = 1;
         #10;
         rst <= 0;
         wen <= 1;
-//        #480;
-//        wen <= 0;
-//        ren <= 1;
+        #480;
+        wen <= 0;
+        ren <= 1;
     end
 endmodule
