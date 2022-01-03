@@ -65,7 +65,6 @@ wire                                in_update;
 wire    [WIDTH * 2 - 1 : 0]         out_mult;
 reg     [WIDTH * 2 - 1 : 0]         in_psum_pipeline        [0 : PIPELINE_STAGE - 1];
 reg                                 out_psum_vld_pipeline   [0 : PIPELINE_STAGE];
-
 integer i;
 
 //////////////////////////////////////////////////////////////////////////////////

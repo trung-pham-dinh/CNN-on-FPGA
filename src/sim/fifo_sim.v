@@ -33,43 +33,58 @@ reg  rst;
 reg  ren;
 reg  wen;
 reg [WIDTH-1:0] in;
-wire [WIDTH-1:0] out;
+reg [ADDR_BIT:0] depth;
+wire [WIDTH*3-1:0] out;
+wire [WIDTH-1:0] out2;
+wire [WIDTH-1:0] out1;
+wire [WIDTH-1:0] out0;
 wire empty;
 wire full;
 wire almost_full;
-wire [ADDR_BIT:0] gray_count;
-integer i;
+wire [ADDR_BIT:0] count;
 
     fifo #(.ADDR_BIT(ADDR_BIT), .WIDTH(WIDTH)) uut(clk, rst,
     ren,wen,
-    in,out,
-    empty, full, almost_full, gray_count);
+    in,depth,out[WIDTH*3-1:WIDTH*2],out[WIDTH*2-1:WIDTH*1],out[WIDTH-1:0],
+    empty, full, almost_full, count);
     
-    always #10 clk = ~clk; 
-    initial begin   
-        rst <= 0;
-        #5
-        rst<=1;
+    assign out2 = out[WIDTH*3-1:WIDTH*2];
+    assign out1 = out[WIDTH*2-1:WIDTH*1];
+    assign out0 = out[WIDTH*1-1:WIDTH*0];
+    
+    always #10 clk = ~clk;
+    always@(posedge clk) begin
+        if(wen) begin
+            in <= in + 1;
+        end
+        else begin
+            in <= 1;
+        end
+    end
+    
+    initial begin
+        rst=1;
+        depth = 8;
+        clk = 0;
         
-        clk <= 0;
-        
-        wen <= 0;
-        ren <= 0;
-        in <= 0;
+        wen = 0;
+        ren = 0;
+        in = 1;
         #20;
-        rst <= 0;
-        for(i = 1; i <= 20; i = i+ 1) begin
-            in <= i;
-            wen <= 1;
-            #10;
-            wen<= 0;
-            #10;
-        end
-        for(i = 1; i <= 20; i = i+ 1) begin
-            ren <= 1;
-            #10;
-            ren<= 10;
-            #10;
-        end
+        rst = 0;
+        wen = 1;
+        #400;
+        wen = 0;
+        ren = 1;
+        #400;
+        
+        
+        ren = 0;
+        wen = 1;
+        #200;
+        ren=1;
+        #400;
+        
+        $finish;
     end
 endmodule

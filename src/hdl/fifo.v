@@ -24,11 +24,15 @@ module fifo(
     ren,
     wen,
     in,
-    out,
+    depth,
+    out2,
+    out1,
+    out0,
     empty,
+    almost_empty,
     full,
     almost_full,
-    gray_cnt
+    cnt
     );
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -46,28 +50,42 @@ input   wire                    rst;
 input   wire                    ren;
 input   wire                    wen;
 input   wire    [WIDTH-1:0]     in;
-output  reg     [WIDTH-1:0]     out;
+input   wire    [ADDR_BIT:0]    depth;
+output  wire    [WIDTH-1:0]     out0;
+output  wire    [WIDTH-1:0]     out1;
+output  wire    [WIDTH-1:0]     out2;
 output  wire                    empty;
+output  wire                    almost_empty;
 output  wire                    full;
 output  wire                    almost_full;
-output  wire    [ADDR_BIT:0]    gray_cnt; //[ADDR_BIT:0]: to be able to display (max value of [ADDR_BIT-1:0]) + 1
+output  reg     [ADDR_BIT:0]    cnt; //[ADDR_BIT:0]: to be able to display (max value of [ADDR_BIT-1:0]) + 1
+//output  wire    [ADDR_BIT:0]    gray_cnt; //[ADDR_BIT:0]: to be able to display (max value of [ADDR_BIT-1:0]) + 1
 
 ////////////////////////////////////////////////////////////////////////////////
 
 reg [WIDTH-1:0]     mem [DEPTH-1:0];
-reg [ADDR_BIT:0]    cnt; //[ADDR_BIT:0]: to be able to display (max value of [ADDR_BIT-1:0]) + 1
-reg [ADDR_BIT-1:0]  frontAddr;
+wire [WIDTH-1:0]     out_reg[2:0];
+reg [ADDR_BIT-1:0]  frontAddr0;
+wire [ADDR_BIT-1:0]  frontAddr1;
+wire [ADDR_BIT-1:0]  frontAddr2;
 reg [ADDR_BIT-1:0]  rearAddr;
+
 
 integer i;
 
 ////////////////////////////////////////////////////////////////////////////////
 
 assign empty = (cnt == 0);
-assign almost_full = (cnt == DEPTH-1);
-assign full = (cnt == DEPTH);
+assign almost_empty = (cnt == 1) | empty;
+assign full = (cnt == depth);
+assign almost_full = (cnt == depth-1) | full;
 
-bin_to_gray #(.WIDTH(ADDR_BIT+1))cvt(cnt, gray_cnt);
+assign mem0 = mem[0];
+
+assign out_reg[0] = mem[frontAddr0];
+assign out_reg[1] = mem[frontAddr1];
+assign out_reg[2] = mem[frontAddr2];
+//bin_to_gray #(.WIDTH(ADDR_BIT+1))cvt(cnt, gray_cnt);
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -95,10 +113,6 @@ always @(posedge clk) begin
         end
         rearAddr <= 0;
     end
-	else if((!full && wen) && (!empty && ren)) begin
-		mem[rearAddr] <= mem[rearAddr];
-        rearAddr <= rearAddr;
-	end
     else if(!full && wen) begin
         mem[rearAddr] <= in;
         rearAddr <= rearAddr + 1;
@@ -106,18 +120,22 @@ always @(posedge clk) begin
 end
 
 // read from front
+
+assign out0 = out_reg[2];
+assign out1 = out_reg[1];
+assign out2 = out_reg[0];
+
+assign frontAddr1 = frontAddr0 + 3'd1;
+assign frontAddr2 = frontAddr0 + 3'd2;
+
 always @(posedge clk) begin
     if(rst) begin
-        out <= 0;
-        frontAddr <=0;
+        frontAddr0 <=0;
     end
-	else if((!full && wen) && (!empty && ren)) begin
-		out <= mem[frontAddr];
-        frontAddr <= frontAddr;
-	end
-    else if(!empty && ren) begin
-        out <= mem[frontAddr];
-        frontAddr <= frontAddr + 1;
+    else begin
+        if(!empty && ren) begin
+            frontAddr0 <= frontAddr0 + 1;
+        end
     end
 end
 
