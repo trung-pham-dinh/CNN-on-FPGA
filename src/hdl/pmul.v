@@ -22,12 +22,11 @@
 
 module pmul(
 clk,rst,
+in_update,
 
 in_data2,
 in_data1,
 in_data0,
-
-in_update,
 
 in_weight2,
 in_weight1,
@@ -56,20 +55,20 @@ psum_vld
     
     wire [2:0] out_psum_vld;
     wire [WIDTH-1:0] out_psum [0:2];
-    reg[8:0]   psum_vld_reg;
     
     
-    assign psum = out_psum[2];
-    assign psum_vld = out_psum_vld[2];
+    
+    assign psum = out_psum[2] + out_psum[1] + out_psum[0];
+    assign psum_vld = (out_psum_vld == 3'b111);
     
     pe pe2( .clk(clk), .rst(rst), 
-            .in_data(in_data2), .in_weight(in_weight2), .in_psum(out_psum[1]), 
-            .in_data_update(out_psum_vld[1]), .in_weight_update(out_psum_vld[1]), .in_psum_update(out_psum_vld[1]), 
+            .in_data(in_data2), .in_weight(in_weight2), .in_psum(0), 
+            .in_data_update(in_update), .in_weight_update(in_update), .in_psum_update(in_update), 
             .out_psum(out_psum[2]), .out_psum_vld(out_psum_vld[2]));
             
     pe pe1( .clk(clk), .rst(rst), 
-            .in_data(in_data1), .in_weight(in_weight1), .in_psum(out_psum[0]), 
-            .in_data_update(out_psum_vld[0]), .in_weight_update(out_psum_vld[0]), .in_psum_update(out_psum_vld[0]), 
+            .in_data(in_data1), .in_weight(in_weight1), .in_psum(0), 
+            .in_data_update(in_update), .in_weight_update(in_update), .in_psum_update(in_update), 
             .out_psum(out_psum[1]), .out_psum_vld(out_psum_vld[1]));
             
     pe pe0( .clk(clk), .rst(rst), 
