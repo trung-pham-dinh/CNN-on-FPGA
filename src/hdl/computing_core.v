@@ -78,7 +78,7 @@ out_psum_vld
     wire            load_done; 
 ///////////////////////////////////////////////////////////////////////////
     assign out_psum_vld = psum_vld[0] & psum_vld[1] & psum_vld[2] & psum_vld[3];
-    assign weight_load_done = (weight_index == 8);
+    assign weight_load_done = (weight_index == 7 || weight_index == 8);
     assign load_done = ~weight_load & activate_ready_reg;
 ///////////////////////////////////////////////////////////////////////////
 //  first core
@@ -147,20 +147,4 @@ out_psum_vld
             activate_ready_reg <= activate_ready;
         end
     end
-    
-//    always@(posedge clk) begin
-//        if(rst) begin
-//            weight_load_done_reg <= 0;
-//        end
-//        else begin
-//            if(weight_load) begin
-//                if(weight_index == 8) begin
-//                    weight_load_done_reg <= 1;
-//                end
-//                else begin
-//                    weight_load_done_reg <= 0;
-//                end
-//            end
-//        end
-//    end
 endmodule

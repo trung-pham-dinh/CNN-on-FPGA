@@ -1,0 +1,689 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x89A52B213270B8A1",
+      "device": "xc7z020clg400-1",
+      "name": "Convo_core",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2021.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "blk_mem_gen_0": "",
+      "blk_mem_gen_1": "",
+      "blk_mem_gen_2": "",
+      "blk_mem_gen_3": "",
+      "load_weight_0": "",
+      "computing_core_0": ""
+    },
+    "ports": {
+      "addr_rst_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "clk_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "rst_0"
+          },
+          "CLK_DOMAIN": {
+            "value": "Convo_core_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "load_start_0": {
+        "direction": "I"
+      },
+      "rst_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "out_psum0_0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "out_psum1_0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "out_psum2_0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "out_psum3_0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "out_psum_vld_0": {
+        "direction": "O"
+      },
+      "activate0_0": {
+        "direction": "I",
+        "left": "23",
+        "right": "0"
+      },
+      "activate1_0": {
+        "direction": "I",
+        "left": "23",
+        "right": "0"
+      },
+      "activate2_0": {
+        "direction": "I",
+        "left": "23",
+        "right": "0"
+      },
+      "activate_ready_0": {
+        "direction": "I"
+      },
+      "weight_done": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "blk_mem_gen_0": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "Convo_core_blk_mem_gen_0_0",
+        "xci_path": "ip\\Convo_core_blk_mem_gen_0_0\\Convo_core_blk_mem_gen_0_0.xci",
+        "inst_hier_path": "blk_mem_gen_0",
+        "parameters": {
+          "Coe_File": {
+            "value": "../../../../../BRAM_init.coe"
+          },
+          "EN_SAFETY_CKT": {
+            "value": "true"
+          },
+          "Enable_32bit_Address": {
+            "value": "true"
+          },
+          "Fill_Remaining_Memory_Locations": {
+            "value": "false"
+          },
+          "Load_Init_File": {
+            "value": "true"
+          },
+          "Register_PortA_Output_of_Memory_Primitives": {
+            "value": "false"
+          },
+          "Use_RSTA_Pin": {
+            "value": "true"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      },
+      "blk_mem_gen_1": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "Convo_core_blk_mem_gen_1_0",
+        "xci_path": "ip\\Convo_core_blk_mem_gen_1_0\\Convo_core_blk_mem_gen_1_0.xci",
+        "inst_hier_path": "blk_mem_gen_1",
+        "parameters": {
+          "Coe_File": {
+            "value": "../../../../../BRAM_init.coe"
+          },
+          "EN_SAFETY_CKT": {
+            "value": "true"
+          },
+          "Enable_32bit_Address": {
+            "value": "true"
+          },
+          "Load_Init_File": {
+            "value": "true"
+          },
+          "Register_PortA_Output_of_Memory_Primitives": {
+            "value": "false"
+          },
+          "Use_RSTA_Pin": {
+            "value": "true"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      },
+      "blk_mem_gen_2": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "Convo_core_blk_mem_gen_2_0",
+        "xci_path": "ip\\Convo_core_blk_mem_gen_2_0\\Convo_core_blk_mem_gen_2_0.xci",
+        "inst_hier_path": "blk_mem_gen_2",
+        "parameters": {
+          "Coe_File": {
+            "value": "../../../../../BRAM_init.coe"
+          },
+          "EN_SAFETY_CKT": {
+            "value": "true"
+          },
+          "Enable_32bit_Address": {
+            "value": "true"
+          },
+          "Load_Init_File": {
+            "value": "true"
+          },
+          "Register_PortA_Output_of_Memory_Primitives": {
+            "value": "false"
+          },
+          "Use_RSTA_Pin": {
+            "value": "true"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      },
+      "blk_mem_gen_3": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "Convo_core_blk_mem_gen_3_0",
+        "xci_path": "ip\\Convo_core_blk_mem_gen_3_0\\Convo_core_blk_mem_gen_3_0.xci",
+        "inst_hier_path": "blk_mem_gen_3",
+        "parameters": {
+          "Coe_File": {
+            "value": "../../../../../BRAM_init.coe"
+          },
+          "EN_SAFETY_CKT": {
+            "value": "true"
+          },
+          "Enable_32bit_Address": {
+            "value": "true"
+          },
+          "Load_Init_File": {
+            "value": "true"
+          },
+          "Register_PortA_Output_of_Memory_Primitives": {
+            "value": "false"
+          },
+          "Use_RSTA_Pin": {
+            "value": "true"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      },
+      "load_weight_0": {
+        "vlnv": "xilinx.com:module_ref:load_weight:1.0",
+        "xci_name": "Convo_core_load_weight_0_1",
+        "xci_path": "ip\\Convo_core_load_weight_0_1\\Convo_core_load_weight_0_1.xci",
+        "inst_hier_path": "load_weight_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "load_weight",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Convo_core_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "load_start": {
+            "direction": "I"
+          },
+          "load_done": {
+            "direction": "I"
+          },
+          "addr_rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "weight0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "weight1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "weight2": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "weight3": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "weight_vld": {
+            "direction": "O"
+          },
+          "BRAM_clk": {
+            "type": "clk",
+            "direction": "O",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "BRAM_rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "BRAM_en": {
+            "direction": "O"
+          },
+          "BRAM_rst": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "BRAM_din": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_wen": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "BRAM_0_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_0_dout": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_1_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_1_dout": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_2_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_2_dout": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_3_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_3_dout": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "computing_core_0": {
+        "vlnv": "xilinx.com:module_ref:computing_core:1.0",
+        "xci_name": "Convo_core_computing_core_0_0",
+        "xci_path": "ip\\Convo_core_computing_core_0_0\\Convo_core_computing_core_0_0.xci",
+        "inst_hier_path": "computing_core_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "computing_core",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Convo_core_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "activate_ready": {
+            "direction": "I"
+          },
+          "weight_load": {
+            "direction": "I"
+          },
+          "activate0": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "activate1": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "activate2": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "weight0": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "weight1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "weight2": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "weight3": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "weight_load_done": {
+            "direction": "O"
+          },
+          "out_psum0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum2": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum3": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum_vld": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "activate0_0_1": {
+        "ports": [
+          "activate0_0",
+          "computing_core_0/activate0"
+        ]
+      },
+      "activate1_0_1": {
+        "ports": [
+          "activate1_0",
+          "computing_core_0/activate1"
+        ]
+      },
+      "activate2_0_1": {
+        "ports": [
+          "activate2_0",
+          "computing_core_0/activate2"
+        ]
+      },
+      "activate_ready_0_1": {
+        "ports": [
+          "activate_ready_0",
+          "computing_core_0/activate_ready"
+        ]
+      },
+      "addr_rst_0_1": {
+        "ports": [
+          "addr_rst_0",
+          "load_weight_0/addr_rst"
+        ]
+      },
+      "blk_mem_gen_0_douta": {
+        "ports": [
+          "blk_mem_gen_0/douta",
+          "load_weight_0/BRAM_0_dout"
+        ]
+      },
+      "blk_mem_gen_1_douta": {
+        "ports": [
+          "blk_mem_gen_1/douta",
+          "load_weight_0/BRAM_1_dout"
+        ]
+      },
+      "blk_mem_gen_2_douta": {
+        "ports": [
+          "blk_mem_gen_2/douta",
+          "load_weight_0/BRAM_3_dout"
+        ]
+      },
+      "blk_mem_gen_3_douta": {
+        "ports": [
+          "blk_mem_gen_3/douta",
+          "load_weight_0/BRAM_2_dout"
+        ]
+      },
+      "clk_0_1": {
+        "ports": [
+          "clk_0",
+          "load_weight_0/clk",
+          "computing_core_0/clk"
+        ]
+      },
+      "computing_core_0_out_psum0": {
+        "ports": [
+          "computing_core_0/out_psum0",
+          "out_psum0_0"
+        ]
+      },
+      "computing_core_0_out_psum1": {
+        "ports": [
+          "computing_core_0/out_psum1",
+          "out_psum1_0"
+        ]
+      },
+      "computing_core_0_out_psum2": {
+        "ports": [
+          "computing_core_0/out_psum2",
+          "out_psum2_0"
+        ]
+      },
+      "computing_core_0_out_psum3": {
+        "ports": [
+          "computing_core_0/out_psum3",
+          "out_psum3_0"
+        ]
+      },
+      "computing_core_0_out_psum_vld": {
+        "ports": [
+          "computing_core_0/out_psum_vld",
+          "out_psum_vld_0"
+        ]
+      },
+      "computing_core_0_weight_load_done": {
+        "ports": [
+          "computing_core_0/weight_load_done",
+          "load_weight_0/load_done",
+          "weight_done"
+        ]
+      },
+      "load_start_0_1": {
+        "ports": [
+          "load_start_0",
+          "load_weight_0/load_start"
+        ]
+      },
+      "load_weight_0_BRAM_0_addr": {
+        "ports": [
+          "load_weight_0/BRAM_0_addr",
+          "blk_mem_gen_0/addra"
+        ]
+      },
+      "load_weight_0_BRAM_1_addr": {
+        "ports": [
+          "load_weight_0/BRAM_1_addr",
+          "blk_mem_gen_1/addra"
+        ]
+      },
+      "load_weight_0_BRAM_2_addr": {
+        "ports": [
+          "load_weight_0/BRAM_2_addr",
+          "blk_mem_gen_3/addra"
+        ]
+      },
+      "load_weight_0_BRAM_3_addr": {
+        "ports": [
+          "load_weight_0/BRAM_3_addr",
+          "blk_mem_gen_2/addra"
+        ]
+      },
+      "load_weight_0_BRAM_clk": {
+        "ports": [
+          "load_weight_0/BRAM_clk",
+          "blk_mem_gen_0/clka",
+          "blk_mem_gen_1/clka",
+          "blk_mem_gen_3/clka",
+          "blk_mem_gen_2/clka"
+        ]
+      },
+      "load_weight_0_BRAM_din": {
+        "ports": [
+          "load_weight_0/BRAM_din",
+          "blk_mem_gen_0/dina",
+          "blk_mem_gen_1/dina",
+          "blk_mem_gen_3/dina",
+          "blk_mem_gen_2/dina"
+        ]
+      },
+      "load_weight_0_BRAM_en": {
+        "ports": [
+          "load_weight_0/BRAM_en",
+          "blk_mem_gen_0/ena",
+          "blk_mem_gen_1/ena",
+          "blk_mem_gen_3/ena",
+          "blk_mem_gen_2/ena"
+        ]
+      },
+      "load_weight_0_BRAM_rst": {
+        "ports": [
+          "load_weight_0/BRAM_rst",
+          "blk_mem_gen_0/rsta",
+          "blk_mem_gen_1/rsta",
+          "blk_mem_gen_3/rsta",
+          "blk_mem_gen_2/rsta"
+        ]
+      },
+      "load_weight_0_BRAM_wen": {
+        "ports": [
+          "load_weight_0/BRAM_wen",
+          "blk_mem_gen_1/wea",
+          "blk_mem_gen_0/wea",
+          "blk_mem_gen_3/wea",
+          "blk_mem_gen_2/wea"
+        ]
+      },
+      "load_weight_0_weight0": {
+        "ports": [
+          "load_weight_0/weight0",
+          "computing_core_0/weight0"
+        ]
+      },
+      "load_weight_0_weight1": {
+        "ports": [
+          "load_weight_0/weight1",
+          "computing_core_0/weight1"
+        ]
+      },
+      "load_weight_0_weight2": {
+        "ports": [
+          "load_weight_0/weight2",
+          "computing_core_0/weight2"
+        ]
+      },
+      "load_weight_0_weight3": {
+        "ports": [
+          "load_weight_0/weight3",
+          "computing_core_0/weight3"
+        ]
+      },
+      "load_weight_0_weight_vld": {
+        "ports": [
+          "load_weight_0/weight_vld",
+          "computing_core_0/weight_load"
+        ]
+      },
+      "rst_0_1": {
+        "ports": [
+          "rst_0",
+          "load_weight_0/rst",
+          "computing_core_0/rst"
+        ]
+      }
+    }
+  }
+}
