@@ -27,10 +27,12 @@ reg [7:0]B_0;
 reg CLK_0;
 wire [15:0]P_0;
 
-    multiplier_8x8_wrapper uut(A_0,
-    B_0,
-    CLK_0,
-    P_0);
+    mult_gen_0 uut (
+      .CLK(CLK_0),  // input wire CLK
+      .A(A_0),      // input wire [7 : 0] A
+      .B(B_0),      // input wire [7 : 0] B
+      .P(P_0)      // output wire [15 : 0] P
+    );
     
     always #10 CLK_0 = ~ CLK_0;
     initial begin

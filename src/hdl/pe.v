@@ -68,8 +68,13 @@ reg                                 out_psum_vld_pipeline   [0 : PIPELINE_STAGE]
 integer i;
 
 //////////////////////////////////////////////////////////////////////////////////
-
-multiplier_8x8_wrapper mult_unit(in_data_reg, in_weight_reg, clk, out_mult);
+mult_gen_0 mult_unit (
+  .CLK(clk),  // input wire CLK
+  .A(in_data_reg),      // input wire [7 : 0] A
+  .B(in_weight_reg),      // input wire [7 : 0] B
+  .P(out_mult)      // output wire [15 : 0] P
+);
+//multiplier_8x8_wrapper mult_unit(in_data_reg, in_weight_reg, clk, out_mult);
 
 assign in_update = (in_data_update | in_weight_update | in_psum_update);
 assign out_psum = in_psum_pipeline[PIPELINE_STAGE-1] + out_mult;
@@ -100,7 +105,7 @@ end
 // Pipeline for output validation
 always @(posedge clk) begin
     if(rst) begin
-        for(i = 0; i < PIPELINE_STAGE; i = i + 1) begin: zero_init_out_psum_vld
+        for(i = 0; i <= PIPELINE_STAGE; i = i + 1) begin: zero_init_out_psum_vld
             out_psum_vld_pipeline[i] <= 0;
         end 
     end
@@ -115,7 +120,7 @@ end
 // Pipeline for input_psum validation
 always @(posedge clk) begin
     if(rst) begin
-        for(i = 0; i < PIPELINE_STAGE - 1; i = i + 1) begin: zero_init_in_psum
+        for(i = 0; i <= PIPELINE_STAGE - 1; i = i + 1) begin: zero_init_in_psum
             in_psum_pipeline[i] <= 0;
         end 
     end
