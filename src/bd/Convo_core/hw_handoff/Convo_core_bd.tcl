@@ -186,7 +186,7 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.Byte_Size {8} \
    CONFIG.Coe_File {../../../../../BRAM_init.coe} \
-   CONFIG.EN_SAFETY_CKT {true} \
+   CONFIG.EN_SAFETY_CKT {false} \
    CONFIG.Enable_32bit_Address {true} \
    CONFIG.Fill_Remaining_Memory_Locations {false} \
    CONFIG.Load_Init_File {true} \
@@ -201,7 +201,7 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.Byte_Size {8} \
    CONFIG.Coe_File {../../../../../BRAM_init.coe} \
-   CONFIG.EN_SAFETY_CKT {true} \
+   CONFIG.EN_SAFETY_CKT {false} \
    CONFIG.Enable_32bit_Address {true} \
    CONFIG.Load_Init_File {true} \
    CONFIG.Register_PortA_Output_of_Memory_Primitives {false} \
@@ -215,7 +215,7 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.Byte_Size {8} \
    CONFIG.Coe_File {../../../../../BRAM_init.coe} \
-   CONFIG.EN_SAFETY_CKT {true} \
+   CONFIG.EN_SAFETY_CKT {false} \
    CONFIG.Enable_32bit_Address {true} \
    CONFIG.Load_Init_File {true} \
    CONFIG.Register_PortA_Output_of_Memory_Primitives {false} \
@@ -229,7 +229,7 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.Byte_Size {8} \
    CONFIG.Coe_File {../../../../../BRAM_init.coe} \
-   CONFIG.EN_SAFETY_CKT {true} \
+   CONFIG.EN_SAFETY_CKT {false} \
    CONFIG.Enable_32bit_Address {true} \
    CONFIG.Load_Init_File {true} \
    CONFIG.Register_PortA_Output_of_Memory_Primitives {false} \

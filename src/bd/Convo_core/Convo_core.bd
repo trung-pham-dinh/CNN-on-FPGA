@@ -14,8 +14,8 @@
       "blk_mem_gen_1": "",
       "blk_mem_gen_2": "",
       "blk_mem_gen_3": "",
-      "load_weight_0": "",
-      "computing_core_0": ""
+      "computing_core_0": "",
+      "load_weight_0": ""
     },
     "ports": {
       "addr_rst_0": {
@@ -134,7 +134,7 @@
             "value": "../../../../../BRAM_init.coe"
           },
           "EN_SAFETY_CKT": {
-            "value": "true"
+            "value": "false"
           },
           "Enable_32bit_Address": {
             "value": "true"
@@ -166,7 +166,7 @@
             "value": "../../../../../BRAM_init.coe"
           },
           "EN_SAFETY_CKT": {
-            "value": "true"
+            "value": "false"
           },
           "Enable_32bit_Address": {
             "value": "true"
@@ -195,7 +195,7 @@
             "value": "../../../../../BRAM_init.coe"
           },
           "EN_SAFETY_CKT": {
-            "value": "true"
+            "value": "false"
           },
           "Enable_32bit_Address": {
             "value": "true"
@@ -224,7 +224,7 @@
             "value": "../../../../../BRAM_init.coe"
           },
           "EN_SAFETY_CKT": {
-            "value": "true"
+            "value": "false"
           },
           "Enable_32bit_Address": {
             "value": "true"
@@ -240,6 +240,104 @@
           },
           "use_bram_block": {
             "value": "Stand_Alone"
+          }
+        }
+      },
+      "computing_core_0": {
+        "vlnv": "xilinx.com:module_ref:computing_core:1.0",
+        "xci_name": "Convo_core_computing_core_0_0",
+        "xci_path": "ip\\Convo_core_computing_core_0_0\\Convo_core_computing_core_0_0.xci",
+        "inst_hier_path": "computing_core_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "computing_core",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Convo_core_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "activate_ready": {
+            "direction": "I"
+          },
+          "weight_load": {
+            "direction": "I"
+          },
+          "activate0": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "activate1": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "activate2": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "weight0": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "weight1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "weight2": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "weight3": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "weight_load_done": {
+            "direction": "O"
+          },
+          "out_psum0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum2": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum3": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum_vld": {
+            "direction": "O"
           }
         }
       },
@@ -373,104 +471,6 @@
             "right": "0"
           }
         }
-      },
-      "computing_core_0": {
-        "vlnv": "xilinx.com:module_ref:computing_core:1.0",
-        "xci_name": "Convo_core_computing_core_0_0",
-        "xci_path": "ip\\Convo_core_computing_core_0_0\\Convo_core_computing_core_0_0.xci",
-        "inst_hier_path": "computing_core_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "computing_core",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "Convo_core_clk_0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "activate_ready": {
-            "direction": "I"
-          },
-          "weight_load": {
-            "direction": "I"
-          },
-          "activate0": {
-            "direction": "I",
-            "left": "23",
-            "right": "0"
-          },
-          "activate1": {
-            "direction": "I",
-            "left": "23",
-            "right": "0"
-          },
-          "activate2": {
-            "direction": "I",
-            "left": "23",
-            "right": "0"
-          },
-          "weight0": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "weight1": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "weight2": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "weight3": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "weight_load_done": {
-            "direction": "O"
-          },
-          "out_psum0": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "out_psum1": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "out_psum2": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "out_psum3": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "out_psum_vld": {
-            "direction": "O"
-          }
-        }
       }
     },
     "nets": {
@@ -531,8 +531,8 @@
       "clk_0_1": {
         "ports": [
           "clk_0",
-          "load_weight_0/clk",
-          "computing_core_0/clk"
+          "computing_core_0/clk",
+          "load_weight_0/clk"
         ]
       },
       "computing_core_0_out_psum0": {
@@ -568,8 +568,8 @@
       "computing_core_0_weight_load_done": {
         "ports": [
           "computing_core_0/weight_load_done",
-          "load_weight_0/load_done",
-          "weight_done"
+          "weight_done",
+          "load_weight_0/load_done"
         ]
       },
       "load_start_0_1": {
@@ -680,8 +680,8 @@
       "rst_0_1": {
         "ports": [
           "rst_0",
-          "load_weight_0/rst",
-          "computing_core_0/rst"
+          "computing_core_0/rst",
+          "load_weight_0/rst"
         ]
       }
     }
