@@ -89,6 +89,7 @@ BRAM_3_dout,
 ////////////////////////////////////////////////////////////////////
     reg                             state;
     reg                             addr_inc;
+    reg     [1:0]                   addr_offset[0:3];
 ////////////////////////////////////////////////////////////////////
     assign BRAM_clk = clk;
     assign BRAM_en = 1;
@@ -96,10 +97,11 @@ BRAM_3_dout,
     assign BRAM_din = 0;
     assign BRAM_wen = 0;
     
-    assign weight0 = BRAM_0_dout;
-    assign weight1 = BRAM_1_dout;
-    assign weight2 = BRAM_2_dout;
-    assign weight3 = BRAM_3_dout;
+    
+    assign weight0 = BRAM_0_dout[{addr_offset[0],3'b0} +: 8];
+    assign weight1 = BRAM_1_dout[{addr_offset[1],3'b0} +: 8];
+    assign weight2 = BRAM_2_dout[{addr_offset[2],3'b0} +: 8];
+    assign weight3 = BRAM_3_dout[{addr_offset[3],3'b0} +: 8];
 ////////////////////////////////////////////////////////////////////
     always@(posedge clk) begin
         if(rst) begin
@@ -142,11 +144,26 @@ BRAM_3_dout,
         end
         else begin
             if(addr_inc) begin
-                BRAM_0_addr <= BRAM_0_addr + 4;
-                BRAM_1_addr <= BRAM_1_addr + 4;
-                BRAM_2_addr <= BRAM_2_addr + 4;
-                BRAM_3_addr <= BRAM_3_addr + 4;
+                BRAM_0_addr <= BRAM_0_addr + 1;
+                BRAM_1_addr <= BRAM_1_addr + 1;
+                BRAM_2_addr <= BRAM_2_addr + 1;
+                BRAM_3_addr <= BRAM_3_addr + 1;
             end
+        end
+    end
+    
+    always@(posedge clk) begin
+        if(rst) begin
+            addr_offset[0] <= 0;
+            addr_offset[1] <= 0;
+            addr_offset[2] <= 0;
+            addr_offset[3] <= 0;
+        end
+        else begin
+            addr_offset[0] <= BRAM_0_addr[1:0];
+            addr_offset[1] <= BRAM_1_addr[1:0];
+            addr_offset[2] <= BRAM_2_addr[1:0];
+            addr_offset[3] <= BRAM_3_addr[1:0];
         end
     end
 endmodule
