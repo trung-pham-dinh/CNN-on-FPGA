@@ -52,15 +52,15 @@ reg rs;
 output wire ff_rst;
 output wire ff_ren;
 output wire ff_wen;
-output wire [2:0] ff_stride;
+output wire [3:0] ff_stride;
 output wire [4:0] ff_row_len;
 
 
 wire [2:0] steps;
-assign steps = (stride == 1)?0:( (stride == 2)? 1: 0);
+assign steps = (stride == 1)?0:((stride == 2)? 1: 0);
 
 assign ff_row_len = rl;
-assign ff_stride = (counter == (row_len -3) >> steps)? ((steps == 0)?stride : row_len) : stride;
+assign ff_stride = (counter == (row_len -3) >> steps)? ((steps == 0)? 3 : ( (row_len << steps) - 2)) : stride;
 assign ff_wen = w;
 assign ff_ren = r;
 assign ff_rst = rs;
