@@ -28,10 +28,6 @@ channel,
 addr_inc,
 
 addr_r0, addr_r1, addr_r2,
-
-entry_cnt,
-row_cnt,
-channel_cnt
     );
     parameter BRAM_ADDR_BIT = 32;
 
@@ -41,9 +37,9 @@ channel_cnt
 
 
     output reg [BRAM_ADDR_BIT-1:0]addr_r0, addr_r1, addr_r2;
-    output reg [11:0]entry_cnt;
-    output reg [11:0]row_cnt;
-    output reg [11:0]channel_cnt;
+    reg [11:0]entry_cnt;
+    reg [11:0]row_cnt;
+    reg [11:0]channel_cnt;
 
     wire entry_end, row_end, channel_end;
 /////////////////////////////////////////////////////////////////////////////

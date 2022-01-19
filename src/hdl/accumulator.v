@@ -118,8 +118,9 @@ BRAM_wen
     parameter NO_ENTRY_BIT = 16;
     parameter NO_CHANNEL_BIT = 11;
 /////////////////////////////////////////////////////////////////////////////
-    localparam STATE_IDLE = 0;
-    localparam STATE_READ = 1;
+    
+    localparam STATE_READ = 0;
+    localparam STATE_WAIT = 1;
     localparam STATE_WRITE = 2;
 /////////////////////////////////////////////////////////////////////////////
     input                               clk,rst,addr_rst;
@@ -139,16 +140,17 @@ BRAM_wen
     wire    [BRAM_ADDR_BIT-1:0]     addr;
     wire    [PSUM_WIDTH-1:0]        accum;
     reg     [1:0]                   state;
+    wire                            addr_inc;
 /////////////////////////////////////////////////////////////////////////////
     assign BRAM_clk = clk;
     assign BRAM_en  = 1;
     assign BRAM_rst = 0;
     
-//    assign BRAM_din = BRAM_dout[{BRAM_addr[1:0],3'b0} +: 8] + in_psum0 + in_psum1 + in_psum2 + in_psum3;
+    assign addr_inc = (BRAM_rready & state==STATE_READ);
 /////////////////////////////////////////////////////////////////////////////    
     out_addr_gen #(.BRAM_ADDR_BIT(BRAM_ADDR_BIT), .NO_ENTRY_BIT(NO_ENTRY_BIT), .NO_CHANNEL_BIT(NO_CHANNEL_BIT))
                     addr_gen(.clk(clk), .rst(rst), 
-                             .addr_rst(addr_rst), .addr_inc(BRAM_rready),
+                             .addr_rst(addr_rst), .addr_inc(addr_inc),
                              .no_entry(no_entry), .no_channel(no_channel), .addr(addr));
 /////////////////////////////////////////////////////////////////////////////    
   
@@ -163,18 +165,19 @@ BRAM_wen
             case(state)
                 STATE_READ: begin
                     if(BRAM_rready) begin
-                        state <= STATE_WRITE;
+                        state <= STATE_WAIT;
                         BRAM_addr <= addr;
                     end
-                    BRAM_din <= 0;
                     BRAM_wen <= 0;
+                    BRAM_din <= 0;
+                end
+                STATE_WAIT: begin
+                    state <= STATE_WRITE;
                 end
                 STATE_WRITE: begin
-                    if(BRAM_wready) begin
-                        state <= STATE_READ;
-                        BRAM_wen[BRAM_addr[1:0]] <= 1;
-                        BRAM_din[{BRAM_addr[1:0],3'b0} +: 8] <= BRAM_dout[{BRAM_addr[1:0],3'b0} +: 8] + in_psum0 + in_psum1 + in_psum2 + in_psum3;
-                    end
+                    state <= STATE_READ;
+                    BRAM_wen[BRAM_addr[1:0]] <= 1;
+                    BRAM_din[{BRAM_addr[1:0],3'b0} +: 8] <= BRAM_dout[{BRAM_addr[1:0],3'b0} +: 8] + in_psum0 + in_psum1 + in_psum2 + in_psum3;
                 end
             endcase
         end
