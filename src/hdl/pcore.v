@@ -75,13 +75,4 @@ module pcore(
          .in_data2(activate0[3*WIDTH-1:2*WIDTH]), .in_data1(activate0[2*WIDTH-1:1*WIDTH]), .in_data0(activate0[1*WIDTH-1:0]), 
          .in_weight2(weight0[3*WIDTH-1:2*WIDTH]), .in_weight1(weight0[2*WIDTH-1:1*WIDTH]), .in_weight0(weight0[1*WIDTH-1:0]), 
          .psum(psum[0]), .psum_vld(psum_vld[0]));
-    
-//    always@(posedge clk) begin
-//        if(rst) begin
-//            pmul_update <= 0;
-//        end
-//        else begin
-//            pmul_update <= in_update;
-//        end
-//    end
 endmodule

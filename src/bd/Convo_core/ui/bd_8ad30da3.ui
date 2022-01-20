@@ -1,64 +1,79 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"1.0",
-   "Default View_TopLeft":"-127,658",
+   "Default View_TopLeft":"-273,780",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace port port-id_addr_rst_0 -pg 1 -lvl 0 -x 0 -y 810 -defaultsOSRD
-preplace port port-id_clk_0 -pg 1 -lvl 0 -x 0 -y 710 -defaultsOSRD
-preplace port port-id_load_start_0 -pg 1 -lvl 0 -x 0 -y 770 -defaultsOSRD
-preplace port port-id_rst_0 -pg 1 -lvl 0 -x 0 -y 740 -defaultsOSRD
-preplace port port-id_out_psum_vld_0 -pg 1 -lvl 3 -x 890 -y 1330 -defaultsOSRD
-preplace port port-id_activate_ready_0 -pg 1 -lvl 0 -x 0 -y 1200 -defaultsOSRD
-preplace port port-id_weight_done -pg 1 -lvl 3 -x 890 -y 1100 -defaultsOSRD
-preplace portBus out_psum0_0 -pg 1 -lvl 3 -x 890 -y 1210 -defaultsOSRD
-preplace portBus out_psum1_0 -pg 1 -lvl 3 -x 890 -y 1240 -defaultsOSRD
-preplace portBus out_psum2_0 -pg 1 -lvl 3 -x 890 -y 1270 -defaultsOSRD
-preplace portBus out_psum3_0 -pg 1 -lvl 3 -x 890 -y 1300 -defaultsOSRD
-preplace portBus activate0_0 -pg 1 -lvl 0 -x 0 -y 1230 -defaultsOSRD
-preplace portBus activate1_0 -pg 1 -lvl 0 -x 0 -y 1260 -defaultsOSRD
-preplace portBus activate2_0 -pg 1 -lvl 0 -x 0 -y 1290 -defaultsOSRD
-preplace inst blk_mem_gen_0 -pg 1 -lvl 2 -x 700 -y 370 -defaultsOSRD
-preplace inst blk_mem_gen_1 -pg 1 -lvl 2 -x 700 -y 130 -defaultsOSRD
-preplace inst blk_mem_gen_2 -pg 1 -lvl 2 -x 700 -y 610 -defaultsOSRD
-preplace inst blk_mem_gen_3 -pg 1 -lvl 2 -x 700 -y 970 -defaultsOSRD
-preplace inst computing_core_0 -pg 1 -lvl 2 -x 700 -y 1260 -defaultsOSRD
-preplace inst load_weight_0 -pg 1 -lvl 1 -x 240 -y 810 -defaultsOSRD
-preplace netloc activate0_0_1 1 0 2 NJ 1230 420J
-preplace netloc activate1_0_1 1 0 2 NJ 1260 NJ
-preplace netloc activate2_0_1 1 0 2 NJ 1290 530J
-preplace netloc activate_ready_0_1 1 0 2 NJ 1200 NJ
-preplace netloc addr_rst_0_1 1 0 1 NJ 810
-preplace netloc blk_mem_gen_0_douta 1 0 2 70 380 NJ
-preplace netloc blk_mem_gen_1_douta 1 0 2 40 140 NJ
-preplace netloc blk_mem_gen_2_douta 1 0 2 60 620 NJ
-preplace netloc blk_mem_gen_3_douta 1 0 2 70 1000 510J
-preplace netloc clk_0_1 1 0 2 30 1090 440J
-preplace netloc computing_core_0_out_psum0 1 2 1 860J 1210n
-preplace netloc computing_core_0_out_psum1 1 2 1 850J 1240n
-preplace netloc computing_core_0_out_psum2 1 2 1 NJ 1270
-preplace netloc computing_core_0_out_psum3 1 2 1 860J 1290n
-preplace netloc computing_core_0_out_psum_vld 1 2 1 850J 1310n
-preplace netloc computing_core_0_weight_load_done 1 0 3 50 1100 NJ 1100 850
-preplace netloc load_start_0_1 1 0 1 NJ 770
-preplace netloc load_weight_0_BRAM_0_addr 1 1 1 470 320n
-preplace netloc load_weight_0_BRAM_1_addr 1 1 1 420 80n
-preplace netloc load_weight_0_BRAM_2_addr 1 1 1 N 920
-preplace netloc load_weight_0_BRAM_3_addr 1 1 1 490 560n
-preplace netloc load_weight_0_BRAM_clk 1 1 1 500 100n
-preplace netloc load_weight_0_BRAM_din 1 1 1 510 120n
-preplace netloc load_weight_0_BRAM_en 1 1 1 520 160n
-preplace netloc load_weight_0_BRAM_rst 1 1 1 530 180n
-preplace netloc load_weight_0_BRAM_wen 1 1 1 540 200n
-preplace netloc load_weight_0_weight0 1 1 1 480 680n
-preplace netloc load_weight_0_weight1 1 1 1 460 700n
-preplace netloc load_weight_0_weight2 1 1 1 430 720n
-preplace netloc load_weight_0_weight3 1 1 1 410 740n
-preplace netloc load_weight_0_weight_vld 1 1 1 450 760n
-preplace netloc rst_0_1 1 0 2 20 1180 NJ
-levelinfo -pg 1 0 240 700 890
-pagesize -pg 1 -db -bbox -sgen -160 0 1050 1420
+preplace port port-id_addr_rst_0 -pg 1 -lvl 0 -x 0 -y 780 -defaultsOSRD
+preplace port port-id_clk_0 -pg 1 -lvl 0 -x 0 -y 680 -defaultsOSRD
+preplace port port-id_load_weight_start -pg 1 -lvl 0 -x 0 -y 740 -defaultsOSRD
+preplace port port-id_rst_0 -pg 1 -lvl 0 -x 0 -y 710 -defaultsOSRD
+preplace port port-id_out_psum_vld_0 -pg 1 -lvl 3 -x 990 -y 1210 -defaultsOSRD
+preplace port port-id_weight_done -pg 1 -lvl 3 -x 990 -y 980 -defaultsOSRD
+preplace port port-id_load_activate_start -pg 1 -lvl 0 -x 0 -y 1460 -defaultsOSRD
+preplace portBus out_psum0_0 -pg 1 -lvl 3 -x 990 -y 1090 -defaultsOSRD
+preplace portBus out_psum1_0 -pg 1 -lvl 3 -x 990 -y 1120 -defaultsOSRD
+preplace portBus out_psum2_0 -pg 1 -lvl 3 -x 990 -y 1150 -defaultsOSRD
+preplace portBus out_psum3_0 -pg 1 -lvl 3 -x 990 -y 1180 -defaultsOSRD
+preplace portBus stride_0 -pg 1 -lvl 0 -x 0 -y 1370 -defaultsOSRD
+preplace portBus width_0 -pg 1 -lvl 0 -x 0 -y 1400 -defaultsOSRD
+preplace portBus channel_0 -pg 1 -lvl 0 -x 0 -y 1430 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 2 -x 770 -y 130 -defaultsOSRD
+preplace inst blk_mem_gen_1 -pg 1 -lvl 2 -x 770 -y 370 -defaultsOSRD
+preplace inst blk_mem_gen_2 -pg 1 -lvl 2 -x 770 -y 620 -defaultsOSRD
+preplace inst blk_mem_gen_3 -pg 1 -lvl 2 -x 770 -y 880 -defaultsOSRD
+preplace inst load_weight_0 -pg 1 -lvl 1 -x 250 -y 780 -defaultsOSRD
+preplace inst blk_mem_gen_4 -pg 1 -lvl 2 -x 770 -y 1530 -defaultsOSRD
+preplace inst load_activation_0 -pg 1 -lvl 1 -x 250 -y 1420 -defaultsOSRD
+preplace inst computing_core_0 -pg 1 -lvl 2 -x 770 -y 1180 -defaultsOSRD
+preplace netloc addr_rst_0_1 1 0 1 NJ 780
+preplace netloc blk_mem_gen_0_douta 1 0 2 60 140 NJ
+preplace netloc blk_mem_gen_1_douta 1 0 2 70 380 NJ
+preplace netloc clk_0_1 1 0 2 40 1080 NJ
+preplace netloc computing_core_0_out_psum0 1 2 1 930J 1090n
+preplace netloc computing_core_0_out_psum1 1 2 1 940J 1120n
+preplace netloc computing_core_0_out_psum2 1 2 1 950J 1150n
+preplace netloc computing_core_0_out_psum3 1 2 1 960J 1180n
+preplace netloc computing_core_0_out_psum_vld 1 2 1 970J 1210n
+preplace netloc computing_core_0_weight_load_done 1 0 3 50 1010 NJ 1010 920
+preplace netloc load_weight_start 1 0 1 N 740
+preplace netloc load_weight_0_BRAM_0_addr 1 1 1 420 80n
+preplace netloc load_weight_0_BRAM_1_addr 1 1 1 430 320n
+preplace netloc load_weight_0_BRAM_2_addr 1 1 1 470 830n
+preplace netloc load_weight_0_BRAM_3_addr 1 1 1 440 570n
+preplace netloc load_weight_0_BRAM_clk 1 1 1 540 100n
+preplace netloc load_weight_0_BRAM_din 1 1 1 550 120n
+preplace netloc load_weight_0_BRAM_en 1 1 1 560 160n
+preplace netloc load_weight_0_BRAM_rst 1 1 1 570 180n
+preplace netloc load_weight_0_BRAM_wen 1 1 1 460 200n
+preplace netloc load_weight_0_weight0 1 1 1 530 650n
+preplace netloc load_weight_0_weight1 1 1 1 510 670n
+preplace netloc load_weight_0_weight2 1 1 1 450 690n
+preplace netloc load_weight_0_weight3 1 1 1 480 710n
+preplace netloc load_weight_0_weight_vld 1 1 1 500 730n
+preplace netloc rst_0_1 1 0 2 30 1100 NJ
+preplace netloc load_activation_0_BRAM_clk 1 1 1 490 1400n
+preplace netloc load_activation_0_BRAM_en 1 1 1 460 1420n
+preplace netloc load_activation_0_BRAM_rst 1 1 1 550 1440n
+preplace netloc load_activation_0_BRAM_din 1 1 1 560 1440n
+preplace netloc load_activation_0_BRAM_wen 1 1 1 440 1480n
+preplace netloc load_activation_0_BRAM_0_addr 1 1 1 540 1400n
+preplace netloc load_activation_0_BRAM_1_addr 1 1 1 420 1520n
+preplace netloc blk_mem_gen_4_doutb 1 0 2 80 1620 NJ
+preplace netloc blk_mem_gen_4_douta 1 0 2 70 1580 570J
+preplace netloc load_activation_0_activate0 1 1 1 520 1160n
+preplace netloc load_activation_0_activate1 1 1 1 560 1180n
+preplace netloc load_activation_0_activate2 1 1 1 570 1200n
+preplace netloc load_activation_0_done 1 1 1 550 1120n
+preplace netloc stride_0_1 1 0 1 20J 1370n
+preplace netloc width_0_1 1 0 1 50J 1400n
+preplace netloc channel_0_1 1 0 1 NJ 1430
+preplace netloc load_start_1_1 1 0 1 50J 1450n
+preplace netloc blk_mem_gen_2_douta 1 0 2 80 590 530J
+preplace netloc blk_mem_gen_3_douta 1 0 2 80 970 490J
+levelinfo -pg 1 0 250 770 990
+pagesize -pg 1 -db -bbox -sgen -170 0 1150 1740
 "
 }
 0
