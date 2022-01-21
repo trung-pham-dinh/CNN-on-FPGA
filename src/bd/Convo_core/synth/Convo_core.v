@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Wed Jan 19 16:12:40 2022
+//Date        : Fri Jan 21 10:59:50 2022
 //Host        : DESKTOP-Q4T850H running 64-bit major release  (build 9200)
 //Command     : generate_target Convo_core.bd
 //Design      : Convo_core
@@ -9,12 +9,13 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "Convo_core,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Convo_core,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=8,numReposBlks=8,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "Convo_core.hwdef" *) 
+(* CORE_GENERATION_INFO = "Convo_core,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Convo_core,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=9,numReposBlks=9,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=4,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "Convo_core.hwdef" *) 
 module Convo_core
    (addr_rst_0,
     channel_0,
     clk_0,
-    load_activate_start,
+    en_0,
+    init_signal_0,
     load_weight_start,
     out_psum0_0,
     out_psum1_0,
@@ -28,7 +29,8 @@ module Convo_core
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.ADDR_RST_0 RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.ADDR_RST_0, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input addr_rst_0;
   input [11:0]channel_0;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_0 CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_0, ASSOCIATED_RESET rst_0, CLK_DOMAIN Convo_core_clk_0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk_0;
-  input load_activate_start;
+  input en_0;
+  input init_signal_0;
   input load_weight_start;
   output [7:0]out_psum0_0;
   output [7:0]out_psum1_0;
@@ -55,6 +57,8 @@ module Convo_core
   wire [7:0]computing_core_0_out_psum3;
   wire computing_core_0_out_psum_vld;
   wire computing_core_0_weight_load_done;
+  wire en_0_1;
+  wire init_signal_0_1;
   wire [31:0]load_activation_0_BRAM_0_addr;
   wire [31:0]load_activation_0_BRAM_1_addr;
   wire load_activation_0_BRAM_clk;
@@ -66,7 +70,6 @@ module Convo_core
   wire [23:0]load_activation_0_activate1;
   wire [23:0]load_activation_0_activate2;
   wire load_activation_0_done;
-  wire load_start_1_1;
   wire [31:0]load_weight_0_BRAM_0_addr;
   wire [31:0]load_weight_0_BRAM_1_addr;
   wire [31:0]load_weight_0_BRAM_2_addr;
@@ -82,6 +85,8 @@ module Convo_core
   wire [7:0]load_weight_0_weight3;
   wire load_weight_0_weight_vld;
   wire load_weight_start;
+  wire pipeline_0_start_core;
+  wire pipeline_0_start_load;
   wire rst_0_1;
   wire [2:0]stride_0_1;
   wire [11:0]width_0_1;
@@ -89,7 +94,8 @@ module Convo_core
   assign addr_rst_0_1 = addr_rst_0;
   assign channel_0_1 = channel_0[11:0];
   assign clk_0_1 = clk_0;
-  assign load_start_1_1 = load_activate_start;
+  assign en_0_1 = en_0;
+  assign init_signal_0_1 = init_signal_0;
   assign out_psum0_0[7:0] = computing_core_0_out_psum0;
   assign out_psum1_0[7:0] = computing_core_0_out_psum1;
   assign out_psum2_0[7:0] = computing_core_0_out_psum2;
@@ -150,7 +156,7 @@ module Convo_core
        (.activate0(load_activation_0_activate0),
         .activate1(load_activation_0_activate1),
         .activate2(load_activation_0_activate2),
-        .activate_ready(load_activation_0_done),
+        .activate_ready(pipeline_0_start_core),
         .clk(clk_0_1),
         .out_psum0(computing_core_0_out_psum0),
         .out_psum1(computing_core_0_out_psum1),
@@ -180,7 +186,7 @@ module Convo_core
         .channel(channel_0_1),
         .clk(clk_0_1),
         .done(load_activation_0_done),
-        .load_start(load_start_1_1),
+        .load_start(pipeline_0_start_load),
         .rst(rst_0_1),
         .stride(stride_0_1),
         .width(width_0_1));
@@ -208,4 +214,13 @@ module Convo_core
         .weight2(load_weight_0_weight2),
         .weight3(load_weight_0_weight3),
         .weight_vld(load_weight_0_weight_vld));
+  Convo_core_pipeline_0_0 pipeline_0
+       (.activate_ready(load_activation_0_done),
+        .clk(clk_0_1),
+        .core_end(computing_core_0_out_psum_vld),
+        .en(en_0_1),
+        .init_signal(init_signal_0_1),
+        .rst(rst_0_1),
+        .start_core(pipeline_0_start_core),
+        .start_load(pipeline_0_start_load));
 endmodule

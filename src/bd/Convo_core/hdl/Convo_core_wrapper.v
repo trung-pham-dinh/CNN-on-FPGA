@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Wed Jan 19 16:12:40 2022
+//Date        : Fri Jan 21 10:59:50 2022
 //Host        : DESKTOP-Q4T850H running 64-bit major release  (build 9200)
 //Command     : generate_target Convo_core_wrapper.bd
 //Design      : Convo_core_wrapper
@@ -13,7 +13,8 @@ module Convo_core_wrapper
    (addr_rst_0,
     channel_0,
     clk_0,
-    load_activate_start,
+    en_0,
+    init_signal_0,
     load_weight_start,
     out_psum0_0,
     out_psum1_0,
@@ -27,7 +28,8 @@ module Convo_core_wrapper
   input addr_rst_0;
   input [11:0]channel_0;
   input clk_0;
-  input load_activate_start;
+  input en_0;
+  input init_signal_0;
   input load_weight_start;
   output [7:0]out_psum0_0;
   output [7:0]out_psum1_0;
@@ -42,7 +44,8 @@ module Convo_core_wrapper
   wire addr_rst_0;
   wire [11:0]channel_0;
   wire clk_0;
-  wire load_activate_start;
+  wire en_0;
+  wire init_signal_0;
   wire load_weight_start;
   wire [7:0]out_psum0_0;
   wire [7:0]out_psum1_0;
@@ -58,7 +61,8 @@ module Convo_core_wrapper
        (.addr_rst_0(addr_rst_0),
         .channel_0(channel_0),
         .clk_0(clk_0),
-        .load_activate_start(load_activate_start),
+        .en_0(en_0),
+        .init_signal_0(init_signal_0),
         .load_weight_start(load_weight_start),
         .out_psum0_0(out_psum0_0),
         .out_psum1_0(out_psum1_0),
