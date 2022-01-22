@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# computing_core, load_activation, load_weight, pipeline
+# computing_core, load_activation, load_weight, load_weight_ctrl, pipeline
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -163,22 +163,30 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
+  set activate0_sim [ create_bd_port -dir O -from 23 -to 0 activate0_sim ]
+  set activate1_sim [ create_bd_port -dir O -from 23 -to 0 activate1_sim ]
+  set activate2_sim [ create_bd_port -dir O -from 23 -to 0 activate2_sim ]
   set addr_rst_0 [ create_bd_port -dir I -type rst addr_rst_0 ]
   set channel_0 [ create_bd_port -dir I -from 11 -to 0 channel_0 ]
+  set channel_end_0 [ create_bd_port -dir I channel_end_0 ]
   set clk_0 [ create_bd_port -dir I -type clk clk_0 ]
   set_property -dict [ list \
    CONFIG.ASSOCIATED_RESET {rst_0} \
  ] $clk_0
   set en_0 [ create_bd_port -dir I en_0 ]
   set init_signal_0 [ create_bd_port -dir I init_signal_0 ]
-  set load_weight_start [ create_bd_port -dir I load_weight_start ]
   set out_psum0_0 [ create_bd_port -dir O -from 7 -to 0 out_psum0_0 ]
   set out_psum1_0 [ create_bd_port -dir O -from 7 -to 0 out_psum1_0 ]
   set out_psum2_0 [ create_bd_port -dir O -from 7 -to 0 out_psum2_0 ]
   set out_psum3_0 [ create_bd_port -dir O -from 7 -to 0 out_psum3_0 ]
   set out_psum_vld_0 [ create_bd_port -dir O out_psum_vld_0 ]
   set rst_0 [ create_bd_port -dir I -type rst rst_0 ]
+  set start_core_sim [ create_bd_port -dir O start_core_sim ]
   set stride_0 [ create_bd_port -dir I -from 2 -to 0 stride_0 ]
+  set weight0_sim [ create_bd_port -dir O -from 71 -to 0 weight0_sim ]
+  set weight1_sim [ create_bd_port -dir O -from 71 -to 0 weight1_sim ]
+  set weight2_sim [ create_bd_port -dir O -from 71 -to 0 weight2_sim ]
+  set weight3_sim [ create_bd_port -dir O -from 71 -to 0 weight3_sim ]
   set weight_done [ create_bd_port -dir O weight_done ]
   set width_0 [ create_bd_port -dir I -from 11 -to 0 width_0 ]
 
@@ -293,6 +301,17 @@ proc create_root_design { parentCell } {
      return 1
    }
   
+  # Create instance: load_weight_ctrl_0, and set properties
+  set block_name load_weight_ctrl
+  set block_cell_name load_weight_ctrl_0
+  if { [catch {set load_weight_ctrl_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $load_weight_ctrl_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: pipeline_0, and set properties
   set block_name pipeline
   set block_cell_name pipeline_0
@@ -313,15 +332,15 @@ proc create_root_design { parentCell } {
   connect_bd_net -net blk_mem_gen_4_douta [get_bd_pins blk_mem_gen_4/douta] [get_bd_pins load_activation_0/BRAM_0_dout]
   connect_bd_net -net blk_mem_gen_4_doutb [get_bd_pins blk_mem_gen_4/doutb] [get_bd_pins load_activation_0/BRAM_1_dout]
   connect_bd_net -net channel_0_1 [get_bd_ports channel_0] [get_bd_pins load_activation_0/channel]
-  connect_bd_net -net clk_0_1 [get_bd_ports clk_0] [get_bd_pins computing_core_0/clk] [get_bd_pins load_activation_0/clk] [get_bd_pins load_weight_0/clk] [get_bd_pins pipeline_0/clk]
+  connect_bd_net -net channel_end_0_1 [get_bd_ports channel_end_0] [get_bd_pins load_weight_ctrl_0/channel_end]
+  connect_bd_net -net clk_0_1 [get_bd_ports clk_0] [get_bd_pins computing_core_0/clk] [get_bd_pins load_activation_0/clk] [get_bd_pins load_weight_0/clk] [get_bd_pins load_weight_ctrl_0/clk] [get_bd_pins pipeline_0/clk]
   connect_bd_net -net computing_core_0_out_psum0 [get_bd_ports out_psum0_0] [get_bd_pins computing_core_0/out_psum0]
   connect_bd_net -net computing_core_0_out_psum1 [get_bd_ports out_psum1_0] [get_bd_pins computing_core_0/out_psum1]
   connect_bd_net -net computing_core_0_out_psum2 [get_bd_ports out_psum2_0] [get_bd_pins computing_core_0/out_psum2]
   connect_bd_net -net computing_core_0_out_psum3 [get_bd_ports out_psum3_0] [get_bd_pins computing_core_0/out_psum3]
-  connect_bd_net -net computing_core_0_out_psum_vld [get_bd_ports out_psum_vld_0] [get_bd_pins computing_core_0/out_psum_vld] [get_bd_pins pipeline_0/core_end]
-  connect_bd_net -net computing_core_0_weight_load_done [get_bd_ports weight_done] [get_bd_pins computing_core_0/weight_load_done] [get_bd_pins load_weight_0/load_done]
+  connect_bd_net -net computing_core_0_out_psum_vld [get_bd_ports out_psum_vld_0] [get_bd_pins computing_core_0/out_psum_vld] [get_bd_pins load_weight_ctrl_0/core_free] [get_bd_pins pipeline_0/core_end]
   connect_bd_net -net en_0_1 [get_bd_ports en_0] [get_bd_pins pipeline_0/en]
-  connect_bd_net -net init_signal_0_1 [get_bd_ports init_signal_0] [get_bd_pins pipeline_0/init_signal]
+  connect_bd_net -net init_signal_0_1 [get_bd_ports init_signal_0] [get_bd_pins load_weight_ctrl_0/init] [get_bd_pins pipeline_0/init_signal]
   connect_bd_net -net load_activation_0_BRAM_0_addr [get_bd_pins blk_mem_gen_4/addra] [get_bd_pins load_activation_0/BRAM_0_addr]
   connect_bd_net -net load_activation_0_BRAM_1_addr [get_bd_pins blk_mem_gen_4/addrb] [get_bd_pins load_activation_0/BRAM_1_addr]
   connect_bd_net -net load_activation_0_BRAM_clk [get_bd_pins blk_mem_gen_4/clka] [get_bd_pins blk_mem_gen_4/clkb] [get_bd_pins load_activation_0/BRAM_clk]
@@ -329,9 +348,9 @@ proc create_root_design { parentCell } {
   connect_bd_net -net load_activation_0_BRAM_en [get_bd_pins blk_mem_gen_4/ena] [get_bd_pins blk_mem_gen_4/enb] [get_bd_pins load_activation_0/BRAM_en]
   connect_bd_net -net load_activation_0_BRAM_rst [get_bd_pins blk_mem_gen_4/rsta] [get_bd_pins blk_mem_gen_4/rstb] [get_bd_pins load_activation_0/BRAM_rst]
   connect_bd_net -net load_activation_0_BRAM_wen [get_bd_pins blk_mem_gen_4/wea] [get_bd_pins blk_mem_gen_4/web] [get_bd_pins load_activation_0/BRAM_wen]
-  connect_bd_net -net load_activation_0_activate0 [get_bd_pins computing_core_0/activate0] [get_bd_pins load_activation_0/activate0]
-  connect_bd_net -net load_activation_0_activate1 [get_bd_pins computing_core_0/activate1] [get_bd_pins load_activation_0/activate1]
-  connect_bd_net -net load_activation_0_activate2 [get_bd_pins computing_core_0/activate2] [get_bd_pins load_activation_0/activate2]
+  connect_bd_net -net load_activation_0_activate0 [get_bd_ports activate0_sim] [get_bd_pins computing_core_0/activate0] [get_bd_pins load_activation_0/activate0]
+  connect_bd_net -net load_activation_0_activate1 [get_bd_ports activate1_sim] [get_bd_pins computing_core_0/activate1] [get_bd_pins load_activation_0/activate1]
+  connect_bd_net -net load_activation_0_activate2 [get_bd_ports activate2_sim] [get_bd_pins computing_core_0/activate2] [get_bd_pins load_activation_0/activate2]
   connect_bd_net -net load_activation_0_done [get_bd_pins load_activation_0/done] [get_bd_pins pipeline_0/activate_ready]
   connect_bd_net -net load_weight_0_BRAM_0_addr [get_bd_pins blk_mem_gen_0/addra] [get_bd_pins load_weight_0/BRAM_0_addr]
   connect_bd_net -net load_weight_0_BRAM_1_addr [get_bd_pins blk_mem_gen_1/addra] [get_bd_pins load_weight_0/BRAM_1_addr]
@@ -342,15 +361,20 @@ proc create_root_design { parentCell } {
   connect_bd_net -net load_weight_0_BRAM_en [get_bd_pins blk_mem_gen_0/ena] [get_bd_pins blk_mem_gen_1/ena] [get_bd_pins blk_mem_gen_2/ena] [get_bd_pins blk_mem_gen_3/ena] [get_bd_pins load_weight_0/BRAM_en]
   connect_bd_net -net load_weight_0_BRAM_rst [get_bd_pins blk_mem_gen_0/rsta] [get_bd_pins blk_mem_gen_1/rsta] [get_bd_pins blk_mem_gen_2/rsta] [get_bd_pins blk_mem_gen_3/rsta] [get_bd_pins load_weight_0/BRAM_rst]
   connect_bd_net -net load_weight_0_BRAM_wen [get_bd_pins blk_mem_gen_0/wea] [get_bd_pins blk_mem_gen_1/wea] [get_bd_pins blk_mem_gen_2/wea] [get_bd_pins blk_mem_gen_3/wea] [get_bd_pins load_weight_0/BRAM_wen]
-  connect_bd_net -net load_weight_0_weight0 [get_bd_pins computing_core_0/weight0] [get_bd_pins load_weight_0/weight0]
-  connect_bd_net -net load_weight_0_weight1 [get_bd_pins computing_core_0/weight1] [get_bd_pins load_weight_0/weight1]
-  connect_bd_net -net load_weight_0_weight2 [get_bd_pins computing_core_0/weight2] [get_bd_pins load_weight_0/weight2]
-  connect_bd_net -net load_weight_0_weight3 [get_bd_pins computing_core_0/weight3] [get_bd_pins load_weight_0/weight3]
-  connect_bd_net -net load_weight_0_weight_vld [get_bd_pins computing_core_0/weight_load] [get_bd_pins load_weight_0/weight_vld]
-  connect_bd_net -net load_weight_start [get_bd_ports load_weight_start] [get_bd_pins load_weight_0/load_start]
-  connect_bd_net -net pipeline_0_start_core [get_bd_pins computing_core_0/activate_ready] [get_bd_pins pipeline_0/start_core]
+  connect_bd_net -net load_weight_0_load_end [get_bd_ports weight_done] [get_bd_pins load_weight_0/load_end] [get_bd_pins load_weight_ctrl_0/load_done]
+  connect_bd_net -net load_weight_0_weight0 [get_bd_pins load_weight_0/weight0] [get_bd_pins load_weight_ctrl_0/weight0_in]
+  connect_bd_net -net load_weight_0_weight1 [get_bd_pins load_weight_0/weight1] [get_bd_pins load_weight_ctrl_0/weight1_in]
+  connect_bd_net -net load_weight_0_weight2 [get_bd_pins load_weight_0/weight2] [get_bd_pins load_weight_ctrl_0/weight2_in]
+  connect_bd_net -net load_weight_0_weight3 [get_bd_pins load_weight_0/weight3] [get_bd_pins load_weight_ctrl_0/weight3_in]
+  connect_bd_net -net load_weight_ctrl_0_buffer_ready [get_bd_pins load_weight_ctrl_0/buffer_ready] [get_bd_pins pipeline_0/weight_ready]
+  connect_bd_net -net load_weight_ctrl_0_load_start [get_bd_pins load_weight_0/load_start] [get_bd_pins load_weight_ctrl_0/load_start]
+  connect_bd_net -net load_weight_ctrl_0_weight0_out [get_bd_ports weight0_sim] [get_bd_pins computing_core_0/weight0] [get_bd_pins load_weight_ctrl_0/weight0_out]
+  connect_bd_net -net load_weight_ctrl_0_weight1_out [get_bd_ports weight1_sim] [get_bd_pins computing_core_0/weight1] [get_bd_pins load_weight_ctrl_0/weight1_out]
+  connect_bd_net -net load_weight_ctrl_0_weight2_out [get_bd_ports weight2_sim] [get_bd_pins computing_core_0/weight2] [get_bd_pins load_weight_ctrl_0/weight2_out]
+  connect_bd_net -net load_weight_ctrl_0_weight3_out [get_bd_ports weight3_sim] [get_bd_pins computing_core_0/weight3] [get_bd_pins load_weight_ctrl_0/weight3_out]
+  connect_bd_net -net pipeline_0_start_core [get_bd_ports start_core_sim] [get_bd_pins computing_core_0/load_done] [get_bd_pins pipeline_0/start_core]
   connect_bd_net -net pipeline_0_start_load [get_bd_pins load_activation_0/load_start] [get_bd_pins pipeline_0/start_load]
-  connect_bd_net -net rst_0_1 [get_bd_ports rst_0] [get_bd_pins computing_core_0/rst] [get_bd_pins load_activation_0/rst] [get_bd_pins load_weight_0/rst] [get_bd_pins pipeline_0/rst]
+  connect_bd_net -net rst_0_1 [get_bd_ports rst_0] [get_bd_pins computing_core_0/rst] [get_bd_pins load_activation_0/rst] [get_bd_pins load_weight_0/rst] [get_bd_pins load_weight_ctrl_0/rst] [get_bd_pins pipeline_0/rst]
   connect_bd_net -net stride_0_1 [get_bd_ports stride_0] [get_bd_pins load_activation_0/stride]
   connect_bd_net -net width_0_1 [get_bd_ports width_0] [get_bd_pins load_activation_0/width]
 

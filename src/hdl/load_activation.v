@@ -136,9 +136,9 @@ BRAM_1_dout,
                 STATE_IDLE: begin
                     if(load_start) begin
                         state <= STATE_WAIT;
+                        done <= 0;
                     end
                     addr_inc <= 0;
-                    done <= 0;
                 end
                 STATE_WAIT: begin
                     state <= STATE_LOAD_2;

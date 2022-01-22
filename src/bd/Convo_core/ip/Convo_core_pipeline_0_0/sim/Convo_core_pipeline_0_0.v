@@ -60,6 +60,7 @@ module Convo_core_pipeline_0_0 (
   en,
   init_signal,
   activate_ready,
+  weight_ready,
   core_end,
   start_core,
   start_load
@@ -74,6 +75,7 @@ input wire rst;
 input wire en;
 input wire init_signal;
 input wire activate_ready;
+input wire weight_ready;
 input wire core_end;
 output wire start_core;
 output wire start_load;
@@ -84,6 +86,7 @@ output wire start_load;
     .en(en),
     .init_signal(init_signal),
     .activate_ready(activate_ready),
+    .weight_ready(weight_ready),
     .core_end(core_end),
     .start_core(start_core),
     .start_load(start_load)

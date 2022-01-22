@@ -26,6 +26,7 @@ clk, rst,
 en,          // connect to controller
 init_signal, // connect to controller
 activate_ready, // connect to activate load done signal
+weight_ready, // connect to buffer_ready of load_weight_ctrl
 core_end, // connect to accumulator done signal
 
 start_core, // connect to core module
@@ -41,7 +42,7 @@ start_load // connect to load_activate moddule
     localparam STATE_ACTIVATE_BUSY = 1;
     
     input clk, rst;
-    input en, init_signal, core_end, activate_ready;
+    input en, init_signal, core_end, activate_ready, weight_ready;
     
     output start_core;
     output start_load;
@@ -65,7 +66,7 @@ start_load // connect to load_activate moddule
         else begin
             case(state)
                 STATE_IDLE: begin
-                    if(core_free & activate_vld) begin
+                    if(core_free & activate_ready & weight_ready) begin
                         state <= STATE_START;
                         start_core_reg <= 1;
                     end
@@ -103,27 +104,27 @@ start_load // connect to load_activate moddule
         end
     end
     
-    always@(posedge clk) begin
-        if(rst) begin
-            activate_state <= STATE_ACTIVATE_BUSY;
-            activate_vld <= 0;
-        end
-        else begin
-            case(activate_state)
-                STATE_ACTIVATE_FREE: begin
-                    if(start_core_reg) begin
-                        activate_state <= STATE_ACTIVATE_BUSY;
-                        activate_vld <= 0;
-                    end
-                end
-                STATE_ACTIVATE_BUSY: begin
-                    if(activate_ready) begin
-                        activate_state <= STATE_ACTIVATE_FREE;
-                        activate_vld <= 1;
-                    end
-                end
-            endcase
-        end
-    end
+//    always@(posedge clk) begin
+//        if(rst) begin
+//            activate_state <= STATE_ACTIVATE_BUSY;
+//            activate_vld <= 0;
+//        end
+//        else begin
+//            case(activate_state)
+//                STATE_ACTIVATE_FREE: begin
+//                    if(start_core_reg) begin
+//                        activate_state <= STATE_ACTIVATE_BUSY;
+//                        activate_vld <= 0;
+//                    end
+//                end
+//                STATE_ACTIVATE_BUSY: begin
+//                    if(activate_ready) begin
+//                        activate_state <= STATE_ACTIVATE_FREE;
+//                        activate_vld <= 1;
+//                    end
+//                end
+//            endcase
+//        end
+//    end
     
 endmodule

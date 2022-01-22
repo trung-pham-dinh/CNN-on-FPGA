@@ -47,29 +47,31 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:module_ref:computing_core:1.0
+// IP VLNV: xilinx.com:module_ref:load_weight_ctrl:1.0
 // IP Revision: 1
 
 `timescale 1ns/1ps
 
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
-module Convo_core_computing_core_0_0 (
+module Convo_core_load_weight_ctrl_0_0 (
   clk,
   rst,
+  init,
   load_done,
-  activate0,
-  activate1,
-  activate2,
-  weight0,
-  weight1,
-  weight2,
-  weight3,
-  out_psum0,
-  out_psum1,
-  out_psum2,
-  out_psum3,
-  out_psum_vld
+  channel_end,
+  core_free,
+  weight0_in,
+  weight1_in,
+  weight2_in,
+  weight3_in,
+  weight0_out,
+  weight1_out,
+  weight2_out,
+  weight3_out,
+  buffer_ready,
+  load_start,
+  state
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN Convo_core_clk_0, INSERT_VIP 0" *)
@@ -78,37 +80,41 @@ input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
 input wire rst;
+input wire init;
 input wire load_done;
-input wire [23 : 0] activate0;
-input wire [23 : 0] activate1;
-input wire [23 : 0] activate2;
-input wire [71 : 0] weight0;
-input wire [71 : 0] weight1;
-input wire [71 : 0] weight2;
-input wire [71 : 0] weight3;
-output wire [7 : 0] out_psum0;
-output wire [7 : 0] out_psum1;
-output wire [7 : 0] out_psum2;
-output wire [7 : 0] out_psum3;
-output wire out_psum_vld;
+input wire channel_end;
+input wire core_free;
+input wire [71 : 0] weight0_in;
+input wire [71 : 0] weight1_in;
+input wire [71 : 0] weight2_in;
+input wire [71 : 0] weight3_in;
+output wire [71 : 0] weight0_out;
+output wire [71 : 0] weight1_out;
+output wire [71 : 0] weight2_out;
+output wire [71 : 0] weight3_out;
+output wire buffer_ready;
+output wire load_start;
+output wire [2 : 0] state;
 
-  computing_core #(
-    .WIDTH(8)
+  load_weight_ctrl #(
+    .WEIGHT_WIDTH(8)
   ) inst (
     .clk(clk),
     .rst(rst),
+    .init(init),
     .load_done(load_done),
-    .activate0(activate0),
-    .activate1(activate1),
-    .activate2(activate2),
-    .weight0(weight0),
-    .weight1(weight1),
-    .weight2(weight2),
-    .weight3(weight3),
-    .out_psum0(out_psum0),
-    .out_psum1(out_psum1),
-    .out_psum2(out_psum2),
-    .out_psum3(out_psum3),
-    .out_psum_vld(out_psum_vld)
+    .channel_end(channel_end),
+    .core_free(core_free),
+    .weight0_in(weight0_in),
+    .weight1_in(weight1_in),
+    .weight2_in(weight2_in),
+    .weight3_in(weight3_in),
+    .weight0_out(weight0_out),
+    .weight1_out(weight1_out),
+    .weight2_out(weight2_out),
+    .weight3_out(weight3_out),
+    .buffer_ready(buffer_ready),
+    .load_start(load_start),
+    .state(state)
   );
 endmodule

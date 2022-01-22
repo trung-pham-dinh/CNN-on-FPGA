@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Jan 21 10:59:51 2022" VIVADOVERSION="2021.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Jan 22 22:07:28 2022" VIVADOVERSION="2021.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="Convo_core" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -15,11 +15,7 @@
         <CONNECTION INSTANCE="computing_core_0" PORT="clk"/>
         <CONNECTION INSTANCE="load_activation_0" PORT="clk"/>
         <CONNECTION INSTANCE="pipeline_0" PORT="clk"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="load_weight_start" SIGIS="undef" SIGNAME="External_Ports_load_weight_start">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="load_weight_0" PORT="load_start"/>
+        <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="clk"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="rst_0" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst_0">
@@ -28,6 +24,7 @@
         <CONNECTION INSTANCE="computing_core_0" PORT="rst"/>
         <CONNECTION INSTANCE="load_activation_0" PORT="rst"/>
         <CONNECTION INSTANCE="pipeline_0" PORT="rst"/>
+        <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="rst"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" LEFT="7" NAME="out_psum0_0" RIGHT="0" SIGIS="undef" SIGNAME="computing_core_0_out_psum0">
@@ -55,9 +52,9 @@
         <CONNECTION INSTANCE="computing_core_0" PORT="out_psum_vld"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="weight_done" SIGIS="undef" SIGNAME="computing_core_0_weight_load_done">
+    <PORT DIR="O" NAME="weight_done" SIGIS="undef" SIGNAME="load_weight_0_load_end">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="computing_core_0" PORT="weight_load_done"/>
+        <CONNECTION INSTANCE="load_weight_0" PORT="load_end"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="2" NAME="stride_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_stride_0">
@@ -78,11 +75,57 @@
     <PORT DIR="I" NAME="init_signal_0" SIGIS="undef" SIGNAME="External_Ports_init_signal_0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="pipeline_0" PORT="init_signal"/>
+        <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="init"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="en_0" SIGIS="undef" SIGNAME="External_Ports_en_0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="pipeline_0" PORT="en"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="channel_end_0" SIGIS="undef" SIGNAME="External_Ports_channel_end_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="channel_end"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="71" NAME="weight0_sim" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_ctrl_0_weight0_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="weight0_out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="71" NAME="weight1_sim" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_ctrl_0_weight1_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="weight1_out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="71" NAME="weight2_sim" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_ctrl_0_weight2_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="weight2_out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="71" NAME="weight3_sim" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_ctrl_0_weight3_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="weight3_out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="23" NAME="activate0_sim" RIGHT="0" SIGIS="undef" SIGNAME="load_activation_0_activate0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="load_activation_0" PORT="activate0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="23" NAME="activate1_sim" RIGHT="0" SIGIS="undef" SIGNAME="load_activation_0_activate1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="load_activation_0" PORT="activate1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="23" NAME="activate2_sim" RIGHT="0" SIGIS="undef" SIGNAME="load_activation_0_activate2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="load_activation_0" PORT="activate2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="start_core_sim" SIGIS="undef" SIGNAME="pipeline_0_start_core">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="pipeline_0" PORT="start_core"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -1215,14 +1258,9 @@
             <CONNECTION INSTANCE="External_Ports" PORT="rst_0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="activate_ready" SIGIS="undef" SIGNAME="pipeline_0_start_core">
+        <PORT DIR="I" NAME="load_done" SIGIS="undef" SIGNAME="pipeline_0_start_core">
           <CONNECTIONS>
             <CONNECTION INSTANCE="pipeline_0" PORT="start_core"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="weight_load" SIGIS="undef" SIGNAME="load_weight_0_weight_vld">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="load_weight_0" PORT="weight_vld"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="23" NAME="activate0" RIGHT="0" SIGIS="undef" SIGNAME="load_activation_0_activate0">
@@ -1240,30 +1278,24 @@
             <CONNECTION INSTANCE="load_activation_0" PORT="activate2"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="7" NAME="weight0" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_0_weight0">
+        <PORT DIR="I" LEFT="71" NAME="weight0" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_ctrl_0_weight0_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="load_weight_0" PORT="weight0"/>
+            <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="weight0_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="7" NAME="weight1" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_0_weight1">
+        <PORT DIR="I" LEFT="71" NAME="weight1" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_ctrl_0_weight1_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="load_weight_0" PORT="weight1"/>
+            <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="weight1_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="7" NAME="weight2" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_0_weight2">
+        <PORT DIR="I" LEFT="71" NAME="weight2" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_ctrl_0_weight2_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="load_weight_0" PORT="weight2"/>
+            <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="weight2_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="7" NAME="weight3" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_0_weight3">
+        <PORT DIR="I" LEFT="71" NAME="weight3" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_ctrl_0_weight3_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="load_weight_0" PORT="weight3"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="weight_load_done" SIGIS="undef" SIGNAME="computing_core_0_weight_load_done">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="weight_done"/>
-            <CONNECTION INSTANCE="load_weight_0" PORT="load_done"/>
+            <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="weight3_out"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="7" NAME="out_psum0" RIGHT="0" SIGIS="undef" SIGNAME="computing_core_0_out_psum0">
@@ -1288,6 +1320,7 @@
         </PORT>
         <PORT DIR="O" NAME="out_psum_vld" SIGIS="undef" SIGNAME="computing_core_0_out_psum_vld">
           <CONNECTIONS>
+            <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="core_free"/>
             <CONNECTION INSTANCE="External_Ports" PORT="out_psum_vld_0"/>
             <CONNECTION INSTANCE="pipeline_0" PORT="core_end"/>
           </CONNECTIONS>
@@ -1339,16 +1372,19 @@
         <PORT DIR="O" LEFT="23" NAME="activate0" RIGHT="0" SIGIS="undef" SIGNAME="load_activation_0_activate0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="computing_core_0" PORT="activate0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="activate0_sim"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="23" NAME="activate1" RIGHT="0" SIGIS="undef" SIGNAME="load_activation_0_activate1">
           <CONNECTIONS>
             <CONNECTION INSTANCE="computing_core_0" PORT="activate1"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="activate1_sim"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="23" NAME="activate2" RIGHT="0" SIGIS="undef" SIGNAME="load_activation_0_activate2">
           <CONNECTIONS>
             <CONNECTION INSTANCE="computing_core_0" PORT="activate2"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="activate2_sim"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="done" SIGIS="undef" SIGNAME="load_activation_0_done">
@@ -1430,14 +1466,9 @@
             <CONNECTION INSTANCE="External_Ports" PORT="rst_0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="load_start" SIGIS="undef" SIGNAME="External_Ports_load_weight_start">
+        <PORT DIR="I" NAME="load_start" SIGIS="undef" SIGNAME="load_weight_ctrl_0_load_start">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="load_weight_start"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="load_done" SIGIS="undef" SIGNAME="computing_core_0_weight_load_done">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="computing_core_0" PORT="weight_load_done"/>
+            <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="load_start"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="addr_rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_addr_rst_0">
@@ -1445,29 +1476,30 @@
             <CONNECTION INSTANCE="External_Ports" PORT="addr_rst_0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="7" NAME="weight0" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_0_weight0">
+        <PORT DIR="O" NAME="load_end" SIGIS="undef" SIGNAME="load_weight_0_load_end">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="computing_core_0" PORT="weight0"/>
+            <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="load_done"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="weight_done"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="7" NAME="weight1" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_0_weight1">
+        <PORT DIR="O" LEFT="71" NAME="weight0" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_0_weight0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="computing_core_0" PORT="weight1"/>
+            <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="weight0_in"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="7" NAME="weight2" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_0_weight2">
+        <PORT DIR="O" LEFT="71" NAME="weight1" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_0_weight1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="computing_core_0" PORT="weight2"/>
+            <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="weight1_in"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="7" NAME="weight3" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_0_weight3">
+        <PORT DIR="O" LEFT="71" NAME="weight2" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_0_weight2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="computing_core_0" PORT="weight3"/>
+            <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="weight2_in"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="weight_vld" SIGIS="undef" SIGNAME="load_weight_0_weight_vld">
+        <PORT DIR="O" LEFT="71" NAME="weight3" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_0_weight3">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="computing_core_0" PORT="weight_load"/>
+            <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="weight3_in"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="O" NAME="BRAM_clk" SIGIS="clk" SIGNAME="load_weight_0_BRAM_clk">
@@ -1553,6 +1585,102 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/load_weight_ctrl_0" HWVERSION="1.0" INSTANCE="load_weight_ctrl_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="load_weight_ctrl" VLNV="xilinx.com:module_ref:load_weight_ctrl:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="WEIGHT_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="Convo_core_load_weight_ctrl_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="init" SIGIS="undef" SIGNAME="External_Ports_init_signal_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="init_signal_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="load_done" SIGIS="undef" SIGNAME="load_weight_0_load_end">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="load_weight_0" PORT="load_end"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="channel_end" SIGIS="undef" SIGNAME="External_Ports_channel_end_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="channel_end_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="core_free" SIGIS="undef" SIGNAME="computing_core_0_out_psum_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="computing_core_0" PORT="out_psum_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="71" NAME="weight0_in" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_0_weight0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="load_weight_0" PORT="weight0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="71" NAME="weight1_in" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_0_weight1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="load_weight_0" PORT="weight1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="71" NAME="weight2_in" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_0_weight2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="load_weight_0" PORT="weight2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="71" NAME="weight3_in" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_0_weight3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="load_weight_0" PORT="weight3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="71" NAME="weight0_out" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_ctrl_0_weight0_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="computing_core_0" PORT="weight0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="weight0_sim"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="71" NAME="weight1_out" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_ctrl_0_weight1_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="computing_core_0" PORT="weight1"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="weight1_sim"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="71" NAME="weight2_out" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_ctrl_0_weight2_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="computing_core_0" PORT="weight2"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="weight2_sim"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="71" NAME="weight3_out" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_ctrl_0_weight3_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="computing_core_0" PORT="weight3"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="weight3_sim"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="buffer_ready" SIGIS="undef" SIGNAME="load_weight_ctrl_0_buffer_ready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pipeline_0" PORT="weight_ready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="load_start" SIGIS="undef" SIGNAME="load_weight_ctrl_0_load_start">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="load_weight_0" PORT="load_start"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2" NAME="state" RIGHT="0" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE COREREVISION="1" FULLNAME="/pipeline_0" HWVERSION="1.0" INSTANCE="pipeline_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="pipeline" VLNV="xilinx.com:module_ref:pipeline:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -1585,6 +1713,11 @@
             <CONNECTION INSTANCE="load_activation_0" PORT="done"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" NAME="weight_ready" SIGIS="undef" SIGNAME="load_weight_ctrl_0_buffer_ready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="buffer_ready"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" NAME="core_end" SIGIS="undef" SIGNAME="computing_core_0_out_psum_vld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="computing_core_0" PORT="out_psum_vld"/>
@@ -1592,7 +1725,8 @@
         </PORT>
         <PORT DIR="O" NAME="start_core" SIGIS="undef" SIGNAME="pipeline_0_start_core">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="computing_core_0" PORT="activate_ready"/>
+            <CONNECTION INSTANCE="computing_core_0" PORT="load_done"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="start_core_sim"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="start_load" SIGIS="undef" SIGNAME="pipeline_0_start_load">
