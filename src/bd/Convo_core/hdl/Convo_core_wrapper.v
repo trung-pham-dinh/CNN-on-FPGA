@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Sat Jan 22 22:07:28 2022
+//Date        : Sun Jan 23 10:35:52 2022
 //Host        : DESKTOP-Q4T850H running 64-bit major release  (build 9200)
 //Command     : generate_target Convo_core_wrapper.bd
 //Design      : Convo_core_wrapper
@@ -15,7 +15,7 @@ module Convo_core_wrapper
     activate2_sim,
     addr_rst_0,
     channel_0,
-    channel_end_0,
+    channel_end_out,
     clk_0,
     en_0,
     init_signal_0,
@@ -38,7 +38,7 @@ module Convo_core_wrapper
   output [23:0]activate2_sim;
   input addr_rst_0;
   input [11:0]channel_0;
-  input channel_end_0;
+  output channel_end_out;
   input clk_0;
   input en_0;
   input init_signal_0;
@@ -62,7 +62,7 @@ module Convo_core_wrapper
   wire [23:0]activate2_sim;
   wire addr_rst_0;
   wire [11:0]channel_0;
-  wire channel_end_0;
+  wire channel_end_out;
   wire clk_0;
   wire en_0;
   wire init_signal_0;
@@ -87,7 +87,7 @@ module Convo_core_wrapper
         .activate2_sim(activate2_sim),
         .addr_rst_0(addr_rst_0),
         .channel_0(channel_0),
-        .channel_end_0(channel_end_0),
+        .channel_end_out(channel_end_out),
         .clk_0(clk_0),
         .en_0(en_0),
         .init_signal_0(init_signal_0),

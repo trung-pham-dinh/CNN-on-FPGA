@@ -65,6 +65,7 @@ module Convo_core_load_activation_0_0 (
   activate1,
   activate2,
   done,
+  channel_end,
   BRAM_clk,
   BRAM_en,
   BRAM_rst,
@@ -90,6 +91,7 @@ output wire [23 : 0] activate0;
 output wire [23 : 0] activate1;
 output wire [23 : 0] activate2;
 output wire done;
+output wire channel_end;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_clk, ASSOCIATED_RESET BRAM_rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN Convo_core_load_activation_0_0_BRAM_clk, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 BRAM_clk CLK" *)
 output wire BRAM_clk;
@@ -120,6 +122,7 @@ input wire [31 : 0] BRAM_1_dout;
     .activate1(activate1),
     .activate2(activate2),
     .done(done),
+    .channel_end(channel_end),
     .BRAM_clk(BRAM_clk),
     .BRAM_en(BRAM_en),
     .BRAM_rst(BRAM_rst),

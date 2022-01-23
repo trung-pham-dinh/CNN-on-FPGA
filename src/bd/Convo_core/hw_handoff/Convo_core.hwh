@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Jan 22 22:07:28 2022" VIVADOVERSION="2021.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Jan 23 10:35:53 2022" VIVADOVERSION="2021.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="Convo_core" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -12,19 +12,19 @@
     <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk_0" SIGIS="clk" SIGNAME="External_Ports_clk_0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="load_weight_0" PORT="clk"/>
-        <CONNECTION INSTANCE="computing_core_0" PORT="clk"/>
-        <CONNECTION INSTANCE="load_activation_0" PORT="clk"/>
         <CONNECTION INSTANCE="pipeline_0" PORT="clk"/>
         <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="clk"/>
+        <CONNECTION INSTANCE="computing_core_0" PORT="clk"/>
+        <CONNECTION INSTANCE="load_activation_0" PORT="clk"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="rst_0" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst_0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="load_weight_0" PORT="rst"/>
-        <CONNECTION INSTANCE="computing_core_0" PORT="rst"/>
-        <CONNECTION INSTANCE="load_activation_0" PORT="rst"/>
         <CONNECTION INSTANCE="pipeline_0" PORT="rst"/>
         <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="rst"/>
+        <CONNECTION INSTANCE="computing_core_0" PORT="rst"/>
+        <CONNECTION INSTANCE="load_activation_0" PORT="rst"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" LEFT="7" NAME="out_psum0_0" RIGHT="0" SIGIS="undef" SIGNAME="computing_core_0_out_psum0">
@@ -83,11 +83,6 @@
         <CONNECTION INSTANCE="pipeline_0" PORT="en"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="channel_end_0" SIGIS="undef" SIGNAME="External_Ports_channel_end_0">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="channel_end"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="O" LEFT="71" NAME="weight0_sim" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_ctrl_0_weight0_out">
       <CONNECTIONS>
         <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="weight0_out"/>
@@ -126,6 +121,11 @@
     <PORT DIR="O" NAME="start_core_sim" SIGIS="undef" SIGNAME="pipeline_0_start_core">
       <CONNECTIONS>
         <CONNECTION INSTANCE="pipeline_0" PORT="start_core"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="channel_end_out" SIGIS="undef" SIGNAME="load_activation_0_channel_end">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="load_activation_0" PORT="channel_end"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -257,7 +257,7 @@
         <PARAMETER NAME="register_portb_output_of_softecc" VALUE="false"/>
         <PARAMETER NAME="Pipeline_Stages" VALUE="0"/>
         <PARAMETER NAME="Load_Init_File" VALUE="true"/>
-        <PARAMETER NAME="Coe_File" VALUE="../../../../../bram_init/weight0_0.coe"/>
+        <PARAMETER NAME="Coe_File" VALUE="../../../../program/bram_weight_init/bram_weight_init_0.coe"/>
         <PARAMETER NAME="Fill_Remaining_Memory_Locations" VALUE="false"/>
         <PARAMETER NAME="Remaining_Memory_Locations" VALUE="0"/>
         <PARAMETER NAME="Use_RSTA_Pin" VALUE="true"/>
@@ -468,7 +468,7 @@
         <PARAMETER NAME="register_portb_output_of_softecc" VALUE="false"/>
         <PARAMETER NAME="Pipeline_Stages" VALUE="0"/>
         <PARAMETER NAME="Load_Init_File" VALUE="true"/>
-        <PARAMETER NAME="Coe_File" VALUE="../../../../../bram_init/weight0_1.coe"/>
+        <PARAMETER NAME="Coe_File" VALUE="../../../../program/bram_weight_init/bram_weight_init_1.coe"/>
         <PARAMETER NAME="Fill_Remaining_Memory_Locations" VALUE="false"/>
         <PARAMETER NAME="Remaining_Memory_Locations" VALUE="0"/>
         <PARAMETER NAME="Use_RSTA_Pin" VALUE="true"/>
@@ -679,7 +679,7 @@
         <PARAMETER NAME="register_portb_output_of_softecc" VALUE="false"/>
         <PARAMETER NAME="Pipeline_Stages" VALUE="0"/>
         <PARAMETER NAME="Load_Init_File" VALUE="true"/>
-        <PARAMETER NAME="Coe_File" VALUE="../../../../../bram_init/weight0_2.coe"/>
+        <PARAMETER NAME="Coe_File" VALUE="../../../../program/bram_weight_init/bram_weight_init_2.coe"/>
         <PARAMETER NAME="Fill_Remaining_Memory_Locations" VALUE="false"/>
         <PARAMETER NAME="Remaining_Memory_Locations" VALUE="0"/>
         <PARAMETER NAME="Use_RSTA_Pin" VALUE="true"/>
@@ -890,7 +890,7 @@
         <PARAMETER NAME="register_portb_output_of_softecc" VALUE="false"/>
         <PARAMETER NAME="Pipeline_Stages" VALUE="0"/>
         <PARAMETER NAME="Load_Init_File" VALUE="true"/>
-        <PARAMETER NAME="Coe_File" VALUE="../../../../../bram_init/weight0_3.coe"/>
+        <PARAMETER NAME="Coe_File" VALUE="../../../../program/bram_weight_init/bram_weight_init_3.coe"/>
         <PARAMETER NAME="Fill_Remaining_Memory_Locations" VALUE="false"/>
         <PARAMETER NAME="Remaining_Memory_Locations" VALUE="0"/>
         <PARAMETER NAME="Use_RSTA_Pin" VALUE="true"/>
@@ -1101,7 +1101,7 @@
         <PARAMETER NAME="register_portb_output_of_softecc" VALUE="false"/>
         <PARAMETER NAME="Pipeline_Stages" VALUE="0"/>
         <PARAMETER NAME="Load_Init_File" VALUE="true"/>
-        <PARAMETER NAME="Coe_File" VALUE="../../../../../bram_init/image0.coe"/>
+        <PARAMETER NAME="Coe_File" VALUE="../../../../program/bram_input_init/bram_input_init_0.coe"/>
         <PARAMETER NAME="Fill_Remaining_Memory_Locations" VALUE="false"/>
         <PARAMETER NAME="Remaining_Memory_Locations" VALUE="0"/>
         <PARAMETER NAME="Use_RSTA_Pin" VALUE="true"/>
@@ -1371,25 +1371,31 @@
         </PORT>
         <PORT DIR="O" LEFT="23" NAME="activate0" RIGHT="0" SIGIS="undef" SIGNAME="load_activation_0_activate0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="computing_core_0" PORT="activate0"/>
             <CONNECTION INSTANCE="External_Ports" PORT="activate0_sim"/>
+            <CONNECTION INSTANCE="computing_core_0" PORT="activate0"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="23" NAME="activate1" RIGHT="0" SIGIS="undef" SIGNAME="load_activation_0_activate1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="computing_core_0" PORT="activate1"/>
             <CONNECTION INSTANCE="External_Ports" PORT="activate1_sim"/>
+            <CONNECTION INSTANCE="computing_core_0" PORT="activate1"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="23" NAME="activate2" RIGHT="0" SIGIS="undef" SIGNAME="load_activation_0_activate2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="computing_core_0" PORT="activate2"/>
             <CONNECTION INSTANCE="External_Ports" PORT="activate2_sim"/>
+            <CONNECTION INSTANCE="computing_core_0" PORT="activate2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="done" SIGIS="undef" SIGNAME="load_activation_0_done">
           <CONNECTIONS>
             <CONNECTION INSTANCE="pipeline_0" PORT="activate_ready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="channel_end" SIGIS="undef" SIGNAME="load_activation_0_channel_end">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="channel_end_out"/>
+            <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="channel_end"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="O" NAME="BRAM_clk" SIGIS="clk" SIGNAME="load_activation_0_BRAM_clk">
@@ -1613,9 +1619,9 @@
             <CONNECTION INSTANCE="load_weight_0" PORT="load_end"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="channel_end" SIGIS="undef" SIGNAME="External_Ports_channel_end_0">
+        <PORT DIR="I" NAME="channel_end" SIGIS="undef" SIGNAME="load_activation_0_channel_end">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="channel_end_0"/>
+            <CONNECTION INSTANCE="load_activation_0" PORT="channel_end"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="core_free" SIGIS="undef" SIGNAME="computing_core_0_out_psum_vld">
@@ -1645,26 +1651,26 @@
         </PORT>
         <PORT DIR="O" LEFT="71" NAME="weight0_out" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_ctrl_0_weight0_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="computing_core_0" PORT="weight0"/>
             <CONNECTION INSTANCE="External_Ports" PORT="weight0_sim"/>
+            <CONNECTION INSTANCE="computing_core_0" PORT="weight0"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="71" NAME="weight1_out" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_ctrl_0_weight1_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="computing_core_0" PORT="weight1"/>
             <CONNECTION INSTANCE="External_Ports" PORT="weight1_sim"/>
+            <CONNECTION INSTANCE="computing_core_0" PORT="weight1"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="71" NAME="weight2_out" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_ctrl_0_weight2_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="computing_core_0" PORT="weight2"/>
             <CONNECTION INSTANCE="External_Ports" PORT="weight2_sim"/>
+            <CONNECTION INSTANCE="computing_core_0" PORT="weight2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="71" NAME="weight3_out" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_ctrl_0_weight3_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="computing_core_0" PORT="weight3"/>
             <CONNECTION INSTANCE="External_Ports" PORT="weight3_sim"/>
+            <CONNECTION INSTANCE="computing_core_0" PORT="weight3"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="buffer_ready" SIGIS="undef" SIGNAME="load_weight_ctrl_0_buffer_ready">
@@ -1725,8 +1731,8 @@
         </PORT>
         <PORT DIR="O" NAME="start_core" SIGIS="undef" SIGNAME="pipeline_0_start_core">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="computing_core_0" PORT="load_done"/>
             <CONNECTION INSTANCE="External_Ports" PORT="start_core_sim"/>
+            <CONNECTION INSTANCE="computing_core_0" PORT="load_done"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="start_load" SIGIS="undef" SIGNAME="pipeline_0_start_load">

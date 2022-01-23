@@ -168,7 +168,7 @@ proc create_root_design { parentCell } {
   set activate2_sim [ create_bd_port -dir O -from 23 -to 0 activate2_sim ]
   set addr_rst_0 [ create_bd_port -dir I -type rst addr_rst_0 ]
   set channel_0 [ create_bd_port -dir I -from 11 -to 0 channel_0 ]
-  set channel_end_0 [ create_bd_port -dir I channel_end_0 ]
+  set channel_end_out [ create_bd_port -dir O channel_end_out ]
   set clk_0 [ create_bd_port -dir I -type clk clk_0 ]
   set_property -dict [ list \
    CONFIG.ASSOCIATED_RESET {rst_0} \
@@ -194,7 +194,7 @@ proc create_root_design { parentCell } {
   set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0 ]
   set_property -dict [ list \
    CONFIG.Byte_Size {8} \
-   CONFIG.Coe_File {../../../../../bram_init/weight0_0.coe} \
+   CONFIG.Coe_File {../../../../program/bram_weight_init/bram_weight_init_0.coe} \
    CONFIG.EN_SAFETY_CKT {false} \
    CONFIG.Enable_32bit_Address {true} \
    CONFIG.Fill_Remaining_Memory_Locations {false} \
@@ -209,7 +209,7 @@ proc create_root_design { parentCell } {
   set blk_mem_gen_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_1 ]
   set_property -dict [ list \
    CONFIG.Byte_Size {8} \
-   CONFIG.Coe_File {../../../../../bram_init/weight0_1.coe} \
+   CONFIG.Coe_File {../../../../program/bram_weight_init/bram_weight_init_1.coe} \
    CONFIG.EN_SAFETY_CKT {false} \
    CONFIG.Enable_32bit_Address {true} \
    CONFIG.Load_Init_File {true} \
@@ -223,7 +223,7 @@ proc create_root_design { parentCell } {
   set blk_mem_gen_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_2 ]
   set_property -dict [ list \
    CONFIG.Byte_Size {8} \
-   CONFIG.Coe_File {../../../../../bram_init/weight0_2.coe} \
+   CONFIG.Coe_File {../../../../program/bram_weight_init/bram_weight_init_2.coe} \
    CONFIG.EN_SAFETY_CKT {false} \
    CONFIG.Enable_32bit_Address {true} \
    CONFIG.Load_Init_File {true} \
@@ -237,7 +237,7 @@ proc create_root_design { parentCell } {
   set blk_mem_gen_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_3 ]
   set_property -dict [ list \
    CONFIG.Byte_Size {8} \
-   CONFIG.Coe_File {../../../../../bram_init/weight0_3.coe} \
+   CONFIG.Coe_File {../../../../program/bram_weight_init/bram_weight_init_3.coe} \
    CONFIG.EN_SAFETY_CKT {false} \
    CONFIG.Enable_32bit_Address {true} \
    CONFIG.Load_Init_File {true} \
@@ -251,7 +251,7 @@ proc create_root_design { parentCell } {
   set blk_mem_gen_4 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_4 ]
   set_property -dict [ list \
    CONFIG.Byte_Size {8} \
-   CONFIG.Coe_File {../../../../../bram_init/image0.coe} \
+   CONFIG.Coe_File {../../../../program/bram_input_init/bram_input_init_0.coe} \
    CONFIG.EN_SAFETY_CKT {false} \
    CONFIG.Enable_32bit_Address {true} \
    CONFIG.Enable_B {Use_ENB_Pin} \
@@ -332,7 +332,6 @@ proc create_root_design { parentCell } {
   connect_bd_net -net blk_mem_gen_4_douta [get_bd_pins blk_mem_gen_4/douta] [get_bd_pins load_activation_0/BRAM_0_dout]
   connect_bd_net -net blk_mem_gen_4_doutb [get_bd_pins blk_mem_gen_4/doutb] [get_bd_pins load_activation_0/BRAM_1_dout]
   connect_bd_net -net channel_0_1 [get_bd_ports channel_0] [get_bd_pins load_activation_0/channel]
-  connect_bd_net -net channel_end_0_1 [get_bd_ports channel_end_0] [get_bd_pins load_weight_ctrl_0/channel_end]
   connect_bd_net -net clk_0_1 [get_bd_ports clk_0] [get_bd_pins computing_core_0/clk] [get_bd_pins load_activation_0/clk] [get_bd_pins load_weight_0/clk] [get_bd_pins load_weight_ctrl_0/clk] [get_bd_pins pipeline_0/clk]
   connect_bd_net -net computing_core_0_out_psum0 [get_bd_ports out_psum0_0] [get_bd_pins computing_core_0/out_psum0]
   connect_bd_net -net computing_core_0_out_psum1 [get_bd_ports out_psum1_0] [get_bd_pins computing_core_0/out_psum1]
@@ -351,6 +350,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net load_activation_0_activate0 [get_bd_ports activate0_sim] [get_bd_pins computing_core_0/activate0] [get_bd_pins load_activation_0/activate0]
   connect_bd_net -net load_activation_0_activate1 [get_bd_ports activate1_sim] [get_bd_pins computing_core_0/activate1] [get_bd_pins load_activation_0/activate1]
   connect_bd_net -net load_activation_0_activate2 [get_bd_ports activate2_sim] [get_bd_pins computing_core_0/activate2] [get_bd_pins load_activation_0/activate2]
+  connect_bd_net -net load_activation_0_channel_end [get_bd_ports channel_end_out] [get_bd_pins load_activation_0/channel_end] [get_bd_pins load_weight_ctrl_0/channel_end]
   connect_bd_net -net load_activation_0_done [get_bd_pins load_activation_0/done] [get_bd_pins pipeline_0/activate_ready]
   connect_bd_net -net load_weight_0_BRAM_0_addr [get_bd_pins blk_mem_gen_0/addra] [get_bd_pins load_weight_0/BRAM_0_addr]
   connect_bd_net -net load_weight_0_BRAM_1_addr [get_bd_pins blk_mem_gen_1/addra] [get_bd_pins load_weight_0/BRAM_1_addr]

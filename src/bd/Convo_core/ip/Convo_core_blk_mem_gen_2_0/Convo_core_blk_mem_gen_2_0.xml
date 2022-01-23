@@ -1470,7 +1470,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:6953ca1f</spirit:value>
+            <spirit:value>9:ab73a29e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1486,11 +1486,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jan 19 09:12:40 UTC 2022</spirit:value>
+            <spirit:value>Sun Jan 23 03:35:53 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:6953ca1f</spirit:value>
+            <spirit:value>9:ab73a29e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3869,7 +3869,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Coe_File</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Coe_File" spirit:order="39">../../../../../bram_init/weight0_2.coe</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Coe_File" spirit:order="39">../../../../program/bram_weight_init/bram_weight_init_2.coe</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>

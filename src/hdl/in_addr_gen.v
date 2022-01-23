@@ -28,6 +28,7 @@ channel,
 addr_inc,
 
 addr_r0, addr_r1, addr_r2,
+channel_end_out
     );
     parameter BRAM_ADDR_BIT = 32;
 
@@ -37,28 +38,29 @@ addr_r0, addr_r1, addr_r2,
 
 
     output reg [BRAM_ADDR_BIT-1:0]addr_r0, addr_r1, addr_r2;
-    reg [11:0]entry_cnt;
+    output reg channel_end_out;
+    reg [11:0]col_cnt;
     reg [11:0]row_cnt;
     reg [11:0]channel_cnt;
 
-    wire entry_end, row_end, channel_end;
+    wire row_end,channel_end,img_end;
 /////////////////////////////////////////////////////////////////////////////
-    assign entry_end = width < entry_cnt+ 3 + stride;
-    assign row_end = width < row_cnt+ 3 + stride;
-    assign channel_end = channel_cnt==channel-1;
+    assign row_end = width < col_cnt+ 3 + stride;
+    assign channel_end = width < row_cnt+ 3 + stride;
+    assign img_end = channel_cnt==channel-1;
 /////////////////////////////////////////////////////////////////////////////
 
     // entry counter
     always@(posedge clk) begin
         if(rst) begin
-            entry_cnt <= 0;
+            col_cnt <= 0;
         end
         else if(addr_inc)begin
-            if(width < entry_cnt+ 3 + stride) begin
-                entry_cnt <= 0;
+            if(row_end) begin
+                col_cnt <= 0;
             end
             else begin
-                entry_cnt <= entry_cnt+stride;
+                col_cnt <= col_cnt+stride;
             end
         end
     end
@@ -69,8 +71,8 @@ addr_r0, addr_r1, addr_r2,
             row_cnt <= 0;
         end
         else if(addr_inc)begin
-            if(entry_end) begin
-                if(width < row_cnt+ 3 + stride) begin
+            if(row_end) begin
+                if(channel_end) begin
                     row_cnt <= 0;
                 end
                 else begin
@@ -86,8 +88,8 @@ addr_r0, addr_r1, addr_r2,
             channel_cnt <= 0;
         end
         else if(addr_inc)begin
-            if(entry_end & row_end) begin
-                if(channel_cnt==channel-1) begin
+            if(row_end & channel_end) begin
+                if(img_end) begin
                     channel_cnt <= 0;
                 end
                 else begin
@@ -102,27 +104,31 @@ addr_r0, addr_r1, addr_r2,
             addr_r0<=0;
             addr_r1<= width;
             addr_r2<= {width, 1'b0};
+            channel_end_out <= 0;
         end
         else if(addr_inc)begin
-            if(row_end & entry_end & channel_end) begin
+            if(img_end & channel_end & row_end) begin
                 addr_r0<=0;
                 addr_r1<= width;
                 addr_r2<= {width, 1'b0};
+                channel_end_out <= 1;
             end
-            else if(row_end & entry_end) begin
-                addr_r0<=addr_r0 -entry_cnt + {width, 1'b0} + (width << (width - row_cnt-3));
-                addr_r1<=addr_r1 -entry_cnt + {width, 1'b0} + (width << (width - row_cnt-3));
-                addr_r2<=addr_r2 -entry_cnt + {width, 1'b0} + (width << (width - row_cnt-3));
+            else if(channel_end & row_end) begin
+                addr_r0<=addr_r0 -col_cnt + {width, 1'b0} + (width << (width - row_cnt-3));
+                addr_r1<=addr_r1 -col_cnt + {width, 1'b0} + (width << (width - row_cnt-3));
+                addr_r2<=addr_r2 -col_cnt + {width, 1'b0} + (width << (width - row_cnt-3));
+                channel_end_out <= 1;
             end
-             else if(entry_end) begin
-                addr_r0<= addr_r0 - entry_cnt + (width<<(stride -1));
-                addr_r1<= addr_r1 - entry_cnt + (width<<(stride -1));
-                addr_r2<= addr_r2 - entry_cnt + (width<<(stride -1));
+             else if(row_end) begin
+                addr_r0<= addr_r0 - col_cnt + (width<<(stride -1));
+                addr_r1<= addr_r1 - col_cnt + (width<<(stride -1));
+                addr_r2<= addr_r2 - col_cnt + (width<<(stride -1));
             end
             else begin
                 addr_r0<=addr_r0+stride;
                 addr_r1<=addr_r1+stride;
                 addr_r2<=addr_r2+stride;
+                channel_end_out <= 0;
             end
         end
     end

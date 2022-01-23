@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Sat Jan 22 22:07:27 2022
+//Date        : Sun Jan 23 10:35:52 2022
 //Host        : DESKTOP-Q4T850H running 64-bit major release  (build 9200)
 //Command     : generate_target Convo_core.bd
 //Design      : Convo_core
@@ -16,7 +16,7 @@ module Convo_core
     activate2_sim,
     addr_rst_0,
     channel_0,
-    channel_end_0,
+    channel_end_out,
     clk_0,
     en_0,
     init_signal_0,
@@ -39,7 +39,7 @@ module Convo_core
   output [23:0]activate2_sim;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.ADDR_RST_0 RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.ADDR_RST_0, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input addr_rst_0;
   input [11:0]channel_0;
-  input channel_end_0;
+  output channel_end_out;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_0 CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_0, ASSOCIATED_RESET rst_0, CLK_DOMAIN Convo_core_clk_0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk_0;
   input en_0;
   input init_signal_0;
@@ -66,7 +66,6 @@ module Convo_core
   wire [31:0]blk_mem_gen_4_douta;
   wire [31:0]blk_mem_gen_4_doutb;
   wire [11:0]channel_0_1;
-  wire channel_end_0_1;
   wire clk_0_1;
   wire [7:0]computing_core_0_out_psum0;
   wire [7:0]computing_core_0_out_psum1;
@@ -85,6 +84,7 @@ module Convo_core
   wire [23:0]load_activation_0_activate0;
   wire [23:0]load_activation_0_activate1;
   wire [23:0]load_activation_0_activate2;
+  wire load_activation_0_channel_end;
   wire load_activation_0_done;
   wire [31:0]load_weight_0_BRAM_0_addr;
   wire [31:0]load_weight_0_BRAM_1_addr;
@@ -117,7 +117,7 @@ module Convo_core
   assign activate2_sim[23:0] = load_activation_0_activate2;
   assign addr_rst_0_1 = addr_rst_0;
   assign channel_0_1 = channel_0[11:0];
-  assign channel_end_0_1 = channel_end_0;
+  assign channel_end_out = load_activation_0_channel_end;
   assign clk_0_1 = clk_0;
   assign en_0_1 = en_0;
   assign init_signal_0_1 = init_signal_0;
@@ -212,6 +212,7 @@ module Convo_core
         .activate1(load_activation_0_activate1),
         .activate2(load_activation_0_activate2),
         .channel(channel_0_1),
+        .channel_end(load_activation_0_channel_end),
         .clk(clk_0_1),
         .done(load_activation_0_done),
         .load_start(pipeline_0_start_load),
@@ -243,7 +244,7 @@ module Convo_core
         .weight3(load_weight_0_weight3));
   Convo_core_load_weight_ctrl_0_0 load_weight_ctrl_0
        (.buffer_ready(load_weight_ctrl_0_buffer_ready),
-        .channel_end(channel_end_0_1),
+        .channel_end(load_activation_0_channel_end),
         .clk(clk_0_1),
         .core_free(computing_core_0_out_psum_vld),
         .init(init_signal_0_1),

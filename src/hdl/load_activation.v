@@ -28,6 +28,7 @@ stride,width,channel,
 load_start,
 activate0,activate1,activate2,
 done,
+channel_end,
 
 BRAM_clk,
 BRAM_en,
@@ -57,6 +58,7 @@ BRAM_1_dout,
     input [2:0]stride;
     output reg done;
     output [3*WEIGHT_WIDTH-1:0]activate0,activate1,activate2;
+    output wire channel_end;
     
     output                          BRAM_clk,BRAM_en,BRAM_rst;
     output [BRAM_WIDTH-1:0]         BRAM_din;
@@ -92,7 +94,7 @@ BRAM_1_dout,
                 .width(width),
                 .channel(channel),
                 .addr_inc(addr_inc),
-                .addr_r0(addr_r0), .addr_r1(addr_r1), .addr_r2(addr_r2));
+                .addr_r0(addr_r0), .addr_r1(addr_r1), .addr_r2(addr_r2), .channel_end_out(channel_end));
 
 ////////////////////////////////////////////////////////////////////
 
