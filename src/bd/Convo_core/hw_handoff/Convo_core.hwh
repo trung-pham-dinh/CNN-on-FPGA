@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Jan 23 16:38:38 2022" VIVADOVERSION="2021.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jan 24 09:01:36 2022" VIVADOVERSION="2021.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="Convo_core" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -14,8 +14,8 @@
         <CONNECTION INSTANCE="load_weight_0" PORT="clk"/>
         <CONNECTION INSTANCE="pipeline_0" PORT="clk"/>
         <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="clk"/>
-        <CONNECTION INSTANCE="computing_core_0" PORT="clk"/>
         <CONNECTION INSTANCE="load_activation_0" PORT="clk"/>
+        <CONNECTION INSTANCE="computing_core_0" PORT="clk"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="rst_0" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst_0">
@@ -23,8 +23,8 @@
         <CONNECTION INSTANCE="load_weight_0" PORT="rst"/>
         <CONNECTION INSTANCE="pipeline_0" PORT="rst"/>
         <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="rst"/>
-        <CONNECTION INSTANCE="computing_core_0" PORT="rst"/>
         <CONNECTION INSTANCE="load_activation_0" PORT="rst"/>
+        <CONNECTION INSTANCE="computing_core_0" PORT="rst"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" LEFT="7" NAME="out_psum0_0" RIGHT="0" SIGIS="undef" SIGNAME="computing_core_0_out_psum0">

@@ -18,8 +18,8 @@
       "load_weight_0": "",
       "pipeline_0": "",
       "load_weight_ctrl_0": "",
-      "computing_core_0": "",
-      "load_activation_0": ""
+      "load_activation_0": "",
+      "computing_core_0": ""
     },
     "ports": {
       "addr_rst_0": {
@@ -633,98 +633,6 @@
           }
         }
       },
-      "computing_core_0": {
-        "vlnv": "xilinx.com:module_ref:computing_core:1.0",
-        "xci_name": "Convo_core_computing_core_0_0",
-        "xci_path": "ip\\Convo_core_computing_core_0_0\\Convo_core_computing_core_0_0.xci",
-        "inst_hier_path": "computing_core_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "computing_core",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "Convo_core_clk_0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "load_done": {
-            "direction": "I"
-          },
-          "activate0": {
-            "direction": "I",
-            "left": "23",
-            "right": "0"
-          },
-          "activate1": {
-            "direction": "I",
-            "left": "23",
-            "right": "0"
-          },
-          "activate2": {
-            "direction": "I",
-            "left": "23",
-            "right": "0"
-          },
-          "weight0": {
-            "direction": "I",
-            "left": "71",
-            "right": "0"
-          },
-          "weight1": {
-            "direction": "I",
-            "left": "71",
-            "right": "0"
-          },
-          "weight2": {
-            "direction": "I",
-            "left": "71",
-            "right": "0"
-          },
-          "weight3": {
-            "direction": "I",
-            "left": "71",
-            "right": "0"
-          },
-          "out_psum0": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "out_psum1": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "out_psum2": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "out_psum3": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "out_psum_vld": {
-            "direction": "O"
-          }
-        }
-      },
       "load_activation_0": {
         "vlnv": "xilinx.com:module_ref:load_activation:1.0",
         "xci_name": "Convo_core_load_activation_0_0",
@@ -841,6 +749,98 @@
             "right": "0"
           }
         }
+      },
+      "computing_core_0": {
+        "vlnv": "xilinx.com:module_ref:computing_core:1.0",
+        "xci_name": "Convo_core_computing_core_0_0",
+        "xci_path": "ip\\Convo_core_computing_core_0_0\\Convo_core_computing_core_0_0.xci",
+        "inst_hier_path": "computing_core_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "computing_core",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Convo_core_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "load_done": {
+            "direction": "I"
+          },
+          "activate0": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "activate1": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "activate2": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "weight0": {
+            "direction": "I",
+            "left": "71",
+            "right": "0"
+          },
+          "weight1": {
+            "direction": "I",
+            "left": "71",
+            "right": "0"
+          },
+          "weight2": {
+            "direction": "I",
+            "left": "71",
+            "right": "0"
+          },
+          "weight3": {
+            "direction": "I",
+            "left": "71",
+            "right": "0"
+          },
+          "out_psum0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum2": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum3": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum_vld": {
+            "direction": "O"
+          }
+        }
       }
     },
     "nets": {
@@ -898,8 +898,8 @@
           "load_weight_0/clk",
           "pipeline_0/clk",
           "load_weight_ctrl_0/clk",
-          "computing_core_0/clk",
-          "load_activation_0/clk"
+          "load_activation_0/clk",
+          "computing_core_0/clk"
         ]
       },
       "computing_core_0_out_psum0": {
@@ -1194,8 +1194,8 @@
           "load_weight_0/rst",
           "pipeline_0/rst",
           "load_weight_ctrl_0/rst",
-          "computing_core_0/rst",
-          "load_activation_0/rst"
+          "load_activation_0/rst",
+          "computing_core_0/rst"
         ]
       },
       "stride_0_1": {
