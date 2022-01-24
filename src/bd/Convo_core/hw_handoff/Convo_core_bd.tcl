@@ -163,6 +163,7 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
+  set BRAM_addr_weight [ create_bd_port -dir O -from 31 -to 0 BRAM_addr_weight ]
   set activate0_sim [ create_bd_port -dir O -from 23 -to 0 activate0_sim ]
   set activate1_sim [ create_bd_port -dir O -from 23 -to 0 activate1_sim ]
   set activate2_sim [ create_bd_port -dir O -from 23 -to 0 activate2_sim ]
@@ -188,6 +189,8 @@ proc create_root_design { parentCell } {
   set weight2_sim [ create_bd_port -dir O -from 71 -to 0 weight2_sim ]
   set weight3_sim [ create_bd_port -dir O -from 71 -to 0 weight3_sim ]
   set weight_done [ create_bd_port -dir O weight_done ]
+  set weight_end_0 [ create_bd_port -dir O weight_end_0 ]
+  set weight_size_0 [ create_bd_port -dir I -from 31 -to 0 weight_size_0 ]
   set width_0 [ create_bd_port -dir I -from 11 -to 0 width_0 ]
 
   # Create instance: blk_mem_gen_0, and set properties
@@ -352,7 +355,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net load_activation_0_activate2 [get_bd_ports activate2_sim] [get_bd_pins computing_core_0/activate2] [get_bd_pins load_activation_0/activate2]
   connect_bd_net -net load_activation_0_channel_end [get_bd_ports channel_end_out] [get_bd_pins load_activation_0/channel_end] [get_bd_pins load_weight_ctrl_0/channel_end]
   connect_bd_net -net load_activation_0_done [get_bd_pins load_activation_0/done] [get_bd_pins pipeline_0/activate_ready]
-  connect_bd_net -net load_weight_0_BRAM_0_addr [get_bd_pins blk_mem_gen_0/addra] [get_bd_pins load_weight_0/BRAM_0_addr]
+  connect_bd_net -net load_weight_0_BRAM_0_addr [get_bd_ports BRAM_addr_weight] [get_bd_pins blk_mem_gen_0/addra] [get_bd_pins load_weight_0/BRAM_0_addr]
   connect_bd_net -net load_weight_0_BRAM_1_addr [get_bd_pins blk_mem_gen_1/addra] [get_bd_pins load_weight_0/BRAM_1_addr]
   connect_bd_net -net load_weight_0_BRAM_2_addr [get_bd_pins blk_mem_gen_3/addra] [get_bd_pins load_weight_0/BRAM_2_addr]
   connect_bd_net -net load_weight_0_BRAM_3_addr [get_bd_pins blk_mem_gen_2/addra] [get_bd_pins load_weight_0/BRAM_3_addr]
@@ -366,6 +369,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net load_weight_0_weight1 [get_bd_pins load_weight_0/weight1] [get_bd_pins load_weight_ctrl_0/weight1_in]
   connect_bd_net -net load_weight_0_weight2 [get_bd_pins load_weight_0/weight2] [get_bd_pins load_weight_ctrl_0/weight2_in]
   connect_bd_net -net load_weight_0_weight3 [get_bd_pins load_weight_0/weight3] [get_bd_pins load_weight_ctrl_0/weight3_in]
+  connect_bd_net -net load_weight_0_weight_end [get_bd_ports weight_end_0] [get_bd_pins load_weight_0/weight_end]
   connect_bd_net -net load_weight_ctrl_0_buffer_ready [get_bd_pins load_weight_ctrl_0/buffer_ready] [get_bd_pins pipeline_0/weight_ready]
   connect_bd_net -net load_weight_ctrl_0_load_start [get_bd_pins load_weight_0/load_start] [get_bd_pins load_weight_ctrl_0/load_start]
   connect_bd_net -net load_weight_ctrl_0_weight0_out [get_bd_ports weight0_sim] [get_bd_pins computing_core_0/weight0] [get_bd_pins load_weight_ctrl_0/weight0_out]
@@ -376,6 +380,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net pipeline_0_start_load [get_bd_pins load_activation_0/load_start] [get_bd_pins pipeline_0/start_load]
   connect_bd_net -net rst_0_1 [get_bd_ports rst_0] [get_bd_pins computing_core_0/rst] [get_bd_pins load_activation_0/rst] [get_bd_pins load_weight_0/rst] [get_bd_pins load_weight_ctrl_0/rst] [get_bd_pins pipeline_0/rst]
   connect_bd_net -net stride_0_1 [get_bd_ports stride_0] [get_bd_pins load_activation_0/stride]
+  connect_bd_net -net weight_size_0_1 [get_bd_ports weight_size_0] [get_bd_pins load_weight_0/weight_size]
   connect_bd_net -net width_0_1 [get_bd_ports width_0] [get_bd_pins load_activation_0/width]
 
   # Create address segments

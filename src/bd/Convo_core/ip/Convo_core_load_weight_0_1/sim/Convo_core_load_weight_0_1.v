@@ -59,7 +59,9 @@ module Convo_core_load_weight_0_1 (
   rst,
   load_start,
   addr_rst,
+  weight_size,
   load_end,
+  weight_end,
   weight0,
   weight1,
   weight2,
@@ -89,7 +91,9 @@ input wire load_start;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME addr_rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 addr_rst RST" *)
 input wire addr_rst;
+input wire [31 : 0] weight_size;
 output wire load_end;
+output wire weight_end;
 output wire [71 : 0] weight0;
 output wire [71 : 0] weight1;
 output wire [71 : 0] weight2;
@@ -122,7 +126,9 @@ input wire [31 : 0] BRAM_3_dout;
     .rst(rst),
     .load_start(load_start),
     .addr_rst(addr_rst),
+    .weight_size(weight_size),
     .load_end(load_end),
+    .weight_end(weight_end),
     .weight0(weight0),
     .weight1(weight1),
     .weight2(weight2),

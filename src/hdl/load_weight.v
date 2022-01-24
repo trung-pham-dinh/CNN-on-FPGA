@@ -25,7 +25,9 @@ clk, rst,
 
 load_start,
 addr_rst,
+weight_size, // k*w*h*c
 load_end,
+weight_end,
 
 weight0,
 weight1,
@@ -61,11 +63,13 @@ BRAM_3_dout
 //////////////////////////////////////////////////////////////////// 
     input                           clk,rst;
     input                           load_start,addr_rst;
+    input  [BRAM_ADDR_BIT-1:0]      weight_size;
     output reg                      load_end;
     output [9*WEIGHT_WIDTH-1:0]     weight0;
     output [9*WEIGHT_WIDTH-1:0]     weight1;
     output [9*WEIGHT_WIDTH-1:0]     weight2;
     output [9*WEIGHT_WIDTH-1:0]     weight3;
+    output                          weight_end;
     
     
     output                          BRAM_clk,BRAM_en,BRAM_rst;
@@ -112,6 +116,7 @@ BRAM_3_dout
     assign weight1 = {weight1_reg[0], weight1_reg[1], weight1_reg[2], weight1_reg[3], weight1_reg[4], weight1_reg[5], weight1_reg[6], weight1_reg[7], weight1_reg[8]};
     assign weight2 = {weight2_reg[0], weight2_reg[1], weight2_reg[2], weight2_reg[3], weight2_reg[4], weight2_reg[5], weight2_reg[6], weight2_reg[7], weight2_reg[8]};
     assign weight3 = {weight3_reg[0], weight3_reg[1], weight3_reg[2], weight3_reg[3], weight3_reg[4], weight3_reg[5], weight3_reg[6], weight3_reg[7], weight3_reg[8]};
+    assign weight_end = (weight_size-1 == BRAM_0_addr);
 ////////////////////////////////////////////////////////////////////
     always@(posedge clk) begin
         if(rst) begin

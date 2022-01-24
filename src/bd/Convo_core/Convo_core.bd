@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x52301EC978132201",
+      "boundary_crc": "0x9B9EA88D2DAA0C6C",
       "device": "xc7z020clg400-1",
       "name": "Convo_core",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
@@ -166,6 +166,19 @@
       },
       "channel_end_out": {
         "direction": "O"
+      },
+      "weight_size_0": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "weight_end_0": {
+        "direction": "O"
+      },
+      "BRAM_addr_weight": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
       }
     },
     "components": {
@@ -374,7 +387,15 @@
             "type": "rst",
             "direction": "I"
           },
+          "weight_size": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
           "load_end": {
+            "direction": "O"
+          },
+          "weight_end": {
             "direction": "O"
           },
           "weight0": {
@@ -908,9 +929,9 @@
       "computing_core_0_out_psum_vld": {
         "ports": [
           "computing_core_0/out_psum_vld",
-          "load_weight_ctrl_0/core_free",
           "out_psum_vld_0",
-          "pipeline_0/core_end"
+          "pipeline_0/core_end",
+          "load_weight_ctrl_0/core_free"
         ]
       },
       "en_0_1": {
@@ -1010,7 +1031,8 @@
       "load_weight_0_BRAM_0_addr": {
         "ports": [
           "load_weight_0/BRAM_0_addr",
-          "blk_mem_gen_0/addra"
+          "blk_mem_gen_0/addra",
+          "BRAM_addr_weight"
         ]
       },
       "load_weight_0_BRAM_1_addr": {
@@ -1079,8 +1101,8 @@
       "load_weight_0_load_end": {
         "ports": [
           "load_weight_0/load_end",
-          "load_weight_ctrl_0/load_done",
-          "weight_done"
+          "weight_done",
+          "load_weight_ctrl_0/load_done"
         ]
       },
       "load_weight_0_weight0": {
@@ -1105,6 +1127,12 @@
         "ports": [
           "load_weight_0/weight3",
           "load_weight_ctrl_0/weight3_in"
+        ]
+      },
+      "load_weight_0_weight_end": {
+        "ports": [
+          "load_weight_0/weight_end",
+          "weight_end_0"
         ]
       },
       "load_weight_ctrl_0_buffer_ready": {
@@ -1174,6 +1202,12 @@
         "ports": [
           "stride_0",
           "load_activation_0/stride"
+        ]
+      },
+      "weight_size_0_1": {
+        "ports": [
+          "weight_size_0",
+          "load_weight_0/weight_size"
         ]
       },
       "width_0_1": {

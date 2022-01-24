@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Jan 23 10:35:53 2022" VIVADOVERSION="2021.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Jan 23 16:38:38 2022" VIVADOVERSION="2021.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="Convo_core" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -126,6 +126,21 @@
     <PORT DIR="O" NAME="channel_end_out" SIGIS="undef" SIGNAME="load_activation_0_channel_end">
       <CONNECTIONS>
         <CONNECTION INSTANCE="load_activation_0" PORT="channel_end"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="weight_size_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_weight_size_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="load_weight_0" PORT="weight_size"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="weight_end_0" SIGIS="undef" SIGNAME="load_weight_0_weight_end">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="load_weight_0" PORT="weight_end"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="BRAM_addr_weight" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_0_BRAM_0_addr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="load_weight_0" PORT="BRAM_0_addr"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -1320,9 +1335,9 @@
         </PORT>
         <PORT DIR="O" NAME="out_psum_vld" SIGIS="undef" SIGNAME="computing_core_0_out_psum_vld">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="core_free"/>
             <CONNECTION INSTANCE="External_Ports" PORT="out_psum_vld_0"/>
             <CONNECTION INSTANCE="pipeline_0" PORT="core_end"/>
+            <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="core_free"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1482,10 +1497,20 @@
             <CONNECTION INSTANCE="External_Ports" PORT="addr_rst_0"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" LEFT="31" NAME="weight_size" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_weight_size_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="weight_size_0"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" NAME="load_end" SIGIS="undef" SIGNAME="load_weight_0_load_end">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="load_done"/>
             <CONNECTION INSTANCE="External_Ports" PORT="weight_done"/>
+            <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="load_done"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="weight_end" SIGIS="undef" SIGNAME="load_weight_0_weight_end">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="weight_end_0"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="71" NAME="weight0" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_0_weight0">
@@ -1551,6 +1576,7 @@
         <PORT DIR="O" LEFT="31" NAME="BRAM_0_addr" RIGHT="0" SIGIS="undef" SIGNAME="load_weight_0_BRAM_0_addr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="blk_mem_gen_0" PORT="addra"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="BRAM_addr_weight"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="31" NAME="BRAM_0_dout" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_douta">

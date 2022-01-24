@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Sun Jan 23 10:35:52 2022
+//Date        : Sun Jan 23 16:38:38 2022
 //Host        : DESKTOP-Q4T850H running 64-bit major release  (build 9200)
 //Command     : generate_target Convo_core_wrapper.bd
 //Design      : Convo_core_wrapper
@@ -10,7 +10,8 @@
 `timescale 1 ps / 1 ps
 
 module Convo_core_wrapper
-   (activate0_sim,
+   (BRAM_addr_weight,
+    activate0_sim,
     activate1_sim,
     activate2_sim,
     addr_rst_0,
@@ -32,7 +33,10 @@ module Convo_core_wrapper
     weight2_sim,
     weight3_sim,
     weight_done,
+    weight_end_0,
+    weight_size_0,
     width_0);
+  output [31:0]BRAM_addr_weight;
   output [23:0]activate0_sim;
   output [23:0]activate1_sim;
   output [23:0]activate2_sim;
@@ -55,8 +59,11 @@ module Convo_core_wrapper
   output [71:0]weight2_sim;
   output [71:0]weight3_sim;
   output weight_done;
+  output weight_end_0;
+  input [31:0]weight_size_0;
   input [11:0]width_0;
 
+  wire [31:0]BRAM_addr_weight;
   wire [23:0]activate0_sim;
   wire [23:0]activate1_sim;
   wire [23:0]activate2_sim;
@@ -79,10 +86,13 @@ module Convo_core_wrapper
   wire [71:0]weight2_sim;
   wire [71:0]weight3_sim;
   wire weight_done;
+  wire weight_end_0;
+  wire [31:0]weight_size_0;
   wire [11:0]width_0;
 
   Convo_core Convo_core_i
-       (.activate0_sim(activate0_sim),
+       (.BRAM_addr_weight(BRAM_addr_weight),
+        .activate0_sim(activate0_sim),
         .activate1_sim(activate1_sim),
         .activate2_sim(activate2_sim),
         .addr_rst_0(addr_rst_0),
@@ -104,5 +114,7 @@ module Convo_core_wrapper
         .weight2_sim(weight2_sim),
         .weight3_sim(weight3_sim),
         .weight_done(weight_done),
+        .weight_end_0(weight_end_0),
+        .weight_size_0(weight_size_0),
         .width_0(width_0));
 endmodule

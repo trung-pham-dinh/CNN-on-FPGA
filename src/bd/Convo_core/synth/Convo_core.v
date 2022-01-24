@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Sun Jan 23 10:35:52 2022
+//Date        : Sun Jan 23 16:38:37 2022
 //Host        : DESKTOP-Q4T850H running 64-bit major release  (build 9200)
 //Command     : generate_target Convo_core.bd
 //Design      : Convo_core
@@ -11,7 +11,8 @@
 
 (* CORE_GENERATION_INFO = "Convo_core,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Convo_core,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=10,numReposBlks=10,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=5,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "Convo_core.hwdef" *) 
 module Convo_core
-   (activate0_sim,
+   (BRAM_addr_weight,
+    activate0_sim,
     activate1_sim,
     activate2_sim,
     addr_rst_0,
@@ -33,7 +34,10 @@ module Convo_core
     weight2_sim,
     weight3_sim,
     weight_done,
+    weight_end_0,
+    weight_size_0,
     width_0);
+  output [31:0]BRAM_addr_weight;
   output [23:0]activate0_sim;
   output [23:0]activate1_sim;
   output [23:0]activate2_sim;
@@ -56,6 +60,8 @@ module Convo_core
   output [71:0]weight2_sim;
   output [71:0]weight3_sim;
   output weight_done;
+  output weight_end_0;
+  input [31:0]weight_size_0;
   input [11:0]width_0;
 
   wire addr_rst_0_1;
@@ -100,6 +106,7 @@ module Convo_core
   wire [71:0]load_weight_0_weight1;
   wire [71:0]load_weight_0_weight2;
   wire [71:0]load_weight_0_weight3;
+  wire load_weight_0_weight_end;
   wire load_weight_ctrl_0_buffer_ready;
   wire load_weight_ctrl_0_load_start;
   wire [71:0]load_weight_ctrl_0_weight0_out;
@@ -110,8 +117,10 @@ module Convo_core
   wire pipeline_0_start_load;
   wire rst_0_1;
   wire [2:0]stride_0_1;
+  wire [31:0]weight_size_0_1;
   wire [11:0]width_0_1;
 
+  assign BRAM_addr_weight[31:0] = load_weight_0_BRAM_0_addr;
   assign activate0_sim[23:0] = load_activation_0_activate0;
   assign activate1_sim[23:0] = load_activation_0_activate1;
   assign activate2_sim[23:0] = load_activation_0_activate2;
@@ -134,6 +143,8 @@ module Convo_core
   assign weight2_sim[71:0] = load_weight_ctrl_0_weight2_out;
   assign weight3_sim[71:0] = load_weight_ctrl_0_weight3_out;
   assign weight_done = load_weight_0_load_end;
+  assign weight_end_0 = load_weight_0_weight_end;
+  assign weight_size_0_1 = weight_size_0[31:0];
   assign width_0_1 = width_0[11:0];
   Convo_core_blk_mem_gen_0_0 blk_mem_gen_0
        (.addra(load_weight_0_BRAM_0_addr),
@@ -241,7 +252,9 @@ module Convo_core
         .weight0(load_weight_0_weight0),
         .weight1(load_weight_0_weight1),
         .weight2(load_weight_0_weight2),
-        .weight3(load_weight_0_weight3));
+        .weight3(load_weight_0_weight3),
+        .weight_end(load_weight_0_weight_end),
+        .weight_size(weight_size_0_1));
   Convo_core_load_weight_ctrl_0_0 load_weight_ctrl_0
        (.buffer_ready(load_weight_ctrl_0_buffer_ready),
         .channel_end(load_activation_0_channel_end),
