@@ -24,7 +24,6 @@ module load_weight(
 clk, rst,
 
 load_start,
-addr_rst,
 weight_size, // k*w*h*c
 load_end,
 weight_end,
@@ -62,7 +61,7 @@ BRAM_3_dout
     localparam STATE_LOAD = 1;
 //////////////////////////////////////////////////////////////////// 
     input                           clk,rst;
-    input                           load_start,addr_rst;
+    input                           load_start;
     input  [BRAM_ADDR_BIT-1:0]      weight_size;
     output reg                      load_end;
     output [9*WEIGHT_WIDTH-1:0]     weight0;
@@ -154,7 +153,7 @@ BRAM_3_dout
     end
     
     always@(posedge clk) begin
-        if(rst | addr_rst) begin
+        if(rst) begin
             BRAM_0_addr <= 0;
             BRAM_1_addr <= 0;
             BRAM_2_addr <= 0;

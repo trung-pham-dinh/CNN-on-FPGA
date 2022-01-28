@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"Multi_convo_core": {
+			"proto_instances": {
+			}
+		}
+	}
+}

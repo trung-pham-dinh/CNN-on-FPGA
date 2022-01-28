@@ -25,7 +25,7 @@ clk,rst,
 
 addr_rst,
 addr_inc, // connect to ff_ren
-no_entry,
+no_entry, // number of entries in 1 channel (width*width)
 no_channel,
 
 addr

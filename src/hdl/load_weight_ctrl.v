@@ -23,12 +23,11 @@
 module load_weight_ctrl(
 clk, rst, init,
 load_done,
-channel_end, core_free,
+channel_end, core_end,
 weight0_in,weight1_in,weight2_in,weight3_in,
 weight0_out,weight1_out,weight2_out,weight3_out,
 buffer_ready, // connect to end_gate in pipeline.v
-load_start, // connect to load_weight
-state
+load_start // connect to load_weight
     );
     parameter WEIGHT_WIDTH = 8;
     
@@ -36,7 +35,7 @@ state
     localparam STATE_SYNC = 1;
     localparam STATE_NON_SYNC = 2;
     
-    input clk,rst, init, load_done, core_free, channel_end;
+    input clk,rst, init, load_done, core_end, channel_end;
     
     input [9*WEIGHT_WIDTH-1:0]     weight0_in;
     input [9*WEIGHT_WIDTH-1:0]     weight1_in;
@@ -50,10 +49,10 @@ state
     output reg                     load_start;
     
     reg                          latch;
-    output reg [2:0]state;
+    reg [2:0]state;
     wire                          load_new_weight;
     
-    assign load_new_weight = channel_end & core_free;
+    assign load_new_weight = channel_end & core_end;
     
     always@(posedge clk) begin
         if(rst) begin

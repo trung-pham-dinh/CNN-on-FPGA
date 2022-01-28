@@ -1,7 +1,7 @@
 {
 	"version": "1.0",
 	"modules": {
-		"Convo_core": {
+		"Convo_core_inst_0": {
 			"proto_instances": {
 			}
 		}

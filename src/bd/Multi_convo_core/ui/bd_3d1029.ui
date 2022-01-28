@@ -1,0 +1,67 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.932143",
+   "Default View_TopLeft":"-246,2",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port port-id_clk_0 -pg 1 -lvl 0 -x -30 -y 40 -defaultsOSRD
+preplace port port-id_rst_0 -pg 1 -lvl 0 -x -30 -y 70 -defaultsOSRD
+preplace port port-id_init_signal_0 -pg 1 -lvl 0 -x -30 -y 570 -defaultsOSRD
+preplace port port-id_en_0 -pg 1 -lvl 0 -x -30 -y 600 -defaultsOSRD
+preplace port port-id_channel_end_0 -pg 1 -lvl 3 -x 1050 -y 610 -defaultsOSRD
+preplace port port-id_weight_end_0 -pg 1 -lvl 3 -x 1050 -y 640 -defaultsOSRD
+preplace port port-id_BRAM_img_sel_0 -pg 1 -lvl 0 -x -30 -y 660 -defaultsOSRD
+preplace portBus weight_size_1_16_0 -pg 1 -lvl 0 -x -30 -y 630 -defaultsOSRD
+preplace portBus width_input_img_0 -pg 1 -lvl 0 -x -30 -y 510 -defaultsOSRD
+preplace portBus out_psum2_0 -pg 1 -lvl 3 -x 1050 -y 550 -defaultsOSRD
+preplace portBus channel_input_img_0 -pg 1 -lvl 0 -x -30 -y 540 -defaultsOSRD
+preplace portBus out_psum3_0 -pg 1 -lvl 3 -x 1050 -y 580 -defaultsOSRD
+preplace portBus out_psum1_0 -pg 1 -lvl 3 -x 1050 -y 520 -defaultsOSRD
+preplace portBus stride_0 -pg 1 -lvl 0 -x -30 -y 480 -defaultsOSRD
+preplace portBus BRAM_out_dout -pg 1 -lvl 3 -x 1050 -y 140 -defaultsOSRD
+preplace portBus in_psum1_0 -pg 1 -lvl 0 -x -30 -y 170 -defaultsOSRD
+preplace portBus in_psum2_0 -pg 1 -lvl 0 -x -30 -y 200 -defaultsOSRD
+preplace portBus in_psum3_0 -pg 1 -lvl 0 -x -30 -y 230 -defaultsOSRD
+preplace portBus no_channel_0 -pg 1 -lvl 0 -x -30 -y 140 -defaultsOSRD
+preplace portBus no_entry_0 -pg 1 -lvl 0 -x -30 -y 110 -defaultsOSRD
+preplace portBus out_psum0_0 -pg 1 -lvl 3 -x 1050 -y 300 -defaultsOSRD
+preplace portBus addr_out -pg 1 -lvl 3 -x 1050 -y 230 -defaultsOSRD
+preplace portBus out_din -pg 1 -lvl 3 -x 1050 -y 200 -defaultsOSRD
+preplace inst Convo_core_0 -pg 1 -lvl 2 -x 800 -y 580 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 2 -x 800 -y 170 -defaultsOSRD
+preplace inst accumulator_0 -pg 1 -lvl 1 -x 210 -y 160 -defaultsOSRD
+preplace netloc BRAM_img_sel_0_1 1 0 2 NJ 660 NJ
+preplace netloc Convo_core_0_channel_end 1 2 1 NJ 610
+preplace netloc Convo_core_0_out_psum0 1 0 3 40 320 NJ 320 1030
+preplace netloc Convo_core_0_out_psum1 1 2 1 1030J 520n
+preplace netloc Convo_core_0_out_psum2 1 2 1 NJ 550
+preplace netloc Convo_core_0_out_psum3 1 2 1 1030J 570n
+preplace netloc Convo_core_0_out_psum_vld 1 0 3 30 310 NJ 310 1020
+preplace netloc Convo_core_0_weight_end 1 2 1 1020J 630n
+preplace netloc accum_done_1 1 1 1 400 100n
+preplace netloc accumulator_0_BRAM_addr 1 1 2 410 30 1020
+preplace netloc accumulator_0_BRAM_clk 1 1 1 N 140
+preplace netloc accumulator_0_BRAM_din 1 1 2 420 40 1010
+preplace netloc accumulator_0_BRAM_en 1 1 1 440 180n
+preplace netloc accumulator_0_BRAM_rst 1 1 1 420 200n
+preplace netloc accumulator_0_BRAM_wen 1 1 1 410 220n
+preplace netloc blk_mem_gen_0_douta 1 0 3 20 0 450J 20 1030
+preplace netloc channel_input_img_0_1 1 0 2 NJ 540 370J
+preplace netloc clk_0_1 1 0 2 10 10 430
+preplace netloc en_0_1 1 0 2 NJ 600 NJ
+preplace netloc in_psum1_0_1 1 0 1 10J 170n
+preplace netloc in_psum2_0_1 1 0 1 -10J 200n
+preplace netloc in_psum3_0_1 1 0 1 NJ 230
+preplace netloc init_signal_0_1 1 0 2 NJ 570 370J
+preplace netloc no_channel_0_1 1 0 1 10J 130n
+preplace netloc no_entry_0_1 1 0 1 NJ 110
+preplace netloc rst_0_1 1 0 2 0 500 NJ
+preplace netloc stride_0_1 1 0 2 NJ 480 390J
+preplace netloc weight_size_1_16_0_1 1 0 2 NJ 630 440J
+preplace netloc width_input_img_0_1 1 0 2 NJ 510 380J
+levelinfo -pg 1 -30 210 800 1050
+pagesize -pg 1 -db -bbox -sgen -250 -20 1240 2210
+"
+}
+0

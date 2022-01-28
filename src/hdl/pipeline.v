@@ -104,27 +104,4 @@ start_load // connect to load_activate moddule
         end
     end
     
-//    always@(posedge clk) begin
-//        if(rst) begin
-//            activate_state <= STATE_ACTIVATE_BUSY;
-//            activate_vld <= 0;
-//        end
-//        else begin
-//            case(activate_state)
-//                STATE_ACTIVATE_FREE: begin
-//                    if(start_core_reg) begin
-//                        activate_state <= STATE_ACTIVATE_BUSY;
-//                        activate_vld <= 0;
-//                    end
-//                end
-//                STATE_ACTIVATE_BUSY: begin
-//                    if(activate_ready) begin
-//                        activate_state <= STATE_ACTIVATE_FREE;
-//                        activate_vld <= 1;
-//                    end
-//                end
-//            endcase
-//        end
-//    end
-    
 endmodule

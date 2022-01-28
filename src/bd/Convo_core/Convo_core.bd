@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x9B9EA88D2DAA0C6C",
+      "boundary_crc": "0x9FA08F68D7BFA2B9",
       "device": "xc7z020clg400-1",
       "name": "Convo_core",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
@@ -15,33 +15,130 @@
       "blk_mem_gen_2": "",
       "blk_mem_gen_3": "",
       "blk_mem_gen_4": "",
-      "load_weight_0": "",
-      "pipeline_0": "",
-      "load_weight_ctrl_0": "",
       "load_activation_0": "",
-      "computing_core_0": ""
+      "computing_core_0": "",
+      "load_weight_0": "",
+      "BRAM_selector_0": "",
+      "pipeline_0": "",
+      "load_weight_ctrl_0": ""
     },
-    "ports": {
-      "addr_rst_0": {
-        "type": "rst",
-        "direction": "I",
+    "interface_ports": {
+      "BRAM_weight_AXI_1": {
+        "mode": "Slave",
+        "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+        "vlnv": "xilinx.com:interface:bram_rtl:1.0",
         "parameters": {
-          "INSERT_VIP": {
-            "value": "0",
+          "MASTER_TYPE": {
+            "value": "OTHER",
             "value_src": "default"
           },
-          "POLARITY": {
-            "value": "ACTIVE_LOW",
+          "MEM_ECC": {
+            "value": "NONE",
+            "value_src": "default"
+          },
+          "MEM_SIZE": {
+            "value": "8192",
+            "value_src": "default"
+          },
+          "MEM_WIDTH": {
+            "value": "32",
+            "value_src": "default"
+          },
+          "READ_LATENCY": {
+            "value": "1",
             "value_src": "default"
           }
         }
       },
-      "clk_0": {
+      "BRAM_weight_AXI_0": {
+        "mode": "Slave",
+        "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+        "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+        "parameters": {
+          "MASTER_TYPE": {
+            "value": "OTHER",
+            "value_src": "default"
+          },
+          "MEM_ECC": {
+            "value": "NONE",
+            "value_src": "default"
+          },
+          "MEM_SIZE": {
+            "value": "8192",
+            "value_src": "default"
+          },
+          "MEM_WIDTH": {
+            "value": "32",
+            "value_src": "default"
+          },
+          "READ_LATENCY": {
+            "value": "1",
+            "value_src": "default"
+          }
+        }
+      },
+      "BRAM_weight_AXI_2": {
+        "mode": "Slave",
+        "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+        "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+        "parameters": {
+          "MASTER_TYPE": {
+            "value": "OTHER",
+            "value_src": "default"
+          },
+          "MEM_ECC": {
+            "value": "NONE",
+            "value_src": "default"
+          },
+          "MEM_SIZE": {
+            "value": "8192",
+            "value_src": "default"
+          },
+          "MEM_WIDTH": {
+            "value": "32",
+            "value_src": "default"
+          },
+          "READ_LATENCY": {
+            "value": "1",
+            "value_src": "default"
+          }
+        }
+      },
+      "BRAM_weight_AXI_3": {
+        "mode": "Slave",
+        "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+        "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+        "parameters": {
+          "MASTER_TYPE": {
+            "value": "OTHER",
+            "value_src": "default"
+          },
+          "MEM_ECC": {
+            "value": "NONE",
+            "value_src": "default"
+          },
+          "MEM_SIZE": {
+            "value": "8192",
+            "value_src": "default"
+          },
+          "MEM_WIDTH": {
+            "value": "32",
+            "value_src": "default"
+          },
+          "READ_LATENCY": {
+            "value": "1",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "ports": {
+      "clk": {
         "type": "clk",
         "direction": "I",
         "parameters": {
           "ASSOCIATED_RESET": {
-            "value": "rst_0"
+            "value": "rst"
           },
           "CLK_DOMAIN": {
             "value": "Convo_core_clk_0",
@@ -65,7 +162,7 @@
           }
         }
       },
-      "rst_0": {
+      "rst": {
         "type": "rst",
         "direction": "I",
         "parameters": {
@@ -79,105 +176,102 @@
           }
         }
       },
-      "out_psum0_0": {
+      "out_psum0": {
         "direction": "O",
         "left": "7",
         "right": "0"
       },
-      "out_psum1_0": {
+      "out_psum1": {
         "direction": "O",
         "left": "7",
         "right": "0"
       },
-      "out_psum2_0": {
+      "out_psum2": {
         "direction": "O",
         "left": "7",
         "right": "0"
       },
-      "out_psum3_0": {
+      "out_psum3": {
         "direction": "O",
         "left": "7",
         "right": "0"
       },
-      "out_psum_vld_0": {
+      "out_psum_vld": {
         "direction": "O"
       },
-      "weight_done": {
-        "direction": "O"
-      },
-      "stride_0": {
+      "stride": {
         "direction": "I",
         "left": "2",
         "right": "0"
       },
-      "width_0": {
+      "width_input_img": {
         "direction": "I",
         "left": "11",
         "right": "0"
       },
-      "channel_0": {
+      "channel_input_img": {
         "direction": "I",
         "left": "11",
         "right": "0"
       },
-      "init_signal_0": {
+      "init_signal": {
         "direction": "I"
       },
-      "en_0": {
+      "en": {
         "direction": "I"
       },
-      "weight0_sim": {
-        "direction": "O",
-        "left": "71",
-        "right": "0"
-      },
-      "weight1_sim": {
-        "direction": "O",
-        "left": "71",
-        "right": "0"
-      },
-      "weight2_sim": {
-        "direction": "O",
-        "left": "71",
-        "right": "0"
-      },
-      "weight3_sim": {
-        "direction": "O",
-        "left": "71",
-        "right": "0"
-      },
-      "activate0_sim": {
-        "direction": "O",
-        "left": "23",
-        "right": "0"
-      },
-      "activate1_sim": {
-        "direction": "O",
-        "left": "23",
-        "right": "0"
-      },
-      "activate2_sim": {
-        "direction": "O",
-        "left": "23",
-        "right": "0"
-      },
-      "start_core_sim": {
+      "channel_end": {
         "direction": "O"
       },
-      "channel_end_out": {
-        "direction": "O"
-      },
-      "weight_size_0": {
+      "weight_size_1_16": {
         "direction": "I",
         "left": "31",
         "right": "0"
       },
-      "weight_end_0": {
+      "weight_end": {
         "direction": "O"
       },
-      "BRAM_addr_weight": {
+      "accum_done": {
+        "direction": "I"
+      },
+      "BRAM_img_sel": {
+        "direction": "I"
+      },
+      "BRAM_img_AXI_addr": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "BRAM_img_AXI_din": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "BRAM_img_AXI_dout": {
         "direction": "O",
         "left": "31",
+        "right": "0"
+      },
+      "BRAM_img_AXI_en": {
+        "direction": "I"
+      },
+      "BRAM_img_AXI_rst": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "BRAM_img_AXI_wen": {
+        "direction": "I",
+        "left": "3",
         "right": "0"
       }
     },
@@ -188,6 +282,9 @@
         "xci_path": "ip\\Convo_core_blk_mem_gen_0_0\\Convo_core_blk_mem_gen_0_0.xci",
         "inst_hier_path": "blk_mem_gen_0",
         "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
           "Coe_File": {
             "value": "../../../../program/bram_weight_init/bram_weight_init_0.coe"
           },
@@ -197,16 +294,37 @@
           "Enable_32bit_Address": {
             "value": "true"
           },
+          "Enable_B": {
+            "value": "Use_ENB_Pin"
+          },
           "Fill_Remaining_Memory_Locations": {
             "value": "false"
           },
           "Load_Init_File": {
             "value": "true"
           },
+          "Memory_Type": {
+            "value": "True_Dual_Port_RAM"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Port_B_Write_Rate": {
+            "value": "50"
+          },
           "Register_PortA_Output_of_Memory_Primitives": {
             "value": "false"
           },
+          "Register_PortB_Output_of_Memory_Primitives": {
+            "value": "false"
+          },
           "Use_RSTA_Pin": {
+            "value": "true"
+          },
+          "Use_RSTB_Pin": {
             "value": "true"
           },
           "use_bram_block": {
@@ -220,6 +338,9 @@
         "xci_path": "ip\\Convo_core_blk_mem_gen_1_0\\Convo_core_blk_mem_gen_1_0.xci",
         "inst_hier_path": "blk_mem_gen_1",
         "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
           "Coe_File": {
             "value": "../../../../program/bram_weight_init/bram_weight_init_1.coe"
           },
@@ -229,13 +350,34 @@
           "Enable_32bit_Address": {
             "value": "true"
           },
+          "Enable_B": {
+            "value": "Use_ENB_Pin"
+          },
           "Load_Init_File": {
             "value": "true"
+          },
+          "Memory_Type": {
+            "value": "True_Dual_Port_RAM"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Port_B_Write_Rate": {
+            "value": "50"
           },
           "Register_PortA_Output_of_Memory_Primitives": {
             "value": "false"
           },
+          "Register_PortB_Output_of_Memory_Primitives": {
+            "value": "false"
+          },
           "Use_RSTA_Pin": {
+            "value": "true"
+          },
+          "Use_RSTB_Pin": {
             "value": "true"
           },
           "use_bram_block": {
@@ -249,6 +391,9 @@
         "xci_path": "ip\\Convo_core_blk_mem_gen_2_0\\Convo_core_blk_mem_gen_2_0.xci",
         "inst_hier_path": "blk_mem_gen_2",
         "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
           "Coe_File": {
             "value": "../../../../program/bram_weight_init/bram_weight_init_2.coe"
           },
@@ -258,13 +403,34 @@
           "Enable_32bit_Address": {
             "value": "true"
           },
+          "Enable_B": {
+            "value": "Use_ENB_Pin"
+          },
           "Load_Init_File": {
             "value": "true"
+          },
+          "Memory_Type": {
+            "value": "True_Dual_Port_RAM"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Port_B_Write_Rate": {
+            "value": "50"
           },
           "Register_PortA_Output_of_Memory_Primitives": {
             "value": "false"
           },
+          "Register_PortB_Output_of_Memory_Primitives": {
+            "value": "false"
+          },
           "Use_RSTA_Pin": {
+            "value": "true"
+          },
+          "Use_RSTB_Pin": {
             "value": "true"
           },
           "use_bram_block": {
@@ -278,6 +444,9 @@
         "xci_path": "ip\\Convo_core_blk_mem_gen_3_0\\Convo_core_blk_mem_gen_3_0.xci",
         "inst_hier_path": "blk_mem_gen_3",
         "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
           "Coe_File": {
             "value": "../../../../program/bram_weight_init/bram_weight_init_3.coe"
           },
@@ -287,13 +456,34 @@
           "Enable_32bit_Address": {
             "value": "true"
           },
+          "Enable_B": {
+            "value": "Use_ENB_Pin"
+          },
           "Load_Init_File": {
             "value": "true"
+          },
+          "Memory_Type": {
+            "value": "True_Dual_Port_RAM"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Port_B_Write_Rate": {
+            "value": "50"
           },
           "Register_PortA_Output_of_Memory_Primitives": {
             "value": "false"
           },
+          "Register_PortB_Output_of_Memory_Primitives": {
+            "value": "false"
+          },
           "Use_RSTA_Pin": {
+            "value": "true"
+          },
+          "Use_RSTB_Pin": {
             "value": "true"
           },
           "use_bram_block": {
@@ -348,288 +538,6 @@
           },
           "use_bram_block": {
             "value": "Stand_Alone"
-          }
-        }
-      },
-      "load_weight_0": {
-        "vlnv": "xilinx.com:module_ref:load_weight:1.0",
-        "xci_name": "Convo_core_load_weight_0_1",
-        "xci_path": "ip\\Convo_core_load_weight_0_1\\Convo_core_load_weight_0_1.xci",
-        "inst_hier_path": "load_weight_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "load_weight",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "Convo_core_clk_0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "load_start": {
-            "direction": "I"
-          },
-          "addr_rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "weight_size": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "load_end": {
-            "direction": "O"
-          },
-          "weight_end": {
-            "direction": "O"
-          },
-          "weight0": {
-            "direction": "O",
-            "left": "71",
-            "right": "0"
-          },
-          "weight1": {
-            "direction": "O",
-            "left": "71",
-            "right": "0"
-          },
-          "weight2": {
-            "direction": "O",
-            "left": "71",
-            "right": "0"
-          },
-          "weight3": {
-            "direction": "O",
-            "left": "71",
-            "right": "0"
-          },
-          "BRAM_clk": {
-            "type": "clk",
-            "direction": "O",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "BRAM_rst",
-                "value_src": "constant"
-              }
-            }
-          },
-          "BRAM_en": {
-            "direction": "O"
-          },
-          "BRAM_rst": {
-            "type": "rst",
-            "direction": "O"
-          },
-          "BRAM_din": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_wen": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          },
-          "BRAM_0_addr": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_0_dout": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_1_addr": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_1_dout": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_2_addr": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_2_dout": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_3_addr": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_3_dout": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          }
-        }
-      },
-      "pipeline_0": {
-        "vlnv": "xilinx.com:module_ref:pipeline:1.0",
-        "xci_name": "Convo_core_pipeline_0_0",
-        "xci_path": "ip\\Convo_core_pipeline_0_0\\Convo_core_pipeline_0_0.xci",
-        "inst_hier_path": "pipeline_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "pipeline",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "Convo_core_clk_0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "en": {
-            "direction": "I"
-          },
-          "init_signal": {
-            "direction": "I"
-          },
-          "activate_ready": {
-            "direction": "I"
-          },
-          "weight_ready": {
-            "direction": "I"
-          },
-          "core_end": {
-            "direction": "I"
-          },
-          "start_core": {
-            "direction": "O"
-          },
-          "start_load": {
-            "direction": "O"
-          }
-        }
-      },
-      "load_weight_ctrl_0": {
-        "vlnv": "xilinx.com:module_ref:load_weight_ctrl:1.0",
-        "xci_name": "Convo_core_load_weight_ctrl_0_0",
-        "xci_path": "ip\\Convo_core_load_weight_ctrl_0_0\\Convo_core_load_weight_ctrl_0_0.xci",
-        "inst_hier_path": "load_weight_ctrl_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "load_weight_ctrl",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "Convo_core_clk_0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "init": {
-            "direction": "I"
-          },
-          "load_done": {
-            "direction": "I"
-          },
-          "channel_end": {
-            "direction": "I"
-          },
-          "core_free": {
-            "direction": "I"
-          },
-          "weight0_in": {
-            "direction": "I",
-            "left": "71",
-            "right": "0"
-          },
-          "weight1_in": {
-            "direction": "I",
-            "left": "71",
-            "right": "0"
-          },
-          "weight2_in": {
-            "direction": "I",
-            "left": "71",
-            "right": "0"
-          },
-          "weight3_in": {
-            "direction": "I",
-            "left": "71",
-            "right": "0"
-          },
-          "weight0_out": {
-            "direction": "O",
-            "left": "71",
-            "right": "0"
-          },
-          "weight1_out": {
-            "direction": "O",
-            "left": "71",
-            "right": "0"
-          },
-          "weight2_out": {
-            "direction": "O",
-            "left": "71",
-            "right": "0"
-          },
-          "weight3_out": {
-            "direction": "O",
-            "left": "71",
-            "right": "0"
-          },
-          "buffer_ready": {
-            "direction": "O"
-          },
-          "load_start": {
-            "direction": "O"
-          },
-          "state": {
-            "direction": "O",
-            "left": "2",
-            "right": "0"
           }
         }
       },
@@ -841,13 +749,508 @@
             "direction": "O"
           }
         }
+      },
+      "load_weight_0": {
+        "vlnv": "xilinx.com:module_ref:load_weight:1.0",
+        "xci_name": "Convo_core_load_weight_0_1",
+        "xci_path": "ip\\Convo_core_load_weight_0_1\\Convo_core_load_weight_0_1.xci",
+        "inst_hier_path": "load_weight_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "load_weight",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Convo_core_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "load_start": {
+            "direction": "I"
+          },
+          "weight_size": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "load_end": {
+            "direction": "O"
+          },
+          "weight_end": {
+            "direction": "O"
+          },
+          "weight0": {
+            "direction": "O",
+            "left": "71",
+            "right": "0"
+          },
+          "weight1": {
+            "direction": "O",
+            "left": "71",
+            "right": "0"
+          },
+          "weight2": {
+            "direction": "O",
+            "left": "71",
+            "right": "0"
+          },
+          "weight3": {
+            "direction": "O",
+            "left": "71",
+            "right": "0"
+          },
+          "BRAM_clk": {
+            "type": "clk",
+            "direction": "O",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "BRAM_rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "BRAM_en": {
+            "direction": "O"
+          },
+          "BRAM_rst": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "BRAM_din": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_wen": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "BRAM_0_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_0_dout": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_1_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_1_dout": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_2_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_2_dout": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_3_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_3_dout": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "BRAM_selector_0": {
+        "vlnv": "xilinx.com:module_ref:BRAM_selector:1.0",
+        "xci_name": "Convo_core_BRAM_selector_0_0",
+        "xci_path": "ip\\Convo_core_BRAM_selector_0_0\\Convo_core_BRAM_selector_0_0.xci",
+        "inst_hier_path": "BRAM_selector_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BRAM_selector",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "Convo_core_load_activation_0_0_BRAM_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "sel": {
+            "direction": "I"
+          },
+          "BRAM_in1_addr": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_in1_din": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_in1_dout": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_in1_en": {
+            "direction": "I"
+          },
+          "BRAM_in1_rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "BRAM_in1_wen": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "BRAM_in2_addr": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_in2_din": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_in2_dout": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_in2_en": {
+            "direction": "I"
+          },
+          "BRAM_in2_rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "BRAM_in2_wen": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "BRAM_out_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_out_clk": {
+            "type": "clk",
+            "direction": "O",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "BRAM_out_rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "BRAM_out_din": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_out_dout": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_out_en": {
+            "direction": "O"
+          },
+          "BRAM_out_rst": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "BRAM_out_wen": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "pipeline_0": {
+        "vlnv": "xilinx.com:module_ref:pipeline:1.0",
+        "xci_name": "Convo_core_pipeline_0_0",
+        "xci_path": "ip\\Convo_core_pipeline_0_0\\Convo_core_pipeline_0_0.xci",
+        "inst_hier_path": "pipeline_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "pipeline",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Convo_core_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "en": {
+            "direction": "I"
+          },
+          "init_signal": {
+            "direction": "I"
+          },
+          "activate_ready": {
+            "direction": "I"
+          },
+          "weight_ready": {
+            "direction": "I"
+          },
+          "core_end": {
+            "direction": "I"
+          },
+          "start_core": {
+            "direction": "O"
+          },
+          "start_load": {
+            "direction": "O"
+          }
+        }
+      },
+      "load_weight_ctrl_0": {
+        "vlnv": "xilinx.com:module_ref:load_weight_ctrl:1.0",
+        "xci_name": "Convo_core_load_weight_ctrl_0_0",
+        "xci_path": "ip\\Convo_core_load_weight_ctrl_0_0\\Convo_core_load_weight_ctrl_0_0.xci",
+        "inst_hier_path": "load_weight_ctrl_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "load_weight_ctrl",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Convo_core_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "init": {
+            "direction": "I"
+          },
+          "load_done": {
+            "direction": "I"
+          },
+          "channel_end": {
+            "direction": "I"
+          },
+          "core_end": {
+            "direction": "I"
+          },
+          "weight0_in": {
+            "direction": "I",
+            "left": "71",
+            "right": "0"
+          },
+          "weight1_in": {
+            "direction": "I",
+            "left": "71",
+            "right": "0"
+          },
+          "weight2_in": {
+            "direction": "I",
+            "left": "71",
+            "right": "0"
+          },
+          "weight3_in": {
+            "direction": "I",
+            "left": "71",
+            "right": "0"
+          },
+          "weight0_out": {
+            "direction": "O",
+            "left": "71",
+            "right": "0"
+          },
+          "weight1_out": {
+            "direction": "O",
+            "left": "71",
+            "right": "0"
+          },
+          "weight2_out": {
+            "direction": "O",
+            "left": "71",
+            "right": "0"
+          },
+          "weight3_out": {
+            "direction": "O",
+            "left": "71",
+            "right": "0"
+          },
+          "buffer_ready": {
+            "direction": "O"
+          },
+          "load_start": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "BRAM_PORTB_0_1": {
+        "interface_ports": [
+          "BRAM_weight_AXI_1",
+          "blk_mem_gen_1/BRAM_PORTB"
+        ]
+      },
+      "BRAM_PORTB_1_1": {
+        "interface_ports": [
+          "BRAM_weight_AXI_0",
+          "blk_mem_gen_0/BRAM_PORTB"
+        ]
+      },
+      "BRAM_PORTB_2_1": {
+        "interface_ports": [
+          "BRAM_weight_AXI_2",
+          "blk_mem_gen_2/BRAM_PORTB"
+        ]
+      },
+      "BRAM_PORTB_3_1": {
+        "interface_ports": [
+          "BRAM_weight_AXI_3",
+          "blk_mem_gen_3/BRAM_PORTB"
+        ]
       }
     },
     "nets": {
-      "addr_rst_0_1": {
+      "BRAM_in2_addr_0_1": {
         "ports": [
-          "addr_rst_0",
-          "load_weight_0/addr_rst"
+          "BRAM_img_AXI_addr",
+          "BRAM_selector_0/BRAM_in2_addr"
+        ]
+      },
+      "BRAM_in2_din_0_1": {
+        "ports": [
+          "BRAM_img_AXI_din",
+          "BRAM_selector_0/BRAM_in2_din"
+        ]
+      },
+      "BRAM_in2_en_0_1": {
+        "ports": [
+          "BRAM_img_AXI_en",
+          "BRAM_selector_0/BRAM_in2_en"
+        ]
+      },
+      "BRAM_in2_rst_0_1": {
+        "ports": [
+          "BRAM_img_AXI_rst",
+          "BRAM_selector_0/BRAM_in2_rst"
+        ]
+      },
+      "BRAM_in2_wen_0_1": {
+        "ports": [
+          "BRAM_img_AXI_wen",
+          "BRAM_selector_0/BRAM_in2_wen"
+        ]
+      },
+      "BRAM_selector_0_BRAM_in1_dout": {
+        "ports": [
+          "BRAM_selector_0/BRAM_in1_dout",
+          "load_activation_0/BRAM_1_dout"
+        ]
+      },
+      "BRAM_selector_0_BRAM_in2_dout": {
+        "ports": [
+          "BRAM_selector_0/BRAM_in2_dout",
+          "BRAM_img_AXI_dout"
+        ]
+      },
+      "BRAM_selector_0_BRAM_out_addr": {
+        "ports": [
+          "BRAM_selector_0/BRAM_out_addr",
+          "blk_mem_gen_4/addrb"
+        ]
+      },
+      "BRAM_selector_0_BRAM_out_clk": {
+        "ports": [
+          "BRAM_selector_0/BRAM_out_clk",
+          "blk_mem_gen_4/clkb"
+        ]
+      },
+      "BRAM_selector_0_BRAM_out_din": {
+        "ports": [
+          "BRAM_selector_0/BRAM_out_din",
+          "blk_mem_gen_4/dinb"
+        ]
+      },
+      "BRAM_selector_0_BRAM_out_en": {
+        "ports": [
+          "BRAM_selector_0/BRAM_out_en",
+          "blk_mem_gen_4/enb"
+        ]
+      },
+      "BRAM_selector_0_BRAM_out_rst": {
+        "ports": [
+          "BRAM_selector_0/BRAM_out_rst",
+          "blk_mem_gen_4/rstb"
+        ]
+      },
+      "BRAM_selector_0_BRAM_out_wen": {
+        "ports": [
+          "BRAM_selector_0/BRAM_out_wen",
+          "blk_mem_gen_4/web"
+        ]
+      },
+      "accum_done_1": {
+        "ports": [
+          "accum_done",
+          "pipeline_0/core_end",
+          "load_weight_ctrl_0/core_end"
         ]
       },
       "blk_mem_gen_0_douta": {
@@ -883,66 +1286,64 @@
       "blk_mem_gen_4_doutb": {
         "ports": [
           "blk_mem_gen_4/doutb",
-          "load_activation_0/BRAM_1_dout"
+          "BRAM_selector_0/BRAM_out_dout"
         ]
       },
       "channel_0_1": {
         "ports": [
-          "channel_0",
+          "channel_input_img",
           "load_activation_0/channel"
         ]
       },
       "clk_0_1": {
         "ports": [
-          "clk_0",
+          "clk",
+          "load_activation_0/clk",
+          "computing_core_0/clk",
           "load_weight_0/clk",
           "pipeline_0/clk",
-          "load_weight_ctrl_0/clk",
-          "load_activation_0/clk",
-          "computing_core_0/clk"
+          "load_weight_ctrl_0/clk"
         ]
       },
       "computing_core_0_out_psum0": {
         "ports": [
           "computing_core_0/out_psum0",
-          "out_psum0_0"
+          "out_psum0"
         ]
       },
       "computing_core_0_out_psum1": {
         "ports": [
           "computing_core_0/out_psum1",
-          "out_psum1_0"
+          "out_psum1"
         ]
       },
       "computing_core_0_out_psum2": {
         "ports": [
           "computing_core_0/out_psum2",
-          "out_psum2_0"
+          "out_psum2"
         ]
       },
       "computing_core_0_out_psum3": {
         "ports": [
           "computing_core_0/out_psum3",
-          "out_psum3_0"
+          "out_psum3"
         ]
       },
       "computing_core_0_out_psum_vld": {
         "ports": [
           "computing_core_0/out_psum_vld",
-          "out_psum_vld_0",
-          "pipeline_0/core_end",
-          "load_weight_ctrl_0/core_free"
+          "out_psum_vld"
         ]
       },
       "en_0_1": {
         "ports": [
-          "en_0",
+          "en",
           "pipeline_0/en"
         ]
       },
       "init_signal_0_1": {
         "ports": [
-          "init_signal_0",
+          "init_signal",
           "pipeline_0/init_signal",
           "load_weight_ctrl_0/init"
         ]
@@ -956,69 +1357,66 @@
       "load_activation_0_BRAM_1_addr": {
         "ports": [
           "load_activation_0/BRAM_1_addr",
-          "blk_mem_gen_4/addrb"
+          "BRAM_selector_0/BRAM_in1_addr"
         ]
       },
       "load_activation_0_BRAM_clk": {
         "ports": [
           "load_activation_0/BRAM_clk",
           "blk_mem_gen_4/clka",
-          "blk_mem_gen_4/clkb"
+          "BRAM_selector_0/clk"
         ]
       },
       "load_activation_0_BRAM_din": {
         "ports": [
           "load_activation_0/BRAM_din",
           "blk_mem_gen_4/dina",
-          "blk_mem_gen_4/dinb"
+          "BRAM_selector_0/BRAM_in1_din"
         ]
       },
       "load_activation_0_BRAM_en": {
         "ports": [
           "load_activation_0/BRAM_en",
           "blk_mem_gen_4/ena",
-          "blk_mem_gen_4/enb"
+          "BRAM_selector_0/BRAM_in1_en"
         ]
       },
       "load_activation_0_BRAM_rst": {
         "ports": [
           "load_activation_0/BRAM_rst",
           "blk_mem_gen_4/rsta",
-          "blk_mem_gen_4/rstb"
+          "BRAM_selector_0/BRAM_in1_rst"
         ]
       },
       "load_activation_0_BRAM_wen": {
         "ports": [
           "load_activation_0/BRAM_wen",
-          "blk_mem_gen_4/web",
-          "blk_mem_gen_4/wea"
+          "blk_mem_gen_4/wea",
+          "BRAM_selector_0/BRAM_in1_wen"
         ]
       },
       "load_activation_0_activate0": {
         "ports": [
           "load_activation_0/activate0",
-          "activate0_sim",
           "computing_core_0/activate0"
         ]
       },
       "load_activation_0_activate1": {
         "ports": [
           "load_activation_0/activate1",
-          "activate1_sim",
           "computing_core_0/activate1"
         ]
       },
       "load_activation_0_activate2": {
         "ports": [
           "load_activation_0/activate2",
-          "activate2_sim",
           "computing_core_0/activate2"
         ]
       },
       "load_activation_0_channel_end": {
         "ports": [
           "load_activation_0/channel_end",
-          "channel_end_out",
+          "channel_end",
           "load_weight_ctrl_0/channel_end"
         ]
       },
@@ -1031,8 +1429,7 @@
       "load_weight_0_BRAM_0_addr": {
         "ports": [
           "load_weight_0/BRAM_0_addr",
-          "blk_mem_gen_0/addra",
-          "BRAM_addr_weight"
+          "blk_mem_gen_0/addra"
         ]
       },
       "load_weight_0_BRAM_1_addr": {
@@ -1101,7 +1498,6 @@
       "load_weight_0_load_end": {
         "ports": [
           "load_weight_0/load_end",
-          "weight_done",
           "load_weight_ctrl_0/load_done"
         ]
       },
@@ -1132,7 +1528,7 @@
       "load_weight_0_weight_end": {
         "ports": [
           "load_weight_0/weight_end",
-          "weight_end_0"
+          "weight_end"
         ]
       },
       "load_weight_ctrl_0_buffer_ready": {
@@ -1150,35 +1546,30 @@
       "load_weight_ctrl_0_weight0_out": {
         "ports": [
           "load_weight_ctrl_0/weight0_out",
-          "weight0_sim",
           "computing_core_0/weight0"
         ]
       },
       "load_weight_ctrl_0_weight1_out": {
         "ports": [
           "load_weight_ctrl_0/weight1_out",
-          "weight1_sim",
           "computing_core_0/weight1"
         ]
       },
       "load_weight_ctrl_0_weight2_out": {
         "ports": [
           "load_weight_ctrl_0/weight2_out",
-          "weight2_sim",
           "computing_core_0/weight2"
         ]
       },
       "load_weight_ctrl_0_weight3_out": {
         "ports": [
           "load_weight_ctrl_0/weight3_out",
-          "weight3_sim",
           "computing_core_0/weight3"
         ]
       },
       "pipeline_0_start_core": {
         "ports": [
           "pipeline_0/start_core",
-          "start_core_sim",
           "computing_core_0/load_done"
         ]
       },
@@ -1190,29 +1581,35 @@
       },
       "rst_0_1": {
         "ports": [
-          "rst_0",
+          "rst",
+          "load_activation_0/rst",
+          "computing_core_0/rst",
           "load_weight_0/rst",
           "pipeline_0/rst",
-          "load_weight_ctrl_0/rst",
-          "load_activation_0/rst",
-          "computing_core_0/rst"
+          "load_weight_ctrl_0/rst"
+        ]
+      },
+      "sel_0_1": {
+        "ports": [
+          "BRAM_img_sel",
+          "BRAM_selector_0/sel"
         ]
       },
       "stride_0_1": {
         "ports": [
-          "stride_0",
+          "stride",
           "load_activation_0/stride"
         ]
       },
       "weight_size_0_1": {
         "ports": [
-          "weight_size_0",
+          "weight_size_1_16",
           "load_weight_0/weight_size"
         ]
       },
       "width_0_1": {
         "ports": [
-          "width_0",
+          "width_input_img",
           "load_activation_0/width"
         ]
       }
