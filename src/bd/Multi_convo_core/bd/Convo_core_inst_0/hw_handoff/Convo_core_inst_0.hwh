@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Jan 28 09:37:51 2022" VIVADOVERSION="2021.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Jan 28 16:10:43 2022" VIVADOVERSION="2021.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="Convo_core_inst_0" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -29,7 +29,7 @@
         <CONNECTION INSTANCE="blk_mem_gen_1" PORT="enb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="BRAM_weight_AXI_1_rst" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="blk_mem_gen_1_rstb">
+    <PORT DIR="I" NAME="BRAM_weight_AXI_1_rst" SIGIS="undef" SIGNAME="blk_mem_gen_1_rstb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_1" PORT="rstb"/>
       </CONNECTIONS>
@@ -64,7 +64,7 @@
         <CONNECTION INSTANCE="blk_mem_gen_0" PORT="enb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="BRAM_weight_AXI_0_rst" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="blk_mem_gen_0_rstb">
+    <PORT DIR="I" NAME="BRAM_weight_AXI_0_rst" SIGIS="undef" SIGNAME="blk_mem_gen_0_rstb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_0" PORT="rstb"/>
       </CONNECTIONS>
@@ -99,7 +99,7 @@
         <CONNECTION INSTANCE="blk_mem_gen_2" PORT="enb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="BRAM_weight_AXI_2_rst" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="blk_mem_gen_2_rstb">
+    <PORT DIR="I" NAME="BRAM_weight_AXI_2_rst" SIGIS="undef" SIGNAME="blk_mem_gen_2_rstb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_2" PORT="rstb"/>
       </CONNECTIONS>
@@ -134,7 +134,7 @@
         <CONNECTION INSTANCE="blk_mem_gen_3" PORT="enb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="BRAM_weight_AXI_3_rst" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="blk_mem_gen_3_rstb">
+    <PORT DIR="I" NAME="BRAM_weight_AXI_3_rst" SIGIS="undef" SIGNAME="blk_mem_gen_3_rstb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_3" PORT="rstb"/>
       </CONNECTIONS>

@@ -39,15 +39,8 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 
 # The design that will be created by this Tcl script contains the following 
-# module references:
-# accumulator
-
-# Please add the sources of those modules before sourcing this Tcl script.
-
-
-# The design that will be created by this Tcl script contains the following 
 # block design container source references:
-# Convo_core
+# Convo_core, Multi_accumulator
 
 # Please add the sources before sourcing this Tcl script.
 
@@ -170,29 +163,26 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
-  set BRAM_img_sel_0 [ create_bd_port -dir I BRAM_img_sel_0 ]
-  set BRAM_out_dout [ create_bd_port -dir O -from 31 -to 0 BRAM_out_dout ]
-  set addr_out [ create_bd_port -dir O -from 31 -to 0 addr_out ]
-  set channel_end_0 [ create_bd_port -dir O channel_end_0 ]
-  set channel_input_img_0 [ create_bd_port -dir I -from 11 -to 0 channel_input_img_0 ]
-  set clk_0 [ create_bd_port -dir I -type clk clk_0 ]
-  set en_0 [ create_bd_port -dir I en_0 ]
-  set in_psum1_0 [ create_bd_port -dir I -from 7 -to 0 in_psum1_0 ]
-  set in_psum2_0 [ create_bd_port -dir I -from 7 -to 0 in_psum2_0 ]
-  set in_psum3_0 [ create_bd_port -dir I -from 7 -to 0 in_psum3_0 ]
-  set init_signal_0 [ create_bd_port -dir I init_signal_0 ]
-  set no_channel_0 [ create_bd_port -dir I -from 10 -to 0 no_channel_0 ]
-  set no_entry_0 [ create_bd_port -dir I -from 15 -to 0 no_entry_0 ]
-  set out_din [ create_bd_port -dir O -from 31 -to 0 out_din ]
-  set out_psum0_0 [ create_bd_port -dir O -from 7 -to 0 out_psum0_0 ]
-  set out_psum1_0 [ create_bd_port -dir O -from 7 -to 0 out_psum1_0 ]
-  set out_psum2_0 [ create_bd_port -dir O -from 7 -to 0 out_psum2_0 ]
-  set out_psum3_0 [ create_bd_port -dir O -from 7 -to 0 out_psum3_0 ]
-  set rst_0 [ create_bd_port -dir I -type rst rst_0 ]
-  set stride_0 [ create_bd_port -dir I -from 2 -to 0 stride_0 ]
-  set weight_end_0 [ create_bd_port -dir O weight_end_0 ]
-  set weight_size_1_16_0 [ create_bd_port -dir I -from 31 -to 0 weight_size_1_16_0 ]
-  set width_input_img_0 [ create_bd_port -dir I -from 11 -to 0 width_input_img_0 ]
+  set BRAM_addr_sim [ create_bd_port -dir O -from 31 -to 0 BRAM_addr_sim ]
+  set BRAM_img_sel [ create_bd_port -dir I BRAM_img_sel ]
+  set WxW_out [ create_bd_port -dir I -from 15 -to 0 WxW_out ]
+  set bram_dout_0 [ create_bd_port -dir O -from 31 -to 0 bram_dout_0 ]
+  set bram_dout_1 [ create_bd_port -dir O -from 31 -to 0 bram_dout_1 ]
+  set bram_dout_2 [ create_bd_port -dir O -from 31 -to 0 bram_dout_2 ]
+  set bram_dout_3 [ create_bd_port -dir O -from 31 -to 0 bram_dout_3 ]
+  set channel_input_img [ create_bd_port -dir I -from 11 -to 0 channel_input_img ]
+  set clk [ create_bd_port -dir I -type clk clk ]
+  set en [ create_bd_port -dir I en ]
+  set init_signal [ create_bd_port -dir I init_signal ]
+  set no_channel_out [ create_bd_port -dir I -from 10 -to 0 no_channel_out ]
+  set psum_0 [ create_bd_port -dir O -from 7 -to 0 psum_0 ]
+  set psum_1 [ create_bd_port -dir O -from 7 -to 0 psum_1 ]
+  set psum_2 [ create_bd_port -dir O -from 7 -to 0 psum_2 ]
+  set psum_3 [ create_bd_port -dir O -from 7 -to 0 psum_3 ]
+  set rst [ create_bd_port -dir I -type rst rst ]
+  set stride [ create_bd_port -dir I -from 2 -to 0 stride ]
+  set weight_size_1_16 [ create_bd_port -dir I -from 31 -to 0 weight_size_1_16 ]
+  set width_input_img [ create_bd_port -dir I -from 11 -to 0 width_input_img ]
 
   # Create instance: Convo_core_0, and set properties
   set Convo_core_0 [ create_bd_cell -type container -reference Convo_core Convo_core_0 ]
@@ -205,60 +195,88 @@ proc create_root_design { parentCell } {
    CONFIG.LOCK_PROPAGATE {0} \
  ] $Convo_core_0
 
-  # Create instance: accumulator_0, and set properties
-  set block_name accumulator
-  set block_cell_name accumulator_0
-  if { [catch {set accumulator_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $accumulator_0 eq "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
-  # Create instance: blk_mem_gen_0, and set properties
-  set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0 ]
+  # Create instance: Convo_core_1, and set properties
+  set Convo_core_1 [ create_bd_cell -type container -reference Convo_core Convo_core_1 ]
   set_property -dict [ list \
-   CONFIG.Byte_Size {8} \
-   CONFIG.EN_SAFETY_CKT {false} \
-   CONFIG.Enable_32bit_Address {true} \
-   CONFIG.Load_Init_File {false} \
-   CONFIG.Register_PortA_Output_of_Memory_Primitives {false} \
-   CONFIG.Use_Byte_Write_Enable {true} \
-   CONFIG.Use_RSTA_Pin {true} \
-   CONFIG.use_bram_block {BRAM_Controller} \
- ] $blk_mem_gen_0
+   CONFIG.ACTIVE_SIM_BD {Convo_core.bd} \
+   CONFIG.ACTIVE_SYNTH_BD {Convo_core.bd} \
+   CONFIG.ENABLE_DFX {0} \
+   CONFIG.LIST_SIM_BD {Convo_core.bd} \
+   CONFIG.LIST_SYNTH_BD {Convo_core.bd} \
+   CONFIG.LOCK_PROPAGATE {0} \
+ ] $Convo_core_1
+
+  # Create instance: Convo_core_2, and set properties
+  set Convo_core_2 [ create_bd_cell -type container -reference Convo_core Convo_core_2 ]
+  set_property -dict [ list \
+   CONFIG.ACTIVE_SIM_BD {Convo_core.bd} \
+   CONFIG.ACTIVE_SYNTH_BD {Convo_core.bd} \
+   CONFIG.ENABLE_DFX {0} \
+   CONFIG.LIST_SIM_BD {Convo_core.bd} \
+   CONFIG.LIST_SYNTH_BD {Convo_core.bd} \
+   CONFIG.LOCK_PROPAGATE {0} \
+ ] $Convo_core_2
+
+  # Create instance: Convo_core_3, and set properties
+  set Convo_core_3 [ create_bd_cell -type container -reference Convo_core Convo_core_3 ]
+  set_property -dict [ list \
+   CONFIG.ACTIVE_SIM_BD {Convo_core.bd} \
+   CONFIG.ACTIVE_SYNTH_BD {Convo_core.bd} \
+   CONFIG.ENABLE_DFX {0} \
+   CONFIG.LIST_SIM_BD {Convo_core.bd} \
+   CONFIG.LIST_SYNTH_BD {Convo_core.bd} \
+   CONFIG.LOCK_PROPAGATE {0} \
+ ] $Convo_core_3
+
+  # Create instance: Multi_accumulator_0, and set properties
+  set Multi_accumulator_0 [ create_bd_cell -type container -reference Multi_accumulator Multi_accumulator_0 ]
+  set_property -dict [ list \
+   CONFIG.ACTIVE_SIM_BD {Multi_accumulator.bd} \
+   CONFIG.ACTIVE_SYNTH_BD {Multi_accumulator.bd} \
+   CONFIG.ENABLE_DFX {0} \
+   CONFIG.LIST_SIM_BD {Multi_accumulator.bd} \
+   CONFIG.LIST_SYNTH_BD {Multi_accumulator.bd} \
+   CONFIG.LOCK_PROPAGATE {0} \
+ ] $Multi_accumulator_0
 
   # Create port connections
-  connect_bd_net -net BRAM_img_sel_0_1 [get_bd_ports BRAM_img_sel_0] [get_bd_pins Convo_core_0/BRAM_img_sel]
-  connect_bd_net -net Convo_core_0_channel_end [get_bd_ports channel_end_0] [get_bd_pins Convo_core_0/channel_end]
-  connect_bd_net -net Convo_core_0_out_psum0 [get_bd_ports out_psum0_0] [get_bd_pins Convo_core_0/out_psum0] [get_bd_pins accumulator_0/in_psum0]
-  connect_bd_net -net Convo_core_0_out_psum1 [get_bd_ports out_psum1_0] [get_bd_pins Convo_core_0/out_psum1]
-  connect_bd_net -net Convo_core_0_out_psum2 [get_bd_ports out_psum2_0] [get_bd_pins Convo_core_0/out_psum2]
-  connect_bd_net -net Convo_core_0_out_psum3 [get_bd_ports out_psum3_0] [get_bd_pins Convo_core_0/out_psum3]
-  connect_bd_net -net Convo_core_0_out_psum_vld [get_bd_pins Convo_core_0/out_psum_vld] [get_bd_pins accumulator_0/BRAM_rready]
-  connect_bd_net -net Convo_core_0_weight_end [get_bd_ports weight_end_0] [get_bd_pins Convo_core_0/weight_end]
-  connect_bd_net -net accum_done_1 [get_bd_pins Convo_core_0/accum_done] [get_bd_pins accumulator_0/accum_done]
-  connect_bd_net -net accumulator_0_BRAM_addr [get_bd_ports addr_out] [get_bd_pins accumulator_0/BRAM_addr] [get_bd_pins blk_mem_gen_0/addra]
-  connect_bd_net -net accumulator_0_BRAM_clk [get_bd_pins accumulator_0/BRAM_clk] [get_bd_pins blk_mem_gen_0/clka]
-  connect_bd_net -net accumulator_0_BRAM_din [get_bd_ports out_din] [get_bd_pins accumulator_0/BRAM_din] [get_bd_pins blk_mem_gen_0/dina]
-  connect_bd_net -net accumulator_0_BRAM_en [get_bd_pins accumulator_0/BRAM_en] [get_bd_pins blk_mem_gen_0/ena]
-  connect_bd_net -net accumulator_0_BRAM_rst [get_bd_pins accumulator_0/BRAM_rst] [get_bd_pins blk_mem_gen_0/rsta]
-  connect_bd_net -net accumulator_0_BRAM_wen [get_bd_pins accumulator_0/BRAM_wen] [get_bd_pins blk_mem_gen_0/wea]
-  connect_bd_net -net blk_mem_gen_0_douta [get_bd_ports BRAM_out_dout] [get_bd_pins accumulator_0/BRAM_dout] [get_bd_pins blk_mem_gen_0/douta]
-  connect_bd_net -net channel_input_img_0_1 [get_bd_ports channel_input_img_0] [get_bd_pins Convo_core_0/channel_input_img]
-  connect_bd_net -net clk_0_1 [get_bd_ports clk_0] [get_bd_pins Convo_core_0/clk] [get_bd_pins accumulator_0/clk]
-  connect_bd_net -net en_0_1 [get_bd_ports en_0] [get_bd_pins Convo_core_0/en]
-  connect_bd_net -net in_psum1_0_1 [get_bd_ports in_psum1_0] [get_bd_pins accumulator_0/in_psum1]
-  connect_bd_net -net in_psum2_0_1 [get_bd_ports in_psum2_0] [get_bd_pins accumulator_0/in_psum2]
-  connect_bd_net -net in_psum3_0_1 [get_bd_ports in_psum3_0] [get_bd_pins accumulator_0/in_psum3]
-  connect_bd_net -net init_signal_0_1 [get_bd_ports init_signal_0] [get_bd_pins Convo_core_0/init_signal]
-  connect_bd_net -net no_channel_0_1 [get_bd_ports no_channel_0] [get_bd_pins accumulator_0/no_channel]
-  connect_bd_net -net no_entry_0_1 [get_bd_ports no_entry_0] [get_bd_pins accumulator_0/no_entry]
-  connect_bd_net -net rst_0_1 [get_bd_ports rst_0] [get_bd_pins Convo_core_0/rst] [get_bd_pins accumulator_0/rst]
-  connect_bd_net -net stride_0_1 [get_bd_ports stride_0] [get_bd_pins Convo_core_0/stride]
-  connect_bd_net -net weight_size_1_16_0_1 [get_bd_ports weight_size_1_16_0] [get_bd_pins Convo_core_0/weight_size_1_16]
-  connect_bd_net -net width_input_img_0_1 [get_bd_ports width_input_img_0] [get_bd_pins Convo_core_0/width_input_img]
+  connect_bd_net -net BRAM_img_sel_0_1 [get_bd_ports BRAM_img_sel] [get_bd_pins Convo_core_0/BRAM_img_sel] [get_bd_pins Convo_core_1/BRAM_img_sel] [get_bd_pins Convo_core_2/BRAM_img_sel] [get_bd_pins Convo_core_3/BRAM_img_sel]
+  connect_bd_net -net Convo_core_0_out_psum0 [get_bd_ports psum_0] [get_bd_pins Convo_core_0/out_psum0] [get_bd_pins Multi_accumulator_0/psum0_0]
+  connect_bd_net -net Convo_core_0_out_psum1 [get_bd_ports psum_1] [get_bd_pins Convo_core_0/out_psum1] [get_bd_pins Multi_accumulator_0/psum1_0]
+  connect_bd_net -net Convo_core_0_out_psum2 [get_bd_ports psum_2] [get_bd_pins Convo_core_0/out_psum2] [get_bd_pins Multi_accumulator_0/psum2_0]
+  connect_bd_net -net Convo_core_0_out_psum3 [get_bd_ports psum_3] [get_bd_pins Convo_core_0/out_psum3] [get_bd_pins Multi_accumulator_0/psum3_0]
+  connect_bd_net -net Convo_core_1_out_psum0 [get_bd_pins Convo_core_1/out_psum0] [get_bd_pins Multi_accumulator_0/psum0_1]
+  connect_bd_net -net Convo_core_1_out_psum1 [get_bd_pins Convo_core_1/out_psum1] [get_bd_pins Multi_accumulator_0/psum1_1]
+  connect_bd_net -net Convo_core_1_out_psum2 [get_bd_pins Convo_core_1/out_psum2] [get_bd_pins Multi_accumulator_0/psum2_1]
+  connect_bd_net -net Convo_core_1_out_psum3 [get_bd_pins Convo_core_1/out_psum3] [get_bd_pins Multi_accumulator_0/psum3_1]
+  connect_bd_net -net Convo_core_2_out_psum0 [get_bd_pins Convo_core_2/out_psum0] [get_bd_pins Multi_accumulator_0/psum0_2]
+  connect_bd_net -net Convo_core_2_out_psum1 [get_bd_pins Convo_core_2/out_psum1] [get_bd_pins Multi_accumulator_0/psum1_2]
+  connect_bd_net -net Convo_core_2_out_psum2 [get_bd_pins Convo_core_2/out_psum2] [get_bd_pins Multi_accumulator_0/psum2_2]
+  connect_bd_net -net Convo_core_2_out_psum3 [get_bd_pins Convo_core_2/out_psum3] [get_bd_pins Multi_accumulator_0/psum3_2]
+  connect_bd_net -net Convo_core_2_out_psum_vld [get_bd_pins Convo_core_2/out_psum_vld] [get_bd_pins Multi_accumulator_0/mac_done_2]
+  connect_bd_net -net Convo_core_3_out_psum0 [get_bd_pins Convo_core_3/out_psum0] [get_bd_pins Multi_accumulator_0/psum0_3]
+  connect_bd_net -net Convo_core_3_out_psum1 [get_bd_pins Convo_core_3/out_psum1] [get_bd_pins Multi_accumulator_0/psum1_3]
+  connect_bd_net -net Convo_core_3_out_psum2 [get_bd_pins Convo_core_3/out_psum2] [get_bd_pins Multi_accumulator_0/psum2_3]
+  connect_bd_net -net Convo_core_3_out_psum3 [get_bd_pins Convo_core_3/out_psum3] [get_bd_pins Multi_accumulator_0/psum3_3]
+  connect_bd_net -net Multi_accumulator_0_BRAM_addr_sim [get_bd_ports BRAM_addr_sim] [get_bd_pins Multi_accumulator_0/BRAM_addr_sim]
+  connect_bd_net -net Multi_accumulator_0_accum_done [get_bd_pins Convo_core_0/accum_done] [get_bd_pins Convo_core_1/accum_done] [get_bd_pins Convo_core_2/accum_done] [get_bd_pins Convo_core_3/accum_done] [get_bd_pins Multi_accumulator_0/accum_done]
+  connect_bd_net -net Multi_accumulator_0_bram_dout_0 [get_bd_ports bram_dout_0] [get_bd_pins Multi_accumulator_0/bram_dout_0]
+  connect_bd_net -net Multi_accumulator_0_bram_dout_1 [get_bd_ports bram_dout_1] [get_bd_pins Multi_accumulator_0/bram_dout_1]
+  connect_bd_net -net Multi_accumulator_0_bram_dout_2 [get_bd_ports bram_dout_2] [get_bd_pins Multi_accumulator_0/bram_dout_2]
+  connect_bd_net -net Multi_accumulator_0_bram_dout_3 [get_bd_ports bram_dout_3] [get_bd_pins Multi_accumulator_0/bram_dout_3]
+  connect_bd_net -net WxW_out_0_1 [get_bd_ports WxW_out] [get_bd_pins Multi_accumulator_0/WxW_out]
+  connect_bd_net -net channel_input_img_0_1 [get_bd_ports channel_input_img] [get_bd_pins Convo_core_0/channel_input_img] [get_bd_pins Convo_core_1/channel_input_img] [get_bd_pins Convo_core_2/channel_input_img] [get_bd_pins Convo_core_3/channel_input_img]
+  connect_bd_net -net clk_0_1 [get_bd_ports clk] [get_bd_pins Convo_core_0/clk] [get_bd_pins Convo_core_1/clk] [get_bd_pins Convo_core_2/clk] [get_bd_pins Convo_core_3/clk] [get_bd_pins Multi_accumulator_0/clk]
+  connect_bd_net -net en_0_1 [get_bd_ports en] [get_bd_pins Convo_core_0/en] [get_bd_pins Convo_core_1/en] [get_bd_pins Convo_core_2/en] [get_bd_pins Convo_core_3/en]
+  connect_bd_net -net init_signal_0_1 [get_bd_ports init_signal] [get_bd_pins Convo_core_0/init_signal] [get_bd_pins Convo_core_1/init_signal] [get_bd_pins Convo_core_2/init_signal] [get_bd_pins Convo_core_3/init_signal]
+  connect_bd_net -net mac_done_0_1 [get_bd_pins Convo_core_0/out_psum_vld] [get_bd_pins Multi_accumulator_0/mac_done_0]
+  connect_bd_net -net mac_done_1_1 [get_bd_pins Convo_core_1/out_psum_vld] [get_bd_pins Multi_accumulator_0/mac_done_1]
+  connect_bd_net -net mac_done_3_1 [get_bd_pins Convo_core_3/out_psum_vld] [get_bd_pins Multi_accumulator_0/mac_done_3]
+  connect_bd_net -net no_channel_out_0_1 [get_bd_ports no_channel_out] [get_bd_pins Multi_accumulator_0/no_channel_out]
+  connect_bd_net -net rst_0_1 [get_bd_ports rst] [get_bd_pins Convo_core_0/rst] [get_bd_pins Convo_core_1/rst] [get_bd_pins Convo_core_2/rst] [get_bd_pins Convo_core_3/rst] [get_bd_pins Multi_accumulator_0/rst]
+  connect_bd_net -net stride_0_1 [get_bd_ports stride] [get_bd_pins Convo_core_0/stride] [get_bd_pins Convo_core_1/stride] [get_bd_pins Convo_core_2/stride] [get_bd_pins Convo_core_3/stride]
+  connect_bd_net -net weight_size_1_16_0_1 [get_bd_ports weight_size_1_16] [get_bd_pins Convo_core_0/weight_size_1_16] [get_bd_pins Convo_core_1/weight_size_1_16] [get_bd_pins Convo_core_2/weight_size_1_16] [get_bd_pins Convo_core_3/weight_size_1_16]
+  connect_bd_net -net width_input_img_0_1 [get_bd_ports width_input_img] [get_bd_pins Convo_core_0/width_input_img] [get_bd_pins Convo_core_1/width_input_img] [get_bd_pins Convo_core_2/width_input_img] [get_bd_pins Convo_core_3/width_input_img]
 
   # Create address segments
 

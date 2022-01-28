@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xC5488E2E06E836F7",
+      "boundary_crc": "0x97AE3DD3FCC1BF9D",
       "device": "xc7z020clg400-1",
       "name": "Multi_convo_core",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
@@ -11,16 +11,18 @@
     },
     "design_tree": {
       "Convo_core_0": "",
-      "blk_mem_gen_0": "",
-      "accumulator_0": ""
+      "Convo_core_1": "",
+      "Convo_core_2": "",
+      "Convo_core_3": "",
+      "Multi_accumulator_0": ""
     },
     "ports": {
-      "clk_0": {
+      "clk": {
         "type": "clk",
         "direction": "I",
         "parameters": {
           "ASSOCIATED_RESET": {
-            "value": "rst_0",
+            "value": "rst",
             "value_src": "default"
           },
           "CLK_DOMAIN": {
@@ -45,7 +47,7 @@
           }
         }
       },
-      "rst_0": {
+      "rst": {
         "type": "rst",
         "direction": "I",
         "parameters": {
@@ -59,100 +61,89 @@
           }
         }
       },
-      "weight_size_1_16_0": {
-        "direction": "I",
-        "left": "31",
-        "right": "0"
-      },
-      "init_signal_0": {
-        "direction": "I"
-      },
-      "width_input_img_0": {
-        "direction": "I",
-        "left": "11",
-        "right": "0"
-      },
-      "en_0": {
-        "direction": "I"
-      },
-      "out_psum2_0": {
-        "direction": "O",
-        "left": "7",
-        "right": "0"
-      },
-      "channel_input_img_0": {
-        "direction": "I",
-        "left": "11",
-        "right": "0"
-      },
-      "out_psum3_0": {
-        "direction": "O",
-        "left": "7",
-        "right": "0"
-      },
-      "channel_end_0": {
-        "direction": "O"
-      },
-      "out_psum1_0": {
-        "direction": "O",
-        "left": "7",
-        "right": "0"
-      },
-      "weight_end_0": {
-        "direction": "O"
-      },
-      "stride_0": {
-        "direction": "I",
-        "left": "2",
-        "right": "0"
-      },
-      "BRAM_out_dout": {
-        "direction": "O",
-        "left": "31",
-        "right": "0"
-      },
-      "in_psum1_0": {
-        "direction": "I",
-        "left": "7",
-        "right": "0"
-      },
-      "in_psum2_0": {
-        "direction": "I",
-        "left": "7",
-        "right": "0"
-      },
-      "in_psum3_0": {
-        "direction": "I",
-        "left": "7",
-        "right": "0"
-      },
-      "no_channel_0": {
-        "direction": "I",
-        "left": "10",
-        "right": "0"
-      },
-      "no_entry_0": {
+      "WxW_out": {
         "direction": "I",
         "left": "15",
         "right": "0"
       },
-      "out_psum0_0": {
+      "no_channel_out": {
+        "direction": "I",
+        "left": "10",
+        "right": "0"
+      },
+      "stride": {
+        "direction": "I",
+        "left": "2",
+        "right": "0"
+      },
+      "width_input_img": {
+        "direction": "I",
+        "left": "11",
+        "right": "0"
+      },
+      "channel_input_img": {
+        "direction": "I",
+        "left": "11",
+        "right": "0"
+      },
+      "init_signal": {
+        "direction": "I"
+      },
+      "en": {
+        "direction": "I"
+      },
+      "weight_size_1_16": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "bram_dout_0": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "bram_dout_1": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "bram_dout_2": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "bram_dout_3": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "BRAM_img_sel": {
+        "direction": "I"
+      },
+      "psum_0": {
         "direction": "O",
         "left": "7",
         "right": "0"
       },
-      "addr_out": {
+      "psum_1": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "psum_2": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "psum_3": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "BRAM_addr_sim": {
         "direction": "O",
         "left": "31",
         "right": "0"
-      },
-      "out_din": {
-        "direction": "O",
-        "left": "31",
-        "right": "0"
-      },
-      "BRAM_img_sel_0": {
-        "direction": "I"
       }
     },
     "components": {
@@ -445,38 +436,1003 @@
           }
         }
       },
-      "blk_mem_gen_0": {
-        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
-        "xci_name": "Multi_convo_core_blk_mem_gen_0_0",
-        "xci_path": "ip\\Multi_convo_core_blk_mem_gen_0_0\\Multi_convo_core_blk_mem_gen_0_0.xci",
-        "inst_hier_path": "blk_mem_gen_0",
+      "Convo_core_1": {
         "parameters": {
-          "EN_SAFETY_CKT": {
-            "value": "false"
+          "ACTIVE_SIM_BD": {
+            "value": "Convo_core.bd"
           },
-          "Enable_32bit_Address": {
-            "value": "true"
+          "ACTIVE_SYNTH_BD": {
+            "value": "Convo_core.bd"
           },
-          "Register_PortA_Output_of_Memory_Primitives": {
-            "value": "false"
+          "ENABLE_DFX": {
+            "value": "0"
           },
-          "Use_RSTA_Pin": {
-            "value": "true"
+          "LIST_SIM_BD": {
+            "value": "Convo_core.bd"
           },
-          "use_bram_block": {
-            "value": "BRAM_Controller"
+          "LIST_SYNTH_BD": {
+            "value": "Convo_core.bd"
+          },
+          "LOCK_PROPAGATE": {
+            "value": "0"
+          }
+        },
+        "interface_ports": {
+          "BRAM_weight_AXI_1": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "OTHER",
+                "value_src": "strong"
+              },
+              "MEM_ECC": {
+                "value": "NONE",
+                "value_src": "strong"
+              },
+              "MEM_SIZE": {
+                "value": "8192",
+                "value_src": "strong"
+              },
+              "MEM_WIDTH": {
+                "value": "32",
+                "value_src": "strong"
+              },
+              "READ_LATENCY": {
+                "value": "1",
+                "value_src": "strong"
+              }
+            }
+          },
+          "BRAM_weight_AXI_0": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "OTHER",
+                "value_src": "strong"
+              },
+              "MEM_ECC": {
+                "value": "NONE",
+                "value_src": "strong"
+              },
+              "MEM_SIZE": {
+                "value": "8192",
+                "value_src": "strong"
+              },
+              "MEM_WIDTH": {
+                "value": "32",
+                "value_src": "strong"
+              },
+              "READ_LATENCY": {
+                "value": "1",
+                "value_src": "strong"
+              }
+            }
+          },
+          "BRAM_weight_AXI_2": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "OTHER",
+                "value_src": "strong"
+              },
+              "MEM_ECC": {
+                "value": "NONE",
+                "value_src": "strong"
+              },
+              "MEM_SIZE": {
+                "value": "8192",
+                "value_src": "strong"
+              },
+              "MEM_WIDTH": {
+                "value": "32",
+                "value_src": "strong"
+              },
+              "READ_LATENCY": {
+                "value": "1",
+                "value_src": "strong"
+              }
+            }
+          },
+          "BRAM_weight_AXI_3": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "OTHER",
+                "value_src": "strong"
+              },
+              "MEM_ECC": {
+                "value": "NONE",
+                "value_src": "strong"
+              },
+              "MEM_SIZE": {
+                "value": "8192",
+                "value_src": "strong"
+              },
+              "MEM_WIDTH": {
+                "value": "32",
+                "value_src": "strong"
+              },
+              "READ_LATENCY": {
+                "value": "1",
+                "value_src": "strong"
+              }
+            }
+          }
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst:rst_0",
+                "value_src": "strong"
+              },
+              "CLK_DOMAIN": {
+                "value": "Multi_convo_core_clk_0",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "FREQ_TOLERANCE_HZ": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "INSERT_VIP": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "INSERT_VIP": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "out_psum0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum2": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum3": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum_vld": {
+            "direction": "O"
+          },
+          "stride": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "width_input_img": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "channel_input_img": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "init_signal": {
+            "direction": "I"
+          },
+          "en": {
+            "direction": "I"
+          },
+          "channel_end": {
+            "direction": "O"
+          },
+          "weight_size_1_16": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "weight_end": {
+            "direction": "O"
+          },
+          "accum_done": {
+            "direction": "I"
+          },
+          "BRAM_img_sel": {
+            "direction": "I"
+          },
+          "BRAM_img_AXI_addr": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_img_AXI_din": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_img_AXI_dout": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_img_AXI_en": {
+            "direction": "I"
+          },
+          "BRAM_img_AXI_rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "INSERT_VIP": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "strong"
+              }
+            }
+          },
+          "BRAM_img_AXI_wen": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          }
+        },
+        "post_compiled_compname": "Convo_core_inst_1",
+        "architecture": "zynq",
+        "variant_info": {
+          "Convo_core.bd": {
+            "scoped_diagram": "Convo_core_inst_1.bd",
+            "design_checksum": "0x77B6649C",
+            "ref_name": "Convo_core",
+            "ref_subinst_path": "Multi_convo_coreConvo_core_1",
+            "ref_type": "Block Design",
+            "source_type": "all",
+            "active": "all"
           }
         }
       },
-      "accumulator_0": {
-        "vlnv": "xilinx.com:module_ref:accumulator:1.0",
-        "xci_name": "Multi_convo_core_accumulator_0_0",
-        "xci_path": "ip\\Multi_convo_core_accumulator_0_0\\Multi_convo_core_accumulator_0_0.xci",
-        "inst_hier_path": "accumulator_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "accumulator",
-          "boundary_crc": "0x0"
+      "Convo_core_2": {
+        "parameters": {
+          "ACTIVE_SIM_BD": {
+            "value": "Convo_core.bd"
+          },
+          "ACTIVE_SYNTH_BD": {
+            "value": "Convo_core.bd"
+          },
+          "ENABLE_DFX": {
+            "value": "0"
+          },
+          "LIST_SIM_BD": {
+            "value": "Convo_core.bd"
+          },
+          "LIST_SYNTH_BD": {
+            "value": "Convo_core.bd"
+          },
+          "LOCK_PROPAGATE": {
+            "value": "0"
+          }
+        },
+        "interface_ports": {
+          "BRAM_weight_AXI_1": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "OTHER",
+                "value_src": "strong"
+              },
+              "MEM_ECC": {
+                "value": "NONE",
+                "value_src": "strong"
+              },
+              "MEM_SIZE": {
+                "value": "8192",
+                "value_src": "strong"
+              },
+              "MEM_WIDTH": {
+                "value": "32",
+                "value_src": "strong"
+              },
+              "READ_LATENCY": {
+                "value": "1",
+                "value_src": "strong"
+              }
+            }
+          },
+          "BRAM_weight_AXI_0": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "OTHER",
+                "value_src": "strong"
+              },
+              "MEM_ECC": {
+                "value": "NONE",
+                "value_src": "strong"
+              },
+              "MEM_SIZE": {
+                "value": "8192",
+                "value_src": "strong"
+              },
+              "MEM_WIDTH": {
+                "value": "32",
+                "value_src": "strong"
+              },
+              "READ_LATENCY": {
+                "value": "1",
+                "value_src": "strong"
+              }
+            }
+          },
+          "BRAM_weight_AXI_2": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "OTHER",
+                "value_src": "strong"
+              },
+              "MEM_ECC": {
+                "value": "NONE",
+                "value_src": "strong"
+              },
+              "MEM_SIZE": {
+                "value": "8192",
+                "value_src": "strong"
+              },
+              "MEM_WIDTH": {
+                "value": "32",
+                "value_src": "strong"
+              },
+              "READ_LATENCY": {
+                "value": "1",
+                "value_src": "strong"
+              }
+            }
+          },
+          "BRAM_weight_AXI_3": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "OTHER",
+                "value_src": "strong"
+              },
+              "MEM_ECC": {
+                "value": "NONE",
+                "value_src": "strong"
+              },
+              "MEM_SIZE": {
+                "value": "8192",
+                "value_src": "strong"
+              },
+              "MEM_WIDTH": {
+                "value": "32",
+                "value_src": "strong"
+              },
+              "READ_LATENCY": {
+                "value": "1",
+                "value_src": "strong"
+              }
+            }
+          }
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst:rst_0",
+                "value_src": "strong"
+              },
+              "CLK_DOMAIN": {
+                "value": "Multi_convo_core_clk_0",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "FREQ_TOLERANCE_HZ": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "INSERT_VIP": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "INSERT_VIP": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "out_psum0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum2": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum3": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum_vld": {
+            "direction": "O"
+          },
+          "stride": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "width_input_img": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "channel_input_img": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "init_signal": {
+            "direction": "I"
+          },
+          "en": {
+            "direction": "I"
+          },
+          "channel_end": {
+            "direction": "O"
+          },
+          "weight_size_1_16": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "weight_end": {
+            "direction": "O"
+          },
+          "accum_done": {
+            "direction": "I"
+          },
+          "BRAM_img_sel": {
+            "direction": "I"
+          },
+          "BRAM_img_AXI_addr": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_img_AXI_din": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_img_AXI_dout": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_img_AXI_en": {
+            "direction": "I"
+          },
+          "BRAM_img_AXI_rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "INSERT_VIP": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "strong"
+              }
+            }
+          },
+          "BRAM_img_AXI_wen": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          }
+        },
+        "post_compiled_compname": "Convo_core_inst_2",
+        "architecture": "zynq",
+        "variant_info": {
+          "Convo_core.bd": {
+            "scoped_diagram": "Convo_core_inst_2.bd",
+            "design_checksum": "0x77B6649C",
+            "ref_name": "Convo_core",
+            "ref_subinst_path": "Multi_convo_coreConvo_core_2",
+            "ref_type": "Block Design",
+            "source_type": "all",
+            "active": "all"
+          }
+        }
+      },
+      "Convo_core_3": {
+        "parameters": {
+          "ACTIVE_SIM_BD": {
+            "value": "Convo_core.bd"
+          },
+          "ACTIVE_SYNTH_BD": {
+            "value": "Convo_core.bd"
+          },
+          "ENABLE_DFX": {
+            "value": "0"
+          },
+          "LIST_SIM_BD": {
+            "value": "Convo_core.bd"
+          },
+          "LIST_SYNTH_BD": {
+            "value": "Convo_core.bd"
+          },
+          "LOCK_PROPAGATE": {
+            "value": "0"
+          }
+        },
+        "interface_ports": {
+          "BRAM_weight_AXI_1": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "OTHER",
+                "value_src": "strong"
+              },
+              "MEM_ECC": {
+                "value": "NONE",
+                "value_src": "strong"
+              },
+              "MEM_SIZE": {
+                "value": "8192",
+                "value_src": "strong"
+              },
+              "MEM_WIDTH": {
+                "value": "32",
+                "value_src": "strong"
+              },
+              "READ_LATENCY": {
+                "value": "1",
+                "value_src": "strong"
+              }
+            }
+          },
+          "BRAM_weight_AXI_0": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "OTHER",
+                "value_src": "strong"
+              },
+              "MEM_ECC": {
+                "value": "NONE",
+                "value_src": "strong"
+              },
+              "MEM_SIZE": {
+                "value": "8192",
+                "value_src": "strong"
+              },
+              "MEM_WIDTH": {
+                "value": "32",
+                "value_src": "strong"
+              },
+              "READ_LATENCY": {
+                "value": "1",
+                "value_src": "strong"
+              }
+            }
+          },
+          "BRAM_weight_AXI_2": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "OTHER",
+                "value_src": "strong"
+              },
+              "MEM_ECC": {
+                "value": "NONE",
+                "value_src": "strong"
+              },
+              "MEM_SIZE": {
+                "value": "8192",
+                "value_src": "strong"
+              },
+              "MEM_WIDTH": {
+                "value": "32",
+                "value_src": "strong"
+              },
+              "READ_LATENCY": {
+                "value": "1",
+                "value_src": "strong"
+              }
+            }
+          },
+          "BRAM_weight_AXI_3": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "OTHER",
+                "value_src": "strong"
+              },
+              "MEM_ECC": {
+                "value": "NONE",
+                "value_src": "strong"
+              },
+              "MEM_SIZE": {
+                "value": "8192",
+                "value_src": "strong"
+              },
+              "MEM_WIDTH": {
+                "value": "32",
+                "value_src": "strong"
+              },
+              "READ_LATENCY": {
+                "value": "1",
+                "value_src": "strong"
+              }
+            }
+          }
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst:rst_0",
+                "value_src": "strong"
+              },
+              "CLK_DOMAIN": {
+                "value": "Multi_convo_core_clk_0",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "FREQ_TOLERANCE_HZ": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "INSERT_VIP": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "INSERT_VIP": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "out_psum0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum2": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum3": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum_vld": {
+            "direction": "O"
+          },
+          "stride": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "width_input_img": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "channel_input_img": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "init_signal": {
+            "direction": "I"
+          },
+          "en": {
+            "direction": "I"
+          },
+          "channel_end": {
+            "direction": "O"
+          },
+          "weight_size_1_16": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "weight_end": {
+            "direction": "O"
+          },
+          "accum_done": {
+            "direction": "I"
+          },
+          "BRAM_img_sel": {
+            "direction": "I"
+          },
+          "BRAM_img_AXI_addr": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_img_AXI_din": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_img_AXI_dout": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_img_AXI_en": {
+            "direction": "I"
+          },
+          "BRAM_img_AXI_rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "INSERT_VIP": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "strong"
+              }
+            }
+          },
+          "BRAM_img_AXI_wen": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          }
+        },
+        "post_compiled_compname": "Convo_core_inst_3",
+        "architecture": "zynq",
+        "variant_info": {
+          "Convo_core.bd": {
+            "scoped_diagram": "Convo_core_inst_3.bd",
+            "design_checksum": "0x77B6649C",
+            "ref_name": "Convo_core",
+            "ref_subinst_path": "Multi_convo_coreConvo_core_3",
+            "ref_type": "Block Design",
+            "source_type": "all",
+            "active": "all"
+          }
+        }
+      },
+      "Multi_accumulator_0": {
+        "parameters": {
+          "ACTIVE_SIM_BD": {
+            "value": "Multi_accumulator.bd"
+          },
+          "ACTIVE_SYNTH_BD": {
+            "value": "Multi_accumulator.bd"
+          },
+          "ENABLE_DFX": {
+            "value": "0"
+          },
+          "LIST_SIM_BD": {
+            "value": "Multi_accumulator.bd"
+          },
+          "LIST_SYNTH_BD": {
+            "value": "Multi_accumulator.bd"
+          },
+          "LOCK_PROPAGATE": {
+            "value": "0"
+          }
+        },
+        "interface_ports": {
+          "BRAM_out_AXI_0": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "BRAM_CTRL",
+                "value_src": "strong"
+              },
+              "MEM_ECC": {
+                "value": "NONE",
+                "value_src": "strong"
+              },
+              "MEM_SIZE": {
+                "value": "8192",
+                "value_src": "strong"
+              },
+              "MEM_WIDTH": {
+                "value": "32",
+                "value_src": "strong"
+              },
+              "READ_LATENCY": {
+                "value": "1",
+                "value_src": "strong"
+              }
+            }
+          },
+          "BRAM_out_AXI_1": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "BRAM_CTRL",
+                "value_src": "strong"
+              },
+              "MEM_ECC": {
+                "value": "NONE",
+                "value_src": "strong"
+              },
+              "MEM_SIZE": {
+                "value": "8192",
+                "value_src": "strong"
+              },
+              "MEM_WIDTH": {
+                "value": "32",
+                "value_src": "strong"
+              },
+              "READ_LATENCY": {
+                "value": "1",
+                "value_src": "strong"
+              }
+            }
+          },
+          "BRAM_out_AXI_2": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "BRAM_CTRL",
+                "value_src": "strong"
+              },
+              "MEM_ECC": {
+                "value": "NONE",
+                "value_src": "strong"
+              },
+              "MEM_SIZE": {
+                "value": "8192",
+                "value_src": "strong"
+              },
+              "MEM_WIDTH": {
+                "value": "32",
+                "value_src": "strong"
+              },
+              "READ_LATENCY": {
+                "value": "1",
+                "value_src": "strong"
+              }
+            }
+          },
+          "BRAM_out_AXI_3": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "BRAM_CTRL",
+                "value_src": "strong"
+              },
+              "MEM_ECC": {
+                "value": "NONE",
+                "value_src": "strong"
+              },
+              "MEM_SIZE": {
+                "value": "8192",
+                "value_src": "strong"
+              },
+              "MEM_WIDTH": {
+                "value": "32",
+                "value_src": "strong"
+              },
+              "READ_LATENCY": {
+                "value": "1",
+                "value_src": "strong"
+              }
+            }
+          }
         },
         "ports": {
           "clk": {
@@ -485,90 +1441,181 @@
             "parameters": {
               "ASSOCIATED_RESET": {
                 "value": "rst",
-                "value_src": "constant"
+                "value_src": "strong"
               },
               "CLK_DOMAIN": {
                 "value": "Multi_convo_core_clk_0",
                 "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "FREQ_TOLERANCE_HZ": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "INSERT_VIP": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
               }
             }
           },
+          "psum0_0": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "psum0_1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "psum0_2": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "psum0_3": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "psum1_0": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "psum1_1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "psum1_2": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "psum1_3": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "psum2_0": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "psum2_1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "psum2_2": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "psum2_3": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "psum3_0": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "psum3_1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "psum3_2": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "psum3_3": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
           "rst": {
-            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "mac_done_0": {
             "direction": "I"
           },
-          "no_entry": {
-            "direction": "I",
-            "left": "15",
-            "right": "0"
-          },
-          "no_channel": {
-            "direction": "I",
-            "left": "10",
-            "right": "0"
-          },
-          "BRAM_rready": {
+          "mac_done_1": {
             "direction": "I"
           },
-          "in_psum0": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
+          "mac_done_2": {
+            "direction": "I"
           },
-          "in_psum1": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "in_psum2": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "in_psum3": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
+          "mac_done_3": {
+            "direction": "I"
           },
           "accum_done": {
             "direction": "O"
           },
-          "BRAM_addr": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_clk": {
-            "type": "clk",
-            "direction": "O",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "BRAM_rst",
-                "value_src": "constant"
-              }
-            }
-          },
-          "BRAM_din": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_dout": {
+          "WxW_out": {
             "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "no_channel_out": {
+            "direction": "I",
+            "left": "10",
+            "right": "0"
+          },
+          "bram_dout_0": {
+            "direction": "O",
             "left": "31",
             "right": "0"
           },
-          "BRAM_en": {
-            "direction": "O"
-          },
-          "BRAM_rst": {
-            "type": "rst",
-            "direction": "O"
-          },
-          "BRAM_wen": {
+          "bram_dout_1": {
             "direction": "O",
-            "left": "3",
+            "left": "31",
             "right": "0"
+          },
+          "bram_dout_2": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "bram_dout_3": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_addr_sim": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        },
+        "post_compiled_compname": "Multi_accumulator_inst_0",
+        "architecture": "zynq",
+        "variant_info": {
+          "Multi_accumulator.bd": {
+            "scoped_diagram": "Multi_accumulator_inst_0.bd",
+            "design_checksum": "0x474EF1B7",
+            "ref_name": "Multi_accumulator",
+            "ref_subinst_path": "Multi_convo_core_Multi_accumulator_0",
+            "ref_type": "Block Design",
+            "source_type": "all",
+            "active": "all"
           }
         }
       }
@@ -576,182 +1623,260 @@
     "nets": {
       "BRAM_img_sel_0_1": {
         "ports": [
-          "BRAM_img_sel_0",
-          "Convo_core_0/BRAM_img_sel"
-        ]
-      },
-      "Convo_core_0_channel_end": {
-        "ports": [
-          "Convo_core_0/channel_end",
-          "channel_end_0"
+          "BRAM_img_sel",
+          "Convo_core_0/BRAM_img_sel",
+          "Convo_core_1/BRAM_img_sel",
+          "Convo_core_2/BRAM_img_sel",
+          "Convo_core_3/BRAM_img_sel"
         ]
       },
       "Convo_core_0_out_psum0": {
         "ports": [
           "Convo_core_0/out_psum0",
-          "out_psum0_0",
-          "accumulator_0/in_psum0"
+          "Multi_accumulator_0/psum0_0",
+          "psum_0"
         ]
       },
       "Convo_core_0_out_psum1": {
         "ports": [
           "Convo_core_0/out_psum1",
-          "out_psum1_0"
+          "Multi_accumulator_0/psum1_0",
+          "psum_1"
         ]
       },
       "Convo_core_0_out_psum2": {
         "ports": [
           "Convo_core_0/out_psum2",
-          "out_psum2_0"
+          "Multi_accumulator_0/psum2_0",
+          "psum_2"
         ]
       },
       "Convo_core_0_out_psum3": {
         "ports": [
           "Convo_core_0/out_psum3",
-          "out_psum3_0"
+          "Multi_accumulator_0/psum3_0",
+          "psum_3"
         ]
       },
-      "Convo_core_0_out_psum_vld": {
+      "Convo_core_1_out_psum0": {
         "ports": [
-          "Convo_core_0/out_psum_vld",
-          "accumulator_0/BRAM_rready"
+          "Convo_core_1/out_psum0",
+          "Multi_accumulator_0/psum0_1"
         ]
       },
-      "Convo_core_0_weight_end": {
+      "Convo_core_1_out_psum1": {
         "ports": [
-          "Convo_core_0/weight_end",
-          "weight_end_0"
+          "Convo_core_1/out_psum1",
+          "Multi_accumulator_0/psum1_1"
         ]
       },
-      "accum_done_1": {
+      "Convo_core_1_out_psum2": {
         "ports": [
-          "accumulator_0/accum_done",
-          "Convo_core_0/accum_done"
+          "Convo_core_1/out_psum2",
+          "Multi_accumulator_0/psum2_1"
         ]
       },
-      "accumulator_0_BRAM_addr": {
+      "Convo_core_1_out_psum3": {
         "ports": [
-          "accumulator_0/BRAM_addr",
-          "blk_mem_gen_0/addra",
-          "addr_out"
+          "Convo_core_1/out_psum3",
+          "Multi_accumulator_0/psum3_1"
         ]
       },
-      "accumulator_0_BRAM_clk": {
+      "Convo_core_2_out_psum0": {
         "ports": [
-          "accumulator_0/BRAM_clk",
-          "blk_mem_gen_0/clka"
+          "Convo_core_2/out_psum0",
+          "Multi_accumulator_0/psum0_2"
         ]
       },
-      "accumulator_0_BRAM_din": {
+      "Convo_core_2_out_psum1": {
         "ports": [
-          "accumulator_0/BRAM_din",
-          "blk_mem_gen_0/dina",
-          "out_din"
+          "Convo_core_2/out_psum1",
+          "Multi_accumulator_0/psum1_2"
         ]
       },
-      "accumulator_0_BRAM_en": {
+      "Convo_core_2_out_psum2": {
         "ports": [
-          "accumulator_0/BRAM_en",
-          "blk_mem_gen_0/ena"
+          "Convo_core_2/out_psum2",
+          "Multi_accumulator_0/psum2_2"
         ]
       },
-      "accumulator_0_BRAM_rst": {
+      "Convo_core_2_out_psum3": {
         "ports": [
-          "accumulator_0/BRAM_rst",
-          "blk_mem_gen_0/rsta"
+          "Convo_core_2/out_psum3",
+          "Multi_accumulator_0/psum3_2"
         ]
       },
-      "accumulator_0_BRAM_wen": {
+      "Convo_core_2_out_psum_vld": {
         "ports": [
-          "accumulator_0/BRAM_wen",
-          "blk_mem_gen_0/wea"
+          "Convo_core_2/out_psum_vld",
+          "Multi_accumulator_0/mac_done_2"
         ]
       },
-      "blk_mem_gen_0_douta": {
+      "Convo_core_3_out_psum0": {
         "ports": [
-          "blk_mem_gen_0/douta",
-          "BRAM_out_dout",
-          "accumulator_0/BRAM_dout"
+          "Convo_core_3/out_psum0",
+          "Multi_accumulator_0/psum0_3"
+        ]
+      },
+      "Convo_core_3_out_psum1": {
+        "ports": [
+          "Convo_core_3/out_psum1",
+          "Multi_accumulator_0/psum1_3"
+        ]
+      },
+      "Convo_core_3_out_psum2": {
+        "ports": [
+          "Convo_core_3/out_psum2",
+          "Multi_accumulator_0/psum2_3"
+        ]
+      },
+      "Convo_core_3_out_psum3": {
+        "ports": [
+          "Convo_core_3/out_psum3",
+          "Multi_accumulator_0/psum3_3"
+        ]
+      },
+      "Multi_accumulator_0_BRAM_addr_sim": {
+        "ports": [
+          "Multi_accumulator_0/BRAM_addr_sim",
+          "BRAM_addr_sim"
+        ]
+      },
+      "Multi_accumulator_0_accum_done": {
+        "ports": [
+          "Multi_accumulator_0/accum_done",
+          "Convo_core_0/accum_done",
+          "Convo_core_1/accum_done",
+          "Convo_core_2/accum_done",
+          "Convo_core_3/accum_done"
+        ]
+      },
+      "Multi_accumulator_0_bram_dout_0": {
+        "ports": [
+          "Multi_accumulator_0/bram_dout_0",
+          "bram_dout_0"
+        ]
+      },
+      "Multi_accumulator_0_bram_dout_1": {
+        "ports": [
+          "Multi_accumulator_0/bram_dout_1",
+          "bram_dout_1"
+        ]
+      },
+      "Multi_accumulator_0_bram_dout_2": {
+        "ports": [
+          "Multi_accumulator_0/bram_dout_2",
+          "bram_dout_2"
+        ]
+      },
+      "Multi_accumulator_0_bram_dout_3": {
+        "ports": [
+          "Multi_accumulator_0/bram_dout_3",
+          "bram_dout_3"
+        ]
+      },
+      "WxW_out_0_1": {
+        "ports": [
+          "WxW_out",
+          "Multi_accumulator_0/WxW_out"
         ]
       },
       "channel_input_img_0_1": {
         "ports": [
-          "channel_input_img_0",
-          "Convo_core_0/channel_input_img"
+          "channel_input_img",
+          "Convo_core_0/channel_input_img",
+          "Convo_core_1/channel_input_img",
+          "Convo_core_2/channel_input_img",
+          "Convo_core_3/channel_input_img"
         ]
       },
       "clk_0_1": {
         "ports": [
-          "clk_0",
+          "clk",
           "Convo_core_0/clk",
-          "accumulator_0/clk"
+          "Convo_core_1/clk",
+          "Convo_core_2/clk",
+          "Convo_core_3/clk",
+          "Multi_accumulator_0/clk"
         ]
       },
       "en_0_1": {
         "ports": [
-          "en_0",
-          "Convo_core_0/en"
-        ]
-      },
-      "in_psum1_0_1": {
-        "ports": [
-          "in_psum1_0",
-          "accumulator_0/in_psum1"
-        ]
-      },
-      "in_psum2_0_1": {
-        "ports": [
-          "in_psum2_0",
-          "accumulator_0/in_psum2"
-        ]
-      },
-      "in_psum3_0_1": {
-        "ports": [
-          "in_psum3_0",
-          "accumulator_0/in_psum3"
+          "en",
+          "Convo_core_0/en",
+          "Convo_core_1/en",
+          "Convo_core_2/en",
+          "Convo_core_3/en"
         ]
       },
       "init_signal_0_1": {
         "ports": [
-          "init_signal_0",
-          "Convo_core_0/init_signal"
+          "init_signal",
+          "Convo_core_0/init_signal",
+          "Convo_core_1/init_signal",
+          "Convo_core_2/init_signal",
+          "Convo_core_3/init_signal"
         ]
       },
-      "no_channel_0_1": {
+      "mac_done_0_1": {
         "ports": [
-          "no_channel_0",
-          "accumulator_0/no_channel"
+          "Convo_core_0/out_psum_vld",
+          "Multi_accumulator_0/mac_done_0"
         ]
       },
-      "no_entry_0_1": {
+      "mac_done_1_1": {
         "ports": [
-          "no_entry_0",
-          "accumulator_0/no_entry"
+          "Convo_core_1/out_psum_vld",
+          "Multi_accumulator_0/mac_done_1"
+        ]
+      },
+      "mac_done_3_1": {
+        "ports": [
+          "Convo_core_3/out_psum_vld",
+          "Multi_accumulator_0/mac_done_3"
+        ]
+      },
+      "no_channel_out_0_1": {
+        "ports": [
+          "no_channel_out",
+          "Multi_accumulator_0/no_channel_out"
         ]
       },
       "rst_0_1": {
         "ports": [
-          "rst_0",
+          "rst",
           "Convo_core_0/rst",
-          "accumulator_0/rst"
+          "Convo_core_1/rst",
+          "Convo_core_2/rst",
+          "Convo_core_3/rst",
+          "Multi_accumulator_0/rst"
         ]
       },
       "stride_0_1": {
         "ports": [
-          "stride_0",
-          "Convo_core_0/stride"
+          "stride",
+          "Convo_core_0/stride",
+          "Convo_core_1/stride",
+          "Convo_core_2/stride",
+          "Convo_core_3/stride"
         ]
       },
       "weight_size_1_16_0_1": {
         "ports": [
-          "weight_size_1_16_0",
-          "Convo_core_0/weight_size_1_16"
+          "weight_size_1_16",
+          "Convo_core_0/weight_size_1_16",
+          "Convo_core_1/weight_size_1_16",
+          "Convo_core_2/weight_size_1_16",
+          "Convo_core_3/weight_size_1_16"
         ]
       },
       "width_input_img_0_1": {
         "ports": [
-          "width_input_img_0",
-          "Convo_core_0/width_input_img"
+          "width_input_img",
+          "Convo_core_0/width_input_img",
+          "Convo_core_1/width_input_img",
+          "Convo_core_2/width_input_img",
+          "Convo_core_3/width_input_img"
         ]
       }
     }

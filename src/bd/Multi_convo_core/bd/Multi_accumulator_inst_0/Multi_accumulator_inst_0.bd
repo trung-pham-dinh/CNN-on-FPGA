@@ -1,0 +1,1514 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x1C98400A26CE6347",
+      "design_src": "D:/Documents/Xilinx/CNN_FPGA/Vivado/src/bd/Multi_accumulator/Multi_accumulator.bd",
+      "device": "xc7z020clg400-1",
+      "name": "Multi_accumulator_inst_0",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2021.1",
+      "validated": "true",
+      "variant": "true"
+    },
+    "design_tree": {
+      "accumulator_0": "",
+      "accumulator_2": "",
+      "accumulator_1": "",
+      "accumulator_3": "",
+      "blk_mem_gen_0": "",
+      "blk_mem_gen_2": "",
+      "blk_mem_gen_3": "",
+      "blk_mem_gen_1": "",
+      "and_gate_accum_0": "",
+      "and_gate_accum_1": ""
+    },
+    "interface_ports": {
+      "BRAM_out_AXI_0": {
+        "mode": "Slave",
+        "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+        "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+        "parameters": {
+          "MASTER_TYPE": {
+            "value": "BRAM_CTRL",
+            "value_src": "strong"
+          },
+          "MEM_ECC": {
+            "value": "NONE",
+            "value_src": "strong"
+          },
+          "MEM_SIZE": {
+            "value": "8192",
+            "value_src": "strong"
+          },
+          "MEM_WIDTH": {
+            "value": "32",
+            "value_src": "strong"
+          },
+          "READ_LATENCY": {
+            "value": "1",
+            "value_src": "strong"
+          }
+        },
+        "port_maps": {
+          "ADDR": {
+            "physical_name": "BRAM_out_AXI_0_addr",
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "CLK": {
+            "physical_name": "BRAM_out_AXI_0_clk",
+            "direction": "I"
+          },
+          "DIN": {
+            "physical_name": "BRAM_out_AXI_0_din",
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "DOUT": {
+            "physical_name": "BRAM_out_AXI_0_dout",
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "EN": {
+            "physical_name": "BRAM_out_AXI_0_en",
+            "direction": "I"
+          },
+          "RST": {
+            "physical_name": "BRAM_out_AXI_0_rst",
+            "direction": "I"
+          },
+          "WE": {
+            "physical_name": "BRAM_out_AXI_0_we",
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "BRAM_out_AXI_1": {
+        "mode": "Slave",
+        "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+        "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+        "parameters": {
+          "MASTER_TYPE": {
+            "value": "BRAM_CTRL",
+            "value_src": "strong"
+          },
+          "MEM_ECC": {
+            "value": "NONE",
+            "value_src": "strong"
+          },
+          "MEM_SIZE": {
+            "value": "8192",
+            "value_src": "strong"
+          },
+          "MEM_WIDTH": {
+            "value": "32",
+            "value_src": "strong"
+          },
+          "READ_LATENCY": {
+            "value": "1",
+            "value_src": "strong"
+          }
+        },
+        "port_maps": {
+          "ADDR": {
+            "physical_name": "BRAM_out_AXI_1_addr",
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "CLK": {
+            "physical_name": "BRAM_out_AXI_1_clk",
+            "direction": "I"
+          },
+          "DIN": {
+            "physical_name": "BRAM_out_AXI_1_din",
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "DOUT": {
+            "physical_name": "BRAM_out_AXI_1_dout",
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "EN": {
+            "physical_name": "BRAM_out_AXI_1_en",
+            "direction": "I"
+          },
+          "RST": {
+            "physical_name": "BRAM_out_AXI_1_rst",
+            "direction": "I"
+          },
+          "WE": {
+            "physical_name": "BRAM_out_AXI_1_we",
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "BRAM_out_AXI_2": {
+        "mode": "Slave",
+        "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+        "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+        "parameters": {
+          "MASTER_TYPE": {
+            "value": "BRAM_CTRL",
+            "value_src": "strong"
+          },
+          "MEM_ECC": {
+            "value": "NONE",
+            "value_src": "strong"
+          },
+          "MEM_SIZE": {
+            "value": "8192",
+            "value_src": "strong"
+          },
+          "MEM_WIDTH": {
+            "value": "32",
+            "value_src": "strong"
+          },
+          "READ_LATENCY": {
+            "value": "1",
+            "value_src": "strong"
+          }
+        },
+        "port_maps": {
+          "ADDR": {
+            "physical_name": "BRAM_out_AXI_2_addr",
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "CLK": {
+            "physical_name": "BRAM_out_AXI_2_clk",
+            "direction": "I"
+          },
+          "DIN": {
+            "physical_name": "BRAM_out_AXI_2_din",
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "DOUT": {
+            "physical_name": "BRAM_out_AXI_2_dout",
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "EN": {
+            "physical_name": "BRAM_out_AXI_2_en",
+            "direction": "I"
+          },
+          "RST": {
+            "physical_name": "BRAM_out_AXI_2_rst",
+            "direction": "I"
+          },
+          "WE": {
+            "physical_name": "BRAM_out_AXI_2_we",
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "BRAM_out_AXI_3": {
+        "mode": "Slave",
+        "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+        "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+        "parameters": {
+          "MASTER_TYPE": {
+            "value": "BRAM_CTRL",
+            "value_src": "strong"
+          },
+          "MEM_ECC": {
+            "value": "NONE",
+            "value_src": "strong"
+          },
+          "MEM_SIZE": {
+            "value": "8192",
+            "value_src": "strong"
+          },
+          "MEM_WIDTH": {
+            "value": "32",
+            "value_src": "strong"
+          },
+          "READ_LATENCY": {
+            "value": "1",
+            "value_src": "strong"
+          }
+        },
+        "port_maps": {
+          "ADDR": {
+            "physical_name": "BRAM_out_AXI_3_addr",
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "CLK": {
+            "physical_name": "BRAM_out_AXI_3_clk",
+            "direction": "I"
+          },
+          "DIN": {
+            "physical_name": "BRAM_out_AXI_3_din",
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "DOUT": {
+            "physical_name": "BRAM_out_AXI_3_dout",
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "EN": {
+            "physical_name": "BRAM_out_AXI_3_en",
+            "direction": "I"
+          },
+          "RST": {
+            "physical_name": "BRAM_out_AXI_3_rst",
+            "direction": "I"
+          },
+          "WE": {
+            "physical_name": "BRAM_out_AXI_3_we",
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "ports": {
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "rst",
+            "value_src": "strong"
+          },
+          "CLK_DOMAIN": {
+            "value": "Multi_convo_core_clk_0",
+            "value_src": "default_prop"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default_prop"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "strong"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "strong"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default_prop"
+          }
+        }
+      },
+      "psum0_0": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "psum0_1": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "psum0_2": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "psum0_3": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "psum1_0": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "psum1_1": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "psum1_2": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "psum1_3": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "psum2_0": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "psum2_1": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "psum2_2": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "psum2_3": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "psum3_0": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "psum3_1": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "psum3_2": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "psum3_3": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "rst": {
+        "direction": "I",
+        "parameters": {
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default_prop"
+          }
+        }
+      },
+      "mac_done_0": {
+        "direction": "I"
+      },
+      "mac_done_1": {
+        "direction": "I"
+      },
+      "mac_done_2": {
+        "direction": "I"
+      },
+      "mac_done_3": {
+        "direction": "I"
+      },
+      "accum_done": {
+        "direction": "O"
+      },
+      "WxW_out": {
+        "direction": "I",
+        "left": "15",
+        "right": "0"
+      },
+      "no_channel_out": {
+        "direction": "I",
+        "left": "10",
+        "right": "0"
+      },
+      "bram_dout_0": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "bram_dout_1": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "bram_dout_2": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "bram_dout_3": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "BRAM_addr_sim": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      }
+    },
+    "components": {
+      "accumulator_0": {
+        "vlnv": "xilinx.com:module_ref:accumulator:1.0",
+        "xci_name": "Multi_accumulator_inst_0_accumulator_0_0",
+        "xci_path": "ip\\Multi_accumulator_inst_0_accumulator_0_0\\Multi_accumulator_inst_0_accumulator_0_0.xci",
+        "inst_hier_path": "accumulator_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "accumulator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "Multi_convo_core_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "no_entry": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "no_channel": {
+            "direction": "I",
+            "left": "10",
+            "right": "0"
+          },
+          "BRAM_rready": {
+            "direction": "I"
+          },
+          "in_psum0": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum2": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum3": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "accum_done": {
+            "direction": "O"
+          },
+          "BRAM_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_clk": {
+            "type": "clk",
+            "direction": "O",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "BRAM_rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "BRAM_din": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_dout": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_en": {
+            "direction": "O"
+          },
+          "BRAM_rst": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "BRAM_wen": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "accumulator_2": {
+        "vlnv": "xilinx.com:module_ref:accumulator:1.0",
+        "xci_name": "Multi_accumulator_inst_0_accumulator_2_0",
+        "xci_path": "ip\\Multi_accumulator_inst_0_accumulator_2_0\\Multi_accumulator_inst_0_accumulator_2_0.xci",
+        "inst_hier_path": "accumulator_2",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "accumulator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "Multi_convo_core_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "no_entry": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "no_channel": {
+            "direction": "I",
+            "left": "10",
+            "right": "0"
+          },
+          "BRAM_rready": {
+            "direction": "I"
+          },
+          "in_psum0": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum2": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum3": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "accum_done": {
+            "direction": "O"
+          },
+          "BRAM_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_clk": {
+            "type": "clk",
+            "direction": "O",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "BRAM_rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "BRAM_din": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_dout": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_en": {
+            "direction": "O"
+          },
+          "BRAM_rst": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "BRAM_wen": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "accumulator_1": {
+        "vlnv": "xilinx.com:module_ref:accumulator:1.0",
+        "xci_name": "Multi_accumulator_inst_0_accumulator_1_0",
+        "xci_path": "ip\\Multi_accumulator_inst_0_accumulator_1_0\\Multi_accumulator_inst_0_accumulator_1_0.xci",
+        "inst_hier_path": "accumulator_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "accumulator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "Multi_convo_core_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "no_entry": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "no_channel": {
+            "direction": "I",
+            "left": "10",
+            "right": "0"
+          },
+          "BRAM_rready": {
+            "direction": "I"
+          },
+          "in_psum0": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum2": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum3": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "accum_done": {
+            "direction": "O"
+          },
+          "BRAM_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_clk": {
+            "type": "clk",
+            "direction": "O",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "BRAM_rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "BRAM_din": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_dout": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_en": {
+            "direction": "O"
+          },
+          "BRAM_rst": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "BRAM_wen": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "accumulator_3": {
+        "vlnv": "xilinx.com:module_ref:accumulator:1.0",
+        "xci_name": "Multi_accumulator_inst_0_accumulator_3_0",
+        "xci_path": "ip\\Multi_accumulator_inst_0_accumulator_3_0\\Multi_accumulator_inst_0_accumulator_3_0.xci",
+        "inst_hier_path": "accumulator_3",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "accumulator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "Multi_convo_core_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "no_entry": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "no_channel": {
+            "direction": "I",
+            "left": "10",
+            "right": "0"
+          },
+          "BRAM_rready": {
+            "direction": "I"
+          },
+          "in_psum0": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum2": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum3": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "accum_done": {
+            "direction": "O"
+          },
+          "BRAM_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_clk": {
+            "type": "clk",
+            "direction": "O",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "BRAM_rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "BRAM_din": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_dout": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_en": {
+            "direction": "O"
+          },
+          "BRAM_rst": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "BRAM_wen": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "blk_mem_gen_0": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "Multi_accumulator_inst_0_blk_mem_gen_0_0",
+        "xci_path": "ip\\Multi_accumulator_inst_0_blk_mem_gen_0_0\\Multi_accumulator_inst_0_blk_mem_gen_0_0.xci",
+        "inst_hier_path": "blk_mem_gen_0",
+        "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
+          "EN_SAFETY_CKT": {
+            "value": "false"
+          },
+          "Enable_B": {
+            "value": "Use_ENB_Pin"
+          },
+          "Memory_Type": {
+            "value": "True_Dual_Port_RAM"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Port_B_Write_Rate": {
+            "value": "50"
+          },
+          "Use_RSTB_Pin": {
+            "value": "true"
+          }
+        }
+      },
+      "blk_mem_gen_2": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "Multi_accumulator_inst_0_blk_mem_gen_2_0",
+        "xci_path": "ip\\Multi_accumulator_inst_0_blk_mem_gen_2_0\\Multi_accumulator_inst_0_blk_mem_gen_2_0.xci",
+        "inst_hier_path": "blk_mem_gen_2",
+        "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
+          "EN_SAFETY_CKT": {
+            "value": "false"
+          },
+          "Enable_B": {
+            "value": "Use_ENB_Pin"
+          },
+          "Memory_Type": {
+            "value": "True_Dual_Port_RAM"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Port_B_Write_Rate": {
+            "value": "50"
+          },
+          "Use_RSTB_Pin": {
+            "value": "true"
+          }
+        }
+      },
+      "blk_mem_gen_3": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "Multi_accumulator_inst_0_blk_mem_gen_3_0",
+        "xci_path": "ip\\Multi_accumulator_inst_0_blk_mem_gen_3_0\\Multi_accumulator_inst_0_blk_mem_gen_3_0.xci",
+        "inst_hier_path": "blk_mem_gen_3",
+        "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
+          "EN_SAFETY_CKT": {
+            "value": "false"
+          },
+          "Enable_B": {
+            "value": "Use_ENB_Pin"
+          },
+          "Memory_Type": {
+            "value": "True_Dual_Port_RAM"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Port_B_Write_Rate": {
+            "value": "50"
+          },
+          "Use_RSTB_Pin": {
+            "value": "true"
+          }
+        }
+      },
+      "blk_mem_gen_1": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "Multi_accumulator_inst_0_blk_mem_gen_1_0",
+        "xci_path": "ip\\Multi_accumulator_inst_0_blk_mem_gen_1_0\\Multi_accumulator_inst_0_blk_mem_gen_1_0.xci",
+        "inst_hier_path": "blk_mem_gen_1",
+        "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
+          "EN_SAFETY_CKT": {
+            "value": "false"
+          },
+          "Enable_B": {
+            "value": "Use_ENB_Pin"
+          },
+          "Memory_Type": {
+            "value": "True_Dual_Port_RAM"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Port_B_Write_Rate": {
+            "value": "50"
+          },
+          "Use_RSTB_Pin": {
+            "value": "true"
+          }
+        }
+      },
+      "and_gate_accum_0": {
+        "vlnv": "xilinx.com:module_ref:and_gate_accum:1.0",
+        "xci_name": "Multi_accumulator_inst_0_and_gate_accum_0_0",
+        "xci_path": "ip\\Multi_accumulator_inst_0_and_gate_accum_0_0\\Multi_accumulator_inst_0_and_gate_accum_0_0.xci",
+        "inst_hier_path": "and_gate_accum_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "and_gate_accum",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "in0": {
+            "direction": "I"
+          },
+          "in1": {
+            "direction": "I"
+          },
+          "in2": {
+            "direction": "I"
+          },
+          "in3": {
+            "direction": "I"
+          },
+          "and_out": {
+            "direction": "O"
+          }
+        }
+      },
+      "and_gate_accum_1": {
+        "vlnv": "xilinx.com:module_ref:and_gate_accum:1.0",
+        "xci_name": "Multi_accumulator_inst_0_and_gate_accum_1_0",
+        "xci_path": "ip\\Multi_accumulator_inst_0_and_gate_accum_1_0\\Multi_accumulator_inst_0_and_gate_accum_1_0.xci",
+        "inst_hier_path": "and_gate_accum_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "and_gate_accum",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "in0": {
+            "direction": "I"
+          },
+          "in1": {
+            "direction": "I"
+          },
+          "in2": {
+            "direction": "I"
+          },
+          "in3": {
+            "direction": "I"
+          },
+          "and_out": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "BRAM_PORTB_0_1": {
+        "interface_ports": [
+          "BRAM_out_AXI_0",
+          "blk_mem_gen_0/BRAM_PORTB"
+        ]
+      },
+      "BRAM_PORTB_1_1": {
+        "interface_ports": [
+          "BRAM_out_AXI_1",
+          "blk_mem_gen_1/BRAM_PORTB"
+        ]
+      },
+      "BRAM_PORTB_2_1": {
+        "interface_ports": [
+          "BRAM_out_AXI_2",
+          "blk_mem_gen_2/BRAM_PORTB"
+        ]
+      },
+      "BRAM_PORTB_3_1": {
+        "interface_ports": [
+          "BRAM_out_AXI_3",
+          "blk_mem_gen_3/BRAM_PORTB"
+        ]
+      }
+    },
+    "nets": {
+      "Net": {
+        "ports": [
+          "rst",
+          "accumulator_3/rst",
+          "accumulator_1/rst",
+          "accumulator_2/rst",
+          "accumulator_0/rst"
+        ]
+      },
+      "Net1": {
+        "ports": [
+          "WxW_out",
+          "accumulator_0/no_entry",
+          "accumulator_2/no_entry",
+          "accumulator_1/no_entry",
+          "accumulator_3/no_entry"
+        ]
+      },
+      "Net2": {
+        "ports": [
+          "no_channel_out",
+          "accumulator_0/no_channel",
+          "accumulator_2/no_channel",
+          "accumulator_1/no_channel",
+          "accumulator_3/no_channel"
+        ]
+      },
+      "accumulator_0_BRAM_addr": {
+        "ports": [
+          "accumulator_0/BRAM_addr",
+          "blk_mem_gen_0/addra",
+          "BRAM_addr_sim"
+        ]
+      },
+      "accumulator_0_BRAM_clk": {
+        "ports": [
+          "accumulator_0/BRAM_clk",
+          "blk_mem_gen_0/clka"
+        ]
+      },
+      "accumulator_0_BRAM_din": {
+        "ports": [
+          "accumulator_0/BRAM_din",
+          "blk_mem_gen_0/dina"
+        ]
+      },
+      "accumulator_0_BRAM_en": {
+        "ports": [
+          "accumulator_0/BRAM_en",
+          "blk_mem_gen_0/ena"
+        ]
+      },
+      "accumulator_0_BRAM_rst": {
+        "ports": [
+          "accumulator_0/BRAM_rst",
+          "blk_mem_gen_0/rsta"
+        ]
+      },
+      "accumulator_0_BRAM_wen": {
+        "ports": [
+          "accumulator_0/BRAM_wen",
+          "blk_mem_gen_0/wea"
+        ]
+      },
+      "accumulator_0_accum_done": {
+        "ports": [
+          "accumulator_0/accum_done",
+          "and_gate_accum_1/in0"
+        ]
+      },
+      "accumulator_1_BRAM_addr": {
+        "ports": [
+          "accumulator_2/BRAM_addr",
+          "blk_mem_gen_2/addra"
+        ]
+      },
+      "accumulator_1_BRAM_clk": {
+        "ports": [
+          "accumulator_2/BRAM_clk",
+          "blk_mem_gen_2/clka"
+        ]
+      },
+      "accumulator_1_BRAM_din": {
+        "ports": [
+          "accumulator_2/BRAM_din",
+          "blk_mem_gen_2/dina"
+        ]
+      },
+      "accumulator_1_BRAM_en": {
+        "ports": [
+          "accumulator_2/BRAM_en",
+          "blk_mem_gen_2/ena"
+        ]
+      },
+      "accumulator_1_BRAM_rst": {
+        "ports": [
+          "accumulator_2/BRAM_rst",
+          "blk_mem_gen_2/rsta"
+        ]
+      },
+      "accumulator_1_BRAM_wen": {
+        "ports": [
+          "accumulator_2/BRAM_wen",
+          "blk_mem_gen_2/wea"
+        ]
+      },
+      "accumulator_1_accum_done": {
+        "ports": [
+          "accumulator_1/accum_done",
+          "and_gate_accum_1/in1"
+        ]
+      },
+      "accumulator_2_BRAM_addr": {
+        "ports": [
+          "accumulator_1/BRAM_addr",
+          "blk_mem_gen_1/addra"
+        ]
+      },
+      "accumulator_2_BRAM_clk": {
+        "ports": [
+          "accumulator_1/BRAM_clk",
+          "blk_mem_gen_1/clka"
+        ]
+      },
+      "accumulator_2_BRAM_din": {
+        "ports": [
+          "accumulator_1/BRAM_din",
+          "blk_mem_gen_1/dina"
+        ]
+      },
+      "accumulator_2_BRAM_en": {
+        "ports": [
+          "accumulator_1/BRAM_en",
+          "blk_mem_gen_1/ena"
+        ]
+      },
+      "accumulator_2_BRAM_rst": {
+        "ports": [
+          "accumulator_1/BRAM_rst",
+          "blk_mem_gen_1/rsta"
+        ]
+      },
+      "accumulator_2_BRAM_wen": {
+        "ports": [
+          "accumulator_1/BRAM_wen",
+          "blk_mem_gen_1/wea"
+        ]
+      },
+      "accumulator_2_accum_done": {
+        "ports": [
+          "accumulator_2/accum_done",
+          "and_gate_accum_1/in2"
+        ]
+      },
+      "accumulator_3_BRAM_addr": {
+        "ports": [
+          "accumulator_3/BRAM_addr",
+          "blk_mem_gen_3/addra"
+        ]
+      },
+      "accumulator_3_BRAM_clk": {
+        "ports": [
+          "accumulator_3/BRAM_clk",
+          "blk_mem_gen_3/clka"
+        ]
+      },
+      "accumulator_3_BRAM_din": {
+        "ports": [
+          "accumulator_3/BRAM_din",
+          "blk_mem_gen_3/dina"
+        ]
+      },
+      "accumulator_3_BRAM_en": {
+        "ports": [
+          "accumulator_3/BRAM_en",
+          "blk_mem_gen_3/ena"
+        ]
+      },
+      "accumulator_3_BRAM_rst": {
+        "ports": [
+          "accumulator_3/BRAM_rst",
+          "blk_mem_gen_3/rsta"
+        ]
+      },
+      "accumulator_3_BRAM_wen": {
+        "ports": [
+          "accumulator_3/BRAM_wen",
+          "blk_mem_gen_3/wea"
+        ]
+      },
+      "accumulator_3_accum_done": {
+        "ports": [
+          "accumulator_3/accum_done",
+          "and_gate_accum_1/in3"
+        ]
+      },
+      "and_gate_accum_0_out": {
+        "ports": [
+          "and_gate_accum_0/and_out",
+          "accumulator_0/BRAM_rready",
+          "accumulator_2/BRAM_rready",
+          "accumulator_1/BRAM_rready",
+          "accumulator_3/BRAM_rready"
+        ]
+      },
+      "and_gate_accum_1_and_out": {
+        "ports": [
+          "and_gate_accum_1/and_out",
+          "accum_done"
+        ]
+      },
+      "blk_mem_gen_0_douta": {
+        "ports": [
+          "blk_mem_gen_0/douta",
+          "accumulator_0/BRAM_dout",
+          "bram_dout_0"
+        ]
+      },
+      "blk_mem_gen_1_douta": {
+        "ports": [
+          "blk_mem_gen_2/douta",
+          "accumulator_2/BRAM_dout",
+          "bram_dout_2"
+        ]
+      },
+      "blk_mem_gen_2_douta": {
+        "ports": [
+          "blk_mem_gen_3/douta",
+          "accumulator_3/BRAM_dout",
+          "bram_dout_3"
+        ]
+      },
+      "blk_mem_gen_3_douta": {
+        "ports": [
+          "blk_mem_gen_1/douta",
+          "accumulator_1/BRAM_dout",
+          "bram_dout_1"
+        ]
+      },
+      "clk_0_1": {
+        "ports": [
+          "clk",
+          "accumulator_0/clk",
+          "accumulator_2/clk",
+          "accumulator_1/clk",
+          "accumulator_3/clk"
+        ]
+      },
+      "in0_0_1": {
+        "ports": [
+          "mac_done_0",
+          "and_gate_accum_0/in0"
+        ]
+      },
+      "in1_0_1": {
+        "ports": [
+          "mac_done_1",
+          "and_gate_accum_0/in1"
+        ]
+      },
+      "in2_0_1": {
+        "ports": [
+          "mac_done_2",
+          "and_gate_accum_0/in2"
+        ]
+      },
+      "in3_0_1": {
+        "ports": [
+          "mac_done_3",
+          "and_gate_accum_0/in3"
+        ]
+      },
+      "in_psum0_0_1": {
+        "ports": [
+          "psum0_0",
+          "accumulator_0/in_psum0"
+        ]
+      },
+      "in_psum0_1_1": {
+        "ports": [
+          "psum1_0",
+          "accumulator_1/in_psum0"
+        ]
+      },
+      "in_psum0_2_1": {
+        "ports": [
+          "psum2_0",
+          "accumulator_2/in_psum0"
+        ]
+      },
+      "in_psum0_3_1": {
+        "ports": [
+          "psum3_0",
+          "accumulator_3/in_psum0"
+        ]
+      },
+      "in_psum1_0_1": {
+        "ports": [
+          "psum0_1",
+          "accumulator_0/in_psum1"
+        ]
+      },
+      "in_psum1_1_1": {
+        "ports": [
+          "psum1_1",
+          "accumulator_1/in_psum1"
+        ]
+      },
+      "in_psum1_2_1": {
+        "ports": [
+          "psum2_1",
+          "accumulator_2/in_psum1"
+        ]
+      },
+      "in_psum1_3_1": {
+        "ports": [
+          "psum3_1",
+          "accumulator_3/in_psum1"
+        ]
+      },
+      "in_psum2_0_1": {
+        "ports": [
+          "psum0_2",
+          "accumulator_0/in_psum2"
+        ]
+      },
+      "in_psum2_1_1": {
+        "ports": [
+          "psum1_2",
+          "accumulator_1/in_psum2"
+        ]
+      },
+      "in_psum2_2_1": {
+        "ports": [
+          "psum2_2",
+          "accumulator_2/in_psum2"
+        ]
+      },
+      "in_psum2_3_1": {
+        "ports": [
+          "psum3_2",
+          "accumulator_3/in_psum2"
+        ]
+      },
+      "in_psum3_0_1": {
+        "ports": [
+          "psum0_3",
+          "accumulator_0/in_psum3"
+        ]
+      },
+      "in_psum3_1_1": {
+        "ports": [
+          "psum1_3",
+          "accumulator_1/in_psum3"
+        ]
+      },
+      "in_psum3_2_1": {
+        "ports": [
+          "psum2_3",
+          "accumulator_2/in_psum3"
+        ]
+      },
+      "in_psum3_3_1": {
+        "ports": [
+          "psum3_3",
+          "accumulator_3/in_psum3"
+        ]
+      }
+    }
+  }
+}

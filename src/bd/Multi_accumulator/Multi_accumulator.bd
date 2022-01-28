@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x74BB2087AC0F8D93",
+      "boundary_crc": "0x1C98400AB163A41A",
       "device": "xc7z020clg400-1",
       "name": "Multi_accumulator",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
@@ -264,6 +264,31 @@
       "no_channel_out": {
         "direction": "I",
         "left": "10",
+        "right": "0"
+      },
+      "bram_dout_0": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "bram_dout_1": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "bram_dout_2": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "bram_dout_3": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "BRAM_addr_sim": {
+        "direction": "O",
+        "left": "31",
         "right": "0"
       }
     },
@@ -926,7 +951,8 @@
       "accumulator_0_BRAM_addr": {
         "ports": [
           "accumulator_0/BRAM_addr",
-          "blk_mem_gen_0/addra"
+          "blk_mem_gen_0/addra",
+          "BRAM_addr_sim"
         ]
       },
       "accumulator_0_BRAM_clk": {
@@ -1109,25 +1135,29 @@
       "blk_mem_gen_0_douta": {
         "ports": [
           "blk_mem_gen_0/douta",
-          "accumulator_0/BRAM_dout"
+          "accumulator_0/BRAM_dout",
+          "bram_dout_0"
         ]
       },
       "blk_mem_gen_1_douta": {
         "ports": [
           "blk_mem_gen_2/douta",
-          "accumulator_2/BRAM_dout"
+          "accumulator_2/BRAM_dout",
+          "bram_dout_2"
         ]
       },
       "blk_mem_gen_2_douta": {
         "ports": [
           "blk_mem_gen_3/douta",
-          "accumulator_3/BRAM_dout"
+          "accumulator_3/BRAM_dout",
+          "bram_dout_3"
         ]
       },
       "blk_mem_gen_3_douta": {
         "ports": [
           "blk_mem_gen_1/douta",
-          "accumulator_1/BRAM_dout"
+          "accumulator_1/BRAM_dout",
+          "bram_dout_1"
         ]
       },
       "clk_0_1": {

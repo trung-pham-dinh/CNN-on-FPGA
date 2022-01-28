@@ -1,0 +1,1919 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Jan 28 16:10:48 2022" VIVADOVERSION="2021.1">
+
+  <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="Multi_accumulator_inst_0" PACKAGE="clg400" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" LEFT="31" NAME="BRAM_out_AXI_0_addr" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_addrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="addrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="BRAM_out_AXI_0_clk" SIGIS="undef" SIGNAME="blk_mem_gen_0_clkb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="clkb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="BRAM_out_AXI_0_din" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_dinb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="dinb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="BRAM_out_AXI_0_dout" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_doutb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="doutb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="BRAM_out_AXI_0_en" SIGIS="undef" SIGNAME="blk_mem_gen_0_enb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="enb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="BRAM_out_AXI_0_rst" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="blk_mem_gen_0_rstb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="rstb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="BRAM_out_AXI_0_we" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_web">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="web"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="BRAM_out_AXI_1_addr" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_1_addrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_1" PORT="addrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="BRAM_out_AXI_1_clk" SIGIS="undef" SIGNAME="blk_mem_gen_1_clkb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_1" PORT="clkb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="BRAM_out_AXI_1_din" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_1_dinb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_1" PORT="dinb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="BRAM_out_AXI_1_dout" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_1_doutb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_1" PORT="doutb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="BRAM_out_AXI_1_en" SIGIS="undef" SIGNAME="blk_mem_gen_1_enb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_1" PORT="enb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="BRAM_out_AXI_1_rst" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="blk_mem_gen_1_rstb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_1" PORT="rstb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="BRAM_out_AXI_1_we" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_1_web">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_1" PORT="web"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="BRAM_out_AXI_2_addr" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_2_addrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_2" PORT="addrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="BRAM_out_AXI_2_clk" SIGIS="undef" SIGNAME="blk_mem_gen_2_clkb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_2" PORT="clkb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="BRAM_out_AXI_2_din" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_2_dinb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_2" PORT="dinb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="BRAM_out_AXI_2_dout" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_2_doutb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_2" PORT="doutb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="BRAM_out_AXI_2_en" SIGIS="undef" SIGNAME="blk_mem_gen_2_enb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_2" PORT="enb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="BRAM_out_AXI_2_rst" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="blk_mem_gen_2_rstb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_2" PORT="rstb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="BRAM_out_AXI_2_we" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_2_web">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_2" PORT="web"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="BRAM_out_AXI_3_addr" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_3_addrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_3" PORT="addrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="BRAM_out_AXI_3_clk" SIGIS="undef" SIGNAME="blk_mem_gen_3_clkb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_3" PORT="clkb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="BRAM_out_AXI_3_din" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_3_dinb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_3" PORT="dinb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="BRAM_out_AXI_3_dout" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_3_doutb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_3" PORT="doutb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="BRAM_out_AXI_3_en" SIGIS="undef" SIGNAME="blk_mem_gen_3_enb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_3" PORT="enb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="BRAM_out_AXI_3_rst" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="blk_mem_gen_3_rstb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_3" PORT="rstb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="BRAM_out_AXI_3_we" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_3_web">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_3" PORT="web"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_0" PORT="clk"/>
+        <CONNECTION INSTANCE="accumulator_2" PORT="clk"/>
+        <CONNECTION INSTANCE="accumulator_1" PORT="clk"/>
+        <CONNECTION INSTANCE="accumulator_3" PORT="clk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="psum0_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum0_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_0" PORT="in_psum0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="psum0_1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum0_1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_0" PORT="in_psum1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="psum0_2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum0_2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_0" PORT="in_psum2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="psum0_3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum0_3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_0" PORT="in_psum3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="psum1_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum1_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_1" PORT="in_psum0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="psum1_1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum1_1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_1" PORT="in_psum1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="psum1_2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum1_2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_1" PORT="in_psum2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="psum1_3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum1_3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_1" PORT="in_psum3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="psum2_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum2_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_2" PORT="in_psum0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="psum2_1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum2_1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_2" PORT="in_psum1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="psum2_2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum2_2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_2" PORT="in_psum2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="psum2_3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum2_3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_2" PORT="in_psum3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="psum3_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum3_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_3" PORT="in_psum0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="psum3_1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum3_1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_3" PORT="in_psum1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="psum3_2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum3_2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_3" PORT="in_psum2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="psum3_3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum3_3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_3" PORT="in_psum3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="External_Ports_rst">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_3" PORT="rst"/>
+        <CONNECTION INSTANCE="accumulator_1" PORT="rst"/>
+        <CONNECTION INSTANCE="accumulator_2" PORT="rst"/>
+        <CONNECTION INSTANCE="accumulator_0" PORT="rst"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="mac_done_0" SIGIS="undef" SIGNAME="External_Ports_mac_done_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="and_gate_accum_0" PORT="in0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="mac_done_1" SIGIS="undef" SIGNAME="External_Ports_mac_done_1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="and_gate_accum_0" PORT="in1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="mac_done_2" SIGIS="undef" SIGNAME="External_Ports_mac_done_2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="and_gate_accum_0" PORT="in2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="mac_done_3" SIGIS="undef" SIGNAME="External_Ports_mac_done_3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="and_gate_accum_0" PORT="in3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="accum_done" SIGIS="undef" SIGNAME="and_gate_accum_1_and_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="and_gate_accum_1" PORT="and_out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="15" NAME="WxW_out" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_WxW_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_0" PORT="no_entry"/>
+        <CONNECTION INSTANCE="accumulator_2" PORT="no_entry"/>
+        <CONNECTION INSTANCE="accumulator_1" PORT="no_entry"/>
+        <CONNECTION INSTANCE="accumulator_3" PORT="no_entry"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="10" NAME="no_channel_out" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_no_channel_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_0" PORT="no_channel"/>
+        <CONNECTION INSTANCE="accumulator_2" PORT="no_channel"/>
+        <CONNECTION INSTANCE="accumulator_1" PORT="no_channel"/>
+        <CONNECTION INSTANCE="accumulator_3" PORT="no_channel"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="bram_dout_0" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_douta">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="douta"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="bram_dout_1" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_1_douta">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_1" PORT="douta"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="bram_dout_2" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_2_douta">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_2" PORT="douta"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="bram_dout_3" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_3_douta">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_3" PORT="douta"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="BRAM_addr_sim" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_0_BRAM_addr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="accumulator_0" PORT="BRAM_addr"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES>
+    <BUSINTERFACE BUSNAME="External_Interface_BRAM_out_AXI_0" NAME="BRAM_out_AXI_0" TYPE="TARGET">
+      <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
+      <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
+      <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
+      <PARAMETER NAME="MASTER_TYPE" VALUE="BRAM_CTRL"/>
+      <PARAMETER NAME="READ_WRITE_MODE"/>
+      <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="ADDR" PHYSICAL="BRAM_out_AXI_0_addr"/>
+        <PORTMAP LOGICAL="CLK" PHYSICAL="BRAM_out_AXI_0_clk"/>
+        <PORTMAP LOGICAL="DIN" PHYSICAL="BRAM_out_AXI_0_din"/>
+        <PORTMAP LOGICAL="DOUT" PHYSICAL="BRAM_out_AXI_0_dout"/>
+        <PORTMAP LOGICAL="EN" PHYSICAL="BRAM_out_AXI_0_en"/>
+        <PORTMAP LOGICAL="RST" PHYSICAL="BRAM_out_AXI_0_rst"/>
+        <PORTMAP LOGICAL="WE" PHYSICAL="BRAM_out_AXI_0_we"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="External_Interface_BRAM_out_AXI_1" NAME="BRAM_out_AXI_1" TYPE="TARGET">
+      <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
+      <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
+      <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
+      <PARAMETER NAME="MASTER_TYPE" VALUE="BRAM_CTRL"/>
+      <PARAMETER NAME="READ_WRITE_MODE"/>
+      <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="ADDR" PHYSICAL="BRAM_out_AXI_1_addr"/>
+        <PORTMAP LOGICAL="CLK" PHYSICAL="BRAM_out_AXI_1_clk"/>
+        <PORTMAP LOGICAL="DIN" PHYSICAL="BRAM_out_AXI_1_din"/>
+        <PORTMAP LOGICAL="DOUT" PHYSICAL="BRAM_out_AXI_1_dout"/>
+        <PORTMAP LOGICAL="EN" PHYSICAL="BRAM_out_AXI_1_en"/>
+        <PORTMAP LOGICAL="RST" PHYSICAL="BRAM_out_AXI_1_rst"/>
+        <PORTMAP LOGICAL="WE" PHYSICAL="BRAM_out_AXI_1_we"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="External_Interface_BRAM_out_AXI_2" NAME="BRAM_out_AXI_2" TYPE="TARGET">
+      <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
+      <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
+      <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
+      <PARAMETER NAME="MASTER_TYPE" VALUE="BRAM_CTRL"/>
+      <PARAMETER NAME="READ_WRITE_MODE"/>
+      <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="ADDR" PHYSICAL="BRAM_out_AXI_2_addr"/>
+        <PORTMAP LOGICAL="CLK" PHYSICAL="BRAM_out_AXI_2_clk"/>
+        <PORTMAP LOGICAL="DIN" PHYSICAL="BRAM_out_AXI_2_din"/>
+        <PORTMAP LOGICAL="DOUT" PHYSICAL="BRAM_out_AXI_2_dout"/>
+        <PORTMAP LOGICAL="EN" PHYSICAL="BRAM_out_AXI_2_en"/>
+        <PORTMAP LOGICAL="RST" PHYSICAL="BRAM_out_AXI_2_rst"/>
+        <PORTMAP LOGICAL="WE" PHYSICAL="BRAM_out_AXI_2_we"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="External_Interface_BRAM_out_AXI_3" NAME="BRAM_out_AXI_3" TYPE="TARGET">
+      <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
+      <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
+      <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
+      <PARAMETER NAME="MASTER_TYPE" VALUE="BRAM_CTRL"/>
+      <PARAMETER NAME="READ_WRITE_MODE"/>
+      <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="ADDR" PHYSICAL="BRAM_out_AXI_3_addr"/>
+        <PORTMAP LOGICAL="CLK" PHYSICAL="BRAM_out_AXI_3_clk"/>
+        <PORTMAP LOGICAL="DIN" PHYSICAL="BRAM_out_AXI_3_din"/>
+        <PORTMAP LOGICAL="DOUT" PHYSICAL="BRAM_out_AXI_3_dout"/>
+        <PORTMAP LOGICAL="EN" PHYSICAL="BRAM_out_AXI_3_en"/>
+        <PORTMAP LOGICAL="RST" PHYSICAL="BRAM_out_AXI_3_rst"/>
+        <PORTMAP LOGICAL="WE" PHYSICAL="BRAM_out_AXI_3_we"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+  </EXTERNALINTERFACES>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/accumulator_0" HWVERSION="1.0" INSTANCE="accumulator_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="accumulator" VLNV="xilinx.com:module_ref:accumulator:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="PSUM_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="BRAM_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="BRAM_ADDR_BIT" VALUE="32"/>
+        <PARAMETER NAME="BRAM_BYTE" VALUE="4"/>
+        <PARAMETER NAME="NO_ENTRY_BIT" VALUE="16"/>
+        <PARAMETER NAME="NO_CHANNEL_BIT" VALUE="11"/>
+        <PARAMETER NAME="Component_Name" VALUE="Multi_accumulator_inst_0_accumulator_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="15" NAME="no_entry" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_WxW_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="WxW_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="10" NAME="no_channel" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_no_channel_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="no_channel_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="BRAM_rready" SIGIS="undef" SIGNAME="and_gate_accum_0_and_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="and_gate_accum_0" PORT="and_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="in_psum0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum0_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="psum0_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="in_psum1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum0_1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="psum0_1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="in_psum2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum0_2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="psum0_2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="in_psum3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum0_3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="psum0_3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="accum_done" SIGIS="undef" SIGNAME="accumulator_0_accum_done">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="and_gate_accum_1" PORT="in0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="BRAM_addr" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_0_BRAM_addr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="addra"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="BRAM_addr_sim"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="BRAM_clk" SIGIS="clk" SIGNAME="accumulator_0_BRAM_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="clka"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="BRAM_din" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_0_BRAM_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="dina"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="BRAM_dout" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_douta">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="douta"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="BRAM_en" SIGIS="undef" SIGNAME="accumulator_0_BRAM_en">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="ena"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="BRAM_rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="accumulator_0_BRAM_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="rsta"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="BRAM_wen" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_0_BRAM_wen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="wea"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/accumulator_1" HWVERSION="1.0" INSTANCE="accumulator_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="accumulator" VLNV="xilinx.com:module_ref:accumulator:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="PSUM_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="BRAM_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="BRAM_ADDR_BIT" VALUE="32"/>
+        <PARAMETER NAME="BRAM_BYTE" VALUE="4"/>
+        <PARAMETER NAME="NO_ENTRY_BIT" VALUE="16"/>
+        <PARAMETER NAME="NO_CHANNEL_BIT" VALUE="11"/>
+        <PARAMETER NAME="Component_Name" VALUE="Multi_accumulator_inst_0_accumulator_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="15" NAME="no_entry" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_WxW_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="WxW_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="10" NAME="no_channel" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_no_channel_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="no_channel_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="BRAM_rready" SIGIS="undef" SIGNAME="and_gate_accum_0_and_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="and_gate_accum_0" PORT="and_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="in_psum0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum1_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="psum1_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="in_psum1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum1_1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="psum1_1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="in_psum2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum1_2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="psum1_2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="in_psum3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum1_3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="psum1_3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="accum_done" SIGIS="undef" SIGNAME="accumulator_1_accum_done">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="and_gate_accum_1" PORT="in1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="BRAM_addr" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_1_BRAM_addr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_1" PORT="addra"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="BRAM_clk" SIGIS="clk" SIGNAME="accumulator_1_BRAM_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_1" PORT="clka"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="BRAM_din" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_1_BRAM_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_1" PORT="dina"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="BRAM_dout" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_1_douta">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_1" PORT="douta"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="BRAM_en" SIGIS="undef" SIGNAME="accumulator_1_BRAM_en">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_1" PORT="ena"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="BRAM_rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="accumulator_1_BRAM_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_1" PORT="rsta"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="BRAM_wen" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_1_BRAM_wen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_1" PORT="wea"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/accumulator_2" HWVERSION="1.0" INSTANCE="accumulator_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="accumulator" VLNV="xilinx.com:module_ref:accumulator:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="PSUM_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="BRAM_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="BRAM_ADDR_BIT" VALUE="32"/>
+        <PARAMETER NAME="BRAM_BYTE" VALUE="4"/>
+        <PARAMETER NAME="NO_ENTRY_BIT" VALUE="16"/>
+        <PARAMETER NAME="NO_CHANNEL_BIT" VALUE="11"/>
+        <PARAMETER NAME="Component_Name" VALUE="Multi_accumulator_inst_0_accumulator_2_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="15" NAME="no_entry" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_WxW_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="WxW_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="10" NAME="no_channel" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_no_channel_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="no_channel_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="BRAM_rready" SIGIS="undef" SIGNAME="and_gate_accum_0_and_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="and_gate_accum_0" PORT="and_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="in_psum0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum2_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="psum2_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="in_psum1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum2_1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="psum2_1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="in_psum2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum2_2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="psum2_2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="in_psum3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum2_3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="psum2_3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="accum_done" SIGIS="undef" SIGNAME="accumulator_2_accum_done">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="and_gate_accum_1" PORT="in2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="BRAM_addr" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_2_BRAM_addr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_2" PORT="addra"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="BRAM_clk" SIGIS="clk" SIGNAME="accumulator_2_BRAM_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_2" PORT="clka"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="BRAM_din" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_2_BRAM_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_2" PORT="dina"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="BRAM_dout" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_2_douta">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_2" PORT="douta"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="BRAM_en" SIGIS="undef" SIGNAME="accumulator_2_BRAM_en">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_2" PORT="ena"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="BRAM_rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="accumulator_2_BRAM_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_2" PORT="rsta"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="BRAM_wen" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_2_BRAM_wen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_2" PORT="wea"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/accumulator_3" HWVERSION="1.0" INSTANCE="accumulator_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="accumulator" VLNV="xilinx.com:module_ref:accumulator:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="PSUM_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="BRAM_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="BRAM_ADDR_BIT" VALUE="32"/>
+        <PARAMETER NAME="BRAM_BYTE" VALUE="4"/>
+        <PARAMETER NAME="NO_ENTRY_BIT" VALUE="16"/>
+        <PARAMETER NAME="NO_CHANNEL_BIT" VALUE="11"/>
+        <PARAMETER NAME="Component_Name" VALUE="Multi_accumulator_inst_0_accumulator_3_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="15" NAME="no_entry" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_WxW_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="WxW_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="10" NAME="no_channel" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_no_channel_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="no_channel_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="BRAM_rready" SIGIS="undef" SIGNAME="and_gate_accum_0_and_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="and_gate_accum_0" PORT="and_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="in_psum0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum3_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="psum3_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="in_psum1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum3_1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="psum3_1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="in_psum2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum3_2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="psum3_2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="in_psum3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_psum3_3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="psum3_3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="accum_done" SIGIS="undef" SIGNAME="accumulator_3_accum_done">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="and_gate_accum_1" PORT="in3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="BRAM_addr" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_3_BRAM_addr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_3" PORT="addra"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="BRAM_clk" SIGIS="clk" SIGNAME="accumulator_3_BRAM_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_3" PORT="clka"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="BRAM_din" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_3_BRAM_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_3" PORT="dina"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="BRAM_dout" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_3_douta">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_3" PORT="douta"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="BRAM_en" SIGIS="undef" SIGNAME="accumulator_3_BRAM_en">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_3" PORT="ena"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="BRAM_rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="accumulator_3_BRAM_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_3" PORT="rsta"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="BRAM_wen" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_3_BRAM_wen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_3" PORT="wea"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/and_gate_accum_0" HWVERSION="1.0" INSTANCE="and_gate_accum_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="and_gate_accum" VLNV="xilinx.com:module_ref:and_gate_accum:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="Multi_accumulator_inst_0_and_gate_accum_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="in0" SIGIS="undef" SIGNAME="External_Ports_mac_done_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="mac_done_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="in1" SIGIS="undef" SIGNAME="External_Ports_mac_done_1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="mac_done_1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="in2" SIGIS="undef" SIGNAME="External_Ports_mac_done_2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="mac_done_2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="in3" SIGIS="undef" SIGNAME="External_Ports_mac_done_3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="mac_done_3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="and_out" SIGIS="undef" SIGNAME="and_gate_accum_0_and_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_0" PORT="BRAM_rready"/>
+            <CONNECTION INSTANCE="accumulator_2" PORT="BRAM_rready"/>
+            <CONNECTION INSTANCE="accumulator_1" PORT="BRAM_rready"/>
+            <CONNECTION INSTANCE="accumulator_3" PORT="BRAM_rready"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/and_gate_accum_1" HWVERSION="1.0" INSTANCE="and_gate_accum_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="and_gate_accum" VLNV="xilinx.com:module_ref:and_gate_accum:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="Multi_accumulator_inst_0_and_gate_accum_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="in0" SIGIS="undef" SIGNAME="accumulator_0_accum_done">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_0" PORT="accum_done"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="in1" SIGIS="undef" SIGNAME="accumulator_1_accum_done">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_1" PORT="accum_done"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="in2" SIGIS="undef" SIGNAME="accumulator_2_accum_done">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_2" PORT="accum_done"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="in3" SIGIS="undef" SIGNAME="accumulator_3_accum_done">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_3" PORT="accum_done"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="and_out" SIGIS="undef" SIGNAME="and_gate_accum_1_and_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="accum_done"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="4" FULLNAME="/blk_mem_gen_0" HWVERSION="8.4" INSTANCE="blk_mem_gen_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="MEMORY" MODTYPE="blk_mem_gen" VLNV="xilinx.com:ip:blk_mem_gen:8.4">
+      <DOCUMENTS>
+        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=blk_mem_gen;v=v8_4;d=pg058-blk-mem-gen.pdf"/>
+      </DOCUMENTS>
+      <PARAMETERS>
+        <PARAMETER NAME="C_FAMILY" VALUE="zynq"/>
+        <PARAMETER NAME="C_XDEVICEFAMILY" VALUE="zynq"/>
+        <PARAMETER NAME="C_ELABORATION_DIR" VALUE="./"/>
+        <PARAMETER NAME="C_INTERFACE_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_AXI_TYPE" VALUE="1"/>
+        <PARAMETER NAME="C_AXI_SLAVE_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_USE_BRAM_BLOCK" VALUE="1"/>
+        <PARAMETER NAME="C_ENABLE_32BIT_ADDRESS" VALUE="1"/>
+        <PARAMETER NAME="C_CTRL_ECC_ALGO" VALUE="NONE"/>
+        <PARAMETER NAME="C_HAS_AXI_ID" VALUE="0"/>
+        <PARAMETER NAME="C_AXI_ID_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_MEM_TYPE" VALUE="2"/>
+        <PARAMETER NAME="C_BYTE_SIZE" VALUE="8"/>
+        <PARAMETER NAME="C_ALGORITHM" VALUE="1"/>
+        <PARAMETER NAME="C_PRIM_TYPE" VALUE="1"/>
+        <PARAMETER NAME="C_LOAD_INIT_FILE" VALUE="0"/>
+        <PARAMETER NAME="C_INIT_FILE_NAME" VALUE="no_coe_file_loaded"/>
+        <PARAMETER NAME="C_INIT_FILE" VALUE="NONE"/>
+        <PARAMETER NAME="C_USE_DEFAULT_DATA" VALUE="0"/>
+        <PARAMETER NAME="C_DEFAULT_DATA" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_RSTA" VALUE="1"/>
+        <PARAMETER NAME="C_RST_PRIORITY_A" VALUE="CE"/>
+        <PARAMETER NAME="C_RSTRAM_A" VALUE="0"/>
+        <PARAMETER NAME="C_INITA_VAL" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_ENA" VALUE="1"/>
+        <PARAMETER NAME="C_HAS_REGCEA" VALUE="0"/>
+        <PARAMETER NAME="C_USE_BYTE_WEA" VALUE="1"/>
+        <PARAMETER NAME="C_WEA_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_WRITE_MODE_A" VALUE="WRITE_FIRST"/>
+        <PARAMETER NAME="C_WRITE_WIDTH_A" VALUE="32"/>
+        <PARAMETER NAME="C_READ_WIDTH_A" VALUE="32"/>
+        <PARAMETER NAME="C_WRITE_DEPTH_A" VALUE="2048"/>
+        <PARAMETER NAME="C_READ_DEPTH_A" VALUE="2048"/>
+        <PARAMETER NAME="C_ADDRA_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_HAS_RSTB" VALUE="1"/>
+        <PARAMETER NAME="C_RST_PRIORITY_B" VALUE="CE"/>
+        <PARAMETER NAME="C_RSTRAM_B" VALUE="0"/>
+        <PARAMETER NAME="C_INITB_VAL" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_ENB" VALUE="1"/>
+        <PARAMETER NAME="C_HAS_REGCEB" VALUE="0"/>
+        <PARAMETER NAME="C_USE_BYTE_WEB" VALUE="1"/>
+        <PARAMETER NAME="C_WEB_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_WRITE_MODE_B" VALUE="WRITE_FIRST"/>
+        <PARAMETER NAME="C_WRITE_WIDTH_B" VALUE="32"/>
+        <PARAMETER NAME="C_READ_WIDTH_B" VALUE="32"/>
+        <PARAMETER NAME="C_WRITE_DEPTH_B" VALUE="2048"/>
+        <PARAMETER NAME="C_READ_DEPTH_B" VALUE="2048"/>
+        <PARAMETER NAME="C_ADDRB_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_HAS_MEM_OUTPUT_REGS_A" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_MEM_OUTPUT_REGS_B" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_MUX_OUTPUT_REGS_A" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_MUX_OUTPUT_REGS_B" VALUE="0"/>
+        <PARAMETER NAME="C_MUX_PIPELINE_STAGES" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_SOFTECC_INPUT_REGS_A" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_SOFTECC_OUTPUT_REGS_B" VALUE="0"/>
+        <PARAMETER NAME="C_USE_SOFTECC" VALUE="0"/>
+        <PARAMETER NAME="C_USE_ECC" VALUE="0"/>
+        <PARAMETER NAME="C_EN_ECC_PIPE" VALUE="0"/>
+        <PARAMETER NAME="C_READ_LATENCY_A" VALUE="1"/>
+        <PARAMETER NAME="C_READ_LATENCY_B" VALUE="1"/>
+        <PARAMETER NAME="C_HAS_INJECTERR" VALUE="0"/>
+        <PARAMETER NAME="C_SIM_COLLISION_CHECK" VALUE="ALL"/>
+        <PARAMETER NAME="C_COMMON_CLK" VALUE="1"/>
+        <PARAMETER NAME="C_DISABLE_WARN_BHV_COLL" VALUE="0"/>
+        <PARAMETER NAME="C_EN_SLEEP_PIN" VALUE="0"/>
+        <PARAMETER NAME="C_USE_URAM" VALUE="0"/>
+        <PARAMETER NAME="C_EN_RDADDRA_CHG" VALUE="0"/>
+        <PARAMETER NAME="C_EN_RDADDRB_CHG" VALUE="0"/>
+        <PARAMETER NAME="C_EN_DEEPSLEEP_PIN" VALUE="0"/>
+        <PARAMETER NAME="C_EN_SHUTDOWN_PIN" VALUE="0"/>
+        <PARAMETER NAME="C_EN_SAFETY_CKT" VALUE="0"/>
+        <PARAMETER NAME="C_DISABLE_WARN_BHV_RANGE" VALUE="0"/>
+        <PARAMETER NAME="C_COUNT_36K_BRAM" VALUE="2"/>
+        <PARAMETER NAME="C_COUNT_18K_BRAM" VALUE="0"/>
+        <PARAMETER NAME="C_EST_POWER_SUMMARY" VALUE="Estimated Power for IP     :     10.7492 mW"/>
+        <PARAMETER NAME="Component_Name" VALUE="Multi_accumulator_inst_0_blk_mem_gen_0_0"/>
+        <PARAMETER NAME="Interface_Type" VALUE="Native"/>
+        <PARAMETER NAME="AXI_Type" VALUE="AXI4_Full"/>
+        <PARAMETER NAME="AXI_Slave_Type" VALUE="Memory_Slave"/>
+        <PARAMETER NAME="Use_AXI_ID" VALUE="false"/>
+        <PARAMETER NAME="AXI_ID_Width" VALUE="4"/>
+        <PARAMETER NAME="Memory_Type" VALUE="True_Dual_Port_RAM"/>
+        <PARAMETER NAME="PRIM_type_to_Implement" VALUE="BRAM"/>
+        <PARAMETER NAME="Enable_32bit_Address" VALUE="true"/>
+        <PARAMETER NAME="ecctype" VALUE="No_ECC"/>
+        <PARAMETER NAME="ECC" VALUE="false"/>
+        <PARAMETER NAME="softecc" VALUE="false"/>
+        <PARAMETER NAME="EN_SLEEP_PIN" VALUE="false"/>
+        <PARAMETER NAME="EN_DEEPSLEEP_PIN" VALUE="false"/>
+        <PARAMETER NAME="EN_SHUTDOWN_PIN" VALUE="false"/>
+        <PARAMETER NAME="EN_ECC_PIPE" VALUE="false"/>
+        <PARAMETER NAME="RD_ADDR_CHNG_A" VALUE="false"/>
+        <PARAMETER NAME="RD_ADDR_CHNG_B" VALUE="false"/>
+        <PARAMETER NAME="Use_Error_Injection_Pins" VALUE="false"/>
+        <PARAMETER NAME="Error_Injection_Type" VALUE="Single_Bit_Error_Injection"/>
+        <PARAMETER NAME="Use_Byte_Write_Enable" VALUE="true"/>
+        <PARAMETER NAME="Byte_Size" VALUE="8"/>
+        <PARAMETER NAME="Algorithm" VALUE="Minimum_Area"/>
+        <PARAMETER NAME="Primitive" VALUE="8kx2"/>
+        <PARAMETER NAME="Assume_Synchronous_Clk" VALUE="true"/>
+        <PARAMETER NAME="Write_Width_A" VALUE="32"/>
+        <PARAMETER NAME="Write_Depth_A" VALUE="2048"/>
+        <PARAMETER NAME="Read_Width_A" VALUE="32"/>
+        <PARAMETER NAME="Operating_Mode_A" VALUE="WRITE_FIRST"/>
+        <PARAMETER NAME="Enable_A" VALUE="Use_ENA_Pin"/>
+        <PARAMETER NAME="Write_Width_B" VALUE="32"/>
+        <PARAMETER NAME="Read_Width_B" VALUE="32"/>
+        <PARAMETER NAME="Operating_Mode_B" VALUE="WRITE_FIRST"/>
+        <PARAMETER NAME="Enable_B" VALUE="Use_ENB_Pin"/>
+        <PARAMETER NAME="Register_PortA_Output_of_Memory_Primitives" VALUE="false"/>
+        <PARAMETER NAME="Register_PortA_Output_of_Memory_Core" VALUE="false"/>
+        <PARAMETER NAME="Use_REGCEA_Pin" VALUE="false"/>
+        <PARAMETER NAME="Register_PortB_Output_of_Memory_Primitives" VALUE="false"/>
+        <PARAMETER NAME="Register_PortB_Output_of_Memory_Core" VALUE="false"/>
+        <PARAMETER NAME="Use_REGCEB_Pin" VALUE="false"/>
+        <PARAMETER NAME="register_porta_input_of_softecc" VALUE="false"/>
+        <PARAMETER NAME="register_portb_output_of_softecc" VALUE="false"/>
+        <PARAMETER NAME="Pipeline_Stages" VALUE="0"/>
+        <PARAMETER NAME="Load_Init_File" VALUE="false"/>
+        <PARAMETER NAME="Coe_File" VALUE="no_coe_file_loaded"/>
+        <PARAMETER NAME="Fill_Remaining_Memory_Locations" VALUE="false"/>
+        <PARAMETER NAME="Remaining_Memory_Locations" VALUE="0"/>
+        <PARAMETER NAME="Use_RSTA_Pin" VALUE="true"/>
+        <PARAMETER NAME="Reset_Memory_Latch_A" VALUE="false"/>
+        <PARAMETER NAME="Reset_Priority_A" VALUE="CE"/>
+        <PARAMETER NAME="Output_Reset_Value_A" VALUE="0"/>
+        <PARAMETER NAME="Use_RSTB_Pin" VALUE="true"/>
+        <PARAMETER NAME="Reset_Memory_Latch_B" VALUE="false"/>
+        <PARAMETER NAME="Reset_Priority_B" VALUE="CE"/>
+        <PARAMETER NAME="Output_Reset_Value_B" VALUE="0"/>
+        <PARAMETER NAME="Reset_Type" VALUE="SYNC"/>
+        <PARAMETER NAME="Additional_Inputs_for_Power_Estimation" VALUE="false"/>
+        <PARAMETER NAME="Port_A_Clock" VALUE="100"/>
+        <PARAMETER NAME="Port_A_Write_Rate" VALUE="50"/>
+        <PARAMETER NAME="Port_B_Clock" VALUE="100"/>
+        <PARAMETER NAME="Port_B_Write_Rate" VALUE="50"/>
+        <PARAMETER NAME="Port_A_Enable_Rate" VALUE="100"/>
+        <PARAMETER NAME="Port_B_Enable_Rate" VALUE="100"/>
+        <PARAMETER NAME="Collision_Warnings" VALUE="ALL"/>
+        <PARAMETER NAME="Disable_Collision_Warnings" VALUE="false"/>
+        <PARAMETER NAME="Disable_Out_of_Range_Warnings" VALUE="false"/>
+        <PARAMETER NAME="use_bram_block" VALUE="BRAM_Controller"/>
+        <PARAMETER NAME="MEM_FILE" VALUE="NONE"/>
+        <PARAMETER NAME="CTRL_ECC_ALGO" VALUE="NONE"/>
+        <PARAMETER NAME="EN_SAFETY_CKT" VALUE="false"/>
+        <PARAMETER NAME="READ_LATENCY_A" VALUE="1"/>
+        <PARAMETER NAME="READ_LATENCY_B" VALUE="1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clka" SIGIS="clk" SIGNAME="accumulator_0_BRAM_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_0" PORT="BRAM_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rsta" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="accumulator_0_BRAM_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_0" PORT="BRAM_rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ena" SIGIS="undef" SIGNAME="accumulator_0_BRAM_en">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_0" PORT="BRAM_en"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="wea" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_0_BRAM_wen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_0" PORT="BRAM_wen"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="addra" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_0_BRAM_addr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_0" PORT="BRAM_addr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="dina" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_0_BRAM_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_0" PORT="BRAM_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="douta" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_douta">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_0" PORT="BRAM_dout"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="bram_dout_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clkb" SIGIS="clk" SIGNAME="blk_mem_gen_0_clkb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_0_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rstb" SIGIS="rst" SIGNAME="blk_mem_gen_0_rstb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_0_rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="enb" SIGIS="undef" SIGNAME="blk_mem_gen_0_enb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_0_en"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="web" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_web">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_0_we"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="addrb" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_addrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_0_addr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="dinb" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_dinb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_0_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="doutb" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_doutb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_0_dout"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="BRAM_PORTA" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
+          <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
+          <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
+          <PARAMETER NAME="MASTER_TYPE" VALUE="BRAM_CTRL"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ADDR" PHYSICAL="addra"/>
+            <PORTMAP LOGICAL="CLK" PHYSICAL="clka"/>
+            <PORTMAP LOGICAL="DIN" PHYSICAL="dina"/>
+            <PORTMAP LOGICAL="DOUT" PHYSICAL="douta"/>
+            <PORTMAP LOGICAL="EN" PHYSICAL="ena"/>
+            <PORTMAP LOGICAL="RST" PHYSICAL="rsta"/>
+            <PORTMAP LOGICAL="WE" PHYSICAL="wea"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="External_Interface_BRAM_out_AXI_0" NAME="BRAM_PORTB" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
+          <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
+          <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
+          <PARAMETER NAME="MASTER_TYPE" VALUE="BRAM_CTRL"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ADDR" PHYSICAL="addrb"/>
+            <PORTMAP LOGICAL="CLK" PHYSICAL="clkb"/>
+            <PORTMAP LOGICAL="DIN" PHYSICAL="dinb"/>
+            <PORTMAP LOGICAL="DOUT" PHYSICAL="doutb"/>
+            <PORTMAP LOGICAL="EN" PHYSICAL="enb"/>
+            <PORTMAP LOGICAL="RST" PHYSICAL="rstb"/>
+            <PORTMAP LOGICAL="WE" PHYSICAL="web"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="4" FULLNAME="/blk_mem_gen_1" HWVERSION="8.4" INSTANCE="blk_mem_gen_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="MEMORY" MODTYPE="blk_mem_gen" VLNV="xilinx.com:ip:blk_mem_gen:8.4">
+      <DOCUMENTS>
+        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=blk_mem_gen;v=v8_4;d=pg058-blk-mem-gen.pdf"/>
+      </DOCUMENTS>
+      <PARAMETERS>
+        <PARAMETER NAME="C_FAMILY" VALUE="zynq"/>
+        <PARAMETER NAME="C_XDEVICEFAMILY" VALUE="zynq"/>
+        <PARAMETER NAME="C_ELABORATION_DIR" VALUE="./"/>
+        <PARAMETER NAME="C_INTERFACE_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_AXI_TYPE" VALUE="1"/>
+        <PARAMETER NAME="C_AXI_SLAVE_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_USE_BRAM_BLOCK" VALUE="1"/>
+        <PARAMETER NAME="C_ENABLE_32BIT_ADDRESS" VALUE="1"/>
+        <PARAMETER NAME="C_CTRL_ECC_ALGO" VALUE="NONE"/>
+        <PARAMETER NAME="C_HAS_AXI_ID" VALUE="0"/>
+        <PARAMETER NAME="C_AXI_ID_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_MEM_TYPE" VALUE="2"/>
+        <PARAMETER NAME="C_BYTE_SIZE" VALUE="8"/>
+        <PARAMETER NAME="C_ALGORITHM" VALUE="1"/>
+        <PARAMETER NAME="C_PRIM_TYPE" VALUE="1"/>
+        <PARAMETER NAME="C_LOAD_INIT_FILE" VALUE="0"/>
+        <PARAMETER NAME="C_INIT_FILE_NAME" VALUE="no_coe_file_loaded"/>
+        <PARAMETER NAME="C_INIT_FILE" VALUE="NONE"/>
+        <PARAMETER NAME="C_USE_DEFAULT_DATA" VALUE="0"/>
+        <PARAMETER NAME="C_DEFAULT_DATA" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_RSTA" VALUE="1"/>
+        <PARAMETER NAME="C_RST_PRIORITY_A" VALUE="CE"/>
+        <PARAMETER NAME="C_RSTRAM_A" VALUE="0"/>
+        <PARAMETER NAME="C_INITA_VAL" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_ENA" VALUE="1"/>
+        <PARAMETER NAME="C_HAS_REGCEA" VALUE="0"/>
+        <PARAMETER NAME="C_USE_BYTE_WEA" VALUE="1"/>
+        <PARAMETER NAME="C_WEA_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_WRITE_MODE_A" VALUE="WRITE_FIRST"/>
+        <PARAMETER NAME="C_WRITE_WIDTH_A" VALUE="32"/>
+        <PARAMETER NAME="C_READ_WIDTH_A" VALUE="32"/>
+        <PARAMETER NAME="C_WRITE_DEPTH_A" VALUE="2048"/>
+        <PARAMETER NAME="C_READ_DEPTH_A" VALUE="2048"/>
+        <PARAMETER NAME="C_ADDRA_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_HAS_RSTB" VALUE="1"/>
+        <PARAMETER NAME="C_RST_PRIORITY_B" VALUE="CE"/>
+        <PARAMETER NAME="C_RSTRAM_B" VALUE="0"/>
+        <PARAMETER NAME="C_INITB_VAL" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_ENB" VALUE="1"/>
+        <PARAMETER NAME="C_HAS_REGCEB" VALUE="0"/>
+        <PARAMETER NAME="C_USE_BYTE_WEB" VALUE="1"/>
+        <PARAMETER NAME="C_WEB_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_WRITE_MODE_B" VALUE="WRITE_FIRST"/>
+        <PARAMETER NAME="C_WRITE_WIDTH_B" VALUE="32"/>
+        <PARAMETER NAME="C_READ_WIDTH_B" VALUE="32"/>
+        <PARAMETER NAME="C_WRITE_DEPTH_B" VALUE="2048"/>
+        <PARAMETER NAME="C_READ_DEPTH_B" VALUE="2048"/>
+        <PARAMETER NAME="C_ADDRB_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_HAS_MEM_OUTPUT_REGS_A" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_MEM_OUTPUT_REGS_B" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_MUX_OUTPUT_REGS_A" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_MUX_OUTPUT_REGS_B" VALUE="0"/>
+        <PARAMETER NAME="C_MUX_PIPELINE_STAGES" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_SOFTECC_INPUT_REGS_A" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_SOFTECC_OUTPUT_REGS_B" VALUE="0"/>
+        <PARAMETER NAME="C_USE_SOFTECC" VALUE="0"/>
+        <PARAMETER NAME="C_USE_ECC" VALUE="0"/>
+        <PARAMETER NAME="C_EN_ECC_PIPE" VALUE="0"/>
+        <PARAMETER NAME="C_READ_LATENCY_A" VALUE="1"/>
+        <PARAMETER NAME="C_READ_LATENCY_B" VALUE="1"/>
+        <PARAMETER NAME="C_HAS_INJECTERR" VALUE="0"/>
+        <PARAMETER NAME="C_SIM_COLLISION_CHECK" VALUE="ALL"/>
+        <PARAMETER NAME="C_COMMON_CLK" VALUE="1"/>
+        <PARAMETER NAME="C_DISABLE_WARN_BHV_COLL" VALUE="0"/>
+        <PARAMETER NAME="C_EN_SLEEP_PIN" VALUE="0"/>
+        <PARAMETER NAME="C_USE_URAM" VALUE="0"/>
+        <PARAMETER NAME="C_EN_RDADDRA_CHG" VALUE="0"/>
+        <PARAMETER NAME="C_EN_RDADDRB_CHG" VALUE="0"/>
+        <PARAMETER NAME="C_EN_DEEPSLEEP_PIN" VALUE="0"/>
+        <PARAMETER NAME="C_EN_SHUTDOWN_PIN" VALUE="0"/>
+        <PARAMETER NAME="C_EN_SAFETY_CKT" VALUE="0"/>
+        <PARAMETER NAME="C_DISABLE_WARN_BHV_RANGE" VALUE="0"/>
+        <PARAMETER NAME="C_COUNT_36K_BRAM" VALUE="2"/>
+        <PARAMETER NAME="C_COUNT_18K_BRAM" VALUE="0"/>
+        <PARAMETER NAME="C_EST_POWER_SUMMARY" VALUE="Estimated Power for IP     :     10.7492 mW"/>
+        <PARAMETER NAME="Component_Name" VALUE="Multi_accumulator_inst_0_blk_mem_gen_1_0"/>
+        <PARAMETER NAME="Interface_Type" VALUE="Native"/>
+        <PARAMETER NAME="AXI_Type" VALUE="AXI4_Full"/>
+        <PARAMETER NAME="AXI_Slave_Type" VALUE="Memory_Slave"/>
+        <PARAMETER NAME="Use_AXI_ID" VALUE="false"/>
+        <PARAMETER NAME="AXI_ID_Width" VALUE="4"/>
+        <PARAMETER NAME="Memory_Type" VALUE="True_Dual_Port_RAM"/>
+        <PARAMETER NAME="PRIM_type_to_Implement" VALUE="BRAM"/>
+        <PARAMETER NAME="Enable_32bit_Address" VALUE="true"/>
+        <PARAMETER NAME="ecctype" VALUE="No_ECC"/>
+        <PARAMETER NAME="ECC" VALUE="false"/>
+        <PARAMETER NAME="softecc" VALUE="false"/>
+        <PARAMETER NAME="EN_SLEEP_PIN" VALUE="false"/>
+        <PARAMETER NAME="EN_DEEPSLEEP_PIN" VALUE="false"/>
+        <PARAMETER NAME="EN_SHUTDOWN_PIN" VALUE="false"/>
+        <PARAMETER NAME="EN_ECC_PIPE" VALUE="false"/>
+        <PARAMETER NAME="RD_ADDR_CHNG_A" VALUE="false"/>
+        <PARAMETER NAME="RD_ADDR_CHNG_B" VALUE="false"/>
+        <PARAMETER NAME="Use_Error_Injection_Pins" VALUE="false"/>
+        <PARAMETER NAME="Error_Injection_Type" VALUE="Single_Bit_Error_Injection"/>
+        <PARAMETER NAME="Use_Byte_Write_Enable" VALUE="true"/>
+        <PARAMETER NAME="Byte_Size" VALUE="8"/>
+        <PARAMETER NAME="Algorithm" VALUE="Minimum_Area"/>
+        <PARAMETER NAME="Primitive" VALUE="8kx2"/>
+        <PARAMETER NAME="Assume_Synchronous_Clk" VALUE="true"/>
+        <PARAMETER NAME="Write_Width_A" VALUE="32"/>
+        <PARAMETER NAME="Write_Depth_A" VALUE="2048"/>
+        <PARAMETER NAME="Read_Width_A" VALUE="32"/>
+        <PARAMETER NAME="Operating_Mode_A" VALUE="WRITE_FIRST"/>
+        <PARAMETER NAME="Enable_A" VALUE="Use_ENA_Pin"/>
+        <PARAMETER NAME="Write_Width_B" VALUE="32"/>
+        <PARAMETER NAME="Read_Width_B" VALUE="32"/>
+        <PARAMETER NAME="Operating_Mode_B" VALUE="WRITE_FIRST"/>
+        <PARAMETER NAME="Enable_B" VALUE="Use_ENB_Pin"/>
+        <PARAMETER NAME="Register_PortA_Output_of_Memory_Primitives" VALUE="false"/>
+        <PARAMETER NAME="Register_PortA_Output_of_Memory_Core" VALUE="false"/>
+        <PARAMETER NAME="Use_REGCEA_Pin" VALUE="false"/>
+        <PARAMETER NAME="Register_PortB_Output_of_Memory_Primitives" VALUE="false"/>
+        <PARAMETER NAME="Register_PortB_Output_of_Memory_Core" VALUE="false"/>
+        <PARAMETER NAME="Use_REGCEB_Pin" VALUE="false"/>
+        <PARAMETER NAME="register_porta_input_of_softecc" VALUE="false"/>
+        <PARAMETER NAME="register_portb_output_of_softecc" VALUE="false"/>
+        <PARAMETER NAME="Pipeline_Stages" VALUE="0"/>
+        <PARAMETER NAME="Load_Init_File" VALUE="false"/>
+        <PARAMETER NAME="Coe_File" VALUE="no_coe_file_loaded"/>
+        <PARAMETER NAME="Fill_Remaining_Memory_Locations" VALUE="false"/>
+        <PARAMETER NAME="Remaining_Memory_Locations" VALUE="0"/>
+        <PARAMETER NAME="Use_RSTA_Pin" VALUE="true"/>
+        <PARAMETER NAME="Reset_Memory_Latch_A" VALUE="false"/>
+        <PARAMETER NAME="Reset_Priority_A" VALUE="CE"/>
+        <PARAMETER NAME="Output_Reset_Value_A" VALUE="0"/>
+        <PARAMETER NAME="Use_RSTB_Pin" VALUE="true"/>
+        <PARAMETER NAME="Reset_Memory_Latch_B" VALUE="false"/>
+        <PARAMETER NAME="Reset_Priority_B" VALUE="CE"/>
+        <PARAMETER NAME="Output_Reset_Value_B" VALUE="0"/>
+        <PARAMETER NAME="Reset_Type" VALUE="SYNC"/>
+        <PARAMETER NAME="Additional_Inputs_for_Power_Estimation" VALUE="false"/>
+        <PARAMETER NAME="Port_A_Clock" VALUE="100"/>
+        <PARAMETER NAME="Port_A_Write_Rate" VALUE="50"/>
+        <PARAMETER NAME="Port_B_Clock" VALUE="100"/>
+        <PARAMETER NAME="Port_B_Write_Rate" VALUE="50"/>
+        <PARAMETER NAME="Port_A_Enable_Rate" VALUE="100"/>
+        <PARAMETER NAME="Port_B_Enable_Rate" VALUE="100"/>
+        <PARAMETER NAME="Collision_Warnings" VALUE="ALL"/>
+        <PARAMETER NAME="Disable_Collision_Warnings" VALUE="false"/>
+        <PARAMETER NAME="Disable_Out_of_Range_Warnings" VALUE="false"/>
+        <PARAMETER NAME="use_bram_block" VALUE="BRAM_Controller"/>
+        <PARAMETER NAME="MEM_FILE" VALUE="NONE"/>
+        <PARAMETER NAME="CTRL_ECC_ALGO" VALUE="NONE"/>
+        <PARAMETER NAME="EN_SAFETY_CKT" VALUE="false"/>
+        <PARAMETER NAME="READ_LATENCY_A" VALUE="1"/>
+        <PARAMETER NAME="READ_LATENCY_B" VALUE="1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clka" SIGIS="clk" SIGNAME="accumulator_1_BRAM_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_1" PORT="BRAM_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rsta" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="accumulator_1_BRAM_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_1" PORT="BRAM_rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ena" SIGIS="undef" SIGNAME="accumulator_1_BRAM_en">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_1" PORT="BRAM_en"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="wea" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_1_BRAM_wen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_1" PORT="BRAM_wen"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="addra" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_1_BRAM_addr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_1" PORT="BRAM_addr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="dina" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_1_BRAM_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_1" PORT="BRAM_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="douta" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_1_douta">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_1" PORT="BRAM_dout"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="bram_dout_1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clkb" SIGIS="clk" SIGNAME="blk_mem_gen_1_clkb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_1_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rstb" SIGIS="rst" SIGNAME="blk_mem_gen_1_rstb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_1_rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="enb" SIGIS="undef" SIGNAME="blk_mem_gen_1_enb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_1_en"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="web" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_1_web">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_1_we"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="addrb" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_1_addrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_1_addr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="dinb" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_1_dinb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_1_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="doutb" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_1_doutb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_1_dout"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="BRAM_PORTA" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
+          <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
+          <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
+          <PARAMETER NAME="MASTER_TYPE" VALUE="BRAM_CTRL"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ADDR" PHYSICAL="addra"/>
+            <PORTMAP LOGICAL="CLK" PHYSICAL="clka"/>
+            <PORTMAP LOGICAL="DIN" PHYSICAL="dina"/>
+            <PORTMAP LOGICAL="DOUT" PHYSICAL="douta"/>
+            <PORTMAP LOGICAL="EN" PHYSICAL="ena"/>
+            <PORTMAP LOGICAL="RST" PHYSICAL="rsta"/>
+            <PORTMAP LOGICAL="WE" PHYSICAL="wea"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="External_Interface_BRAM_out_AXI_1" NAME="BRAM_PORTB" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
+          <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
+          <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
+          <PARAMETER NAME="MASTER_TYPE" VALUE="BRAM_CTRL"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ADDR" PHYSICAL="addrb"/>
+            <PORTMAP LOGICAL="CLK" PHYSICAL="clkb"/>
+            <PORTMAP LOGICAL="DIN" PHYSICAL="dinb"/>
+            <PORTMAP LOGICAL="DOUT" PHYSICAL="doutb"/>
+            <PORTMAP LOGICAL="EN" PHYSICAL="enb"/>
+            <PORTMAP LOGICAL="RST" PHYSICAL="rstb"/>
+            <PORTMAP LOGICAL="WE" PHYSICAL="web"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="4" FULLNAME="/blk_mem_gen_2" HWVERSION="8.4" INSTANCE="blk_mem_gen_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="MEMORY" MODTYPE="blk_mem_gen" VLNV="xilinx.com:ip:blk_mem_gen:8.4">
+      <DOCUMENTS>
+        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=blk_mem_gen;v=v8_4;d=pg058-blk-mem-gen.pdf"/>
+      </DOCUMENTS>
+      <PARAMETERS>
+        <PARAMETER NAME="C_FAMILY" VALUE="zynq"/>
+        <PARAMETER NAME="C_XDEVICEFAMILY" VALUE="zynq"/>
+        <PARAMETER NAME="C_ELABORATION_DIR" VALUE="./"/>
+        <PARAMETER NAME="C_INTERFACE_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_AXI_TYPE" VALUE="1"/>
+        <PARAMETER NAME="C_AXI_SLAVE_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_USE_BRAM_BLOCK" VALUE="1"/>
+        <PARAMETER NAME="C_ENABLE_32BIT_ADDRESS" VALUE="1"/>
+        <PARAMETER NAME="C_CTRL_ECC_ALGO" VALUE="NONE"/>
+        <PARAMETER NAME="C_HAS_AXI_ID" VALUE="0"/>
+        <PARAMETER NAME="C_AXI_ID_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_MEM_TYPE" VALUE="2"/>
+        <PARAMETER NAME="C_BYTE_SIZE" VALUE="8"/>
+        <PARAMETER NAME="C_ALGORITHM" VALUE="1"/>
+        <PARAMETER NAME="C_PRIM_TYPE" VALUE="1"/>
+        <PARAMETER NAME="C_LOAD_INIT_FILE" VALUE="0"/>
+        <PARAMETER NAME="C_INIT_FILE_NAME" VALUE="no_coe_file_loaded"/>
+        <PARAMETER NAME="C_INIT_FILE" VALUE="NONE"/>
+        <PARAMETER NAME="C_USE_DEFAULT_DATA" VALUE="0"/>
+        <PARAMETER NAME="C_DEFAULT_DATA" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_RSTA" VALUE="1"/>
+        <PARAMETER NAME="C_RST_PRIORITY_A" VALUE="CE"/>
+        <PARAMETER NAME="C_RSTRAM_A" VALUE="0"/>
+        <PARAMETER NAME="C_INITA_VAL" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_ENA" VALUE="1"/>
+        <PARAMETER NAME="C_HAS_REGCEA" VALUE="0"/>
+        <PARAMETER NAME="C_USE_BYTE_WEA" VALUE="1"/>
+        <PARAMETER NAME="C_WEA_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_WRITE_MODE_A" VALUE="WRITE_FIRST"/>
+        <PARAMETER NAME="C_WRITE_WIDTH_A" VALUE="32"/>
+        <PARAMETER NAME="C_READ_WIDTH_A" VALUE="32"/>
+        <PARAMETER NAME="C_WRITE_DEPTH_A" VALUE="2048"/>
+        <PARAMETER NAME="C_READ_DEPTH_A" VALUE="2048"/>
+        <PARAMETER NAME="C_ADDRA_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_HAS_RSTB" VALUE="1"/>
+        <PARAMETER NAME="C_RST_PRIORITY_B" VALUE="CE"/>
+        <PARAMETER NAME="C_RSTRAM_B" VALUE="0"/>
+        <PARAMETER NAME="C_INITB_VAL" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_ENB" VALUE="1"/>
+        <PARAMETER NAME="C_HAS_REGCEB" VALUE="0"/>
+        <PARAMETER NAME="C_USE_BYTE_WEB" VALUE="1"/>
+        <PARAMETER NAME="C_WEB_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_WRITE_MODE_B" VALUE="WRITE_FIRST"/>
+        <PARAMETER NAME="C_WRITE_WIDTH_B" VALUE="32"/>
+        <PARAMETER NAME="C_READ_WIDTH_B" VALUE="32"/>
+        <PARAMETER NAME="C_WRITE_DEPTH_B" VALUE="2048"/>
+        <PARAMETER NAME="C_READ_DEPTH_B" VALUE="2048"/>
+        <PARAMETER NAME="C_ADDRB_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_HAS_MEM_OUTPUT_REGS_A" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_MEM_OUTPUT_REGS_B" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_MUX_OUTPUT_REGS_A" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_MUX_OUTPUT_REGS_B" VALUE="0"/>
+        <PARAMETER NAME="C_MUX_PIPELINE_STAGES" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_SOFTECC_INPUT_REGS_A" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_SOFTECC_OUTPUT_REGS_B" VALUE="0"/>
+        <PARAMETER NAME="C_USE_SOFTECC" VALUE="0"/>
+        <PARAMETER NAME="C_USE_ECC" VALUE="0"/>
+        <PARAMETER NAME="C_EN_ECC_PIPE" VALUE="0"/>
+        <PARAMETER NAME="C_READ_LATENCY_A" VALUE="1"/>
+        <PARAMETER NAME="C_READ_LATENCY_B" VALUE="1"/>
+        <PARAMETER NAME="C_HAS_INJECTERR" VALUE="0"/>
+        <PARAMETER NAME="C_SIM_COLLISION_CHECK" VALUE="ALL"/>
+        <PARAMETER NAME="C_COMMON_CLK" VALUE="1"/>
+        <PARAMETER NAME="C_DISABLE_WARN_BHV_COLL" VALUE="0"/>
+        <PARAMETER NAME="C_EN_SLEEP_PIN" VALUE="0"/>
+        <PARAMETER NAME="C_USE_URAM" VALUE="0"/>
+        <PARAMETER NAME="C_EN_RDADDRA_CHG" VALUE="0"/>
+        <PARAMETER NAME="C_EN_RDADDRB_CHG" VALUE="0"/>
+        <PARAMETER NAME="C_EN_DEEPSLEEP_PIN" VALUE="0"/>
+        <PARAMETER NAME="C_EN_SHUTDOWN_PIN" VALUE="0"/>
+        <PARAMETER NAME="C_EN_SAFETY_CKT" VALUE="0"/>
+        <PARAMETER NAME="C_DISABLE_WARN_BHV_RANGE" VALUE="0"/>
+        <PARAMETER NAME="C_COUNT_36K_BRAM" VALUE="2"/>
+        <PARAMETER NAME="C_COUNT_18K_BRAM" VALUE="0"/>
+        <PARAMETER NAME="C_EST_POWER_SUMMARY" VALUE="Estimated Power for IP     :     10.7492 mW"/>
+        <PARAMETER NAME="Component_Name" VALUE="Multi_accumulator_inst_0_blk_mem_gen_2_0"/>
+        <PARAMETER NAME="Interface_Type" VALUE="Native"/>
+        <PARAMETER NAME="AXI_Type" VALUE="AXI4_Full"/>
+        <PARAMETER NAME="AXI_Slave_Type" VALUE="Memory_Slave"/>
+        <PARAMETER NAME="Use_AXI_ID" VALUE="false"/>
+        <PARAMETER NAME="AXI_ID_Width" VALUE="4"/>
+        <PARAMETER NAME="Memory_Type" VALUE="True_Dual_Port_RAM"/>
+        <PARAMETER NAME="PRIM_type_to_Implement" VALUE="BRAM"/>
+        <PARAMETER NAME="Enable_32bit_Address" VALUE="true"/>
+        <PARAMETER NAME="ecctype" VALUE="No_ECC"/>
+        <PARAMETER NAME="ECC" VALUE="false"/>
+        <PARAMETER NAME="softecc" VALUE="false"/>
+        <PARAMETER NAME="EN_SLEEP_PIN" VALUE="false"/>
+        <PARAMETER NAME="EN_DEEPSLEEP_PIN" VALUE="false"/>
+        <PARAMETER NAME="EN_SHUTDOWN_PIN" VALUE="false"/>
+        <PARAMETER NAME="EN_ECC_PIPE" VALUE="false"/>
+        <PARAMETER NAME="RD_ADDR_CHNG_A" VALUE="false"/>
+        <PARAMETER NAME="RD_ADDR_CHNG_B" VALUE="false"/>
+        <PARAMETER NAME="Use_Error_Injection_Pins" VALUE="false"/>
+        <PARAMETER NAME="Error_Injection_Type" VALUE="Single_Bit_Error_Injection"/>
+        <PARAMETER NAME="Use_Byte_Write_Enable" VALUE="true"/>
+        <PARAMETER NAME="Byte_Size" VALUE="8"/>
+        <PARAMETER NAME="Algorithm" VALUE="Minimum_Area"/>
+        <PARAMETER NAME="Primitive" VALUE="8kx2"/>
+        <PARAMETER NAME="Assume_Synchronous_Clk" VALUE="true"/>
+        <PARAMETER NAME="Write_Width_A" VALUE="32"/>
+        <PARAMETER NAME="Write_Depth_A" VALUE="2048"/>
+        <PARAMETER NAME="Read_Width_A" VALUE="32"/>
+        <PARAMETER NAME="Operating_Mode_A" VALUE="WRITE_FIRST"/>
+        <PARAMETER NAME="Enable_A" VALUE="Use_ENA_Pin"/>
+        <PARAMETER NAME="Write_Width_B" VALUE="32"/>
+        <PARAMETER NAME="Read_Width_B" VALUE="32"/>
+        <PARAMETER NAME="Operating_Mode_B" VALUE="WRITE_FIRST"/>
+        <PARAMETER NAME="Enable_B" VALUE="Use_ENB_Pin"/>
+        <PARAMETER NAME="Register_PortA_Output_of_Memory_Primitives" VALUE="false"/>
+        <PARAMETER NAME="Register_PortA_Output_of_Memory_Core" VALUE="false"/>
+        <PARAMETER NAME="Use_REGCEA_Pin" VALUE="false"/>
+        <PARAMETER NAME="Register_PortB_Output_of_Memory_Primitives" VALUE="false"/>
+        <PARAMETER NAME="Register_PortB_Output_of_Memory_Core" VALUE="false"/>
+        <PARAMETER NAME="Use_REGCEB_Pin" VALUE="false"/>
+        <PARAMETER NAME="register_porta_input_of_softecc" VALUE="false"/>
+        <PARAMETER NAME="register_portb_output_of_softecc" VALUE="false"/>
+        <PARAMETER NAME="Pipeline_Stages" VALUE="0"/>
+        <PARAMETER NAME="Load_Init_File" VALUE="false"/>
+        <PARAMETER NAME="Coe_File" VALUE="no_coe_file_loaded"/>
+        <PARAMETER NAME="Fill_Remaining_Memory_Locations" VALUE="false"/>
+        <PARAMETER NAME="Remaining_Memory_Locations" VALUE="0"/>
+        <PARAMETER NAME="Use_RSTA_Pin" VALUE="true"/>
+        <PARAMETER NAME="Reset_Memory_Latch_A" VALUE="false"/>
+        <PARAMETER NAME="Reset_Priority_A" VALUE="CE"/>
+        <PARAMETER NAME="Output_Reset_Value_A" VALUE="0"/>
+        <PARAMETER NAME="Use_RSTB_Pin" VALUE="true"/>
+        <PARAMETER NAME="Reset_Memory_Latch_B" VALUE="false"/>
+        <PARAMETER NAME="Reset_Priority_B" VALUE="CE"/>
+        <PARAMETER NAME="Output_Reset_Value_B" VALUE="0"/>
+        <PARAMETER NAME="Reset_Type" VALUE="SYNC"/>
+        <PARAMETER NAME="Additional_Inputs_for_Power_Estimation" VALUE="false"/>
+        <PARAMETER NAME="Port_A_Clock" VALUE="100"/>
+        <PARAMETER NAME="Port_A_Write_Rate" VALUE="50"/>
+        <PARAMETER NAME="Port_B_Clock" VALUE="100"/>
+        <PARAMETER NAME="Port_B_Write_Rate" VALUE="50"/>
+        <PARAMETER NAME="Port_A_Enable_Rate" VALUE="100"/>
+        <PARAMETER NAME="Port_B_Enable_Rate" VALUE="100"/>
+        <PARAMETER NAME="Collision_Warnings" VALUE="ALL"/>
+        <PARAMETER NAME="Disable_Collision_Warnings" VALUE="false"/>
+        <PARAMETER NAME="Disable_Out_of_Range_Warnings" VALUE="false"/>
+        <PARAMETER NAME="use_bram_block" VALUE="BRAM_Controller"/>
+        <PARAMETER NAME="MEM_FILE" VALUE="NONE"/>
+        <PARAMETER NAME="CTRL_ECC_ALGO" VALUE="NONE"/>
+        <PARAMETER NAME="EN_SAFETY_CKT" VALUE="false"/>
+        <PARAMETER NAME="READ_LATENCY_A" VALUE="1"/>
+        <PARAMETER NAME="READ_LATENCY_B" VALUE="1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clka" SIGIS="clk" SIGNAME="accumulator_2_BRAM_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_2" PORT="BRAM_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rsta" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="accumulator_2_BRAM_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_2" PORT="BRAM_rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ena" SIGIS="undef" SIGNAME="accumulator_2_BRAM_en">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_2" PORT="BRAM_en"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="wea" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_2_BRAM_wen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_2" PORT="BRAM_wen"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="addra" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_2_BRAM_addr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_2" PORT="BRAM_addr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="dina" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_2_BRAM_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_2" PORT="BRAM_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="douta" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_2_douta">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_2" PORT="BRAM_dout"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="bram_dout_2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clkb" SIGIS="clk" SIGNAME="blk_mem_gen_2_clkb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_2_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rstb" SIGIS="rst" SIGNAME="blk_mem_gen_2_rstb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_2_rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="enb" SIGIS="undef" SIGNAME="blk_mem_gen_2_enb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_2_en"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="web" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_2_web">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_2_we"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="addrb" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_2_addrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_2_addr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="dinb" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_2_dinb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_2_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="doutb" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_2_doutb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_2_dout"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="BRAM_PORTA" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
+          <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
+          <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
+          <PARAMETER NAME="MASTER_TYPE" VALUE="BRAM_CTRL"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ADDR" PHYSICAL="addra"/>
+            <PORTMAP LOGICAL="CLK" PHYSICAL="clka"/>
+            <PORTMAP LOGICAL="DIN" PHYSICAL="dina"/>
+            <PORTMAP LOGICAL="DOUT" PHYSICAL="douta"/>
+            <PORTMAP LOGICAL="EN" PHYSICAL="ena"/>
+            <PORTMAP LOGICAL="RST" PHYSICAL="rsta"/>
+            <PORTMAP LOGICAL="WE" PHYSICAL="wea"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="External_Interface_BRAM_out_AXI_2" NAME="BRAM_PORTB" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
+          <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
+          <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
+          <PARAMETER NAME="MASTER_TYPE" VALUE="BRAM_CTRL"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ADDR" PHYSICAL="addrb"/>
+            <PORTMAP LOGICAL="CLK" PHYSICAL="clkb"/>
+            <PORTMAP LOGICAL="DIN" PHYSICAL="dinb"/>
+            <PORTMAP LOGICAL="DOUT" PHYSICAL="doutb"/>
+            <PORTMAP LOGICAL="EN" PHYSICAL="enb"/>
+            <PORTMAP LOGICAL="RST" PHYSICAL="rstb"/>
+            <PORTMAP LOGICAL="WE" PHYSICAL="web"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="4" FULLNAME="/blk_mem_gen_3" HWVERSION="8.4" INSTANCE="blk_mem_gen_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="MEMORY" MODTYPE="blk_mem_gen" VLNV="xilinx.com:ip:blk_mem_gen:8.4">
+      <DOCUMENTS>
+        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=blk_mem_gen;v=v8_4;d=pg058-blk-mem-gen.pdf"/>
+      </DOCUMENTS>
+      <PARAMETERS>
+        <PARAMETER NAME="C_FAMILY" VALUE="zynq"/>
+        <PARAMETER NAME="C_XDEVICEFAMILY" VALUE="zynq"/>
+        <PARAMETER NAME="C_ELABORATION_DIR" VALUE="./"/>
+        <PARAMETER NAME="C_INTERFACE_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_AXI_TYPE" VALUE="1"/>
+        <PARAMETER NAME="C_AXI_SLAVE_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_USE_BRAM_BLOCK" VALUE="1"/>
+        <PARAMETER NAME="C_ENABLE_32BIT_ADDRESS" VALUE="1"/>
+        <PARAMETER NAME="C_CTRL_ECC_ALGO" VALUE="NONE"/>
+        <PARAMETER NAME="C_HAS_AXI_ID" VALUE="0"/>
+        <PARAMETER NAME="C_AXI_ID_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_MEM_TYPE" VALUE="2"/>
+        <PARAMETER NAME="C_BYTE_SIZE" VALUE="8"/>
+        <PARAMETER NAME="C_ALGORITHM" VALUE="1"/>
+        <PARAMETER NAME="C_PRIM_TYPE" VALUE="1"/>
+        <PARAMETER NAME="C_LOAD_INIT_FILE" VALUE="0"/>
+        <PARAMETER NAME="C_INIT_FILE_NAME" VALUE="no_coe_file_loaded"/>
+        <PARAMETER NAME="C_INIT_FILE" VALUE="NONE"/>
+        <PARAMETER NAME="C_USE_DEFAULT_DATA" VALUE="0"/>
+        <PARAMETER NAME="C_DEFAULT_DATA" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_RSTA" VALUE="1"/>
+        <PARAMETER NAME="C_RST_PRIORITY_A" VALUE="CE"/>
+        <PARAMETER NAME="C_RSTRAM_A" VALUE="0"/>
+        <PARAMETER NAME="C_INITA_VAL" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_ENA" VALUE="1"/>
+        <PARAMETER NAME="C_HAS_REGCEA" VALUE="0"/>
+        <PARAMETER NAME="C_USE_BYTE_WEA" VALUE="1"/>
+        <PARAMETER NAME="C_WEA_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_WRITE_MODE_A" VALUE="WRITE_FIRST"/>
+        <PARAMETER NAME="C_WRITE_WIDTH_A" VALUE="32"/>
+        <PARAMETER NAME="C_READ_WIDTH_A" VALUE="32"/>
+        <PARAMETER NAME="C_WRITE_DEPTH_A" VALUE="2048"/>
+        <PARAMETER NAME="C_READ_DEPTH_A" VALUE="2048"/>
+        <PARAMETER NAME="C_ADDRA_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_HAS_RSTB" VALUE="1"/>
+        <PARAMETER NAME="C_RST_PRIORITY_B" VALUE="CE"/>
+        <PARAMETER NAME="C_RSTRAM_B" VALUE="0"/>
+        <PARAMETER NAME="C_INITB_VAL" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_ENB" VALUE="1"/>
+        <PARAMETER NAME="C_HAS_REGCEB" VALUE="0"/>
+        <PARAMETER NAME="C_USE_BYTE_WEB" VALUE="1"/>
+        <PARAMETER NAME="C_WEB_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_WRITE_MODE_B" VALUE="WRITE_FIRST"/>
+        <PARAMETER NAME="C_WRITE_WIDTH_B" VALUE="32"/>
+        <PARAMETER NAME="C_READ_WIDTH_B" VALUE="32"/>
+        <PARAMETER NAME="C_WRITE_DEPTH_B" VALUE="2048"/>
+        <PARAMETER NAME="C_READ_DEPTH_B" VALUE="2048"/>
+        <PARAMETER NAME="C_ADDRB_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_HAS_MEM_OUTPUT_REGS_A" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_MEM_OUTPUT_REGS_B" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_MUX_OUTPUT_REGS_A" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_MUX_OUTPUT_REGS_B" VALUE="0"/>
+        <PARAMETER NAME="C_MUX_PIPELINE_STAGES" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_SOFTECC_INPUT_REGS_A" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_SOFTECC_OUTPUT_REGS_B" VALUE="0"/>
+        <PARAMETER NAME="C_USE_SOFTECC" VALUE="0"/>
+        <PARAMETER NAME="C_USE_ECC" VALUE="0"/>
+        <PARAMETER NAME="C_EN_ECC_PIPE" VALUE="0"/>
+        <PARAMETER NAME="C_READ_LATENCY_A" VALUE="1"/>
+        <PARAMETER NAME="C_READ_LATENCY_B" VALUE="1"/>
+        <PARAMETER NAME="C_HAS_INJECTERR" VALUE="0"/>
+        <PARAMETER NAME="C_SIM_COLLISION_CHECK" VALUE="ALL"/>
+        <PARAMETER NAME="C_COMMON_CLK" VALUE="1"/>
+        <PARAMETER NAME="C_DISABLE_WARN_BHV_COLL" VALUE="0"/>
+        <PARAMETER NAME="C_EN_SLEEP_PIN" VALUE="0"/>
+        <PARAMETER NAME="C_USE_URAM" VALUE="0"/>
+        <PARAMETER NAME="C_EN_RDADDRA_CHG" VALUE="0"/>
+        <PARAMETER NAME="C_EN_RDADDRB_CHG" VALUE="0"/>
+        <PARAMETER NAME="C_EN_DEEPSLEEP_PIN" VALUE="0"/>
+        <PARAMETER NAME="C_EN_SHUTDOWN_PIN" VALUE="0"/>
+        <PARAMETER NAME="C_EN_SAFETY_CKT" VALUE="0"/>
+        <PARAMETER NAME="C_DISABLE_WARN_BHV_RANGE" VALUE="0"/>
+        <PARAMETER NAME="C_COUNT_36K_BRAM" VALUE="2"/>
+        <PARAMETER NAME="C_COUNT_18K_BRAM" VALUE="0"/>
+        <PARAMETER NAME="C_EST_POWER_SUMMARY" VALUE="Estimated Power for IP     :     10.7492 mW"/>
+        <PARAMETER NAME="Component_Name" VALUE="Multi_accumulator_inst_0_blk_mem_gen_3_0"/>
+        <PARAMETER NAME="Interface_Type" VALUE="Native"/>
+        <PARAMETER NAME="AXI_Type" VALUE="AXI4_Full"/>
+        <PARAMETER NAME="AXI_Slave_Type" VALUE="Memory_Slave"/>
+        <PARAMETER NAME="Use_AXI_ID" VALUE="false"/>
+        <PARAMETER NAME="AXI_ID_Width" VALUE="4"/>
+        <PARAMETER NAME="Memory_Type" VALUE="True_Dual_Port_RAM"/>
+        <PARAMETER NAME="PRIM_type_to_Implement" VALUE="BRAM"/>
+        <PARAMETER NAME="Enable_32bit_Address" VALUE="true"/>
+        <PARAMETER NAME="ecctype" VALUE="No_ECC"/>
+        <PARAMETER NAME="ECC" VALUE="false"/>
+        <PARAMETER NAME="softecc" VALUE="false"/>
+        <PARAMETER NAME="EN_SLEEP_PIN" VALUE="false"/>
+        <PARAMETER NAME="EN_DEEPSLEEP_PIN" VALUE="false"/>
+        <PARAMETER NAME="EN_SHUTDOWN_PIN" VALUE="false"/>
+        <PARAMETER NAME="EN_ECC_PIPE" VALUE="false"/>
+        <PARAMETER NAME="RD_ADDR_CHNG_A" VALUE="false"/>
+        <PARAMETER NAME="RD_ADDR_CHNG_B" VALUE="false"/>
+        <PARAMETER NAME="Use_Error_Injection_Pins" VALUE="false"/>
+        <PARAMETER NAME="Error_Injection_Type" VALUE="Single_Bit_Error_Injection"/>
+        <PARAMETER NAME="Use_Byte_Write_Enable" VALUE="true"/>
+        <PARAMETER NAME="Byte_Size" VALUE="8"/>
+        <PARAMETER NAME="Algorithm" VALUE="Minimum_Area"/>
+        <PARAMETER NAME="Primitive" VALUE="8kx2"/>
+        <PARAMETER NAME="Assume_Synchronous_Clk" VALUE="true"/>
+        <PARAMETER NAME="Write_Width_A" VALUE="32"/>
+        <PARAMETER NAME="Write_Depth_A" VALUE="2048"/>
+        <PARAMETER NAME="Read_Width_A" VALUE="32"/>
+        <PARAMETER NAME="Operating_Mode_A" VALUE="WRITE_FIRST"/>
+        <PARAMETER NAME="Enable_A" VALUE="Use_ENA_Pin"/>
+        <PARAMETER NAME="Write_Width_B" VALUE="32"/>
+        <PARAMETER NAME="Read_Width_B" VALUE="32"/>
+        <PARAMETER NAME="Operating_Mode_B" VALUE="WRITE_FIRST"/>
+        <PARAMETER NAME="Enable_B" VALUE="Use_ENB_Pin"/>
+        <PARAMETER NAME="Register_PortA_Output_of_Memory_Primitives" VALUE="false"/>
+        <PARAMETER NAME="Register_PortA_Output_of_Memory_Core" VALUE="false"/>
+        <PARAMETER NAME="Use_REGCEA_Pin" VALUE="false"/>
+        <PARAMETER NAME="Register_PortB_Output_of_Memory_Primitives" VALUE="false"/>
+        <PARAMETER NAME="Register_PortB_Output_of_Memory_Core" VALUE="false"/>
+        <PARAMETER NAME="Use_REGCEB_Pin" VALUE="false"/>
+        <PARAMETER NAME="register_porta_input_of_softecc" VALUE="false"/>
+        <PARAMETER NAME="register_portb_output_of_softecc" VALUE="false"/>
+        <PARAMETER NAME="Pipeline_Stages" VALUE="0"/>
+        <PARAMETER NAME="Load_Init_File" VALUE="false"/>
+        <PARAMETER NAME="Coe_File" VALUE="no_coe_file_loaded"/>
+        <PARAMETER NAME="Fill_Remaining_Memory_Locations" VALUE="false"/>
+        <PARAMETER NAME="Remaining_Memory_Locations" VALUE="0"/>
+        <PARAMETER NAME="Use_RSTA_Pin" VALUE="true"/>
+        <PARAMETER NAME="Reset_Memory_Latch_A" VALUE="false"/>
+        <PARAMETER NAME="Reset_Priority_A" VALUE="CE"/>
+        <PARAMETER NAME="Output_Reset_Value_A" VALUE="0"/>
+        <PARAMETER NAME="Use_RSTB_Pin" VALUE="true"/>
+        <PARAMETER NAME="Reset_Memory_Latch_B" VALUE="false"/>
+        <PARAMETER NAME="Reset_Priority_B" VALUE="CE"/>
+        <PARAMETER NAME="Output_Reset_Value_B" VALUE="0"/>
+        <PARAMETER NAME="Reset_Type" VALUE="SYNC"/>
+        <PARAMETER NAME="Additional_Inputs_for_Power_Estimation" VALUE="false"/>
+        <PARAMETER NAME="Port_A_Clock" VALUE="100"/>
+        <PARAMETER NAME="Port_A_Write_Rate" VALUE="50"/>
+        <PARAMETER NAME="Port_B_Clock" VALUE="100"/>
+        <PARAMETER NAME="Port_B_Write_Rate" VALUE="50"/>
+        <PARAMETER NAME="Port_A_Enable_Rate" VALUE="100"/>
+        <PARAMETER NAME="Port_B_Enable_Rate" VALUE="100"/>
+        <PARAMETER NAME="Collision_Warnings" VALUE="ALL"/>
+        <PARAMETER NAME="Disable_Collision_Warnings" VALUE="false"/>
+        <PARAMETER NAME="Disable_Out_of_Range_Warnings" VALUE="false"/>
+        <PARAMETER NAME="use_bram_block" VALUE="BRAM_Controller"/>
+        <PARAMETER NAME="MEM_FILE" VALUE="NONE"/>
+        <PARAMETER NAME="CTRL_ECC_ALGO" VALUE="NONE"/>
+        <PARAMETER NAME="EN_SAFETY_CKT" VALUE="false"/>
+        <PARAMETER NAME="READ_LATENCY_A" VALUE="1"/>
+        <PARAMETER NAME="READ_LATENCY_B" VALUE="1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clka" SIGIS="clk" SIGNAME="accumulator_3_BRAM_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_3" PORT="BRAM_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rsta" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="accumulator_3_BRAM_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_3" PORT="BRAM_rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ena" SIGIS="undef" SIGNAME="accumulator_3_BRAM_en">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_3" PORT="BRAM_en"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="wea" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_3_BRAM_wen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_3" PORT="BRAM_wen"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="addra" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_3_BRAM_addr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_3" PORT="BRAM_addr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="dina" RIGHT="0" SIGIS="undef" SIGNAME="accumulator_3_BRAM_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_3" PORT="BRAM_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="douta" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_3_douta">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="accumulator_3" PORT="BRAM_dout"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="bram_dout_3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clkb" SIGIS="clk" SIGNAME="blk_mem_gen_3_clkb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_3_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rstb" SIGIS="rst" SIGNAME="blk_mem_gen_3_rstb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_3_rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="enb" SIGIS="undef" SIGNAME="blk_mem_gen_3_enb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_3_en"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="web" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_3_web">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_3_we"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="addrb" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_3_addrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_3_addr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="dinb" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_3_dinb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_3_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="doutb" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_3_doutb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multi_accumulator_inst_0_imp" PORT="BRAM_out_AXI_3_dout"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="BRAM_PORTA" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
+          <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
+          <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
+          <PARAMETER NAME="MASTER_TYPE" VALUE="BRAM_CTRL"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ADDR" PHYSICAL="addra"/>
+            <PORTMAP LOGICAL="CLK" PHYSICAL="clka"/>
+            <PORTMAP LOGICAL="DIN" PHYSICAL="dina"/>
+            <PORTMAP LOGICAL="DOUT" PHYSICAL="douta"/>
+            <PORTMAP LOGICAL="EN" PHYSICAL="ena"/>
+            <PORTMAP LOGICAL="RST" PHYSICAL="rsta"/>
+            <PORTMAP LOGICAL="WE" PHYSICAL="wea"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="External_Interface_BRAM_out_AXI_3" NAME="BRAM_PORTB" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
+          <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
+          <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
+          <PARAMETER NAME="MASTER_TYPE" VALUE="BRAM_CTRL"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ADDR" PHYSICAL="addrb"/>
+            <PORTMAP LOGICAL="CLK" PHYSICAL="clkb"/>
+            <PORTMAP LOGICAL="DIN" PHYSICAL="dinb"/>
+            <PORTMAP LOGICAL="DOUT" PHYSICAL="doutb"/>
+            <PORTMAP LOGICAL="EN" PHYSICAL="enb"/>
+            <PORTMAP LOGICAL="RST" PHYSICAL="rstb"/>
+            <PORTMAP LOGICAL="WE" PHYSICAL="web"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

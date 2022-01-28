@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x9FA08F6859CD8447",
+      "boundary_crc": "0x9FA08F68EC3F91FC",
       "design_src": "D:/Documents/Xilinx/CNN_FPGA/Vivado/src/bd/Convo_core/Convo_core.bd",
       "device": "xc7z020clg400-1",
       "name": "Convo_core_inst_0",
