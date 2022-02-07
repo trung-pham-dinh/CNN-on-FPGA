@@ -10,16 +10,16 @@
       "validated": "true"
     },
     "design_tree": {
-      "accumulator_0": "",
-      "accumulator_2": "",
-      "accumulator_1": "",
-      "accumulator_3": "",
       "blk_mem_gen_0": "",
       "blk_mem_gen_2": "",
       "blk_mem_gen_3": "",
       "blk_mem_gen_1": "",
       "and_gate_accum_0": "",
-      "and_gate_accum_1": ""
+      "and_gate_accum_1": "",
+      "accumulator_0": "",
+      "accumulator_2": "",
+      "accumulator_1": "",
+      "accumulator_3": ""
     },
     "interface_ports": {
       "BRAM_out_AXI_0": {
@@ -137,7 +137,7 @@
             "value_src": "default"
           },
           "CLK_DOMAIN": {
-            "value": "Multi_accumulator_clk_0",
+            "value": "Multi_accumulator_clk",
             "value_src": "default"
           },
           "FREQ_HZ": {
@@ -293,422 +293,6 @@
       }
     },
     "components": {
-      "accumulator_0": {
-        "vlnv": "xilinx.com:module_ref:accumulator:1.0",
-        "xci_name": "Multi_accumulator_accumulator_0_0",
-        "xci_path": "ip\\Multi_accumulator_accumulator_0_0\\Multi_accumulator_accumulator_0_0.xci",
-        "inst_hier_path": "accumulator_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "accumulator",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "Multi_accumulator_clk_0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "no_entry": {
-            "direction": "I",
-            "left": "15",
-            "right": "0"
-          },
-          "no_channel": {
-            "direction": "I",
-            "left": "10",
-            "right": "0"
-          },
-          "BRAM_rready": {
-            "direction": "I"
-          },
-          "in_psum0": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "in_psum1": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "in_psum2": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "in_psum3": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "accum_done": {
-            "direction": "O"
-          },
-          "BRAM_addr": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_clk": {
-            "type": "clk",
-            "direction": "O",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "BRAM_rst",
-                "value_src": "constant"
-              }
-            }
-          },
-          "BRAM_din": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_dout": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_en": {
-            "direction": "O"
-          },
-          "BRAM_rst": {
-            "type": "rst",
-            "direction": "O"
-          },
-          "BRAM_wen": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          }
-        }
-      },
-      "accumulator_2": {
-        "vlnv": "xilinx.com:module_ref:accumulator:1.0",
-        "xci_name": "Multi_accumulator_accumulator_0_1",
-        "xci_path": "ip\\Multi_accumulator_accumulator_0_1\\Multi_accumulator_accumulator_0_1.xci",
-        "inst_hier_path": "accumulator_2",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "accumulator",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "Multi_accumulator_clk_0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "no_entry": {
-            "direction": "I",
-            "left": "15",
-            "right": "0"
-          },
-          "no_channel": {
-            "direction": "I",
-            "left": "10",
-            "right": "0"
-          },
-          "BRAM_rready": {
-            "direction": "I"
-          },
-          "in_psum0": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "in_psum1": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "in_psum2": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "in_psum3": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "accum_done": {
-            "direction": "O"
-          },
-          "BRAM_addr": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_clk": {
-            "type": "clk",
-            "direction": "O",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "BRAM_rst",
-                "value_src": "constant"
-              }
-            }
-          },
-          "BRAM_din": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_dout": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_en": {
-            "direction": "O"
-          },
-          "BRAM_rst": {
-            "type": "rst",
-            "direction": "O"
-          },
-          "BRAM_wen": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          }
-        }
-      },
-      "accumulator_1": {
-        "vlnv": "xilinx.com:module_ref:accumulator:1.0",
-        "xci_name": "Multi_accumulator_accumulator_0_2",
-        "xci_path": "ip\\Multi_accumulator_accumulator_0_2\\Multi_accumulator_accumulator_0_2.xci",
-        "inst_hier_path": "accumulator_1",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "accumulator",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "Multi_accumulator_clk_0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "no_entry": {
-            "direction": "I",
-            "left": "15",
-            "right": "0"
-          },
-          "no_channel": {
-            "direction": "I",
-            "left": "10",
-            "right": "0"
-          },
-          "BRAM_rready": {
-            "direction": "I"
-          },
-          "in_psum0": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "in_psum1": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "in_psum2": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "in_psum3": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "accum_done": {
-            "direction": "O"
-          },
-          "BRAM_addr": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_clk": {
-            "type": "clk",
-            "direction": "O",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "BRAM_rst",
-                "value_src": "constant"
-              }
-            }
-          },
-          "BRAM_din": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_dout": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_en": {
-            "direction": "O"
-          },
-          "BRAM_rst": {
-            "type": "rst",
-            "direction": "O"
-          },
-          "BRAM_wen": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          }
-        }
-      },
-      "accumulator_3": {
-        "vlnv": "xilinx.com:module_ref:accumulator:1.0",
-        "xci_name": "Multi_accumulator_accumulator_0_3",
-        "xci_path": "ip\\Multi_accumulator_accumulator_0_3\\Multi_accumulator_accumulator_0_3.xci",
-        "inst_hier_path": "accumulator_3",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "accumulator",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "Multi_accumulator_clk_0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "no_entry": {
-            "direction": "I",
-            "left": "15",
-            "right": "0"
-          },
-          "no_channel": {
-            "direction": "I",
-            "left": "10",
-            "right": "0"
-          },
-          "BRAM_rready": {
-            "direction": "I"
-          },
-          "in_psum0": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "in_psum1": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "in_psum2": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "in_psum3": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "accum_done": {
-            "direction": "O"
-          },
-          "BRAM_addr": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_clk": {
-            "type": "clk",
-            "direction": "O",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "BRAM_rst",
-                "value_src": "constant"
-              }
-            }
-          },
-          "BRAM_din": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_dout": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "BRAM_en": {
-            "direction": "O"
-          },
-          "BRAM_rst": {
-            "type": "rst",
-            "direction": "O"
-          },
-          "BRAM_wen": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          }
-        }
-      },
       "blk_mem_gen_0": {
         "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
         "xci_name": "Multi_accumulator_blk_mem_gen_0_0",
@@ -892,6 +476,422 @@
             "direction": "O"
           }
         }
+      },
+      "accumulator_0": {
+        "vlnv": "xilinx.com:module_ref:accumulator:1.0",
+        "xci_name": "Multi_accumulator_accumulator_0_0",
+        "xci_path": "ip\\Multi_accumulator_accumulator_0_0\\Multi_accumulator_accumulator_0_0.xci",
+        "inst_hier_path": "accumulator_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "accumulator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Multi_accumulator_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "no_entry": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "no_channel": {
+            "direction": "I",
+            "left": "10",
+            "right": "0"
+          },
+          "BRAM_rready": {
+            "direction": "I"
+          },
+          "in_psum0": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum2": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum3": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "accum_done": {
+            "direction": "O"
+          },
+          "BRAM_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_clk": {
+            "type": "clk",
+            "direction": "O",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "BRAM_rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "BRAM_din": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_dout": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_en": {
+            "direction": "O"
+          },
+          "BRAM_rst": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "BRAM_wen": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "accumulator_2": {
+        "vlnv": "xilinx.com:module_ref:accumulator:1.0",
+        "xci_name": "Multi_accumulator_accumulator_0_1",
+        "xci_path": "ip\\Multi_accumulator_accumulator_0_1\\Multi_accumulator_accumulator_0_1.xci",
+        "inst_hier_path": "accumulator_2",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "accumulator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Multi_accumulator_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "no_entry": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "no_channel": {
+            "direction": "I",
+            "left": "10",
+            "right": "0"
+          },
+          "BRAM_rready": {
+            "direction": "I"
+          },
+          "in_psum0": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum2": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum3": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "accum_done": {
+            "direction": "O"
+          },
+          "BRAM_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_clk": {
+            "type": "clk",
+            "direction": "O",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "BRAM_rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "BRAM_din": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_dout": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_en": {
+            "direction": "O"
+          },
+          "BRAM_rst": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "BRAM_wen": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "accumulator_1": {
+        "vlnv": "xilinx.com:module_ref:accumulator:1.0",
+        "xci_name": "Multi_accumulator_accumulator_0_2",
+        "xci_path": "ip\\Multi_accumulator_accumulator_0_2\\Multi_accumulator_accumulator_0_2.xci",
+        "inst_hier_path": "accumulator_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "accumulator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Multi_accumulator_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "no_entry": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "no_channel": {
+            "direction": "I",
+            "left": "10",
+            "right": "0"
+          },
+          "BRAM_rready": {
+            "direction": "I"
+          },
+          "in_psum0": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum2": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum3": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "accum_done": {
+            "direction": "O"
+          },
+          "BRAM_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_clk": {
+            "type": "clk",
+            "direction": "O",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "BRAM_rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "BRAM_din": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_dout": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_en": {
+            "direction": "O"
+          },
+          "BRAM_rst": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "BRAM_wen": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "accumulator_3": {
+        "vlnv": "xilinx.com:module_ref:accumulator:1.0",
+        "xci_name": "Multi_accumulator_accumulator_0_3",
+        "xci_path": "ip\\Multi_accumulator_accumulator_0_3\\Multi_accumulator_accumulator_0_3.xci",
+        "inst_hier_path": "accumulator_3",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "accumulator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Multi_accumulator_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "no_entry": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "no_channel": {
+            "direction": "I",
+            "left": "10",
+            "right": "0"
+          },
+          "BRAM_rready": {
+            "direction": "I"
+          },
+          "in_psum0": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum2": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_psum3": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "accum_done": {
+            "direction": "O"
+          },
+          "BRAM_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_clk": {
+            "type": "clk",
+            "direction": "O",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "BRAM_rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "BRAM_din": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_dout": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "BRAM_en": {
+            "direction": "O"
+          },
+          "BRAM_rst": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "BRAM_wen": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -924,10 +924,10 @@
       "Net": {
         "ports": [
           "rst",
-          "accumulator_3/rst",
-          "accumulator_1/rst",
+          "accumulator_0/rst",
           "accumulator_2/rst",
-          "accumulator_0/rst"
+          "accumulator_1/rst",
+          "accumulator_3/rst"
         ]
       },
       "Net1": {
@@ -1135,29 +1135,29 @@
       "blk_mem_gen_0_douta": {
         "ports": [
           "blk_mem_gen_0/douta",
-          "accumulator_0/BRAM_dout",
-          "bram_dout_0"
+          "bram_dout_0",
+          "accumulator_0/BRAM_dout"
         ]
       },
       "blk_mem_gen_1_douta": {
         "ports": [
           "blk_mem_gen_2/douta",
-          "accumulator_2/BRAM_dout",
-          "bram_dout_2"
+          "bram_dout_2",
+          "accumulator_2/BRAM_dout"
         ]
       },
       "blk_mem_gen_2_douta": {
         "ports": [
           "blk_mem_gen_3/douta",
-          "accumulator_3/BRAM_dout",
-          "bram_dout_3"
+          "bram_dout_3",
+          "accumulator_3/BRAM_dout"
         ]
       },
       "blk_mem_gen_3_douta": {
         "ports": [
           "blk_mem_gen_1/douta",
-          "accumulator_1/BRAM_dout",
-          "bram_dout_1"
+          "bram_dout_1",
+          "accumulator_1/BRAM_dout"
         ]
       },
       "clk_0_1": {

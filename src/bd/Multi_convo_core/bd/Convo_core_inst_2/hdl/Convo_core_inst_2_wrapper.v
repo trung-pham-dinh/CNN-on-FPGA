@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Fri Jan 28 16:10:45 2022
+//Date        : Mon Feb  7 19:14:55 2022
 //Host        : DESKTOP-Q4T850H running 64-bit major release  (build 9200)
 //Command     : generate_target Convo_core_inst_2_wrapper.bd
 //Design      : Convo_core_inst_2_wrapper
@@ -68,34 +68,34 @@ module Convo_core_inst_2_wrapper
   input BRAM_img_AXI_rst;
   input [3:0]BRAM_img_AXI_wen;
   input BRAM_img_sel;
-  input [31:0]BRAM_weight_AXI_0_addr;
+  input BRAM_weight_AXI_0_addr;
   input BRAM_weight_AXI_0_clk;
-  input [31:0]BRAM_weight_AXI_0_din;
-  output [31:0]BRAM_weight_AXI_0_dout;
+  input BRAM_weight_AXI_0_din;
+  output BRAM_weight_AXI_0_dout;
   input BRAM_weight_AXI_0_en;
   input BRAM_weight_AXI_0_rst;
-  input [3:0]BRAM_weight_AXI_0_we;
-  input [31:0]BRAM_weight_AXI_1_addr;
+  input BRAM_weight_AXI_0_we;
+  input BRAM_weight_AXI_1_addr;
   input BRAM_weight_AXI_1_clk;
-  input [31:0]BRAM_weight_AXI_1_din;
-  output [31:0]BRAM_weight_AXI_1_dout;
+  input BRAM_weight_AXI_1_din;
+  output BRAM_weight_AXI_1_dout;
   input BRAM_weight_AXI_1_en;
   input BRAM_weight_AXI_1_rst;
-  input [3:0]BRAM_weight_AXI_1_we;
-  input [31:0]BRAM_weight_AXI_2_addr;
+  input BRAM_weight_AXI_1_we;
+  input BRAM_weight_AXI_2_addr;
   input BRAM_weight_AXI_2_clk;
-  input [31:0]BRAM_weight_AXI_2_din;
-  output [31:0]BRAM_weight_AXI_2_dout;
+  input BRAM_weight_AXI_2_din;
+  output BRAM_weight_AXI_2_dout;
   input BRAM_weight_AXI_2_en;
   input BRAM_weight_AXI_2_rst;
-  input [3:0]BRAM_weight_AXI_2_we;
-  input [31:0]BRAM_weight_AXI_3_addr;
+  input BRAM_weight_AXI_2_we;
+  input BRAM_weight_AXI_3_addr;
   input BRAM_weight_AXI_3_clk;
-  input [31:0]BRAM_weight_AXI_3_din;
-  output [31:0]BRAM_weight_AXI_3_dout;
+  input BRAM_weight_AXI_3_din;
+  output BRAM_weight_AXI_3_dout;
   input BRAM_weight_AXI_3_en;
   input BRAM_weight_AXI_3_rst;
-  input [3:0]BRAM_weight_AXI_3_we;
+  input BRAM_weight_AXI_3_we;
   input accum_done;
   output channel_end;
   input [11:0]channel_input_img;
@@ -120,34 +120,34 @@ module Convo_core_inst_2_wrapper
   wire BRAM_img_AXI_rst;
   wire [3:0]BRAM_img_AXI_wen;
   wire BRAM_img_sel;
-  wire [31:0]BRAM_weight_AXI_0_addr;
+  wire BRAM_weight_AXI_0_addr;
   wire BRAM_weight_AXI_0_clk;
-  wire [31:0]BRAM_weight_AXI_0_din;
-  wire [31:0]BRAM_weight_AXI_0_dout;
+  wire BRAM_weight_AXI_0_din;
+  wire BRAM_weight_AXI_0_dout;
   wire BRAM_weight_AXI_0_en;
   wire BRAM_weight_AXI_0_rst;
-  wire [3:0]BRAM_weight_AXI_0_we;
-  wire [31:0]BRAM_weight_AXI_1_addr;
+  wire BRAM_weight_AXI_0_we;
+  wire BRAM_weight_AXI_1_addr;
   wire BRAM_weight_AXI_1_clk;
-  wire [31:0]BRAM_weight_AXI_1_din;
-  wire [31:0]BRAM_weight_AXI_1_dout;
+  wire BRAM_weight_AXI_1_din;
+  wire BRAM_weight_AXI_1_dout;
   wire BRAM_weight_AXI_1_en;
   wire BRAM_weight_AXI_1_rst;
-  wire [3:0]BRAM_weight_AXI_1_we;
-  wire [31:0]BRAM_weight_AXI_2_addr;
+  wire BRAM_weight_AXI_1_we;
+  wire BRAM_weight_AXI_2_addr;
   wire BRAM_weight_AXI_2_clk;
-  wire [31:0]BRAM_weight_AXI_2_din;
-  wire [31:0]BRAM_weight_AXI_2_dout;
+  wire BRAM_weight_AXI_2_din;
+  wire BRAM_weight_AXI_2_dout;
   wire BRAM_weight_AXI_2_en;
   wire BRAM_weight_AXI_2_rst;
-  wire [3:0]BRAM_weight_AXI_2_we;
-  wire [31:0]BRAM_weight_AXI_3_addr;
+  wire BRAM_weight_AXI_2_we;
+  wire BRAM_weight_AXI_3_addr;
   wire BRAM_weight_AXI_3_clk;
-  wire [31:0]BRAM_weight_AXI_3_din;
-  wire [31:0]BRAM_weight_AXI_3_dout;
+  wire BRAM_weight_AXI_3_din;
+  wire BRAM_weight_AXI_3_dout;
   wire BRAM_weight_AXI_3_en;
   wire BRAM_weight_AXI_3_rst;
-  wire [3:0]BRAM_weight_AXI_3_we;
+  wire BRAM_weight_AXI_3_we;
   wire accum_done;
   wire channel_end;
   wire [11:0]channel_input_img;

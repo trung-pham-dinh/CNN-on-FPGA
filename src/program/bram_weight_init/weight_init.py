@@ -31,4 +31,4 @@ def bram_weight_init(weight, kernel, width, height, channel):
 	    f.write(";")
 	    f.close()
 
-bram_weight_init([i+1 for i in range(4*3*3*4)],4,3,3,4) #parameters: weight, kernel, width, height, channel
+bram_weight_init([i+1 for i in range(4*3*3*8)],4,3,3,8) #parameters: weight, kernel, width, height, channel

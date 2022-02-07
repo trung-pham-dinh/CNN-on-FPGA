@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Fri Jan 28 16:10:40 2022
+//Date        : Mon Feb  7 19:14:44 2022
 //Host        : DESKTOP-Q4T850H running 64-bit major release  (build 9200)
 //Command     : generate_target Multi_convo_core_wrapper.bd
 //Design      : Multi_convo_core_wrapper
@@ -17,6 +17,7 @@ module Multi_convo_core_wrapper
     bram_dout_1,
     bram_dout_2,
     bram_dout_3,
+    channel_end,
     channel_input_img,
     clk,
     en,
@@ -28,6 +29,7 @@ module Multi_convo_core_wrapper
     psum_3,
     rst,
     stride,
+    weight_end,
     weight_size_1_16,
     width_input_img);
   output [31:0]BRAM_addr_sim;
@@ -37,6 +39,7 @@ module Multi_convo_core_wrapper
   output [31:0]bram_dout_1;
   output [31:0]bram_dout_2;
   output [31:0]bram_dout_3;
+  output channel_end;
   input [11:0]channel_input_img;
   input clk;
   input en;
@@ -48,6 +51,7 @@ module Multi_convo_core_wrapper
   output [7:0]psum_3;
   input rst;
   input [2:0]stride;
+  output weight_end;
   input [31:0]weight_size_1_16;
   input [11:0]width_input_img;
 
@@ -58,6 +62,7 @@ module Multi_convo_core_wrapper
   wire [31:0]bram_dout_1;
   wire [31:0]bram_dout_2;
   wire [31:0]bram_dout_3;
+  wire channel_end;
   wire [11:0]channel_input_img;
   wire clk;
   wire en;
@@ -69,6 +74,7 @@ module Multi_convo_core_wrapper
   wire [7:0]psum_3;
   wire rst;
   wire [2:0]stride;
+  wire weight_end;
   wire [31:0]weight_size_1_16;
   wire [11:0]width_input_img;
 
@@ -80,6 +86,7 @@ module Multi_convo_core_wrapper
         .bram_dout_1(bram_dout_1),
         .bram_dout_2(bram_dout_2),
         .bram_dout_3(bram_dout_3),
+        .channel_end(channel_end),
         .channel_input_img(channel_input_img),
         .clk(clk),
         .en(en),
@@ -91,6 +98,7 @@ module Multi_convo_core_wrapper
         .psum_3(psum_3),
         .rst(rst),
         .stride(stride),
+        .weight_end(weight_end),
         .weight_size_1_16(weight_size_1_16),
         .width_input_img(width_input_img));
 endmodule

@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Fri Jan 28 16:10:47 2022
+//Date        : Mon Feb  7 19:14:51 2022
 //Host        : DESKTOP-Q4T850H running 64-bit major release  (build 9200)
 //Command     : generate_target Multi_accumulator_inst_0.bd
 //Design      : Multi_accumulator_inst_0
@@ -70,41 +70,41 @@ module Multi_accumulator_inst_0
     psum3_3,
     rst);
   output [31:0]BRAM_addr_sim;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_0 ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_out_AXI_0, MASTER_TYPE BRAM_CTRL, MEM_ECC NONE, MEM_SIZE 8192, MEM_WIDTH 32, READ_LATENCY 1" *) input [31:0]BRAM_out_AXI_0_addr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_0 ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_out_AXI_0, MASTER_TYPE BRAM_CTRL, MEM_ECC NONE, MEM_SIZE 8192, MEM_WIDTH 32, READ_LATENCY 1" *) input BRAM_out_AXI_0_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_0 CLK" *) input BRAM_out_AXI_0_clk;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_0 DIN" *) input [31:0]BRAM_out_AXI_0_din;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_0 DOUT" *) output [31:0]BRAM_out_AXI_0_dout;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_0 DIN" *) input BRAM_out_AXI_0_din;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_0 DOUT" *) output BRAM_out_AXI_0_dout;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_0 EN" *) input BRAM_out_AXI_0_en;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_0 RST" *) input BRAM_out_AXI_0_rst;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_0 WE" *) input [3:0]BRAM_out_AXI_0_we;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_1 ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_out_AXI_1, MASTER_TYPE BRAM_CTRL, MEM_ECC NONE, MEM_SIZE 8192, MEM_WIDTH 32, READ_LATENCY 1" *) input [31:0]BRAM_out_AXI_1_addr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_0 WE" *) input BRAM_out_AXI_0_we;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_1 ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_out_AXI_1, MASTER_TYPE BRAM_CTRL, MEM_ECC NONE, MEM_SIZE 8192, MEM_WIDTH 32, READ_LATENCY 1" *) input BRAM_out_AXI_1_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_1 CLK" *) input BRAM_out_AXI_1_clk;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_1 DIN" *) input [31:0]BRAM_out_AXI_1_din;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_1 DOUT" *) output [31:0]BRAM_out_AXI_1_dout;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_1 DIN" *) input BRAM_out_AXI_1_din;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_1 DOUT" *) output BRAM_out_AXI_1_dout;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_1 EN" *) input BRAM_out_AXI_1_en;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_1 RST" *) input BRAM_out_AXI_1_rst;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_1 WE" *) input [3:0]BRAM_out_AXI_1_we;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_2 ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_out_AXI_2, MASTER_TYPE BRAM_CTRL, MEM_ECC NONE, MEM_SIZE 8192, MEM_WIDTH 32, READ_LATENCY 1" *) input [31:0]BRAM_out_AXI_2_addr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_1 WE" *) input BRAM_out_AXI_1_we;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_2 ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_out_AXI_2, MASTER_TYPE BRAM_CTRL, MEM_ECC NONE, MEM_SIZE 8192, MEM_WIDTH 32, READ_LATENCY 1" *) input BRAM_out_AXI_2_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_2 CLK" *) input BRAM_out_AXI_2_clk;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_2 DIN" *) input [31:0]BRAM_out_AXI_2_din;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_2 DOUT" *) output [31:0]BRAM_out_AXI_2_dout;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_2 DIN" *) input BRAM_out_AXI_2_din;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_2 DOUT" *) output BRAM_out_AXI_2_dout;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_2 EN" *) input BRAM_out_AXI_2_en;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_2 RST" *) input BRAM_out_AXI_2_rst;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_2 WE" *) input [3:0]BRAM_out_AXI_2_we;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_3 ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_out_AXI_3, MASTER_TYPE BRAM_CTRL, MEM_ECC NONE, MEM_SIZE 8192, MEM_WIDTH 32, READ_LATENCY 1" *) input [31:0]BRAM_out_AXI_3_addr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_2 WE" *) input BRAM_out_AXI_2_we;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_3 ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_out_AXI_3, MASTER_TYPE BRAM_CTRL, MEM_ECC NONE, MEM_SIZE 8192, MEM_WIDTH 32, READ_LATENCY 1" *) input BRAM_out_AXI_3_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_3 CLK" *) input BRAM_out_AXI_3_clk;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_3 DIN" *) input [31:0]BRAM_out_AXI_3_din;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_3 DOUT" *) output [31:0]BRAM_out_AXI_3_dout;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_3 DIN" *) input BRAM_out_AXI_3_din;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_3 DOUT" *) output BRAM_out_AXI_3_dout;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_3 EN" *) input BRAM_out_AXI_3_en;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_3 RST" *) input BRAM_out_AXI_3_rst;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_3 WE" *) input [3:0]BRAM_out_AXI_3_we;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_out_AXI_3 WE" *) input BRAM_out_AXI_3_we;
   input [15:0]WxW_out;
   output accum_done;
   output [31:0]bram_dout_0;
   output [31:0]bram_dout_1;
   output [31:0]bram_dout_2;
   output [31:0]bram_dout_3;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_RESET rst, CLK_DOMAIN Multi_convo_core_clk_0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_RESET rst, CLK_DOMAIN Multi_convo_core_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk;
   input mac_done_0;
   input mac_done_1;
   input mac_done_2;
@@ -128,34 +128,34 @@ module Multi_accumulator_inst_0
   input [7:0]psum3_3;
   input rst;
 
-  wire [31:0]BRAM_PORTB_0_1_ADDR;
+  wire BRAM_PORTB_0_1_ADDR;
   wire BRAM_PORTB_0_1_CLK;
-  wire [31:0]BRAM_PORTB_0_1_DIN;
+  wire BRAM_PORTB_0_1_DIN;
   wire [31:0]BRAM_PORTB_0_1_DOUT;
   wire BRAM_PORTB_0_1_EN;
   wire BRAM_PORTB_0_1_RST;
-  wire [3:0]BRAM_PORTB_0_1_WE;
-  wire [31:0]BRAM_PORTB_1_1_ADDR;
+  wire BRAM_PORTB_0_1_WE;
+  wire BRAM_PORTB_1_1_ADDR;
   wire BRAM_PORTB_1_1_CLK;
-  wire [31:0]BRAM_PORTB_1_1_DIN;
+  wire BRAM_PORTB_1_1_DIN;
   wire [31:0]BRAM_PORTB_1_1_DOUT;
   wire BRAM_PORTB_1_1_EN;
   wire BRAM_PORTB_1_1_RST;
-  wire [3:0]BRAM_PORTB_1_1_WE;
-  wire [31:0]BRAM_PORTB_2_1_ADDR;
+  wire BRAM_PORTB_1_1_WE;
+  wire BRAM_PORTB_2_1_ADDR;
   wire BRAM_PORTB_2_1_CLK;
-  wire [31:0]BRAM_PORTB_2_1_DIN;
+  wire BRAM_PORTB_2_1_DIN;
   wire [31:0]BRAM_PORTB_2_1_DOUT;
   wire BRAM_PORTB_2_1_EN;
   wire BRAM_PORTB_2_1_RST;
-  wire [3:0]BRAM_PORTB_2_1_WE;
-  wire [31:0]BRAM_PORTB_3_1_ADDR;
+  wire BRAM_PORTB_2_1_WE;
+  wire BRAM_PORTB_3_1_ADDR;
   wire BRAM_PORTB_3_1_CLK;
-  wire [31:0]BRAM_PORTB_3_1_DIN;
+  wire BRAM_PORTB_3_1_DIN;
   wire [31:0]BRAM_PORTB_3_1_DOUT;
   wire BRAM_PORTB_3_1_EN;
   wire BRAM_PORTB_3_1_RST;
-  wire [3:0]BRAM_PORTB_3_1_WE;
+  wire BRAM_PORTB_3_1_WE;
   wire Net;
   wire [15:0]Net1;
   wire [10:0]Net2;
@@ -215,35 +215,35 @@ module Multi_accumulator_inst_0
   wire [7:0]in_psum3_2_1;
   wire [7:0]in_psum3_3_1;
 
-  assign BRAM_PORTB_0_1_ADDR = BRAM_out_AXI_0_addr[31:0];
+  assign BRAM_PORTB_0_1_ADDR = BRAM_out_AXI_0_addr;
   assign BRAM_PORTB_0_1_CLK = BRAM_out_AXI_0_clk;
-  assign BRAM_PORTB_0_1_DIN = BRAM_out_AXI_0_din[31:0];
+  assign BRAM_PORTB_0_1_DIN = BRAM_out_AXI_0_din;
   assign BRAM_PORTB_0_1_EN = BRAM_out_AXI_0_en;
   assign BRAM_PORTB_0_1_RST = BRAM_out_AXI_0_rst;
-  assign BRAM_PORTB_0_1_WE = BRAM_out_AXI_0_we[3:0];
-  assign BRAM_PORTB_1_1_ADDR = BRAM_out_AXI_1_addr[31:0];
+  assign BRAM_PORTB_0_1_WE = BRAM_out_AXI_0_we;
+  assign BRAM_PORTB_1_1_ADDR = BRAM_out_AXI_1_addr;
   assign BRAM_PORTB_1_1_CLK = BRAM_out_AXI_1_clk;
-  assign BRAM_PORTB_1_1_DIN = BRAM_out_AXI_1_din[31:0];
+  assign BRAM_PORTB_1_1_DIN = BRAM_out_AXI_1_din;
   assign BRAM_PORTB_1_1_EN = BRAM_out_AXI_1_en;
   assign BRAM_PORTB_1_1_RST = BRAM_out_AXI_1_rst;
-  assign BRAM_PORTB_1_1_WE = BRAM_out_AXI_1_we[3:0];
-  assign BRAM_PORTB_2_1_ADDR = BRAM_out_AXI_2_addr[31:0];
+  assign BRAM_PORTB_1_1_WE = BRAM_out_AXI_1_we;
+  assign BRAM_PORTB_2_1_ADDR = BRAM_out_AXI_2_addr;
   assign BRAM_PORTB_2_1_CLK = BRAM_out_AXI_2_clk;
-  assign BRAM_PORTB_2_1_DIN = BRAM_out_AXI_2_din[31:0];
+  assign BRAM_PORTB_2_1_DIN = BRAM_out_AXI_2_din;
   assign BRAM_PORTB_2_1_EN = BRAM_out_AXI_2_en;
   assign BRAM_PORTB_2_1_RST = BRAM_out_AXI_2_rst;
-  assign BRAM_PORTB_2_1_WE = BRAM_out_AXI_2_we[3:0];
-  assign BRAM_PORTB_3_1_ADDR = BRAM_out_AXI_3_addr[31:0];
+  assign BRAM_PORTB_2_1_WE = BRAM_out_AXI_2_we;
+  assign BRAM_PORTB_3_1_ADDR = BRAM_out_AXI_3_addr;
   assign BRAM_PORTB_3_1_CLK = BRAM_out_AXI_3_clk;
-  assign BRAM_PORTB_3_1_DIN = BRAM_out_AXI_3_din[31:0];
+  assign BRAM_PORTB_3_1_DIN = BRAM_out_AXI_3_din;
   assign BRAM_PORTB_3_1_EN = BRAM_out_AXI_3_en;
   assign BRAM_PORTB_3_1_RST = BRAM_out_AXI_3_rst;
-  assign BRAM_PORTB_3_1_WE = BRAM_out_AXI_3_we[3:0];
+  assign BRAM_PORTB_3_1_WE = BRAM_out_AXI_3_we;
   assign BRAM_addr_sim[31:0] = accumulator_0_BRAM_addr;
-  assign BRAM_out_AXI_0_dout[31:0] = BRAM_PORTB_0_1_DOUT;
-  assign BRAM_out_AXI_1_dout[31:0] = BRAM_PORTB_1_1_DOUT;
-  assign BRAM_out_AXI_2_dout[31:0] = BRAM_PORTB_2_1_DOUT;
-  assign BRAM_out_AXI_3_dout[31:0] = BRAM_PORTB_3_1_DOUT;
+  assign BRAM_out_AXI_0_dout = BRAM_PORTB_0_1_DOUT[0];
+  assign BRAM_out_AXI_1_dout = BRAM_PORTB_1_1_DOUT[0];
+  assign BRAM_out_AXI_2_dout = BRAM_PORTB_2_1_DOUT[0];
+  assign BRAM_out_AXI_3_dout = BRAM_PORTB_3_1_DOUT[0];
   assign Net = rst;
   assign Net1 = WxW_out[15:0];
   assign Net2 = no_channel_out[10:0];
@@ -359,11 +359,11 @@ module Multi_accumulator_inst_0
         .in3(accumulator_3_accum_done));
   Multi_accumulator_inst_0_blk_mem_gen_0_0 blk_mem_gen_0
        (.addra(accumulator_0_BRAM_addr),
-        .addrb(BRAM_PORTB_0_1_ADDR),
+        .addrb({BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR}),
         .clka(accumulator_0_BRAM_clk),
         .clkb(BRAM_PORTB_0_1_CLK),
         .dina(accumulator_0_BRAM_din),
-        .dinb(BRAM_PORTB_0_1_DIN),
+        .dinb({BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN}),
         .douta(blk_mem_gen_0_douta),
         .doutb(BRAM_PORTB_0_1_DOUT),
         .ena(accumulator_0_BRAM_en),
@@ -371,14 +371,14 @@ module Multi_accumulator_inst_0
         .rsta(accumulator_0_BRAM_rst),
         .rstb(BRAM_PORTB_0_1_RST),
         .wea(accumulator_0_BRAM_wen),
-        .web(BRAM_PORTB_0_1_WE));
+        .web({BRAM_PORTB_0_1_WE,BRAM_PORTB_0_1_WE,BRAM_PORTB_0_1_WE,BRAM_PORTB_0_1_WE}));
   Multi_accumulator_inst_0_blk_mem_gen_1_0 blk_mem_gen_1
        (.addra(accumulator_2_BRAM_addr),
-        .addrb(BRAM_PORTB_1_1_ADDR),
+        .addrb({BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR}),
         .clka(accumulator_2_BRAM_clk),
         .clkb(BRAM_PORTB_1_1_CLK),
         .dina(accumulator_2_BRAM_din),
-        .dinb(BRAM_PORTB_1_1_DIN),
+        .dinb({BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN}),
         .douta(blk_mem_gen_3_douta),
         .doutb(BRAM_PORTB_1_1_DOUT),
         .ena(accumulator_2_BRAM_en),
@@ -386,14 +386,14 @@ module Multi_accumulator_inst_0
         .rsta(accumulator_2_BRAM_rst),
         .rstb(BRAM_PORTB_1_1_RST),
         .wea(accumulator_2_BRAM_wen),
-        .web(BRAM_PORTB_1_1_WE));
+        .web({BRAM_PORTB_1_1_WE,BRAM_PORTB_1_1_WE,BRAM_PORTB_1_1_WE,BRAM_PORTB_1_1_WE}));
   Multi_accumulator_inst_0_blk_mem_gen_2_0 blk_mem_gen_2
        (.addra(accumulator_1_BRAM_addr),
-        .addrb(BRAM_PORTB_2_1_ADDR),
+        .addrb({BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR}),
         .clka(accumulator_1_BRAM_clk),
         .clkb(BRAM_PORTB_2_1_CLK),
         .dina(accumulator_1_BRAM_din),
-        .dinb(BRAM_PORTB_2_1_DIN),
+        .dinb({BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN}),
         .douta(blk_mem_gen_1_douta),
         .doutb(BRAM_PORTB_2_1_DOUT),
         .ena(accumulator_1_BRAM_en),
@@ -401,14 +401,14 @@ module Multi_accumulator_inst_0
         .rsta(accumulator_1_BRAM_rst),
         .rstb(BRAM_PORTB_2_1_RST),
         .wea(accumulator_1_BRAM_wen),
-        .web(BRAM_PORTB_2_1_WE));
+        .web({BRAM_PORTB_2_1_WE,BRAM_PORTB_2_1_WE,BRAM_PORTB_2_1_WE,BRAM_PORTB_2_1_WE}));
   Multi_accumulator_inst_0_blk_mem_gen_3_0 blk_mem_gen_3
        (.addra(accumulator_3_BRAM_addr),
-        .addrb(BRAM_PORTB_3_1_ADDR),
+        .addrb({BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR}),
         .clka(accumulator_3_BRAM_clk),
         .clkb(BRAM_PORTB_3_1_CLK),
         .dina(accumulator_3_BRAM_din),
-        .dinb(BRAM_PORTB_3_1_DIN),
+        .dinb({BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN}),
         .douta(blk_mem_gen_2_douta),
         .doutb(BRAM_PORTB_3_1_DOUT),
         .ena(accumulator_3_BRAM_en),
@@ -416,5 +416,5 @@ module Multi_accumulator_inst_0
         .rsta(accumulator_3_BRAM_rst),
         .rstb(BRAM_PORTB_3_1_RST),
         .wea(accumulator_3_BRAM_wen),
-        .web(BRAM_PORTB_3_1_WE));
+        .web({BRAM_PORTB_3_1_WE,BRAM_PORTB_3_1_WE,BRAM_PORTB_3_1_WE,BRAM_PORTB_3_1_WE}));
 endmodule

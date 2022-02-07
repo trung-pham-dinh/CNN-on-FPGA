@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Jan 28 16:10:48 2022" VIVADOVERSION="2021.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Feb  7 19:14:52 2022" VIVADOVERSION="2021.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="Multi_accumulator_inst_0" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
-    <PORT DIR="I" LEFT="31" NAME="BRAM_out_AXI_0_addr" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_addrb">
+    <PORT DIR="I" NAME="BRAM_out_AXI_0_addr" SIGIS="undef" SIGNAME="blk_mem_gen_0_addrb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_0" PORT="addrb"/>
       </CONNECTIONS>
@@ -14,12 +14,12 @@
         <CONNECTION INSTANCE="blk_mem_gen_0" PORT="clkb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="31" NAME="BRAM_out_AXI_0_din" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_dinb">
+    <PORT DIR="I" NAME="BRAM_out_AXI_0_din" SIGIS="undef" SIGNAME="blk_mem_gen_0_dinb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_0" PORT="dinb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="31" NAME="BRAM_out_AXI_0_dout" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_doutb">
+    <PORT DIR="O" NAME="BRAM_out_AXI_0_dout" SIGIS="undef" SIGNAME="blk_mem_gen_0_doutb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_0" PORT="doutb"/>
       </CONNECTIONS>
@@ -34,12 +34,12 @@
         <CONNECTION INSTANCE="blk_mem_gen_0" PORT="rstb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="3" NAME="BRAM_out_AXI_0_we" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_web">
+    <PORT DIR="I" NAME="BRAM_out_AXI_0_we" SIGIS="undef" SIGNAME="blk_mem_gen_0_web">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_0" PORT="web"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="31" NAME="BRAM_out_AXI_1_addr" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_1_addrb">
+    <PORT DIR="I" NAME="BRAM_out_AXI_1_addr" SIGIS="undef" SIGNAME="blk_mem_gen_1_addrb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_1" PORT="addrb"/>
       </CONNECTIONS>
@@ -49,12 +49,12 @@
         <CONNECTION INSTANCE="blk_mem_gen_1" PORT="clkb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="31" NAME="BRAM_out_AXI_1_din" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_1_dinb">
+    <PORT DIR="I" NAME="BRAM_out_AXI_1_din" SIGIS="undef" SIGNAME="blk_mem_gen_1_dinb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_1" PORT="dinb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="31" NAME="BRAM_out_AXI_1_dout" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_1_doutb">
+    <PORT DIR="O" NAME="BRAM_out_AXI_1_dout" SIGIS="undef" SIGNAME="blk_mem_gen_1_doutb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_1" PORT="doutb"/>
       </CONNECTIONS>
@@ -69,12 +69,12 @@
         <CONNECTION INSTANCE="blk_mem_gen_1" PORT="rstb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="3" NAME="BRAM_out_AXI_1_we" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_1_web">
+    <PORT DIR="I" NAME="BRAM_out_AXI_1_we" SIGIS="undef" SIGNAME="blk_mem_gen_1_web">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_1" PORT="web"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="31" NAME="BRAM_out_AXI_2_addr" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_2_addrb">
+    <PORT DIR="I" NAME="BRAM_out_AXI_2_addr" SIGIS="undef" SIGNAME="blk_mem_gen_2_addrb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_2" PORT="addrb"/>
       </CONNECTIONS>
@@ -84,12 +84,12 @@
         <CONNECTION INSTANCE="blk_mem_gen_2" PORT="clkb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="31" NAME="BRAM_out_AXI_2_din" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_2_dinb">
+    <PORT DIR="I" NAME="BRAM_out_AXI_2_din" SIGIS="undef" SIGNAME="blk_mem_gen_2_dinb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_2" PORT="dinb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="31" NAME="BRAM_out_AXI_2_dout" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_2_doutb">
+    <PORT DIR="O" NAME="BRAM_out_AXI_2_dout" SIGIS="undef" SIGNAME="blk_mem_gen_2_doutb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_2" PORT="doutb"/>
       </CONNECTIONS>
@@ -104,12 +104,12 @@
         <CONNECTION INSTANCE="blk_mem_gen_2" PORT="rstb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="3" NAME="BRAM_out_AXI_2_we" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_2_web">
+    <PORT DIR="I" NAME="BRAM_out_AXI_2_we" SIGIS="undef" SIGNAME="blk_mem_gen_2_web">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_2" PORT="web"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="31" NAME="BRAM_out_AXI_3_addr" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_3_addrb">
+    <PORT DIR="I" NAME="BRAM_out_AXI_3_addr" SIGIS="undef" SIGNAME="blk_mem_gen_3_addrb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_3" PORT="addrb"/>
       </CONNECTIONS>
@@ -119,12 +119,12 @@
         <CONNECTION INSTANCE="blk_mem_gen_3" PORT="clkb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="31" NAME="BRAM_out_AXI_3_din" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_3_dinb">
+    <PORT DIR="I" NAME="BRAM_out_AXI_3_din" SIGIS="undef" SIGNAME="blk_mem_gen_3_dinb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_3" PORT="dinb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="31" NAME="BRAM_out_AXI_3_dout" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_3_doutb">
+    <PORT DIR="O" NAME="BRAM_out_AXI_3_dout" SIGIS="undef" SIGNAME="blk_mem_gen_3_doutb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_3" PORT="doutb"/>
       </CONNECTIONS>
@@ -139,7 +139,7 @@
         <CONNECTION INSTANCE="blk_mem_gen_3" PORT="rstb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="3" NAME="BRAM_out_AXI_3_we" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_3_web">
+    <PORT DIR="I" NAME="BRAM_out_AXI_3_we" SIGIS="undef" SIGNAME="blk_mem_gen_3_web">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_3" PORT="web"/>
       </CONNECTIONS>
@@ -234,10 +234,10 @@
     </PORT>
     <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="External_Ports_rst">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="accumulator_3" PORT="rst"/>
-        <CONNECTION INSTANCE="accumulator_1" PORT="rst"/>
-        <CONNECTION INSTANCE="accumulator_2" PORT="rst"/>
         <CONNECTION INSTANCE="accumulator_0" PORT="rst"/>
+        <CONNECTION INSTANCE="accumulator_2" PORT="rst"/>
+        <CONNECTION INSTANCE="accumulator_1" PORT="rst"/>
+        <CONNECTION INSTANCE="accumulator_3" PORT="rst"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="mac_done_0" SIGIS="undef" SIGNAME="External_Ports_mac_done_0">
@@ -1045,8 +1045,8 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="douta" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_douta">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="accumulator_0" PORT="BRAM_dout"/>
             <CONNECTION INSTANCE="External_Ports" PORT="bram_dout_0"/>
+            <CONNECTION INSTANCE="accumulator_0" PORT="BRAM_dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="clkb" SIGIS="clk" SIGNAME="blk_mem_gen_0_clkb">
@@ -1309,8 +1309,8 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="douta" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_1_douta">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="accumulator_1" PORT="BRAM_dout"/>
             <CONNECTION INSTANCE="External_Ports" PORT="bram_dout_1"/>
+            <CONNECTION INSTANCE="accumulator_1" PORT="BRAM_dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="clkb" SIGIS="clk" SIGNAME="blk_mem_gen_1_clkb">
@@ -1573,8 +1573,8 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="douta" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_2_douta">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="accumulator_2" PORT="BRAM_dout"/>
             <CONNECTION INSTANCE="External_Ports" PORT="bram_dout_2"/>
+            <CONNECTION INSTANCE="accumulator_2" PORT="BRAM_dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="clkb" SIGIS="clk" SIGNAME="blk_mem_gen_2_clkb">
@@ -1837,8 +1837,8 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="douta" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_3_douta">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="accumulator_3" PORT="BRAM_dout"/>
             <CONNECTION INSTANCE="External_Ports" PORT="bram_dout_3"/>
+            <CONNECTION INSTANCE="accumulator_3" PORT="BRAM_dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="clkb" SIGIS="clk" SIGNAME="blk_mem_gen_3_clkb">
