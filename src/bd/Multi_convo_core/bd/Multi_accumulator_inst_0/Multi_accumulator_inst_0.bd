@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x1C98400A26CE6347",
+      "boundary_crc": "0x1C98400A97AA2C45",
       "design_src": "D:/Documents/Xilinx/CNN_FPGA/Vivado/src/bd/Multi_accumulator/Multi_accumulator.bd",
       "device": "xc7z020clg400-1",
       "name": "Multi_accumulator_inst_0",
@@ -295,7 +295,7 @@
             "value_src": "strong"
           },
           "CLK_DOMAIN": {
-            "value": "Multi_convo_core_clk_0",
+            "value": "Multi_convo_core_clk",
             "value_src": "default_prop"
           },
           "FREQ_HZ": {
@@ -485,7 +485,7 @@
                 "value_src": "default_prop"
               },
               "CLK_DOMAIN": {
-                "value": "Multi_convo_core_clk_0",
+                "value": "Multi_convo_core_clk",
                 "value_src": "default_prop"
               }
             }
@@ -603,7 +603,7 @@
                 "value_src": "default_prop"
               },
               "CLK_DOMAIN": {
-                "value": "Multi_convo_core_clk_0",
+                "value": "Multi_convo_core_clk",
                 "value_src": "default_prop"
               }
             }
@@ -721,7 +721,7 @@
                 "value_src": "default_prop"
               },
               "CLK_DOMAIN": {
-                "value": "Multi_convo_core_clk_0",
+                "value": "Multi_convo_core_clk",
                 "value_src": "default_prop"
               }
             }
@@ -839,7 +839,7 @@
                 "value_src": "default_prop"
               },
               "CLK_DOMAIN": {
-                "value": "Multi_convo_core_clk_0",
+                "value": "Multi_convo_core_clk",
                 "value_src": "default_prop"
               }
             }

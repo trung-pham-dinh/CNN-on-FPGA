@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="Multi_convo_core" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1643361040"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1643361040"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1643361049"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1643361049"/>
+    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1644226504"/>
+    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1644226504"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1644226515"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1644226515"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="synth\Multi_convo_core.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
@@ -52,6 +52,13 @@
       </File>
     </FileCollection>
     <BlockContainerCollection>
+      <BlockContainer InstPath="/Multi_accumulator_0" IsPR="false" State="Generated">
+        <ActiveVariantSynth FileName="bd\Multi_accumulator_inst_0\Multi_accumulator_inst_0.bd"/>
+        <ActiveVariantSim FileName="bd\Multi_accumulator_inst_0\Multi_accumulator_inst_0.bd"/>
+        <VariantsCollection>
+          <BDFile BDFilePath="bd\Multi_accumulator_inst_0\Multi_accumulator_inst_0.bd" BDFileset="Multi_accumulator_inst_0" BDSourceFile="..\Multi_accumulator\Multi_accumulator.bd" BDSourceFileset="sources_1" BDVariantType="ALL"/>
+        </VariantsCollection>
+      </BlockContainer>
       <BlockContainer InstPath="/Convo_core_0" IsPR="false" State="Generated">
         <ActiveVariantSynth FileName="bd\Convo_core_inst_0\Convo_core_inst_0.bd"/>
         <ActiveVariantSim FileName="bd\Convo_core_inst_0\Convo_core_inst_0.bd"/>
@@ -80,54 +87,11 @@
           <BDFile BDFilePath="bd\Convo_core_inst_3\Convo_core_inst_3.bd" BDFileset="Convo_core_inst_3" BDSourceFile="..\Convo_core\Convo_core.bd" BDSourceFileset="sources_1" BDVariantType="ALL"/>
         </VariantsCollection>
       </BlockContainer>
-      <BlockContainer InstPath="/Multi_accumulator_0" IsPR="false" State="Generated">
-        <ActiveVariantSynth FileName="bd\Multi_accumulator_inst_0\Multi_accumulator_inst_0.bd"/>
-        <ActiveVariantSim FileName="bd\Multi_accumulator_inst_0\Multi_accumulator_inst_0.bd"/>
-        <VariantsCollection>
-          <BDFile BDFilePath="bd\Multi_accumulator_inst_0\Multi_accumulator_inst_0.bd" BDFileset="Multi_accumulator_inst_0" BDSourceFile="..\Multi_accumulator\Multi_accumulator.bd" BDSourceFileset="sources_1" BDVariantType="ALL"/>
-        </VariantsCollection>
-      </BlockContainer>
     </BlockContainerCollection>
     <ReferenceCollection>
-      <ModuleReference TargetName="Convo_core" Type="Block Design" SubInstancePath="Multi_convo_core_Convo_core_0">
-        <TopFile Name="..\Convo_core\Convo_core.bd"/>
-        <FileCollection>
-          <File Name="..\..\hdl\in_addr_gen.v"/>
-          <File Name="..\..\hdl\load_activation.v"/>
-          <File Name="..\..\ip\mult_gen_0\mult_gen_0.xci"/>
-          <File Name="..\..\hdl\pcore.v"/>
-          <File Name="..\..\hdl\pe.v"/>
-          <File Name="..\..\hdl\pmul.v"/>
-          <File Name="..\..\hdl\computing_core.v"/>
-          <File Name="..\..\hdl\load_weight.v"/>
-          <File Name="..\..\hdl\BRAM_selector.v"/>
-          <File Name="..\..\hdl\pipeline.v"/>
-          <File Name="..\..\hdl\load_weight_ctrl.v"/>
-          <File Name="..\Convo_core\Convo_core.bd"/>
-        </FileCollection>
-      </ModuleReference>
-      <ModuleReference TargetName="Convo_core" Type="Block Design" SubInstancePath="Multi_convo_coreConvo_core_3">
-        <TopFile Name="..\Convo_core\Convo_core.bd"/>
-        <FileCollection>
-          <File Name="..\..\hdl\in_addr_gen.v"/>
-          <File Name="..\..\hdl\load_activation.v"/>
-          <File Name="..\..\ip\mult_gen_0\mult_gen_0.xci"/>
-          <File Name="..\..\hdl\pcore.v"/>
-          <File Name="..\..\hdl\pe.v"/>
-          <File Name="..\..\hdl\pmul.v"/>
-          <File Name="..\..\hdl\computing_core.v"/>
-          <File Name="..\..\hdl\load_weight.v"/>
-          <File Name="..\..\hdl\BRAM_selector.v"/>
-          <File Name="..\..\hdl\pipeline.v"/>
-          <File Name="..\..\hdl\load_weight_ctrl.v"/>
-          <File Name="..\Convo_core\Convo_core.bd"/>
-        </FileCollection>
-      </ModuleReference>
       <ModuleReference TargetName="Convo_core" Type="Block Design" SubInstancePath="Multi_convo_coreConvo_core_1">
         <TopFile Name="..\Convo_core\Convo_core.bd"/>
         <FileCollection>
-          <File Name="..\..\hdl\in_addr_gen.v"/>
-          <File Name="..\..\hdl\load_activation.v"/>
           <File Name="..\..\ip\mult_gen_0\mult_gen_0.xci"/>
           <File Name="..\..\hdl\pcore.v"/>
           <File Name="..\..\hdl\pe.v"/>
@@ -137,6 +101,25 @@
           <File Name="..\..\hdl\BRAM_selector.v"/>
           <File Name="..\..\hdl\pipeline.v"/>
           <File Name="..\..\hdl\load_weight_ctrl.v"/>
+          <File Name="..\..\hdl\in_addr_gen.v"/>
+          <File Name="..\..\hdl\load_activation.v"/>
+          <File Name="..\Convo_core\Convo_core.bd"/>
+        </FileCollection>
+      </ModuleReference>
+      <ModuleReference TargetName="Convo_core" Type="Block Design" SubInstancePath="Multi_convo_coreConvo_core_2">
+        <TopFile Name="..\Convo_core\Convo_core.bd"/>
+        <FileCollection>
+          <File Name="..\..\ip\mult_gen_0\mult_gen_0.xci"/>
+          <File Name="..\..\hdl\pcore.v"/>
+          <File Name="..\..\hdl\pe.v"/>
+          <File Name="..\..\hdl\pmul.v"/>
+          <File Name="..\..\hdl\computing_core.v"/>
+          <File Name="..\..\hdl\load_weight.v"/>
+          <File Name="..\..\hdl\BRAM_selector.v"/>
+          <File Name="..\..\hdl\pipeline.v"/>
+          <File Name="..\..\hdl\load_weight_ctrl.v"/>
+          <File Name="..\..\hdl\in_addr_gen.v"/>
+          <File Name="..\..\hdl\load_activation.v"/>
           <File Name="..\Convo_core\Convo_core.bd"/>
         </FileCollection>
       </ModuleReference>
@@ -149,11 +132,9 @@
           <File Name="..\Multi_accumulator\Multi_accumulator.bd"/>
         </FileCollection>
       </ModuleReference>
-      <ModuleReference TargetName="Convo_core" Type="Block Design" SubInstancePath="Multi_convo_coreConvo_core_2">
+      <ModuleReference TargetName="Convo_core" Type="Block Design" SubInstancePath="Multi_convo_coreConvo_core_3">
         <TopFile Name="..\Convo_core\Convo_core.bd"/>
         <FileCollection>
-          <File Name="..\..\hdl\in_addr_gen.v"/>
-          <File Name="..\..\hdl\load_activation.v"/>
           <File Name="..\..\ip\mult_gen_0\mult_gen_0.xci"/>
           <File Name="..\..\hdl\pcore.v"/>
           <File Name="..\..\hdl\pe.v"/>
@@ -163,6 +144,25 @@
           <File Name="..\..\hdl\BRAM_selector.v"/>
           <File Name="..\..\hdl\pipeline.v"/>
           <File Name="..\..\hdl\load_weight_ctrl.v"/>
+          <File Name="..\..\hdl\in_addr_gen.v"/>
+          <File Name="..\..\hdl\load_activation.v"/>
+          <File Name="..\Convo_core\Convo_core.bd"/>
+        </FileCollection>
+      </ModuleReference>
+      <ModuleReference TargetName="Convo_core" Type="Block Design" SubInstancePath="Multi_convo_core_Convo_core_0">
+        <TopFile Name="..\Convo_core\Convo_core.bd"/>
+        <FileCollection>
+          <File Name="..\..\ip\mult_gen_0\mult_gen_0.xci"/>
+          <File Name="..\..\hdl\pcore.v"/>
+          <File Name="..\..\hdl\pe.v"/>
+          <File Name="..\..\hdl\pmul.v"/>
+          <File Name="..\..\hdl\computing_core.v"/>
+          <File Name="..\..\hdl\load_weight.v"/>
+          <File Name="..\..\hdl\BRAM_selector.v"/>
+          <File Name="..\..\hdl\pipeline.v"/>
+          <File Name="..\..\hdl\load_weight_ctrl.v"/>
+          <File Name="..\..\hdl\in_addr_gen.v"/>
+          <File Name="..\..\hdl\load_activation.v"/>
           <File Name="..\Convo_core\Convo_core.bd"/>
         </FileCollection>
       </ModuleReference>

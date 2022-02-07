@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.545359",
-   "Default View_TopLeft":"-303,-319",
+   "Default View_ScaleFactor":"0.999998",
+   "Default View_TopLeft":"1584,53",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
@@ -10,65 +10,69 @@ preplace port port-id_rst -pg 1 -lvl 0 -x -410 -y 50 -defaultsOSRD
 preplace port port-id_init_signal -pg 1 -lvl 0 -x -410 -y 170 -defaultsOSRD
 preplace port port-id_en -pg 1 -lvl 0 -x -410 -y 200 -defaultsOSRD
 preplace port port-id_BRAM_img_sel -pg 1 -lvl 0 -x -410 -y 400 -defaultsOSRD
+preplace port port-id_weight_end -pg 1 -lvl 5 -x 2350 -y 360 -defaultsOSRD
+preplace port port-id_channel_end -pg 1 -lvl 5 -x 2350 -y 400 -defaultsOSRD
 preplace portBus WxW_out -pg 1 -lvl 0 -x -410 -y 1150 -defaultsOSRD
 preplace portBus no_channel_out -pg 1 -lvl 0 -x -410 -y 1180 -defaultsOSRD
 preplace portBus stride -pg 1 -lvl 0 -x -410 -y 20 -defaultsOSRD
 preplace portBus width_input_img -pg 1 -lvl 0 -x -410 -y 110 -defaultsOSRD
 preplace portBus channel_input_img -pg 1 -lvl 0 -x -410 -y 140 -defaultsOSRD
 preplace portBus weight_size_1_16 -pg 1 -lvl 0 -x -410 -y 360 -defaultsOSRD
-preplace portBus bram_dout_0 -pg 1 -lvl 5 -x 2380 -y 840 -defaultsOSRD
-preplace portBus bram_dout_1 -pg 1 -lvl 5 -x 2380 -y 870 -defaultsOSRD
-preplace portBus bram_dout_2 -pg 1 -lvl 5 -x 2380 -y 900 -defaultsOSRD
-preplace portBus bram_dout_3 -pg 1 -lvl 5 -x 2380 -y 930 -defaultsOSRD
-preplace portBus psum_0 -pg 1 -lvl 5 -x 2380 -y 650 -defaultsOSRD
-preplace portBus psum_1 -pg 1 -lvl 5 -x 2380 -y 700 -defaultsOSRD
-preplace portBus psum_2 -pg 1 -lvl 5 -x 2380 -y 780 -defaultsOSRD
-preplace portBus psum_3 -pg 1 -lvl 5 -x 2380 -y 810 -defaultsOSRD
-preplace portBus BRAM_addr_sim -pg 1 -lvl 5 -x 2380 -y 960 -defaultsOSRD
-preplace inst Convo_core_0 -pg 1 -lvl 1 -x 150 -y 320 -defaultsOSRD
-preplace inst Convo_core_1 -pg 1 -lvl 2 -x 930 -y 310 -defaultsOSRD
-preplace inst Convo_core_2 -pg 1 -lvl 3 -x 1557 -y 340 -defaultsOSRD
-preplace inst Convo_core_3 -pg 1 -lvl 4 -x 2090 -y 330 -defaultsOSRD
-preplace inst Multi_accumulator_0 -pg 1 -lvl 2 -x 930 -y 910 -defaultsOSRD
-preplace netloc Convo_core_0_out_psum0 1 1 4 430 -30 N -30 N -30 2350
-preplace netloc Convo_core_0_out_psum1 1 1 4 400 1240 1190 700 N 700 N
-preplace netloc Convo_core_0_out_psum2 1 1 4 380 1250 1210 780 N 780 N
-preplace netloc Convo_core_0_out_psum3 1 1 4 360 1260 1230 810 N 810 N
-preplace netloc Convo_core_1_out_psum0 1 1 2 520 1290 1160
-preplace netloc Convo_core_1_out_psum1 1 1 2 570 0 1150
-preplace netloc Convo_core_1_out_psum2 1 1 2 580 60 1140
-preplace netloc Convo_core_1_out_psum3 1 1 2 560 1270 1150
-preplace netloc Convo_core_2_out_psum0 1 1 3 560 -10 NJ -10 1790
-preplace netloc Convo_core_2_out_psum1 1 1 3 500 1330 NJ 1330 1790
-preplace netloc Convo_core_2_out_psum2 1 1 3 510 -20 NJ -20 1800
-preplace netloc Convo_core_2_out_psum3 1 1 3 530 1340 NJ 1340 1780
-preplace netloc Convo_core_2_out_psum_vld 1 1 3 550 1320 NJ 1320 1770
-preplace netloc Convo_core_3_out_psum0 1 1 4 480 1350 NJ 1350 NJ 1350 2340
-preplace netloc Convo_core_3_out_psum1 1 1 4 490 1360 NJ 1360 NJ 1360 2330
-preplace netloc Convo_core_3_out_psum2 1 1 4 540 1300 NJ 1300 NJ 1300 2310
-preplace netloc Convo_core_3_out_psum3 1 1 4 510 1370 NJ 1370 NJ 1370 2320
-preplace netloc Multi_accumulator_0_accum_done 1 0 4 -330 590 420J 550 1170 620 1850
-preplace netloc Multi_accumulator_0_bram_dout_0 1 2 3 1180J 840 NJ 840 NJ
-preplace netloc Multi_accumulator_0_bram_dout_1 1 2 3 1200J 870 NJ 870 NJ
-preplace netloc Multi_accumulator_0_bram_dout_2 1 2 3 1220J 900 NJ 900 NJ
-preplace netloc Multi_accumulator_0_bram_dout_3 1 2 3 1240J 930 NJ 930 NJ
-preplace netloc WxW_out_0_1 1 0 2 NJ 1150 370J
-preplace netloc channel_input_img_0_1 1 0 4 -340 60 480 50 1190 60 1830
-preplace netloc clk_0_1 1 0 4 -330 70 450 20 1240 70 1850
-preplace netloc en_0_1 1 0 4 -380 560 410 560 1190 600 1810
-preplace netloc init_signal_0_1 1 0 4 -320 80 500 70 1180 590 1800
-preplace netloc mac_done_0_1 1 1 1 390 330n
-preplace netloc mac_done_1_1 1 1 2 580 1280 1140
-preplace netloc mac_done_3_1 1 1 4 570 1310 NJ 1310 NJ 1310 2300
-preplace netloc no_channel_out_0_1 1 0 2 NJ 1180 NJ
-preplace netloc rst_0_1 1 0 4 -370 50 470 40 1210 80 1840
-preplace netloc stride_0_1 1 0 4 -360 20 440 10 1230 100 1810
-preplace netloc weight_size_1_16_0_1 1 0 4 -360 570 440 570 1200 610 1840
-preplace netloc width_input_img_0_1 1 0 4 -350 40 460 30 1200 90 1820
-preplace netloc BRAM_img_sel_0_1 1 0 4 -390 580 500 580 1230 580 1830
+preplace portBus bram_dout_0 -pg 1 -lvl 5 -x 2350 -y 840 -defaultsOSRD
+preplace portBus bram_dout_1 -pg 1 -lvl 5 -x 2350 -y 870 -defaultsOSRD
+preplace portBus bram_dout_2 -pg 1 -lvl 5 -x 2350 -y 900 -defaultsOSRD
+preplace portBus bram_dout_3 -pg 1 -lvl 5 -x 2350 -y 930 -defaultsOSRD
+preplace portBus psum_0 -pg 1 -lvl 5 -x 2350 -y 650 -defaultsOSRD
+preplace portBus psum_1 -pg 1 -lvl 5 -x 2350 -y 700 -defaultsOSRD
+preplace portBus psum_2 -pg 1 -lvl 5 -x 2350 -y 780 -defaultsOSRD
+preplace portBus psum_3 -pg 1 -lvl 5 -x 2350 -y 810 -defaultsOSRD
+preplace portBus BRAM_addr_sim -pg 1 -lvl 5 -x 2350 -y 960 -defaultsOSRD
+preplace inst Convo_core_0 -pg 1 -lvl 1 -x 140 -y 320 -defaultsOSRD
+preplace inst Convo_core_1 -pg 1 -lvl 2 -x 910 -y 310 -defaultsOSRD
+preplace inst Convo_core_2 -pg 1 -lvl 3 -x 1537 -y 340 -defaultsOSRD
+preplace inst Convo_core_3 -pg 1 -lvl 4 -x 2070 -y 330 -defaultsOSRD
+preplace inst Multi_accumulator_0 -pg 1 -lvl 2 -x 910 -y 910 -defaultsOSRD
+preplace netloc BRAM_img_sel_0_1 1 0 4 -390 580 490 580 1210 580 1810
+preplace netloc Convo_core_0_out_psum0 1 1 4 420 -30 N -30 N -30 2330
+preplace netloc Convo_core_0_out_psum1 1 1 4 390 1240 1170 700 N 700 N
+preplace netloc Convo_core_0_out_psum2 1 1 4 370 1250 1190 780 N 780 N
+preplace netloc Convo_core_0_out_psum3 1 1 4 350 1260 1210 810 N 810 N
+preplace netloc Convo_core_1_out_psum0 1 1 2 510 1290 1140
+preplace netloc Convo_core_1_out_psum1 1 1 2 560 0 1130
+preplace netloc Convo_core_1_out_psum2 1 1 2 570 60 1120
+preplace netloc Convo_core_1_out_psum3 1 1 2 550 1270 1130
+preplace netloc Convo_core_2_out_psum0 1 1 3 550 -10 NJ -10 1770
+preplace netloc Convo_core_2_out_psum1 1 1 3 490 1330 NJ 1330 1770
+preplace netloc Convo_core_2_out_psum2 1 1 3 500 -20 NJ -20 1780
+preplace netloc Convo_core_2_out_psum3 1 1 3 520 1340 NJ 1340 1760
+preplace netloc Convo_core_2_out_psum_vld 1 1 3 540 1320 NJ 1320 1750
+preplace netloc Convo_core_3_out_psum0 1 1 4 470 1350 NJ 1350 NJ 1350 2320
+preplace netloc Convo_core_3_out_psum1 1 1 4 480 1360 NJ 1360 NJ 1360 2310
+preplace netloc Convo_core_3_out_psum2 1 1 4 530 1300 NJ 1300 NJ 1300 2290
+preplace netloc Convo_core_3_out_psum3 1 1 4 500 1370 NJ 1370 NJ 1370 2300
 preplace netloc Multi_accumulator_0_BRAM_addr_sim 1 2 3 NJ 960 NJ 960 NJ
-levelinfo -pg 1 -410 150 930 1557 2090 2380
-pagesize -pg 1 -db -bbox -sgen -620 -40 2570 2870
+preplace netloc Multi_accumulator_0_accum_done 1 0 4 -330 590 410J 550 1150 620 1830
+preplace netloc Multi_accumulator_0_bram_dout_0 1 2 3 1160J 840 NJ 840 NJ
+preplace netloc Multi_accumulator_0_bram_dout_1 1 2 3 1180J 870 NJ 870 NJ
+preplace netloc Multi_accumulator_0_bram_dout_2 1 2 3 1200J 900 NJ 900 NJ
+preplace netloc Multi_accumulator_0_bram_dout_3 1 2 3 1220J 930 NJ 930 NJ
+preplace netloc WxW_out_0_1 1 0 2 NJ 1150 360J
+preplace netloc channel_input_img_0_1 1 0 4 -340 60 470 50 1170 60 1810
+preplace netloc clk_0_1 1 0 4 -330 70 440 20 1220 70 1830
+preplace netloc en_0_1 1 0 4 -380 560 400 560 1170 600 1790
+preplace netloc init_signal_0_1 1 0 4 -320 80 490 70 1160 590 1780
+preplace netloc mac_done_0_1 1 1 1 380 330n
+preplace netloc mac_done_1_1 1 1 2 570 1280 1120
+preplace netloc mac_done_3_1 1 1 4 560 1310 NJ 1310 NJ 1310 2280
+preplace netloc no_channel_out_0_1 1 0 2 NJ 1180 NJ
+preplace netloc rst_0_1 1 0 4 -370 50 460 40 1190 80 1820
+preplace netloc stride_0_1 1 0 4 -360 20 430 10 1210 100 1790
+preplace netloc weight_size_1_16_0_1 1 0 4 -360 570 430 570 1180 610 1820
+preplace netloc width_input_img_0_1 1 0 4 -350 40 450 30 1180 90 1800
+preplace netloc Convo_core_3_weight_end 1 4 1 NJ 360
+preplace netloc Convo_core_3_channel_end 1 4 1 NJ 400
+levelinfo -pg 1 -410 140 910 1537 2070 2350
+pagesize -pg 1 -db -bbox -sgen -620 -40 2540 2870
 "
 }
 0
