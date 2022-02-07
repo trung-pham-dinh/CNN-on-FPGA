@@ -433,7 +433,7 @@
         "variant_info": {
           "Convo_core.bd": {
             "scoped_diagram": "Convo_core_inst_0.bd",
-            "design_checksum": "0xACEC9DB4",
+            "design_checksum": "0x7BA0DF19",
             "ref_name": "Convo_core",
             "ref_subinst_path": "Multi_convo_core_Convo_core_0",
             "ref_type": "Block Design",
@@ -722,7 +722,7 @@
         "variant_info": {
           "Convo_core.bd": {
             "scoped_diagram": "Convo_core_inst_1.bd",
-            "design_checksum": "0xACEC9DB4",
+            "design_checksum": "0x7BA0DF19",
             "ref_name": "Convo_core",
             "ref_subinst_path": "Multi_convo_coreConvo_core_1",
             "ref_type": "Block Design",
@@ -1011,7 +1011,7 @@
         "variant_info": {
           "Convo_core.bd": {
             "scoped_diagram": "Convo_core_inst_2.bd",
-            "design_checksum": "0xACEC9DB4",
+            "design_checksum": "0x7BA0DF19",
             "ref_name": "Convo_core",
             "ref_subinst_path": "Multi_convo_coreConvo_core_2",
             "ref_type": "Block Design",
@@ -1300,7 +1300,7 @@
         "variant_info": {
           "Convo_core.bd": {
             "scoped_diagram": "Convo_core_inst_3.bd",
-            "design_checksum": "0xACEC9DB4",
+            "design_checksum": "0x7BA0DF19",
             "ref_name": "Convo_core",
             "ref_subinst_path": "Multi_convo_coreConvo_core_3",
             "ref_type": "Block Design",
@@ -1616,7 +1616,7 @@
         "variant_info": {
           "Multi_accumulator.bd": {
             "scoped_diagram": "Multi_accumulator_inst_0.bd",
-            "design_checksum": "0x474EF1B7",
+            "design_checksum": "0x3021394D",
             "ref_name": "Multi_accumulator",
             "ref_subinst_path": "Multi_convo_core_Multi_accumulator_0",
             "ref_type": "Block Design",

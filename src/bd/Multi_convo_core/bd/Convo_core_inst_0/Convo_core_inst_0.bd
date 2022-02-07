@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xC10640376A5F83B4",
+      "boundary_crc": "0xC1064037E5F397CA",
       "design_src": "D:/Documents/Xilinx/CNN_FPGA/Vivado/src/bd/Convo_core/Convo_core.bd",
       "device": "xc7z020clg400-1",
       "name": "Convo_core_inst_0",
@@ -17,11 +17,11 @@
       "blk_mem_gen_2": "",
       "blk_mem_gen_3": "",
       "blk_mem_gen_4": "",
-      "computing_core_0": "",
       "load_weight_0": "",
       "BRAM_selector_0": "",
       "pipeline_0": "",
       "load_weight_ctrl_0": "",
+      "computing_core_0": "",
       "load_activation_0": ""
     },
     "interface_ports": {
@@ -664,112 +664,6 @@
           }
         }
       },
-      "computing_core_0": {
-        "vlnv": "xilinx.com:module_ref:computing_core:1.0",
-        "xci_name": "Convo_core_inst_0_computing_core_0_0",
-        "xci_path": "ip\\Convo_core_inst_0_computing_core_0_0\\Convo_core_inst_0_computing_core_0_0.xci",
-        "inst_hier_path": "computing_core_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "computing_core",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "default_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "default_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "Multi_convo_core_clk",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "load_done": {
-            "direction": "I"
-          },
-          "activate0": {
-            "direction": "I",
-            "left": "23",
-            "right": "0"
-          },
-          "activate1": {
-            "direction": "I",
-            "left": "23",
-            "right": "0"
-          },
-          "activate2": {
-            "direction": "I",
-            "left": "23",
-            "right": "0"
-          },
-          "weight0": {
-            "direction": "I",
-            "left": "71",
-            "right": "0"
-          },
-          "weight1": {
-            "direction": "I",
-            "left": "71",
-            "right": "0"
-          },
-          "weight2": {
-            "direction": "I",
-            "left": "71",
-            "right": "0"
-          },
-          "weight3": {
-            "direction": "I",
-            "left": "71",
-            "right": "0"
-          },
-          "out_psum0": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "out_psum1": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "out_psum2": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "out_psum3": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "out_psum_vld": {
-            "direction": "O"
-          }
-        }
-      },
       "load_weight_0": {
         "vlnv": "xilinx.com:module_ref:load_weight:1.0",
         "xci_name": "Convo_core_inst_0_load_weight_0_0",
@@ -1208,6 +1102,112 @@
           }
         }
       },
+      "computing_core_0": {
+        "vlnv": "xilinx.com:module_ref:computing_core:1.0",
+        "xci_name": "Convo_core_inst_0_computing_core_0_0",
+        "xci_path": "ip\\Convo_core_inst_0_computing_core_0_0\\Convo_core_inst_0_computing_core_0_0.xci",
+        "inst_hier_path": "computing_core_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "computing_core",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "Multi_convo_core_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "load_done": {
+            "direction": "I"
+          },
+          "activate0": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "activate1": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "activate2": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "weight0": {
+            "direction": "I",
+            "left": "71",
+            "right": "0"
+          },
+          "weight1": {
+            "direction": "I",
+            "left": "71",
+            "right": "0"
+          },
+          "weight2": {
+            "direction": "I",
+            "left": "71",
+            "right": "0"
+          },
+          "weight3": {
+            "direction": "I",
+            "left": "71",
+            "right": "0"
+          },
+          "out_psum0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum2": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum3": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "out_psum_vld": {
+            "direction": "O"
+          }
+        }
+      },
       "load_activation_0": {
         "vlnv": "xilinx.com:module_ref:load_activation:1.0",
         "xci_name": "Convo_core_inst_0_load_activation_0_0",
@@ -1497,10 +1497,10 @@
       "clk_0_1": {
         "ports": [
           "clk",
-          "computing_core_0/clk",
           "load_weight_0/clk",
           "pipeline_0/clk",
           "load_weight_ctrl_0/clk",
+          "computing_core_0/clk",
           "load_activation_0/clk"
         ]
       },
@@ -1781,10 +1781,10 @@
       "rst_0_1": {
         "ports": [
           "rst",
-          "computing_core_0/rst",
           "load_weight_0/rst",
           "pipeline_0/rst",
           "load_weight_ctrl_0/rst",
+          "computing_core_0/rst",
           "load_activation_0/rst"
         ]
       },

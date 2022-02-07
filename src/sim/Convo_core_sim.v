@@ -89,13 +89,13 @@ assign sum_psum_3 = psum_3*4;
         en <= 1;
         BRAM_img_sel <= 0;
         init_signal <= 0;
-        // 1x5x5x8 X 8x3x3x8 -> 1x3x3x8
+        // 1x5x5x8 X 4x3x3x8 -> 1x3x3x4
         channel_input_img <= 2; // (1/4) channels of  input img
         stride <= 1;
         width_input_img <= 5; // width of input img
-        weight_size_1_16 <= 2*3*3*2; // (1/16 ) size of weight
-        no_channel_out <= 2; // (1/4) of channels of output img
-        WxW_out <= 4; // width x width of output img
+        weight_size_1_16 <= 3*3*2; // (1/16 ) size of weight
+        no_channel_out <= 1; // (1/4) of channels of output img
+        WxW_out <= 9; // width x width of output img
         #150;
         rst <= 0;
     end

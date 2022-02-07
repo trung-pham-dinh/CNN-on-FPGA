@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Mon Feb  7 16:35:04 2022
+//Date        : Mon Feb  7 19:14:44 2022
 //Host        : DESKTOP-Q4T850H running 64-bit major release  (build 9200)
 //Command     : generate_target Multi_convo_core.bd
 //Design      : Multi_convo_core
@@ -302,30 +302,30 @@ module Multi_convo_core
         .width_input_img(width_input_img_0_1));
   Multi_accumulator_inst_0 Multi_accumulator_0
        (.BRAM_addr_sim(Multi_accumulator_0_BRAM_addr_sim),
-        .BRAM_out_AXI_0_addr({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .BRAM_out_AXI_0_addr(1'b0),
         .BRAM_out_AXI_0_clk(1'b0),
-        .BRAM_out_AXI_0_din({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b1,1'b0,1'b0,1'b0}),
+        .BRAM_out_AXI_0_din(1'b0),
         .BRAM_out_AXI_0_en(1'b0),
         .BRAM_out_AXI_0_rst(1'b0),
-        .BRAM_out_AXI_0_we({1'b0,1'b0,1'b0,1'b0}),
-        .BRAM_out_AXI_1_addr({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .BRAM_out_AXI_0_we(1'b0),
+        .BRAM_out_AXI_1_addr(1'b0),
         .BRAM_out_AXI_1_clk(1'b0),
-        .BRAM_out_AXI_1_din({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b1,1'b0,1'b0,1'b0}),
+        .BRAM_out_AXI_1_din(1'b0),
         .BRAM_out_AXI_1_en(1'b0),
         .BRAM_out_AXI_1_rst(1'b0),
-        .BRAM_out_AXI_1_we({1'b0,1'b0,1'b0,1'b0}),
-        .BRAM_out_AXI_2_addr({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .BRAM_out_AXI_1_we(1'b0),
+        .BRAM_out_AXI_2_addr(1'b0),
         .BRAM_out_AXI_2_clk(1'b0),
-        .BRAM_out_AXI_2_din({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b1,1'b0,1'b0,1'b0}),
+        .BRAM_out_AXI_2_din(1'b0),
         .BRAM_out_AXI_2_en(1'b0),
         .BRAM_out_AXI_2_rst(1'b0),
-        .BRAM_out_AXI_2_we({1'b0,1'b0,1'b0,1'b0}),
-        .BRAM_out_AXI_3_addr({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .BRAM_out_AXI_2_we(1'b0),
+        .BRAM_out_AXI_3_addr(1'b0),
         .BRAM_out_AXI_3_clk(1'b0),
-        .BRAM_out_AXI_3_din({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b1,1'b0,1'b0,1'b0}),
+        .BRAM_out_AXI_3_din(1'b0),
         .BRAM_out_AXI_3_en(1'b0),
         .BRAM_out_AXI_3_rst(1'b0),
-        .BRAM_out_AXI_3_we({1'b0,1'b0,1'b0,1'b0}),
+        .BRAM_out_AXI_3_we(1'b0),
         .WxW_out(WxW_out_0_1),
         .accum_done(Multi_accumulator_0_accum_done),
         .bram_dout_0(Multi_accumulator_0_bram_dout_0),

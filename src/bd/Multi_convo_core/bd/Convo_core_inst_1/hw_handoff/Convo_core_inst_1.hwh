@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Feb  7 16:35:09 2022" VIVADOVERSION="2021.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Feb  7 19:14:54 2022" VIVADOVERSION="2021.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="Convo_core_inst_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -29,7 +29,7 @@
         <CONNECTION INSTANCE="blk_mem_gen_1" PORT="enb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="BRAM_weight_AXI_1_rst" SIGIS="undef" SIGNAME="blk_mem_gen_1_rstb">
+    <PORT DIR="I" NAME="BRAM_weight_AXI_1_rst" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="blk_mem_gen_1_rstb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_1" PORT="rstb"/>
       </CONNECTIONS>
@@ -64,7 +64,7 @@
         <CONNECTION INSTANCE="blk_mem_gen_0" PORT="enb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="BRAM_weight_AXI_0_rst" SIGIS="undef" SIGNAME="blk_mem_gen_0_rstb">
+    <PORT DIR="I" NAME="BRAM_weight_AXI_0_rst" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="blk_mem_gen_0_rstb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_0" PORT="rstb"/>
       </CONNECTIONS>
@@ -99,7 +99,7 @@
         <CONNECTION INSTANCE="blk_mem_gen_2" PORT="enb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="BRAM_weight_AXI_2_rst" SIGIS="undef" SIGNAME="blk_mem_gen_2_rstb">
+    <PORT DIR="I" NAME="BRAM_weight_AXI_2_rst" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="blk_mem_gen_2_rstb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_2" PORT="rstb"/>
       </CONNECTIONS>
@@ -134,7 +134,7 @@
         <CONNECTION INSTANCE="blk_mem_gen_3" PORT="enb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="BRAM_weight_AXI_3_rst" SIGIS="undef" SIGNAME="blk_mem_gen_3_rstb">
+    <PORT DIR="I" NAME="BRAM_weight_AXI_3_rst" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="blk_mem_gen_3_rstb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_3" PORT="rstb"/>
       </CONNECTIONS>
@@ -146,19 +146,19 @@
     </PORT>
     <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="computing_core_0" PORT="clk"/>
         <CONNECTION INSTANCE="load_weight_0" PORT="clk"/>
         <CONNECTION INSTANCE="pipeline_0" PORT="clk"/>
         <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="clk"/>
+        <CONNECTION INSTANCE="computing_core_0" PORT="clk"/>
         <CONNECTION INSTANCE="load_activation_0" PORT="clk"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="computing_core_0" PORT="rst"/>
         <CONNECTION INSTANCE="load_weight_0" PORT="rst"/>
         <CONNECTION INSTANCE="pipeline_0" PORT="rst"/>
         <CONNECTION INSTANCE="load_weight_ctrl_0" PORT="rst"/>
+        <CONNECTION INSTANCE="computing_core_0" PORT="rst"/>
         <CONNECTION INSTANCE="load_activation_0" PORT="rst"/>
       </CONNECTIONS>
     </PORT>

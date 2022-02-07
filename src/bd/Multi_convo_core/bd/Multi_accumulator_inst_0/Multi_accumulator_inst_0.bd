@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x1C98400A97AA2C45",
+      "boundary_crc": "0xAEF30E8720649472",
       "design_src": "D:/Documents/Xilinx/CNN_FPGA/Vivado/src/bd/Multi_accumulator/Multi_accumulator.bd",
       "device": "xc7z020clg400-1",
       "name": "Multi_accumulator_inst_0",
@@ -12,16 +12,16 @@
       "variant": "true"
     },
     "design_tree": {
-      "accumulator_0": "",
-      "accumulator_2": "",
-      "accumulator_1": "",
-      "accumulator_3": "",
       "blk_mem_gen_0": "",
       "blk_mem_gen_2": "",
       "blk_mem_gen_3": "",
       "blk_mem_gen_1": "",
       "and_gate_accum_0": "",
-      "and_gate_accum_1": ""
+      "and_gate_accum_1": "",
+      "accumulator_0": "",
+      "accumulator_2": "",
+      "accumulator_1": "",
+      "accumulator_3": ""
     },
     "interface_ports": {
       "BRAM_out_AXI_0": {
@@ -53,9 +53,7 @@
         "port_maps": {
           "ADDR": {
             "physical_name": "BRAM_out_AXI_0_addr",
-            "direction": "I",
-            "left": "31",
-            "right": "0"
+            "direction": "I"
           },
           "CLK": {
             "physical_name": "BRAM_out_AXI_0_clk",
@@ -63,15 +61,11 @@
           },
           "DIN": {
             "physical_name": "BRAM_out_AXI_0_din",
-            "direction": "I",
-            "left": "31",
-            "right": "0"
+            "direction": "I"
           },
           "DOUT": {
             "physical_name": "BRAM_out_AXI_0_dout",
-            "direction": "O",
-            "left": "31",
-            "right": "0"
+            "direction": "O"
           },
           "EN": {
             "physical_name": "BRAM_out_AXI_0_en",
@@ -83,9 +77,7 @@
           },
           "WE": {
             "physical_name": "BRAM_out_AXI_0_we",
-            "direction": "I",
-            "left": "3",
-            "right": "0"
+            "direction": "I"
           }
         }
       },
@@ -118,9 +110,7 @@
         "port_maps": {
           "ADDR": {
             "physical_name": "BRAM_out_AXI_1_addr",
-            "direction": "I",
-            "left": "31",
-            "right": "0"
+            "direction": "I"
           },
           "CLK": {
             "physical_name": "BRAM_out_AXI_1_clk",
@@ -128,15 +118,11 @@
           },
           "DIN": {
             "physical_name": "BRAM_out_AXI_1_din",
-            "direction": "I",
-            "left": "31",
-            "right": "0"
+            "direction": "I"
           },
           "DOUT": {
             "physical_name": "BRAM_out_AXI_1_dout",
-            "direction": "O",
-            "left": "31",
-            "right": "0"
+            "direction": "O"
           },
           "EN": {
             "physical_name": "BRAM_out_AXI_1_en",
@@ -148,9 +134,7 @@
           },
           "WE": {
             "physical_name": "BRAM_out_AXI_1_we",
-            "direction": "I",
-            "left": "3",
-            "right": "0"
+            "direction": "I"
           }
         }
       },
@@ -183,9 +167,7 @@
         "port_maps": {
           "ADDR": {
             "physical_name": "BRAM_out_AXI_2_addr",
-            "direction": "I",
-            "left": "31",
-            "right": "0"
+            "direction": "I"
           },
           "CLK": {
             "physical_name": "BRAM_out_AXI_2_clk",
@@ -193,15 +175,11 @@
           },
           "DIN": {
             "physical_name": "BRAM_out_AXI_2_din",
-            "direction": "I",
-            "left": "31",
-            "right": "0"
+            "direction": "I"
           },
           "DOUT": {
             "physical_name": "BRAM_out_AXI_2_dout",
-            "direction": "O",
-            "left": "31",
-            "right": "0"
+            "direction": "O"
           },
           "EN": {
             "physical_name": "BRAM_out_AXI_2_en",
@@ -213,9 +191,7 @@
           },
           "WE": {
             "physical_name": "BRAM_out_AXI_2_we",
-            "direction": "I",
-            "left": "3",
-            "right": "0"
+            "direction": "I"
           }
         }
       },
@@ -248,9 +224,7 @@
         "port_maps": {
           "ADDR": {
             "physical_name": "BRAM_out_AXI_3_addr",
-            "direction": "I",
-            "left": "31",
-            "right": "0"
+            "direction": "I"
           },
           "CLK": {
             "physical_name": "BRAM_out_AXI_3_clk",
@@ -258,15 +232,11 @@
           },
           "DIN": {
             "physical_name": "BRAM_out_AXI_3_din",
-            "direction": "I",
-            "left": "31",
-            "right": "0"
+            "direction": "I"
           },
           "DOUT": {
             "physical_name": "BRAM_out_AXI_3_dout",
-            "direction": "O",
-            "left": "31",
-            "right": "0"
+            "direction": "O"
           },
           "EN": {
             "physical_name": "BRAM_out_AXI_3_en",
@@ -278,9 +248,7 @@
           },
           "WE": {
             "physical_name": "BRAM_out_AXI_3_we",
-            "direction": "I",
-            "left": "3",
-            "right": "0"
+            "direction": "I"
           }
         }
       }
@@ -457,6 +425,190 @@
       }
     },
     "components": {
+      "blk_mem_gen_0": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "Multi_accumulator_inst_0_blk_mem_gen_0_0",
+        "xci_path": "ip\\Multi_accumulator_inst_0_blk_mem_gen_0_0\\Multi_accumulator_inst_0_blk_mem_gen_0_0.xci",
+        "inst_hier_path": "blk_mem_gen_0",
+        "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
+          "EN_SAFETY_CKT": {
+            "value": "false"
+          },
+          "Enable_B": {
+            "value": "Use_ENB_Pin"
+          },
+          "Memory_Type": {
+            "value": "True_Dual_Port_RAM"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Port_B_Write_Rate": {
+            "value": "50"
+          },
+          "Use_RSTB_Pin": {
+            "value": "true"
+          }
+        }
+      },
+      "blk_mem_gen_2": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "Multi_accumulator_inst_0_blk_mem_gen_2_0",
+        "xci_path": "ip\\Multi_accumulator_inst_0_blk_mem_gen_2_0\\Multi_accumulator_inst_0_blk_mem_gen_2_0.xci",
+        "inst_hier_path": "blk_mem_gen_2",
+        "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
+          "EN_SAFETY_CKT": {
+            "value": "false"
+          },
+          "Enable_B": {
+            "value": "Use_ENB_Pin"
+          },
+          "Memory_Type": {
+            "value": "True_Dual_Port_RAM"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Port_B_Write_Rate": {
+            "value": "50"
+          },
+          "Use_RSTB_Pin": {
+            "value": "true"
+          }
+        }
+      },
+      "blk_mem_gen_3": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "Multi_accumulator_inst_0_blk_mem_gen_3_0",
+        "xci_path": "ip\\Multi_accumulator_inst_0_blk_mem_gen_3_0\\Multi_accumulator_inst_0_blk_mem_gen_3_0.xci",
+        "inst_hier_path": "blk_mem_gen_3",
+        "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
+          "EN_SAFETY_CKT": {
+            "value": "false"
+          },
+          "Enable_B": {
+            "value": "Use_ENB_Pin"
+          },
+          "Memory_Type": {
+            "value": "True_Dual_Port_RAM"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Port_B_Write_Rate": {
+            "value": "50"
+          },
+          "Use_RSTB_Pin": {
+            "value": "true"
+          }
+        }
+      },
+      "blk_mem_gen_1": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "Multi_accumulator_inst_0_blk_mem_gen_1_0",
+        "xci_path": "ip\\Multi_accumulator_inst_0_blk_mem_gen_1_0\\Multi_accumulator_inst_0_blk_mem_gen_1_0.xci",
+        "inst_hier_path": "blk_mem_gen_1",
+        "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
+          "EN_SAFETY_CKT": {
+            "value": "false"
+          },
+          "Enable_B": {
+            "value": "Use_ENB_Pin"
+          },
+          "Memory_Type": {
+            "value": "True_Dual_Port_RAM"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Port_B_Write_Rate": {
+            "value": "50"
+          },
+          "Use_RSTB_Pin": {
+            "value": "true"
+          }
+        }
+      },
+      "and_gate_accum_0": {
+        "vlnv": "xilinx.com:module_ref:and_gate_accum:1.0",
+        "xci_name": "Multi_accumulator_inst_0_and_gate_accum_0_0",
+        "xci_path": "ip\\Multi_accumulator_inst_0_and_gate_accum_0_0\\Multi_accumulator_inst_0_and_gate_accum_0_0.xci",
+        "inst_hier_path": "and_gate_accum_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "and_gate_accum",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "in0": {
+            "direction": "I"
+          },
+          "in1": {
+            "direction": "I"
+          },
+          "in2": {
+            "direction": "I"
+          },
+          "in3": {
+            "direction": "I"
+          },
+          "and_out": {
+            "direction": "O"
+          }
+        }
+      },
+      "and_gate_accum_1": {
+        "vlnv": "xilinx.com:module_ref:and_gate_accum:1.0",
+        "xci_name": "Multi_accumulator_inst_0_and_gate_accum_1_0",
+        "xci_path": "ip\\Multi_accumulator_inst_0_and_gate_accum_1_0\\Multi_accumulator_inst_0_and_gate_accum_1_0.xci",
+        "inst_hier_path": "and_gate_accum_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "and_gate_accum",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "in0": {
+            "direction": "I"
+          },
+          "in1": {
+            "direction": "I"
+          },
+          "in2": {
+            "direction": "I"
+          },
+          "in3": {
+            "direction": "I"
+          },
+          "and_out": {
+            "direction": "O"
+          }
+        }
+      },
       "accumulator_0": {
         "vlnv": "xilinx.com:module_ref:accumulator:1.0",
         "xci_name": "Multi_accumulator_inst_0_accumulator_0_0",
@@ -928,190 +1080,6 @@
             "right": "0"
           }
         }
-      },
-      "blk_mem_gen_0": {
-        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
-        "xci_name": "Multi_accumulator_inst_0_blk_mem_gen_0_0",
-        "xci_path": "ip\\Multi_accumulator_inst_0_blk_mem_gen_0_0\\Multi_accumulator_inst_0_blk_mem_gen_0_0.xci",
-        "inst_hier_path": "blk_mem_gen_0",
-        "parameters": {
-          "Assume_Synchronous_Clk": {
-            "value": "true"
-          },
-          "EN_SAFETY_CKT": {
-            "value": "false"
-          },
-          "Enable_B": {
-            "value": "Use_ENB_Pin"
-          },
-          "Memory_Type": {
-            "value": "True_Dual_Port_RAM"
-          },
-          "Port_B_Clock": {
-            "value": "100"
-          },
-          "Port_B_Enable_Rate": {
-            "value": "100"
-          },
-          "Port_B_Write_Rate": {
-            "value": "50"
-          },
-          "Use_RSTB_Pin": {
-            "value": "true"
-          }
-        }
-      },
-      "blk_mem_gen_2": {
-        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
-        "xci_name": "Multi_accumulator_inst_0_blk_mem_gen_2_0",
-        "xci_path": "ip\\Multi_accumulator_inst_0_blk_mem_gen_2_0\\Multi_accumulator_inst_0_blk_mem_gen_2_0.xci",
-        "inst_hier_path": "blk_mem_gen_2",
-        "parameters": {
-          "Assume_Synchronous_Clk": {
-            "value": "true"
-          },
-          "EN_SAFETY_CKT": {
-            "value": "false"
-          },
-          "Enable_B": {
-            "value": "Use_ENB_Pin"
-          },
-          "Memory_Type": {
-            "value": "True_Dual_Port_RAM"
-          },
-          "Port_B_Clock": {
-            "value": "100"
-          },
-          "Port_B_Enable_Rate": {
-            "value": "100"
-          },
-          "Port_B_Write_Rate": {
-            "value": "50"
-          },
-          "Use_RSTB_Pin": {
-            "value": "true"
-          }
-        }
-      },
-      "blk_mem_gen_3": {
-        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
-        "xci_name": "Multi_accumulator_inst_0_blk_mem_gen_3_0",
-        "xci_path": "ip\\Multi_accumulator_inst_0_blk_mem_gen_3_0\\Multi_accumulator_inst_0_blk_mem_gen_3_0.xci",
-        "inst_hier_path": "blk_mem_gen_3",
-        "parameters": {
-          "Assume_Synchronous_Clk": {
-            "value": "true"
-          },
-          "EN_SAFETY_CKT": {
-            "value": "false"
-          },
-          "Enable_B": {
-            "value": "Use_ENB_Pin"
-          },
-          "Memory_Type": {
-            "value": "True_Dual_Port_RAM"
-          },
-          "Port_B_Clock": {
-            "value": "100"
-          },
-          "Port_B_Enable_Rate": {
-            "value": "100"
-          },
-          "Port_B_Write_Rate": {
-            "value": "50"
-          },
-          "Use_RSTB_Pin": {
-            "value": "true"
-          }
-        }
-      },
-      "blk_mem_gen_1": {
-        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
-        "xci_name": "Multi_accumulator_inst_0_blk_mem_gen_1_0",
-        "xci_path": "ip\\Multi_accumulator_inst_0_blk_mem_gen_1_0\\Multi_accumulator_inst_0_blk_mem_gen_1_0.xci",
-        "inst_hier_path": "blk_mem_gen_1",
-        "parameters": {
-          "Assume_Synchronous_Clk": {
-            "value": "true"
-          },
-          "EN_SAFETY_CKT": {
-            "value": "false"
-          },
-          "Enable_B": {
-            "value": "Use_ENB_Pin"
-          },
-          "Memory_Type": {
-            "value": "True_Dual_Port_RAM"
-          },
-          "Port_B_Clock": {
-            "value": "100"
-          },
-          "Port_B_Enable_Rate": {
-            "value": "100"
-          },
-          "Port_B_Write_Rate": {
-            "value": "50"
-          },
-          "Use_RSTB_Pin": {
-            "value": "true"
-          }
-        }
-      },
-      "and_gate_accum_0": {
-        "vlnv": "xilinx.com:module_ref:and_gate_accum:1.0",
-        "xci_name": "Multi_accumulator_inst_0_and_gate_accum_0_0",
-        "xci_path": "ip\\Multi_accumulator_inst_0_and_gate_accum_0_0\\Multi_accumulator_inst_0_and_gate_accum_0_0.xci",
-        "inst_hier_path": "and_gate_accum_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "and_gate_accum",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "in0": {
-            "direction": "I"
-          },
-          "in1": {
-            "direction": "I"
-          },
-          "in2": {
-            "direction": "I"
-          },
-          "in3": {
-            "direction": "I"
-          },
-          "and_out": {
-            "direction": "O"
-          }
-        }
-      },
-      "and_gate_accum_1": {
-        "vlnv": "xilinx.com:module_ref:and_gate_accum:1.0",
-        "xci_name": "Multi_accumulator_inst_0_and_gate_accum_1_0",
-        "xci_path": "ip\\Multi_accumulator_inst_0_and_gate_accum_1_0\\Multi_accumulator_inst_0_and_gate_accum_1_0.xci",
-        "inst_hier_path": "and_gate_accum_1",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "and_gate_accum",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "in0": {
-            "direction": "I"
-          },
-          "in1": {
-            "direction": "I"
-          },
-          "in2": {
-            "direction": "I"
-          },
-          "in3": {
-            "direction": "I"
-          },
-          "and_out": {
-            "direction": "O"
-          }
-        }
       }
     },
     "interface_nets": {
@@ -1144,10 +1112,10 @@
       "Net": {
         "ports": [
           "rst",
-          "accumulator_3/rst",
-          "accumulator_1/rst",
+          "accumulator_0/rst",
           "accumulator_2/rst",
-          "accumulator_0/rst"
+          "accumulator_1/rst",
+          "accumulator_3/rst"
         ]
       },
       "Net1": {
@@ -1355,29 +1323,29 @@
       "blk_mem_gen_0_douta": {
         "ports": [
           "blk_mem_gen_0/douta",
-          "accumulator_0/BRAM_dout",
-          "bram_dout_0"
+          "bram_dout_0",
+          "accumulator_0/BRAM_dout"
         ]
       },
       "blk_mem_gen_1_douta": {
         "ports": [
           "blk_mem_gen_2/douta",
-          "accumulator_2/BRAM_dout",
-          "bram_dout_2"
+          "bram_dout_2",
+          "accumulator_2/BRAM_dout"
         ]
       },
       "blk_mem_gen_2_douta": {
         "ports": [
           "blk_mem_gen_3/douta",
-          "accumulator_3/BRAM_dout",
-          "bram_dout_3"
+          "bram_dout_3",
+          "accumulator_3/BRAM_dout"
         ]
       },
       "blk_mem_gen_3_douta": {
         "ports": [
           "blk_mem_gen_1/douta",
-          "accumulator_1/BRAM_dout",
-          "bram_dout_1"
+          "bram_dout_1",
+          "accumulator_1/BRAM_dout"
         ]
       },
       "clk_0_1": {

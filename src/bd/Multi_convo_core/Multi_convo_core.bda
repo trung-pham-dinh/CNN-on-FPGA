@@ -25,35 +25,35 @@
       <data key="VT">BC</data>
     </node>
     <node id="n1">
-      <data key="VH">2</data>
-      <data key="VM">Multi_convo_core</data>
-      <data key="VT">VR</data>
+      <data key="VM">/Convo_core_3</data>
+      <data key="VT">BC</data>
     </node>
     <node id="n2">
+      <data key="TU">active</data>
+      <data key="VH">30030</data>
+      <data key="VT">PM</data>
+    </node>
+    <node id="n3">
       <data key="VM">/Multi_accumulator_0</data>
       <data key="VT">BC</data>
     </node>
-    <node id="n3">
-      <data key="VM">/Convo_core_0</data>
-      <data key="VT">BC</data>
-    </node>
     <node id="n4">
-      <data key="VM">Multi_convo_core</data>
-      <data key="VT">BC</data>
-    </node>
-    <node id="n5">
-      <data key="VH">7</data>
-      <data key="VM">Convo_core_inst_2</data>
+      <data key="VH">11</data>
+      <data key="VM">Convo_core_inst_3</data>
       <data key="VT">VR</data>
     </node>
-    <node id="n6">
+    <node id="n5">
       <data key="VH">5</data>
       <data key="VM">Convo_core_inst_1</data>
       <data key="VT">VR</data>
     </node>
+    <node id="n6">
+      <data key="VM">/Convo_core_0</data>
+      <data key="VT">BC</data>
+    </node>
     <node id="n7">
-      <data key="VH">11</data>
-      <data key="VM">Convo_core_inst_3</data>
+      <data key="VH">2</data>
+      <data key="VM">Multi_convo_core</data>
       <data key="VT">VR</data>
     </node>
     <node id="n8">
@@ -62,46 +62,46 @@
       <data key="VT">VR</data>
     </node>
     <node id="n9">
+      <data key="VM">Multi_convo_core</data>
+      <data key="VT">BC</data>
+    </node>
+    <node id="n10">
       <data key="VH">3</data>
       <data key="VM">Convo_core_inst_0</data>
       <data key="VT">VR</data>
-    </node>
-    <node id="n10">
-      <data key="VM">/Convo_core_3</data>
-      <data key="VT">BC</data>
     </node>
     <node id="n11">
       <data key="VM">/Convo_core_2</data>
       <data key="VT">BC</data>
     </node>
     <node id="n12">
-      <data key="TU">active</data>
-      <data key="VH">30030</data>
-      <data key="VT">PM</data>
+      <data key="VH">7</data>
+      <data key="VM">Convo_core_inst_2</data>
+      <data key="VT">VR</data>
     </node>
-    <edge id="e0" source="n4" target="n1">
+    <edge id="e0" source="n9" target="n7">
     </edge>
-    <edge id="e1" source="n3" target="n9">
+    <edge id="e1" source="n6" target="n10">
     </edge>
-    <edge id="e2" source="n1" target="n12">
+    <edge id="e2" source="n7" target="n2">
     </edge>
-    <edge id="e3" source="n9" target="n12">
+    <edge id="e3" source="n10" target="n2">
     </edge>
-    <edge id="e4" source="n0" target="n6">
+    <edge id="e4" source="n0" target="n5">
     </edge>
-    <edge id="e5" source="n11" target="n5">
+    <edge id="e5" source="n11" target="n12">
     </edge>
-    <edge id="e6" source="n10" target="n7">
+    <edge id="e6" source="n1" target="n4">
     </edge>
-    <edge id="e7" source="n2" target="n8">
+    <edge id="e7" source="n3" target="n8">
     </edge>
-    <edge id="e8" source="n5" target="n12">
+    <edge id="e8" source="n12" target="n2">
     </edge>
-    <edge id="e9" source="n7" target="n12">
+    <edge id="e9" source="n4" target="n2">
     </edge>
-    <edge id="e10" source="n6" target="n12">
+    <edge id="e10" source="n5" target="n2">
     </edge>
-    <edge id="e11" source="n8" target="n12">
+    <edge id="e11" source="n8" target="n2">
     </edge>
   </graph>
 </graphml>
