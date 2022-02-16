@@ -24,7 +24,7 @@ clk,rst,
 no_entry,
 no_channel,
 
-BRAM_rready, // connect to ff_ren
+BRAM_rready,
 
 in_psum0,
 in_psum1,

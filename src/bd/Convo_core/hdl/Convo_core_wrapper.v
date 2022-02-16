@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Fri Jan 28 08:49:53 2022
+//Date        : Sat Feb 12 15:54:29 2022
 //Host        : DESKTOP-Q4T850H running 64-bit major release  (build 9200)
 //Command     : generate_target Convo_core_wrapper.bd
 //Design      : Convo_core_wrapper
@@ -50,6 +50,7 @@ module Convo_core_wrapper
     channel_input_img,
     clk,
     en,
+    img_end_0,
     init_signal,
     out_psum0,
     out_psum1,
@@ -101,6 +102,7 @@ module Convo_core_wrapper
   input [11:0]channel_input_img;
   input clk;
   input en;
+  output img_end_0;
   input init_signal;
   output [7:0]out_psum0;
   output [7:0]out_psum1;
@@ -153,6 +155,7 @@ module Convo_core_wrapper
   wire [11:0]channel_input_img;
   wire clk;
   wire en;
+  wire img_end_0;
   wire init_signal;
   wire [7:0]out_psum0;
   wire [7:0]out_psum1;
@@ -206,6 +209,7 @@ module Convo_core_wrapper
         .channel_input_img(channel_input_img),
         .clk(clk),
         .en(en),
+        .img_end_0(img_end_0),
         .init_signal(init_signal),
         .out_psum0(out_psum0),
         .out_psum1(out_psum1),

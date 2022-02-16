@@ -12,7 +12,7 @@ def bram_input_init(input, width, height, channel):
 	    count = 0
 	    temp = 0x0
 	    for j in range(quarterNumberOfEntries):
-	    	temp = append_hex(input[i*quarterNumberOfEntries+j],temp,count)
+	    	temp = append_hex(input[i*quarterNumberOfEntries+j]&0x00FF,temp,count)
 	    	count = count + 1
 	    	if(count == 4):
 	    		f.write(str(hex(temp)[2:])+ " ")

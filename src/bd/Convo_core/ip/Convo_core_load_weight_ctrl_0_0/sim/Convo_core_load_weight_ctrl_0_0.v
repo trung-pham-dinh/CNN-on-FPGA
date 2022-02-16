@@ -60,7 +60,7 @@ module Convo_core_load_weight_ctrl_0_0 (
   init,
   load_done,
   channel_end,
-  core_free,
+  core_end,
   weight0_in,
   weight1_in,
   weight2_in,
@@ -70,11 +70,10 @@ module Convo_core_load_weight_ctrl_0_0 (
   weight2_out,
   weight3_out,
   buffer_ready,
-  load_start,
-  state
+  load_start
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN Convo_core_clk_0, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN Convo_core_clk, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
@@ -83,7 +82,7 @@ input wire rst;
 input wire init;
 input wire load_done;
 input wire channel_end;
-input wire core_free;
+input wire core_end;
 input wire [71 : 0] weight0_in;
 input wire [71 : 0] weight1_in;
 input wire [71 : 0] weight2_in;
@@ -94,7 +93,6 @@ output wire [71 : 0] weight2_out;
 output wire [71 : 0] weight3_out;
 output wire buffer_ready;
 output wire load_start;
-output wire [2 : 0] state;
 
   load_weight_ctrl #(
     .WEIGHT_WIDTH(8)
@@ -104,7 +102,7 @@ output wire [2 : 0] state;
     .init(init),
     .load_done(load_done),
     .channel_end(channel_end),
-    .core_free(core_free),
+    .core_end(core_end),
     .weight0_in(weight0_in),
     .weight1_in(weight1_in),
     .weight2_in(weight2_in),
@@ -114,7 +112,6 @@ output wire [2 : 0] state;
     .weight2_out(weight2_out),
     .weight3_out(weight3_out),
     .buffer_ready(buffer_ready),
-    .load_start(load_start),
-    .state(state)
+    .load_start(load_start)
   );
 endmodule

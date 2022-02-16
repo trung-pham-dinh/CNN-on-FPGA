@@ -19,7 +19,7 @@ def bram_weight_init(weight, kernel, width, height, channel):
 	    count = 0
 	    temp = 0x0
 	    for j in range (int(numberOfEntries*quarterOfKernel*quarterOfChannel)):
-	        temp = append_hex(weight[value],temp,count)
+	        temp = append_hex(weight[value]&0x00FF,temp,count)
 	        value = value + 1
 	        count = count + 1
 	        if(count == 4):
@@ -31,4 +31,4 @@ def bram_weight_init(weight, kernel, width, height, channel):
 	    f.write(";")
 	    f.close()
 
-bram_weight_init([i+1 for i in range(4*3*3*8)],4,3,3,8) #parameters: weight, kernel, width, height, channel
+bram_weight_init([i+1 for i in range(8*3*3*8)],8,3,3,8) #parameters: weight, kernel, width, height, channel

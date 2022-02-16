@@ -21,87 +21,654 @@
   <key attr.name="vert_type" attr.type="string" for="node" id="VT"/>
   <graph edgedefault="undirected" id="G" parse.edgeids="canonical" parse.nodeids="canonical" parse.order="nodesfirst">
     <node id="n0">
-      <data key="VM">/Convo_core_1</data>
-      <data key="VT">BC</data>
+      <data key="BA">0xC8001000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC8001FFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_5_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_weight_0_1</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
     </node>
     <node id="n1">
-      <data key="VM">/Convo_core_3</data>
-      <data key="VT">BC</data>
+      <data key="BA">0xE8003000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xE8003FFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_23_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_img_3</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
     </node>
     <node id="n2">
-      <data key="TU">active</data>
-      <data key="VH">30030</data>
-      <data key="VT">PM</data>
-    </node>
-    <node id="n3">
-      <data key="VM">/Multi_accumulator_0</data>
-      <data key="VT">BC</data>
-    </node>
-    <node id="n4">
-      <data key="VH">11</data>
-      <data key="VM">Convo_core_inst_3</data>
-      <data key="VT">VR</data>
-    </node>
-    <node id="n5">
-      <data key="VH">5</data>
-      <data key="VM">Convo_core_inst_1</data>
-      <data key="VT">VR</data>
-    </node>
-    <node id="n6">
-      <data key="VM">/Convo_core_0</data>
-      <data key="VT">BC</data>
-    </node>
-    <node id="n7">
-      <data key="VH">2</data>
-      <data key="VM">Multi_convo_core</data>
-      <data key="VT">VR</data>
-    </node>
-    <node id="n8">
-      <data key="VH">13</data>
-      <data key="VM">Multi_accumulator_inst_0</data>
-      <data key="VT">VR</data>
-    </node>
-    <node id="n9">
-      <data key="VM">Multi_convo_core</data>
-      <data key="VT">BC</data>
-    </node>
-    <node id="n10">
       <data key="VH">3</data>
       <data key="VM">Convo_core_inst_0</data>
       <data key="VT">VR</data>
     </node>
-    <node id="n11">
-      <data key="VM">/Convo_core_2</data>
-      <data key="VT">BC</data>
-    </node>
-    <node id="n12">
-      <data key="VH">7</data>
+    <node id="n3">
+      <data key="VH">11</data>
       <data key="VM">Convo_core_inst_2</data>
       <data key="VT">VR</data>
     </node>
-    <edge id="e0" source="n9" target="n7">
+    <node id="n4">
+      <data key="BA">0xC8008000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC8008FFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_12_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_weight_2_0</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n5">
+      <data key="BA">0xC0000000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC0000FFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_0_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_out_0</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n6">
+      <data key="BA">0x43C00000</data>
+      <data key="BP">C_BASEADDR</data>
+      <data key="HA">0x43C0FFFF</data>
+      <data key="HP">C_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/processing_system7_0</data>
+      <data key="MI">M_AXI_GP0</data>
+      <data key="MS">SEG_regs_file_0_reg0</data>
+      <data key="MV">xilinx.com:ip:processing_system7:5.5</data>
+      <data key="TM">both</data>
+      <data key="SX">/regs_file_0</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">reg0</data>
+      <data key="SV">xilinx.com:module_ref:regs_file:1.0</data>
+      <data key="TU">register</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n7">
+      <data key="VH">5</data>
+      <data key="VM">Convo_core_inst_1</data>
+      <data key="VT">VR</data>
+    </node>
+    <node id="n8">
+      <data key="BA">0xC8004000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC8004FFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_8_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_weight_1_0</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n9">
+      <data key="TU">active</data>
+      <data key="VH">30030</data>
+      <data key="VT">PM</data>
+    </node>
+    <node id="n10">
+      <data key="BA">0x7E200000</data>
+      <data key="BP">C_BASEADDR</data>
+      <data key="HA">0x7E20FFFF</data>
+      <data key="HP">C_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/processing_system7_0</data>
+      <data key="MI">M_AXI_GP0</data>
+      <data key="MS">SEG_axi_cdma_0_Reg</data>
+      <data key="MV">xilinx.com:ip:processing_system7:5.5</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_cdma_0</data>
+      <data key="SI">S_AXI_LITE</data>
+      <data key="SS">Reg</data>
+      <data key="SV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TU">register</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n11">
+      <data key="BA">0xC0003000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC0003FFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_3_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_out_3</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n12">
+      <data key="BA">0xC800B000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC800BFFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_15_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_weight_2_3</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n13">
+      <data key="BA">0xC0001000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC0001FFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_1_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_out_1</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n14">
+      <data key="BA">0xC800D000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC800DFFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_17_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_weight_3_1</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n15">
+      <data key="BA">0xC800A000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC800AFFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_14_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_weight_2_2</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n16">
+      <data key="BA">0xC800C000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC800CFFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_16_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_weight_3_0</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n17">
+      <data key="BA">0xC8000000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC8000FFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_4_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_weight_0_0</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n18">
+      <data key="VM">/Core/Convo_core_3</data>
+      <data key="VT">BC</data>
+    </node>
+    <node id="n19">
+      <data key="BA">0xE8002000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xE8002FFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_22_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_img_2</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n20">
+      <data key="VH">7</data>
+      <data key="VM">Multi_accumulator_inst_0</data>
+      <data key="VT">VR</data>
+    </node>
+    <node id="n21">
+      <data key="VM">/Core/Convo_core_1</data>
+      <data key="VT">BC</data>
+    </node>
+    <node id="n22">
+      <data key="VH">2</data>
+      <data key="VM">Multi_convo_core</data>
+      <data key="VT">VR</data>
+    </node>
+    <node id="n23">
+      <data key="BA">0xC8009000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC8009FFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_13_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_weight_2_1</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n24">
+      <data key="BA">0xC8002000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC8002FFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_6_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_weight_0_2</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n25">
+      <data key="BA">0xC8007000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC8007FFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_11_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_weight_1_3</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n26">
+      <data key="VM">Multi_convo_core</data>
+      <data key="VT">BC</data>
+    </node>
+    <node id="n27">
+      <data key="VH">13</data>
+      <data key="VM">Convo_core_inst_3</data>
+      <data key="VT">VR</data>
+    </node>
+    <node id="n28">
+      <data key="BA">0xE8000000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xE8000FFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_20_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_img_0</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n29">
+      <data key="VM">/Core/Convo_core_0</data>
+      <data key="VT">BC</data>
+    </node>
+    <node id="n30">
+      <data key="BA">0xC8006000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC8006FFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_10_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_weight_1_2</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n31">
+      <data key="BA">0xC8005000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC8005FFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_9_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_weight_1_1</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n32">
+      <data key="VM">/Core/Convo_core_2</data>
+      <data key="VT">BC</data>
+    </node>
+    <node id="n33">
+      <data key="BA">0xC2000000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC2001FFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_0_Mem0_1</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_0</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n34">
+      <data key="BA">0xC8003000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC8003FFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_7_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_weight_0_3</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n35">
+      <data key="VM">/Core/Multi_accumulator_0</data>
+      <data key="VT">BC</data>
+    </node>
+    <node id="n36">
+      <data key="BA">0xC800E000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC800EFFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_18_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_weight_3_2</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n37">
+      <data key="BA">0xC800F000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC800FFFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_19_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_weight_3_3</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n38">
+      <data key="BA">0xE8001000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xE8001FFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_21_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_img_1</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <node id="n39">
+      <data key="BA">0xC0002000</data>
+      <data key="BP">C_S_AXI_BASEADDR</data>
+      <data key="HA">0xC0002FFF</data>
+      <data key="HP">C_S_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/axi_cdma_0</data>
+      <data key="MI">M_AXI</data>
+      <data key="MS">SEG_axi_bram_ctrl_2_Mem0</data>
+      <data key="MV">xilinx.com:ip:axi_cdma:4.1</data>
+      <data key="TM">both</data>
+      <data key="SX">/axi_bram_ctrl_out_2</data>
+      <data key="SI">S_AXI</data>
+      <data key="SS">Mem0</data>
+      <data key="SV">xilinx.com:ip:axi_bram_ctrl:4.1</data>
+      <data key="TU">memory</data>
+      <data key="VT">AC</data>
+    </node>
+    <edge id="e0" source="n26" target="n22">
     </edge>
-    <edge id="e1" source="n6" target="n10">
+    <edge id="e1" source="n29" target="n2">
     </edge>
-    <edge id="e2" source="n7" target="n2">
+    <edge id="e2" source="n21" target="n7">
     </edge>
-    <edge id="e3" source="n10" target="n2">
+    <edge id="e3" source="n35" target="n20">
     </edge>
-    <edge id="e4" source="n0" target="n5">
+    <edge id="e4" source="n32" target="n3">
     </edge>
-    <edge id="e5" source="n11" target="n12">
+    <edge id="e5" source="n18" target="n27">
     </edge>
-    <edge id="e6" source="n1" target="n4">
+    <edge id="e6" source="n3" target="n9">
     </edge>
-    <edge id="e7" source="n3" target="n8">
+    <edge id="e7" source="n27" target="n9">
     </edge>
-    <edge id="e8" source="n12" target="n2">
+    <edge id="e8" source="n2" target="n9">
     </edge>
-    <edge id="e9" source="n4" target="n2">
+    <edge id="e9" source="n7" target="n9">
     </edge>
-    <edge id="e10" source="n5" target="n2">
+    <edge id="e10" source="n20" target="n9">
     </edge>
-    <edge id="e11" source="n8" target="n2">
+    <edge id="e11" source="n22" target="n9">
+    </edge>
+    <edge id="e12" source="n10" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e13" source="n6" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e14" source="n5" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e15" source="n30" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e16" source="n25" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e17" source="n4" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e18" source="n23" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e19" source="n15" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e20" source="n12" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e21" source="n16" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e22" source="n14" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e23" source="n36" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e24" source="n37" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e25" source="n13" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e26" source="n28" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e27" source="n38" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e28" source="n19" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e29" source="n1" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e30" source="n39" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e31" source="n11" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e32" source="n17" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e33" source="n0" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e34" source="n24" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e35" source="n34" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e36" source="n8" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e37" source="n31" target="n9">
+      <data key="EH">30030</data>
+    </edge>
+    <edge id="e38" source="n33" target="n9">
+      <data key="EH">30030</data>
     </edge>
   </graph>
 </graphml>

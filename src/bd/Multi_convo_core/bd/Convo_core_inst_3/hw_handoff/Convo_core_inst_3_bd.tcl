@@ -171,7 +171,7 @@ proc create_root_design { parentCell } {
 
 
   # Create ports
-  set BRAM_img_AXI_addr [ create_bd_port -dir I -from 31 -to 0 BRAM_img_AXI_addr ]
+  set BRAM_img_AXI_addr [ create_bd_port -dir I -from 11 -to 0 BRAM_img_AXI_addr ]
   set BRAM_img_AXI_din [ create_bd_port -dir I -from 31 -to 0 BRAM_img_AXI_din ]
   set BRAM_img_AXI_dout [ create_bd_port -dir O -from 31 -to 0 BRAM_img_AXI_dout ]
   set BRAM_img_AXI_en [ create_bd_port -dir I BRAM_img_AXI_en ]
@@ -183,6 +183,7 @@ proc create_root_design { parentCell } {
   set channel_input_img [ create_bd_port -dir I -from 11 -to 0 channel_input_img ]
   set clk [ create_bd_port -dir I -type clk clk ]
   set en [ create_bd_port -dir I en ]
+  set img_end_0 [ create_bd_port -dir O img_end_0 ]
   set init_signal [ create_bd_port -dir I init_signal ]
   set out_psum0 [ create_bd_port -dir O -from 7 -to 0 out_psum0 ]
   set out_psum1 [ create_bd_port -dir O -from 7 -to 0 out_psum1 ]
@@ -298,6 +299,7 @@ proc create_root_design { parentCell } {
   # Create instance: blk_mem_gen_4, and set properties
   set blk_mem_gen_4 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_4 ]
   set_property -dict [ list \
+   CONFIG.Assume_Synchronous_Clk {true} \
    CONFIG.Byte_Size {8} \
    CONFIG.Coe_File {../../../../../../program/bram_input_init/bram_input_init_0.coe} \
    CONFIG.EN_SAFETY_CKT {false} \
@@ -419,6 +421,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net load_activation_0_activate2 [get_bd_pins computing_core_0/activate2] [get_bd_pins load_activation_0/activate2]
   connect_bd_net -net load_activation_0_channel_end [get_bd_ports channel_end] [get_bd_pins load_activation_0/channel_end] [get_bd_pins load_weight_ctrl_0/channel_end]
   connect_bd_net -net load_activation_0_done [get_bd_pins load_activation_0/done] [get_bd_pins pipeline_0/activate_ready]
+  connect_bd_net -net load_activation_0_img_end [get_bd_ports img_end_0] [get_bd_pins load_activation_0/img_end]
   connect_bd_net -net load_weight_0_BRAM_0_addr [get_bd_pins blk_mem_gen_0/addra] [get_bd_pins load_weight_0/BRAM_0_addr]
   connect_bd_net -net load_weight_0_BRAM_1_addr [get_bd_pins blk_mem_gen_1/addra] [get_bd_pins load_weight_0/BRAM_1_addr]
   connect_bd_net -net load_weight_0_BRAM_2_addr [get_bd_pins blk_mem_gen_3/addra] [get_bd_pins load_weight_0/BRAM_2_addr]

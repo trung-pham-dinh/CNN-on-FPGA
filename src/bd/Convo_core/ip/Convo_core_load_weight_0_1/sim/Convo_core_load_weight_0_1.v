@@ -58,7 +58,6 @@ module Convo_core_load_weight_0_1 (
   clk,
   rst,
   load_start,
-  addr_rst,
   weight_size,
   load_end,
   weight_end,
@@ -81,16 +80,13 @@ module Convo_core_load_weight_0_1 (
   BRAM_3_dout
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN Convo_core_clk_0, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN Convo_core_clk, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
 input wire rst;
 input wire load_start;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME addr_rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 addr_rst RST" *)
-input wire addr_rst;
 input wire [31 : 0] weight_size;
 output wire load_end;
 output wire weight_end;
@@ -125,7 +121,6 @@ input wire [31 : 0] BRAM_3_dout;
     .clk(clk),
     .rst(rst),
     .load_start(load_start),
-    .addr_rst(addr_rst),
     .weight_size(weight_size),
     .load_end(load_end),
     .weight_end(weight_end),

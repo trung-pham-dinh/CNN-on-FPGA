@@ -5,7 +5,7 @@
       "device": "xc7z020clg400-1",
       "name": "Multi_accumulator",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
-      "synth_flow_mode": "Hierarchical",
+      "synth_flow_mode": "None",
       "tool_version": "2021.1",
       "validated": "true"
     },

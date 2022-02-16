@@ -1,11 +1,11 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x9FA08F68D7BFA2B9",
+      "boundary_crc": "0x164A465FEB39ADBC",
       "device": "xc7z020clg400-1",
       "name": "Convo_core",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
-      "synth_flow_mode": "Hierarchical",
+      "synth_flow_mode": "None",
       "tool_version": "2021.1",
       "validated": "true"
     },
@@ -17,8 +17,8 @@
       "blk_mem_gen_4": "",
       "load_weight_0": "",
       "BRAM_selector_0": "",
-      "pipeline_0": "",
       "load_weight_ctrl_0": "",
+      "pipeline_0": "",
       "computing_core_0": "",
       "load_activation_0": ""
     },
@@ -273,6 +273,9 @@
         "direction": "I",
         "left": "3",
         "right": "0"
+      },
+      "img_end_0": {
+        "direction": "O"
       }
     },
     "components": {
@@ -497,6 +500,9 @@
         "xci_path": "ip\\Convo_core_blk_mem_gen_4_0\\Convo_core_blk_mem_gen_4_0.xci",
         "inst_hier_path": "blk_mem_gen_4",
         "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
           "Coe_File": {
             "value": "../../../../program/bram_input_init/bram_input_init_0.coe"
           },
@@ -790,58 +796,6 @@
           }
         }
       },
-      "pipeline_0": {
-        "vlnv": "xilinx.com:module_ref:pipeline:1.0",
-        "xci_name": "Convo_core_pipeline_0_0",
-        "xci_path": "ip\\Convo_core_pipeline_0_0\\Convo_core_pipeline_0_0.xci",
-        "inst_hier_path": "pipeline_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "pipeline",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "Convo_core_clk",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "en": {
-            "direction": "I"
-          },
-          "init_signal": {
-            "direction": "I"
-          },
-          "activate_ready": {
-            "direction": "I"
-          },
-          "weight_ready": {
-            "direction": "I"
-          },
-          "core_end": {
-            "direction": "I"
-          },
-          "start_core": {
-            "direction": "O"
-          },
-          "start_load": {
-            "direction": "O"
-          }
-        }
-      },
       "load_weight_ctrl_0": {
         "vlnv": "xilinx.com:module_ref:load_weight_ctrl:1.0",
         "xci_name": "Convo_core_load_weight_ctrl_0_0",
@@ -927,6 +881,58 @@
             "direction": "O"
           },
           "load_start": {
+            "direction": "O"
+          }
+        }
+      },
+      "pipeline_0": {
+        "vlnv": "xilinx.com:module_ref:pipeline:1.0",
+        "xci_name": "Convo_core_pipeline_0_0",
+        "xci_path": "ip\\Convo_core_pipeline_0_0\\Convo_core_pipeline_0_0.xci",
+        "inst_hier_path": "pipeline_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "pipeline",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Convo_core_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "en": {
+            "direction": "I"
+          },
+          "init_signal": {
+            "direction": "I"
+          },
+          "activate_ready": {
+            "direction": "I"
+          },
+          "weight_ready": {
+            "direction": "I"
+          },
+          "core_end": {
+            "direction": "I"
+          },
+          "start_core": {
+            "direction": "O"
+          },
+          "start_load": {
             "direction": "O"
           }
         }
@@ -1091,6 +1097,9 @@
           "channel_end": {
             "direction": "O"
           },
+          "img_end": {
+            "direction": "O"
+          },
           "BRAM_clk": {
             "type": "clk",
             "direction": "O",
@@ -1249,8 +1258,8 @@
       "accum_done_1": {
         "ports": [
           "accum_done",
-          "pipeline_0/core_end",
-          "load_weight_ctrl_0/core_end"
+          "load_weight_ctrl_0/core_end",
+          "pipeline_0/core_end"
         ]
       },
       "blk_mem_gen_0_douta": {
@@ -1299,8 +1308,8 @@
         "ports": [
           "clk",
           "load_weight_0/clk",
-          "pipeline_0/clk",
           "load_weight_ctrl_0/clk",
+          "pipeline_0/clk",
           "computing_core_0/clk",
           "load_activation_0/clk"
         ]
@@ -1344,8 +1353,8 @@
       "init_signal_0_1": {
         "ports": [
           "init_signal",
-          "pipeline_0/init_signal",
-          "load_weight_ctrl_0/init"
+          "load_weight_ctrl_0/init",
+          "pipeline_0/init_signal"
         ]
       },
       "load_activation_0_BRAM_0_addr": {
@@ -1424,6 +1433,12 @@
         "ports": [
           "load_activation_0/done",
           "pipeline_0/activate_ready"
+        ]
+      },
+      "load_activation_0_img_end": {
+        "ports": [
+          "load_activation_0/img_end",
+          "img_end_0"
         ]
       },
       "load_weight_0_BRAM_0_addr": {
@@ -1583,8 +1598,8 @@
         "ports": [
           "rst",
           "load_weight_0/rst",
-          "pipeline_0/rst",
           "load_weight_ctrl_0/rst",
+          "pipeline_0/rst",
           "computing_core_0/rst",
           "load_activation_0/rst"
         ]

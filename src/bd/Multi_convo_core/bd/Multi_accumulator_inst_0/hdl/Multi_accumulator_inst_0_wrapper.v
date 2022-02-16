@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Mon Feb  7 19:14:51 2022
+//Date        : Tue Feb 15 08:38:45 2022
 //Host        : DESKTOP-Q4T850H running 64-bit major release  (build 9200)
 //Command     : generate_target Multi_accumulator_inst_0_wrapper.bd
 //Design      : Multi_accumulator_inst_0_wrapper
@@ -69,34 +69,34 @@ module Multi_accumulator_inst_0_wrapper
     psum3_3,
     rst);
   output [31:0]BRAM_addr_sim;
-  input BRAM_out_AXI_0_addr;
+  input [11:0]BRAM_out_AXI_0_addr;
   input BRAM_out_AXI_0_clk;
-  input BRAM_out_AXI_0_din;
-  output BRAM_out_AXI_0_dout;
+  input [31:0]BRAM_out_AXI_0_din;
+  output [31:0]BRAM_out_AXI_0_dout;
   input BRAM_out_AXI_0_en;
   input BRAM_out_AXI_0_rst;
-  input BRAM_out_AXI_0_we;
-  input BRAM_out_AXI_1_addr;
+  input [3:0]BRAM_out_AXI_0_we;
+  input [11:0]BRAM_out_AXI_1_addr;
   input BRAM_out_AXI_1_clk;
-  input BRAM_out_AXI_1_din;
-  output BRAM_out_AXI_1_dout;
+  input [31:0]BRAM_out_AXI_1_din;
+  output [31:0]BRAM_out_AXI_1_dout;
   input BRAM_out_AXI_1_en;
   input BRAM_out_AXI_1_rst;
-  input BRAM_out_AXI_1_we;
-  input BRAM_out_AXI_2_addr;
+  input [3:0]BRAM_out_AXI_1_we;
+  input [11:0]BRAM_out_AXI_2_addr;
   input BRAM_out_AXI_2_clk;
-  input BRAM_out_AXI_2_din;
-  output BRAM_out_AXI_2_dout;
+  input [31:0]BRAM_out_AXI_2_din;
+  output [31:0]BRAM_out_AXI_2_dout;
   input BRAM_out_AXI_2_en;
   input BRAM_out_AXI_2_rst;
-  input BRAM_out_AXI_2_we;
-  input BRAM_out_AXI_3_addr;
+  input [3:0]BRAM_out_AXI_2_we;
+  input [11:0]BRAM_out_AXI_3_addr;
   input BRAM_out_AXI_3_clk;
-  input BRAM_out_AXI_3_din;
-  output BRAM_out_AXI_3_dout;
+  input [31:0]BRAM_out_AXI_3_din;
+  output [31:0]BRAM_out_AXI_3_dout;
   input BRAM_out_AXI_3_en;
   input BRAM_out_AXI_3_rst;
-  input BRAM_out_AXI_3_we;
+  input [3:0]BRAM_out_AXI_3_we;
   input [15:0]WxW_out;
   output accum_done;
   output [31:0]bram_dout_0;
@@ -128,34 +128,34 @@ module Multi_accumulator_inst_0_wrapper
   input rst;
 
   wire [31:0]BRAM_addr_sim;
-  wire BRAM_out_AXI_0_addr;
+  wire [11:0]BRAM_out_AXI_0_addr;
   wire BRAM_out_AXI_0_clk;
-  wire BRAM_out_AXI_0_din;
-  wire BRAM_out_AXI_0_dout;
+  wire [31:0]BRAM_out_AXI_0_din;
+  wire [31:0]BRAM_out_AXI_0_dout;
   wire BRAM_out_AXI_0_en;
   wire BRAM_out_AXI_0_rst;
-  wire BRAM_out_AXI_0_we;
-  wire BRAM_out_AXI_1_addr;
+  wire [3:0]BRAM_out_AXI_0_we;
+  wire [11:0]BRAM_out_AXI_1_addr;
   wire BRAM_out_AXI_1_clk;
-  wire BRAM_out_AXI_1_din;
-  wire BRAM_out_AXI_1_dout;
+  wire [31:0]BRAM_out_AXI_1_din;
+  wire [31:0]BRAM_out_AXI_1_dout;
   wire BRAM_out_AXI_1_en;
   wire BRAM_out_AXI_1_rst;
-  wire BRAM_out_AXI_1_we;
-  wire BRAM_out_AXI_2_addr;
+  wire [3:0]BRAM_out_AXI_1_we;
+  wire [11:0]BRAM_out_AXI_2_addr;
   wire BRAM_out_AXI_2_clk;
-  wire BRAM_out_AXI_2_din;
-  wire BRAM_out_AXI_2_dout;
+  wire [31:0]BRAM_out_AXI_2_din;
+  wire [31:0]BRAM_out_AXI_2_dout;
   wire BRAM_out_AXI_2_en;
   wire BRAM_out_AXI_2_rst;
-  wire BRAM_out_AXI_2_we;
-  wire BRAM_out_AXI_3_addr;
+  wire [3:0]BRAM_out_AXI_2_we;
+  wire [11:0]BRAM_out_AXI_3_addr;
   wire BRAM_out_AXI_3_clk;
-  wire BRAM_out_AXI_3_din;
-  wire BRAM_out_AXI_3_dout;
+  wire [31:0]BRAM_out_AXI_3_din;
+  wire [31:0]BRAM_out_AXI_3_dout;
   wire BRAM_out_AXI_3_en;
   wire BRAM_out_AXI_3_rst;
-  wire BRAM_out_AXI_3_we;
+  wire [3:0]BRAM_out_AXI_3_we;
   wire [15:0]WxW_out;
   wire accum_done;
   wire [31:0]bram_dout_0;

@@ -29,6 +29,7 @@ load_start,
 activate0,activate1,activate2,
 done,
 channel_end,
+img_end,
 
 BRAM_clk,
 BRAM_en,
@@ -40,7 +41,7 @@ BRAM_0_addr,
 BRAM_0_dout,
 
 BRAM_1_addr,
-BRAM_1_dout,
+BRAM_1_dout
     );
     parameter BRAM_ADDR_BIT = 32;
     parameter BRAM_WIDTH = 32;
@@ -58,7 +59,7 @@ BRAM_1_dout,
     input [2:0]stride;
     output reg done;
     output [3*WEIGHT_WIDTH-1:0]activate0,activate1,activate2;
-    output wire channel_end;
+    output wire channel_end, img_end;
     
     output                          BRAM_clk,BRAM_en,BRAM_rst;
     output [BRAM_WIDTH-1:0]         BRAM_din;
@@ -94,7 +95,7 @@ BRAM_1_dout,
                 .width(width),
                 .channel(channel),
                 .addr_inc(addr_inc),
-                .addr_r0(addr_r0), .addr_r1(addr_r1), .addr_r2(addr_r2), .channel_end_out(channel_end));
+                .addr_r0(addr_r0), .addr_r1(addr_r1), .addr_r2(addr_r2), .channel_end_out(channel_end), .img_end_out(img_end));
 
 ////////////////////////////////////////////////////////////////////
 
@@ -140,6 +141,7 @@ BRAM_1_dout,
                         state <= STATE_WAIT;
                         done <= 0;
                     end
+                    done <= 0;
                     addr_inc <= 0;
                 end
                 STATE_WAIT: begin

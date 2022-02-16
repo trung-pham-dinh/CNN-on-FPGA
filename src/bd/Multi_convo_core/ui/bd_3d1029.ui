@@ -1,78 +1,140 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.431932",
-   "Default View_TopLeft":"-609,-236",
+   "Default View_ScaleFactor":"1.89465",
+   "Default View_TopLeft":"2111,6",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace port port-id_clk -pg 1 -lvl 0 -x -410 -y 80 -defaultsOSRD
-preplace port port-id_rst -pg 1 -lvl 0 -x -410 -y 50 -defaultsOSRD
-preplace port port-id_init_signal -pg 1 -lvl 0 -x -410 -y 170 -defaultsOSRD
-preplace port port-id_en -pg 1 -lvl 0 -x -410 -y 200 -defaultsOSRD
-preplace port port-id_BRAM_img_sel -pg 1 -lvl 0 -x -410 -y 400 -defaultsOSRD
-preplace port port-id_weight_end -pg 1 -lvl 5 -x 2390 -y 360 -defaultsOSRD
-preplace port port-id_channel_end -pg 1 -lvl 5 -x 2390 -y 400 -defaultsOSRD
-preplace portBus WxW_out -pg 1 -lvl 0 -x -410 -y 1150 -defaultsOSRD
-preplace portBus no_channel_out -pg 1 -lvl 0 -x -410 -y 1180 -defaultsOSRD
-preplace portBus stride -pg 1 -lvl 0 -x -410 -y 20 -defaultsOSRD
-preplace portBus width_input_img -pg 1 -lvl 0 -x -410 -y 110 -defaultsOSRD
-preplace portBus channel_input_img -pg 1 -lvl 0 -x -410 -y 140 -defaultsOSRD
-preplace portBus weight_size_1_16 -pg 1 -lvl 0 -x -410 -y 360 -defaultsOSRD
-preplace portBus bram_dout_0 -pg 1 -lvl 5 -x 2390 -y 840 -defaultsOSRD
-preplace portBus bram_dout_1 -pg 1 -lvl 5 -x 2390 -y 870 -defaultsOSRD
-preplace portBus bram_dout_2 -pg 1 -lvl 5 -x 2390 -y 900 -defaultsOSRD
-preplace portBus bram_dout_3 -pg 1 -lvl 5 -x 2390 -y 930 -defaultsOSRD
-preplace portBus psum_0 -pg 1 -lvl 5 -x 2390 -y 650 -defaultsOSRD
-preplace portBus psum_1 -pg 1 -lvl 5 -x 2390 -y 700 -defaultsOSRD
-preplace portBus psum_2 -pg 1 -lvl 5 -x 2390 -y 780 -defaultsOSRD
-preplace portBus psum_3 -pg 1 -lvl 5 -x 2390 -y 810 -defaultsOSRD
-preplace portBus BRAM_addr_sim -pg 1 -lvl 5 -x 2390 -y 960 -defaultsOSRD
-preplace inst Convo_core_0 -pg 1 -lvl 1 -x 140 -y 320 -defaultsOSRD
-preplace inst Convo_core_1 -pg 1 -lvl 2 -x 920 -y 310 -defaultsOSRD
-preplace inst Convo_core_2 -pg 1 -lvl 3 -x 1574 -y 340 -defaultsOSRD
-preplace inst Convo_core_3 -pg 1 -lvl 4 -x 2107 -y 330 -defaultsOSRD
-preplace inst Multi_accumulator_0 -pg 1 -lvl 2 -x 920 -y 920 -defaultsOSRD
-preplace netloc BRAM_img_sel_0_1 1 0 4 -380 580 450 580 1230 580 1850
-preplace netloc Convo_core_0_out_psum0 1 1 4 440 590 1170 650 N 650 N
-preplace netloc Convo_core_0_out_psum1 1 1 4 400 1250 1180 700 N 700 N
-preplace netloc Convo_core_0_out_psum2 1 1 4 380 1260 1200 780 N 780 N
-preplace netloc Convo_core_0_out_psum3 1 1 4 360 1270 1220 810 N 810 N
-preplace netloc Convo_core_1_out_psum0 1 1 2 550 1280 1150
-preplace netloc Convo_core_1_out_psum1 1 1 2 600 0 1170
-preplace netloc Convo_core_1_out_psum2 1 1 2 590 60 1160
-preplace netloc Convo_core_1_out_psum3 1 1 2 580 1290 1140
-preplace netloc Convo_core_2_out_psum0 1 1 3 520 1330 NJ 1330 1810
-preplace netloc Convo_core_2_out_psum1 1 1 3 530 -10 NJ -10 1800
-preplace netloc Convo_core_2_out_psum2 1 1 3 530 1340 NJ 1340 1800
-preplace netloc Convo_core_2_out_psum3 1 1 3 510 -30 NJ -30 1820
-preplace netloc Convo_core_2_out_psum_vld 1 1 3 590 1320 NJ 1320 1790
-preplace netloc Convo_core_3_channel_end 1 4 1 2360J 360n
-preplace netloc Convo_core_3_out_psum0 1 1 4 580 -20 NJ -20 NJ -20 2320
-preplace netloc Convo_core_3_out_psum1 1 1 4 490 1350 NJ 1350 NJ 1350 2350
-preplace netloc Convo_core_3_out_psum2 1 1 4 570 1310 NJ 1310 NJ 1310 2320
-preplace netloc Convo_core_3_out_psum3 1 1 4 540 1360 NJ 1360 NJ 1360 2340
-preplace netloc Convo_core_3_weight_end 1 4 1 2370J 360n
-preplace netloc Multi_accumulator_0_BRAM_addr_sim 1 2 3 1230J 960 NJ 960 NJ
-preplace netloc Multi_accumulator_0_accum_done 1 0 4 -340 560 430J 560 1160 620 1870
-preplace netloc Multi_accumulator_0_bram_dout_0 1 2 3 1170J 840 NJ 840 NJ
-preplace netloc Multi_accumulator_0_bram_dout_1 1 2 3 1190J 870 NJ 870 NJ
-preplace netloc Multi_accumulator_0_bram_dout_2 1 2 3 1210J 900 NJ 900 NJ
-preplace netloc Multi_accumulator_0_bram_dout_3 1 2 3 1230J 930 NJ 930 NJ
-preplace netloc WxW_out_0_1 1 0 2 NJ 1150 370J
-preplace netloc channel_input_img_0_1 1 0 4 -350 60 490 50 1190 60 1850
-preplace netloc clk_0_1 1 0 4 -340 70 460 20 1230 70 1870
-preplace netloc en_0_1 1 0 4 -390 590 410 550 1200 600 1840
-preplace netloc init_signal_0_1 1 0 4 -330 80 500 70 1180 590 1830
-preplace netloc mac_done_0_1 1 1 1 390 330n
-preplace netloc mac_done_1_1 1 1 2 600 1300 1130
-preplace netloc mac_done_3_1 1 1 4 560 1370 NJ 1370 NJ 1370 2330
-preplace netloc no_channel_out_0_1 1 0 2 NJ 1180 350J
-preplace netloc rst_0_1 1 0 4 -380 50 480 40 1210 80 1860
-preplace netloc stride_0_1 1 0 4 -370 20 450 10 1220 100 1830
-preplace netloc weight_size_1_16_0_1 1 0 4 -360 570 420 570 1220 610 1860
-preplace netloc width_input_img_0_1 1 0 4 -360 40 470 30 1200 90 1840
-levelinfo -pg 1 -410 140 920 1574 2107 2390
-pagesize -pg 1 -db -bbox -sgen -620 -40 2580 2870
+preplace port DDR -pg 1 -lvl 8 -x 3020 -y 3120 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 8 -x 3020 -y 3700 -defaultsOSRD
+preplace inst Core -pg 1 -lvl 6 -x 2530 -y 2490 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x 110 -y 3170 -defaultsOSRD
+preplace inst axi_cdma_0 -pg 1 -lvl 3 -x 800 -y 2240 -defaultsOSRD
+preplace inst axi_bram_ctrl_out_0 -pg 1 -lvl 5 -x 1650 -y 80 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -x 470 -y 2220 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -x 110 -y 2950 -defaultsOSRD
+preplace inst axi_bram_ctrl_out_1 -pg 1 -lvl 5 -x 1650 -y 660 -defaultsOSRD
+preplace inst smartconnect_0 -pg 1 -lvl 4 -x 1180 -y 2250 -defaultsOSRD
+preplace inst axi_bram_ctrl_out_2 -pg 1 -lvl 5 -x 1650 -y 1020 -defaultsOSRD
+preplace inst axi_bram_ctrl_out_3 -pg 1 -lvl 5 -x 1650 -y 1160 -defaultsOSRD
+preplace inst axi_bram_ctrl_weight_0_0 -pg 1 -lvl 5 -x 1650 -y 1300 -defaultsOSRD
+preplace inst axi_bram_ctrl_weight_0_2 -pg 1 -lvl 5 -x 1650 -y 1920 -defaultsOSRD
+preplace inst axi_bram_ctrl_weight_0_1 -pg 1 -lvl 5 -x 1650 -y 1690 -defaultsOSRD
+preplace inst axi_bram_ctrl_weight_0_3 -pg 1 -lvl 5 -x 1650 -y 2060 -defaultsOSRD
+preplace inst axi_bram_ctrl_weight_1_0 -pg 1 -lvl 5 -x 1650 -y 2200 -defaultsOSRD
+preplace inst axi_bram_ctrl_weight_1_1 -pg 1 -lvl 5 -x 1650 -y 2340 -defaultsOSRD
+preplace inst axi_bram_ctrl_weight_1_2 -pg 1 -lvl 5 -x 1650 -y 2480 -defaultsOSRD
+preplace inst axi_bram_ctrl_weight_1_3 -pg 1 -lvl 5 -x 1650 -y 2620 -defaultsOSRD
+preplace inst axi_bram_ctrl_weight_2_0 -pg 1 -lvl 5 -x 1650 -y 2760 -defaultsOSRD
+preplace inst axi_bram_ctrl_weight_2_1 -pg 1 -lvl 5 -x 1650 -y 2900 -defaultsOSRD
+preplace inst axi_bram_ctrl_weight_2_2 -pg 1 -lvl 5 -x 1650 -y 3040 -defaultsOSRD
+preplace inst axi_bram_ctrl_weight_2_3 -pg 1 -lvl 5 -x 1650 -y 3340 -defaultsOSRD
+preplace inst axi_bram_ctrl_weight_3_0 -pg 1 -lvl 5 -x 1650 -y 3200 -defaultsOSRD
+preplace inst axi_bram_ctrl_weight_3_1 -pg 1 -lvl 5 -x 1650 -y 3480 -defaultsOSRD
+preplace inst axi_bram_ctrl_weight_3_2 -pg 1 -lvl 5 -x 1650 -y 3620 -defaultsOSRD
+preplace inst axi_bram_ctrl_weight_3_3 -pg 1 -lvl 5 -x 1650 -y 3780 -defaultsOSRD
+preplace inst axi_bram_ctrl_img_0 -pg 1 -lvl 5 -x 1650 -y 260 -defaultsOSRD
+preplace inst axi_bram_ctrl_img_1 -pg 1 -lvl 5 -x 1650 -y 480 -defaultsOSRD
+preplace inst axi_bram_ctrl_img_2 -pg 1 -lvl 5 -x 1650 -y 840 -defaultsOSRD
+preplace inst axi_bram_ctrl_img_3 -pg 1 -lvl 5 -x 1650 -y 1480 -defaultsOSRD
+preplace inst regs_file_0 -pg 1 -lvl 3 -x 800 -y 1810 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 7 -x 2880 -y 370 -defaultsOSRD
+preplace inst axi_bram_ctrl_0 -pg 1 -lvl 6 -x 2530 -y 370 -defaultsOSRD
+preplace netloc BRAM_img_addr_0_1 1 5 1 2220 220n
+preplace netloc BRAM_img_din_0_1 1 5 1 2210 240n
+preplace netloc BRAM_img_din_1_1 1 5 1 2120 460n
+preplace netloc BRAM_img_en_1_1 1 5 1 2090 500n
+preplace netloc BRAM_img_rst_1_1 1 5 1 2080 520n
+preplace netloc BRAM_img_wen_0_1 1 5 1 2160 320n
+preplace netloc BRAM_img_wen_1_1 1 5 1 2050 540n
+preplace netloc Core_BRAM_img_dout_0 1 5 2 NJ 260 2740
+preplace netloc Core_BRAM_img_dout_1 1 5 2 NJ 480 2730
+preplace netloc Core_BRAM_img_dout_2 1 5 2 NJ 840 2720
+preplace netloc Core_BRAM_img_dout_3 1 5 2 NJ 1480 2710
+preplace netloc Core_end_core_out 1 2 5 630 -10 NJ -10 NJ -10 NJ -10 2750
+preplace netloc WxW_out_1 1 3 3 NJ 1850 1350J 1610 1880
+preplace netloc axi_bram_ctrl_20_bram_en_a 1 5 1 2200 280n
+preplace netloc axi_bram_ctrl_20_bram_rst_a 1 5 1 2180 300n
+preplace netloc axi_bram_ctrl_21_bram_addr_a 1 5 1 2140 440n
+preplace netloc axi_bram_ctrl_22_bram_addr_a 1 5 1 2010 800n
+preplace netloc axi_bram_ctrl_22_bram_en_a 1 5 1 1960 860n
+preplace netloc axi_bram_ctrl_22_bram_rst_a 1 5 1 1910 880n
+preplace netloc axi_bram_ctrl_22_bram_we_a 1 5 1 1890 900n
+preplace netloc axi_bram_ctrl_22_bram_wrdata_a 1 5 1 1970 820n
+preplace netloc axi_bram_ctrl_23_bram_addr_a 1 5 1 1870 1440n
+preplace netloc axi_bram_ctrl_23_bram_en_a 1 5 1 1850 1500n
+preplace netloc axi_bram_ctrl_23_bram_rst_a 1 5 1 1840 1520n
+preplace netloc axi_bram_ctrl_23_bram_we_a 1 5 1 1820 1540n
+preplace netloc axi_bram_ctrl_23_bram_wrdata_a 1 5 1 1860 1460n
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 -90 2840 320 2080 620 2330 970 2550 1420 1600 2240
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 -80 2850 300
+preplace netloc regs_file_0_BRAM_img_sel 1 3 3 NJ 1730 1500J 1800 1920
+preplace netloc regs_file_0_channel_input_img 1 3 3 NJ 1810 NJ 1810 1950
+preplace netloc regs_file_0_no_channel_out 1 3 3 980J 1840 NJ 1840 1800
+preplace netloc regs_file_0_stride 1 3 3 NJ 1770 NJ 1770 2040
+preplace netloc rst_1 1 3 3 970J 1820 NJ 1820 1990
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 5 310 2070 630 2340 980 2560 1430 3860 2060
+preplace netloc start_core_in_1 1 3 3 NJ 1750 1490J 1780 2030
+preplace netloc weight_size_1_16_1 1 3 3 NJ 1830 NJ 1830 1900
+preplace netloc width_input_img_1 1 3 3 NJ 1790 NJ 1790 2000
+preplace netloc BRAM_out_0_1 1 5 1 2250 80n
+preplace netloc BRAM_weight_0_1_1 1 5 1 2130 1690n
+preplace netloc BRAM_weight_0_2_1 1 5 1 2020 1920n
+preplace netloc axi_bram_ctrl_10_BRAM_PORTA 1 5 1 1980 2120n
+preplace netloc axi_bram_ctrl_11_BRAM_PORTA 1 5 1 2020 2140n
+preplace netloc axi_bram_ctrl_12_BRAM_PORTA 1 5 1 1830 2260n
+preplace netloc axi_bram_ctrl_13_BRAM_PORTA 1 5 1 1810 2240n
+preplace netloc axi_bram_ctrl_14_BRAM_PORTA 1 5 1 2070 2280n
+preplace netloc axi_bram_ctrl_15_BRAM_PORTA 1 5 1 2100 2300n
+preplace netloc axi_bram_ctrl_16_BRAM_PORTA 1 5 1 2110 2340n
+preplace netloc axi_bram_ctrl_17_BRAM_PORTA 1 5 1 2130 2320n
+preplace netloc axi_bram_ctrl_18_BRAM_PORTA 1 5 1 2150 2360n
+preplace netloc axi_bram_ctrl_19_BRAM_PORTA 1 5 1 2170 2380n
+preplace netloc axi_bram_ctrl_1_BRAM_PORTA 1 5 1 2230 660n
+preplace netloc axi_bram_ctrl_2_BRAM_PORTA 1 5 1 2170 1020n
+preplace netloc axi_bram_ctrl_3_BRAM_PORTA 1 5 1 2150 1160n
+preplace netloc axi_bram_ctrl_4_BRAM_PORTA 1 5 1 2190 1300n
+preplace netloc axi_bram_ctrl_7_BRAM_PORTA 1 5 1 N 2060
+preplace netloc axi_bram_ctrl_8_BRAM_PORTA 1 5 1 1940 2100n
+preplace netloc axi_bram_ctrl_9_BRAM_PORTA 1 5 1 1930 2080n
+preplace netloc axi_cdma_0_M_AXI 1 3 1 N 2230
+preplace netloc processing_system7_0_DDR 1 1 7 NJ 3120 NJ 3120 NJ 3120 NJ 3120 NJ 3120 NJ 3120 N
+preplace netloc processing_system7_0_FIXED_IO 1 1 7 310J 3700 NJ 3700 NJ 3700 NJ 3700 NJ 3700 NJ 3700 N
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 330 2140n
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 N 2210
+preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 610 1780n
+preplace netloc smartconnect_0_M00_AXI 1 4 1 1310 60n
+preplace netloc smartconnect_0_M01_AXI 1 4 1 1320 640n
+preplace netloc smartconnect_0_M02_AXI 1 4 1 1340 1000n
+preplace netloc smartconnect_0_M03_AXI 1 4 1 1390 1140n
+preplace netloc smartconnect_0_M04_AXI 1 4 1 1410 1280n
+preplace netloc smartconnect_0_M05_AXI 1 4 1 1460 1670n
+preplace netloc smartconnect_0_M06_AXI 1 4 1 1470 1900n
+preplace netloc smartconnect_0_M07_AXI 1 4 1 1500 2040n
+preplace netloc smartconnect_0_M08_AXI 1 4 1 1500 2170n
+preplace netloc smartconnect_0_M09_AXI 1 4 1 1470 2190n
+preplace netloc smartconnect_0_M10_AXI 1 4 1 1460 2210n
+preplace netloc smartconnect_0_M11_AXI 1 4 1 1440 2230n
+preplace netloc smartconnect_0_M12_AXI 1 4 1 1410 2250n
+preplace netloc smartconnect_0_M13_AXI 1 4 1 1390 2270n
+preplace netloc smartconnect_0_M14_AXI 1 4 1 1360 2290n
+preplace netloc smartconnect_0_M15_AXI 1 4 1 1350 2310n
+preplace netloc smartconnect_0_M16_AXI 1 4 1 1340 2330n
+preplace netloc smartconnect_0_M17_AXI 1 4 1 1330 2350n
+preplace netloc smartconnect_0_M18_AXI 1 4 1 1320 2370n
+preplace netloc smartconnect_0_M19_AXI 1 4 1 1310 2390n
+preplace netloc smartconnect_0_M20_AXI 1 4 1 1380 240n
+preplace netloc smartconnect_0_M21_AXI 1 4 1 1400 460n
+preplace netloc smartconnect_0_M22_AXI 1 4 1 1450 820n
+preplace netloc smartconnect_0_M23_AXI 1 4 1 1480 1460n
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 6 1 N 370
+preplace netloc smartconnect_0_M24_AXI 1 4 2 1370 0 2260J
+levelinfo -pg 1 -110 110 470 800 1180 1650 2530 2880 3020
+pagesize -pg 1 -db -bbox -sgen -110 -20 3130 5930
 "
 }
-0
+{
+   "da_axi4_cnt":"32",
+   "da_clkrst_cnt":"1",
+   "da_ps7_cnt":"1"
+}

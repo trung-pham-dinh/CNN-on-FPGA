@@ -66,6 +66,7 @@ module Convo_core_inst_2_load_activation_0_0 (
   activate2,
   done,
   channel_end,
+  img_end,
   BRAM_clk,
   BRAM_en,
   BRAM_rst,
@@ -77,7 +78,7 @@ module Convo_core_inst_2_load_activation_0_0 (
   BRAM_1_dout
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN Multi_convo_core_clk, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN Multi_convo_core_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
@@ -92,6 +93,7 @@ output wire [23 : 0] activate1;
 output wire [23 : 0] activate2;
 output wire done;
 output wire channel_end;
+output wire img_end;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_clk, ASSOCIATED_RESET BRAM_rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN Convo_core_inst_2_load_activation_0_0_BRAM_clk, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 BRAM_clk CLK" *)
 output wire BRAM_clk;
@@ -123,6 +125,7 @@ input wire [31 : 0] BRAM_1_dout;
     .activate2(activate2),
     .done(done),
     .channel_end(channel_end),
+    .img_end(img_end),
     .BRAM_clk(BRAM_clk),
     .BRAM_en(BRAM_en),
     .BRAM_rst(BRAM_rst),

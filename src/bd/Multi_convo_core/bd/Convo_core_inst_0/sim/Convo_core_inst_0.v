@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Mon Feb  7 19:14:49 2022
+//Date        : Tue Feb 15 08:38:41 2022
 //Host        : DESKTOP-Q4T850H running 64-bit major release  (build 9200)
 //Command     : generate_target Convo_core_inst_0.bd
 //Design      : Convo_core_inst_0
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "Convo_core_inst_0,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Convo_core_inst_0,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=11,numReposBlks=11,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=D_/Documents/Xilinx/CNN_FPGA/Vivado/src/bd/Convo_core/Convo_core.bd,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "Convo_core_inst_0.hwdef" *) 
+(* CORE_GENERATION_INFO = "Convo_core_inst_0,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Convo_core_inst_0,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=11,numReposBlks=11,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=D_/Documents/Xilinx/CNN_FPGA/Vivado/src/bd/Convo_core/Convo_core.bd,synth_mode=Global}" *) (* HW_HANDOFF = "Convo_core_inst_0.hwdef" *) 
 module Convo_core_inst_0
    (BRAM_img_AXI_addr,
     BRAM_img_AXI_din,
@@ -51,6 +51,7 @@ module Convo_core_inst_0
     channel_input_img,
     clk,
     en,
+    img_end_0,
     init_signal,
     out_psum0,
     out_psum1,
@@ -62,46 +63,47 @@ module Convo_core_inst_0
     weight_end,
     weight_size_1_16,
     width_input_img);
-  input [31:0]BRAM_img_AXI_addr;
+  input [11:0]BRAM_img_AXI_addr;
   input [31:0]BRAM_img_AXI_din;
   output [31:0]BRAM_img_AXI_dout;
   input BRAM_img_AXI_en;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.BRAM_IMG_AXI_RST RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.BRAM_IMG_AXI_RST, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input BRAM_img_AXI_rst;
   input [3:0]BRAM_img_AXI_wen;
   input BRAM_img_sel;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_0 ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_weight_AXI_0, MASTER_TYPE OTHER, MEM_ECC NONE, MEM_SIZE 8192, MEM_WIDTH 32, READ_LATENCY 1" *) input BRAM_weight_AXI_0_addr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_0 ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_weight_AXI_0, MASTER_TYPE OTHER, MEM_ECC NONE, MEM_SIZE 4096, MEM_WIDTH 32, READ_LATENCY 1" *) input [11:0]BRAM_weight_AXI_0_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_0 CLK" *) input BRAM_weight_AXI_0_clk;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_0 DIN" *) input BRAM_weight_AXI_0_din;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_0 DOUT" *) output BRAM_weight_AXI_0_dout;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_0 DIN" *) input [31:0]BRAM_weight_AXI_0_din;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_0 DOUT" *) output [31:0]BRAM_weight_AXI_0_dout;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_0 EN" *) input BRAM_weight_AXI_0_en;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_0 RST" *) input BRAM_weight_AXI_0_rst;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_0 WE" *) input BRAM_weight_AXI_0_we;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_1 ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_weight_AXI_1, MASTER_TYPE OTHER, MEM_ECC NONE, MEM_SIZE 8192, MEM_WIDTH 32, READ_LATENCY 1" *) input BRAM_weight_AXI_1_addr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_0 WE" *) input [3:0]BRAM_weight_AXI_0_we;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_1 ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_weight_AXI_1, MASTER_TYPE OTHER, MEM_ECC NONE, MEM_SIZE 4096, MEM_WIDTH 32, READ_LATENCY 1" *) input [11:0]BRAM_weight_AXI_1_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_1 CLK" *) input BRAM_weight_AXI_1_clk;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_1 DIN" *) input BRAM_weight_AXI_1_din;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_1 DOUT" *) output BRAM_weight_AXI_1_dout;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_1 DIN" *) input [31:0]BRAM_weight_AXI_1_din;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_1 DOUT" *) output [31:0]BRAM_weight_AXI_1_dout;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_1 EN" *) input BRAM_weight_AXI_1_en;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_1 RST" *) input BRAM_weight_AXI_1_rst;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_1 WE" *) input BRAM_weight_AXI_1_we;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_2 ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_weight_AXI_2, MASTER_TYPE OTHER, MEM_ECC NONE, MEM_SIZE 8192, MEM_WIDTH 32, READ_LATENCY 1" *) input BRAM_weight_AXI_2_addr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_1 WE" *) input [3:0]BRAM_weight_AXI_1_we;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_2 ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_weight_AXI_2, MASTER_TYPE OTHER, MEM_ECC NONE, MEM_SIZE 4096, MEM_WIDTH 32, READ_LATENCY 1" *) input [11:0]BRAM_weight_AXI_2_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_2 CLK" *) input BRAM_weight_AXI_2_clk;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_2 DIN" *) input BRAM_weight_AXI_2_din;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_2 DOUT" *) output BRAM_weight_AXI_2_dout;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_2 DIN" *) input [31:0]BRAM_weight_AXI_2_din;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_2 DOUT" *) output [31:0]BRAM_weight_AXI_2_dout;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_2 EN" *) input BRAM_weight_AXI_2_en;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_2 RST" *) input BRAM_weight_AXI_2_rst;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_2 WE" *) input BRAM_weight_AXI_2_we;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_3 ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_weight_AXI_3, MASTER_TYPE OTHER, MEM_ECC NONE, MEM_SIZE 8192, MEM_WIDTH 32, READ_LATENCY 1" *) input BRAM_weight_AXI_3_addr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_2 WE" *) input [3:0]BRAM_weight_AXI_2_we;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_3 ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_weight_AXI_3, MASTER_TYPE OTHER, MEM_ECC NONE, MEM_SIZE 4096, MEM_WIDTH 32, READ_LATENCY 1" *) input [11:0]BRAM_weight_AXI_3_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_3 CLK" *) input BRAM_weight_AXI_3_clk;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_3 DIN" *) input BRAM_weight_AXI_3_din;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_3 DOUT" *) output BRAM_weight_AXI_3_dout;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_3 DIN" *) input [31:0]BRAM_weight_AXI_3_din;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_3 DOUT" *) output [31:0]BRAM_weight_AXI_3_dout;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_3 EN" *) input BRAM_weight_AXI_3_en;
   (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_3 RST" *) input BRAM_weight_AXI_3_rst;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_3 WE" *) input BRAM_weight_AXI_3_we;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_weight_AXI_3 WE" *) input [3:0]BRAM_weight_AXI_3_we;
   input accum_done;
   output channel_end;
   input [11:0]channel_input_img;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_RESET rst, CLK_DOMAIN Multi_convo_core_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_RESET rst, CLK_DOMAIN Multi_convo_core_processing_system7_0_0_FCLK_CLK0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk;
   input en;
+  output img_end_0;
   input init_signal;
   output [7:0]out_psum0;
   output [7:0]out_psum1;
@@ -114,35 +116,35 @@ module Convo_core_inst_0
   input [31:0]weight_size_1_16;
   input [11:0]width_input_img;
 
-  wire BRAM_PORTB_0_1_ADDR;
+  wire [11:0]BRAM_PORTB_0_1_ADDR;
   wire BRAM_PORTB_0_1_CLK;
-  wire BRAM_PORTB_0_1_DIN;
+  wire [31:0]BRAM_PORTB_0_1_DIN;
   wire [31:0]BRAM_PORTB_0_1_DOUT;
   wire BRAM_PORTB_0_1_EN;
   wire BRAM_PORTB_0_1_RST;
-  wire BRAM_PORTB_0_1_WE;
-  wire BRAM_PORTB_1_1_ADDR;
+  wire [3:0]BRAM_PORTB_0_1_WE;
+  wire [11:0]BRAM_PORTB_1_1_ADDR;
   wire BRAM_PORTB_1_1_CLK;
-  wire BRAM_PORTB_1_1_DIN;
+  wire [31:0]BRAM_PORTB_1_1_DIN;
   wire [31:0]BRAM_PORTB_1_1_DOUT;
   wire BRAM_PORTB_1_1_EN;
   wire BRAM_PORTB_1_1_RST;
-  wire BRAM_PORTB_1_1_WE;
-  wire BRAM_PORTB_2_1_ADDR;
+  wire [3:0]BRAM_PORTB_1_1_WE;
+  wire [11:0]BRAM_PORTB_2_1_ADDR;
   wire BRAM_PORTB_2_1_CLK;
-  wire BRAM_PORTB_2_1_DIN;
+  wire [31:0]BRAM_PORTB_2_1_DIN;
   wire [31:0]BRAM_PORTB_2_1_DOUT;
   wire BRAM_PORTB_2_1_EN;
   wire BRAM_PORTB_2_1_RST;
-  wire BRAM_PORTB_2_1_WE;
-  wire BRAM_PORTB_3_1_ADDR;
+  wire [3:0]BRAM_PORTB_2_1_WE;
+  wire [11:0]BRAM_PORTB_3_1_ADDR;
   wire BRAM_PORTB_3_1_CLK;
-  wire BRAM_PORTB_3_1_DIN;
+  wire [31:0]BRAM_PORTB_3_1_DIN;
   wire [31:0]BRAM_PORTB_3_1_DOUT;
   wire BRAM_PORTB_3_1_EN;
   wire BRAM_PORTB_3_1_RST;
-  wire BRAM_PORTB_3_1_WE;
-  wire [31:0]BRAM_in2_addr_0_1;
+  wire [3:0]BRAM_PORTB_3_1_WE;
+  wire [11:0]BRAM_in2_addr_0_1;
   wire [31:0]BRAM_in2_din_0_1;
   wire BRAM_in2_en_0_1;
   wire BRAM_in2_rst_0_1;
@@ -183,6 +185,7 @@ module Convo_core_inst_0
   wire [23:0]load_activation_0_activate2;
   wire load_activation_0_channel_end;
   wire load_activation_0_done;
+  wire load_activation_0_img_end;
   wire [31:0]load_weight_0_BRAM_0_addr;
   wire [31:0]load_weight_0_BRAM_1_addr;
   wire [31:0]load_weight_0_BRAM_2_addr;
@@ -212,45 +215,46 @@ module Convo_core_inst_0
   wire [31:0]weight_size_0_1;
   wire [11:0]width_0_1;
 
-  assign BRAM_PORTB_0_1_ADDR = BRAM_weight_AXI_1_addr;
+  assign BRAM_PORTB_0_1_ADDR = BRAM_weight_AXI_1_addr[11:0];
   assign BRAM_PORTB_0_1_CLK = BRAM_weight_AXI_1_clk;
-  assign BRAM_PORTB_0_1_DIN = BRAM_weight_AXI_1_din;
+  assign BRAM_PORTB_0_1_DIN = BRAM_weight_AXI_1_din[31:0];
   assign BRAM_PORTB_0_1_EN = BRAM_weight_AXI_1_en;
   assign BRAM_PORTB_0_1_RST = BRAM_weight_AXI_1_rst;
-  assign BRAM_PORTB_0_1_WE = BRAM_weight_AXI_1_we;
-  assign BRAM_PORTB_1_1_ADDR = BRAM_weight_AXI_0_addr;
+  assign BRAM_PORTB_0_1_WE = BRAM_weight_AXI_1_we[3:0];
+  assign BRAM_PORTB_1_1_ADDR = BRAM_weight_AXI_0_addr[11:0];
   assign BRAM_PORTB_1_1_CLK = BRAM_weight_AXI_0_clk;
-  assign BRAM_PORTB_1_1_DIN = BRAM_weight_AXI_0_din;
+  assign BRAM_PORTB_1_1_DIN = BRAM_weight_AXI_0_din[31:0];
   assign BRAM_PORTB_1_1_EN = BRAM_weight_AXI_0_en;
   assign BRAM_PORTB_1_1_RST = BRAM_weight_AXI_0_rst;
-  assign BRAM_PORTB_1_1_WE = BRAM_weight_AXI_0_we;
-  assign BRAM_PORTB_2_1_ADDR = BRAM_weight_AXI_2_addr;
+  assign BRAM_PORTB_1_1_WE = BRAM_weight_AXI_0_we[3:0];
+  assign BRAM_PORTB_2_1_ADDR = BRAM_weight_AXI_2_addr[11:0];
   assign BRAM_PORTB_2_1_CLK = BRAM_weight_AXI_2_clk;
-  assign BRAM_PORTB_2_1_DIN = BRAM_weight_AXI_2_din;
+  assign BRAM_PORTB_2_1_DIN = BRAM_weight_AXI_2_din[31:0];
   assign BRAM_PORTB_2_1_EN = BRAM_weight_AXI_2_en;
   assign BRAM_PORTB_2_1_RST = BRAM_weight_AXI_2_rst;
-  assign BRAM_PORTB_2_1_WE = BRAM_weight_AXI_2_we;
-  assign BRAM_PORTB_3_1_ADDR = BRAM_weight_AXI_3_addr;
+  assign BRAM_PORTB_2_1_WE = BRAM_weight_AXI_2_we[3:0];
+  assign BRAM_PORTB_3_1_ADDR = BRAM_weight_AXI_3_addr[11:0];
   assign BRAM_PORTB_3_1_CLK = BRAM_weight_AXI_3_clk;
-  assign BRAM_PORTB_3_1_DIN = BRAM_weight_AXI_3_din;
+  assign BRAM_PORTB_3_1_DIN = BRAM_weight_AXI_3_din[31:0];
   assign BRAM_PORTB_3_1_EN = BRAM_weight_AXI_3_en;
   assign BRAM_PORTB_3_1_RST = BRAM_weight_AXI_3_rst;
-  assign BRAM_PORTB_3_1_WE = BRAM_weight_AXI_3_we;
+  assign BRAM_PORTB_3_1_WE = BRAM_weight_AXI_3_we[3:0];
   assign BRAM_img_AXI_dout[31:0] = BRAM_selector_0_BRAM_in2_dout;
-  assign BRAM_in2_addr_0_1 = BRAM_img_AXI_addr[31:0];
+  assign BRAM_in2_addr_0_1 = BRAM_img_AXI_addr[11:0];
   assign BRAM_in2_din_0_1 = BRAM_img_AXI_din[31:0];
   assign BRAM_in2_en_0_1 = BRAM_img_AXI_en;
   assign BRAM_in2_rst_0_1 = BRAM_img_AXI_rst;
   assign BRAM_in2_wen_0_1 = BRAM_img_AXI_wen[3:0];
-  assign BRAM_weight_AXI_0_dout = BRAM_PORTB_1_1_DOUT[0];
-  assign BRAM_weight_AXI_1_dout = BRAM_PORTB_0_1_DOUT[0];
-  assign BRAM_weight_AXI_2_dout = BRAM_PORTB_2_1_DOUT[0];
-  assign BRAM_weight_AXI_3_dout = BRAM_PORTB_3_1_DOUT[0];
+  assign BRAM_weight_AXI_0_dout[31:0] = BRAM_PORTB_1_1_DOUT;
+  assign BRAM_weight_AXI_1_dout[31:0] = BRAM_PORTB_0_1_DOUT;
+  assign BRAM_weight_AXI_2_dout[31:0] = BRAM_PORTB_2_1_DOUT;
+  assign BRAM_weight_AXI_3_dout[31:0] = BRAM_PORTB_3_1_DOUT;
   assign accum_done_1 = accum_done;
   assign channel_0_1 = channel_input_img[11:0];
   assign channel_end = load_activation_0_channel_end;
   assign clk_0_1 = clk;
   assign en_0_1 = en;
+  assign img_end_0 = load_activation_0_img_end;
   assign init_signal_0_1 = init_signal;
   assign out_psum0[7:0] = computing_core_0_out_psum0;
   assign out_psum1[7:0] = computing_core_0_out_psum1;
@@ -270,7 +274,7 @@ module Convo_core_inst_0
         .BRAM_in1_en(load_activation_0_BRAM_en),
         .BRAM_in1_rst(load_activation_0_BRAM_rst),
         .BRAM_in1_wen(load_activation_0_BRAM_wen),
-        .BRAM_in2_addr(BRAM_in2_addr_0_1),
+        .BRAM_in2_addr({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,BRAM_in2_addr_0_1}),
         .BRAM_in2_din(BRAM_in2_din_0_1),
         .BRAM_in2_dout(BRAM_selector_0_BRAM_in2_dout),
         .BRAM_in2_en(BRAM_in2_en_0_1),
@@ -287,11 +291,11 @@ module Convo_core_inst_0
         .sel(sel_0_1));
   Convo_core_inst_0_blk_mem_gen_0_0 blk_mem_gen_0
        (.addra(load_weight_0_BRAM_0_addr),
-        .addrb({BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR,BRAM_PORTB_1_1_ADDR}),
+        .addrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,BRAM_PORTB_1_1_ADDR}),
         .clka(load_weight_0_BRAM_clk),
         .clkb(BRAM_PORTB_1_1_CLK),
         .dina(load_weight_0_BRAM_din),
-        .dinb({BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN,BRAM_PORTB_1_1_DIN}),
+        .dinb(BRAM_PORTB_1_1_DIN),
         .douta(blk_mem_gen_0_douta),
         .doutb(BRAM_PORTB_1_1_DOUT),
         .ena(load_weight_0_BRAM_en),
@@ -299,14 +303,14 @@ module Convo_core_inst_0
         .rsta(load_weight_0_BRAM_rst),
         .rstb(BRAM_PORTB_1_1_RST),
         .wea(load_weight_0_BRAM_wen),
-        .web({BRAM_PORTB_1_1_WE,BRAM_PORTB_1_1_WE,BRAM_PORTB_1_1_WE,BRAM_PORTB_1_1_WE}));
+        .web(BRAM_PORTB_1_1_WE));
   Convo_core_inst_0_blk_mem_gen_1_0 blk_mem_gen_1
        (.addra(load_weight_0_BRAM_1_addr),
-        .addrb({BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR,BRAM_PORTB_0_1_ADDR}),
+        .addrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,BRAM_PORTB_0_1_ADDR}),
         .clka(load_weight_0_BRAM_clk),
         .clkb(BRAM_PORTB_0_1_CLK),
         .dina(load_weight_0_BRAM_din),
-        .dinb({BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN,BRAM_PORTB_0_1_DIN}),
+        .dinb(BRAM_PORTB_0_1_DIN),
         .douta(blk_mem_gen_1_douta),
         .doutb(BRAM_PORTB_0_1_DOUT),
         .ena(load_weight_0_BRAM_en),
@@ -314,14 +318,14 @@ module Convo_core_inst_0
         .rsta(load_weight_0_BRAM_rst),
         .rstb(BRAM_PORTB_0_1_RST),
         .wea(load_weight_0_BRAM_wen),
-        .web({BRAM_PORTB_0_1_WE,BRAM_PORTB_0_1_WE,BRAM_PORTB_0_1_WE,BRAM_PORTB_0_1_WE}));
+        .web(BRAM_PORTB_0_1_WE));
   Convo_core_inst_0_blk_mem_gen_2_0 blk_mem_gen_2
        (.addra(load_weight_0_BRAM_3_addr),
-        .addrb({BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR,BRAM_PORTB_2_1_ADDR}),
+        .addrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,BRAM_PORTB_2_1_ADDR}),
         .clka(load_weight_0_BRAM_clk),
         .clkb(BRAM_PORTB_2_1_CLK),
         .dina(load_weight_0_BRAM_din),
-        .dinb({BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN,BRAM_PORTB_2_1_DIN}),
+        .dinb(BRAM_PORTB_2_1_DIN),
         .douta(blk_mem_gen_2_douta),
         .doutb(BRAM_PORTB_2_1_DOUT),
         .ena(load_weight_0_BRAM_en),
@@ -329,14 +333,14 @@ module Convo_core_inst_0
         .rsta(load_weight_0_BRAM_rst),
         .rstb(BRAM_PORTB_2_1_RST),
         .wea(load_weight_0_BRAM_wen),
-        .web({BRAM_PORTB_2_1_WE,BRAM_PORTB_2_1_WE,BRAM_PORTB_2_1_WE,BRAM_PORTB_2_1_WE}));
+        .web(BRAM_PORTB_2_1_WE));
   Convo_core_inst_0_blk_mem_gen_3_0 blk_mem_gen_3
        (.addra(load_weight_0_BRAM_2_addr),
-        .addrb({BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR,BRAM_PORTB_3_1_ADDR}),
+        .addrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,BRAM_PORTB_3_1_ADDR}),
         .clka(load_weight_0_BRAM_clk),
         .clkb(BRAM_PORTB_3_1_CLK),
         .dina(load_weight_0_BRAM_din),
-        .dinb({BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN,BRAM_PORTB_3_1_DIN}),
+        .dinb(BRAM_PORTB_3_1_DIN),
         .douta(blk_mem_gen_3_douta),
         .doutb(BRAM_PORTB_3_1_DOUT),
         .ena(load_weight_0_BRAM_en),
@@ -344,7 +348,7 @@ module Convo_core_inst_0
         .rsta(load_weight_0_BRAM_rst),
         .rstb(BRAM_PORTB_3_1_RST),
         .wea(load_weight_0_BRAM_wen),
-        .web({BRAM_PORTB_3_1_WE,BRAM_PORTB_3_1_WE,BRAM_PORTB_3_1_WE,BRAM_PORTB_3_1_WE}));
+        .web(BRAM_PORTB_3_1_WE));
   Convo_core_inst_0_blk_mem_gen_4_0 blk_mem_gen_4
        (.addra(load_activation_0_BRAM_0_addr),
         .addrb(BRAM_selector_0_BRAM_out_addr),
@@ -393,6 +397,7 @@ module Convo_core_inst_0
         .channel_end(load_activation_0_channel_end),
         .clk(clk_0_1),
         .done(load_activation_0_done),
+        .img_end(load_activation_0_img_end),
         .load_start(pipeline_0_start_load),
         .rst(rst_0_1),
         .stride(stride_0_1),

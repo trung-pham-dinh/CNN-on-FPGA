@@ -55,8 +55,8 @@ start_load // connect to load_activate moddule
     
     
 //    assign core_begin = start_core_reg;
-    assign start_core = en & start_core_reg;
-    assign start_load = init_signal | start_core;
+    assign start_core = start_core_reg;
+    assign start_load = init_signal | (start_core & en);
     // start_com_load signal
     always@(posedge clk) begin
         if(rst) begin
@@ -66,7 +66,7 @@ start_load // connect to load_activate moddule
         else begin
             case(state)
                 STATE_IDLE: begin
-                    if(core_free & activate_ready & weight_ready) begin
+                    if(core_free & activate_vld & weight_ready) begin
                         state <= STATE_START;
                         start_core_reg <= 1;
                     end
@@ -104,4 +104,29 @@ start_load // connect to load_activate moddule
         end
     end
     
+    always@(posedge clk) begin
+        if(rst) begin
+            activate_state <= STATE_ACTIVATE_FREE;
+            activate_vld <= 0;
+        end
+        else begin
+            case(activate_state)
+                STATE_ACTIVATE_FREE: begin
+                    if(en) begin
+                        if(start_load) begin
+                            activate_state <= STATE_ACTIVATE_BUSY;
+                            activate_vld <= 0;
+                        end
+                    end
+                    else activate_vld <= 0;
+                end
+                STATE_ACTIVATE_BUSY: begin
+                    if(activate_ready) begin
+                        activate_state <= STATE_ACTIVATE_FREE;
+                        activate_vld <= 1;
+                    end
+                end
+            endcase
+        end
+    end
 endmodule

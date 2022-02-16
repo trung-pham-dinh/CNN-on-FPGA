@@ -31,8 +31,7 @@ module Convo_core_sim(
   wire [31:0]bram_dout_3;
   reg [11:0]channel_input_img;
   reg clk;
-  reg en;
-  reg init_signal;
+  reg start_core_in;
   reg [10:0]no_channel_out;
   reg rst;
   reg [2:0]stride;
@@ -52,6 +51,8 @@ module Convo_core_sim(
   
   wire weight_end;
   wire channel_end;
+  wire img_end;
+  wire end_core_out;
 Multi_convo_core_wrapper uut
    (BRAM_addr_sim,
     BRAM_img_sel,
@@ -63,14 +64,15 @@ Multi_convo_core_wrapper uut
     channel_end,
     channel_input_img,
     clk,
-    en,
-    init_signal,
+    end_core_out,
+    img_end,
     no_channel_out,
     psum_0,
     psum_1,
     psum_2,
     psum_3,
     rst,
+    start_core_in,
     stride,
     weight_end,
     weight_size_1_16,
@@ -86,24 +88,23 @@ assign sum_psum_3 = psum_3*4;
     initial begin
         clk <= 0;
         rst <= 1;
-        en <= 1;
         BRAM_img_sel <= 0;
-        init_signal <= 0;
-        // 1x5x5x8 X 4x3x3x8 -> 1x3x3x4
+        start_core_in <= 0;
+        // 1x5x5x8 X 8x3x3x8 -> 1x3x3x8
         channel_input_img <= 2; // (1/4) channels of  input img
         stride <= 1;
         width_input_img <= 5; // width of input img
-        weight_size_1_16 <= 3*3*2; // (1/16 ) size of weight
-        no_channel_out <= 1; // (1/4) of channels of output img
-        WxW_out <= 9; // width x width of output img
+        weight_size_1_16 <= 2*3*3*2; // (1/16 ) size of weight
+        no_channel_out <= 2; // (1/4) of channels of output img
+        WxW_out = 9; // width x width of output img
         #150;
         rst <= 0;
     end
     
     initial begin
         #790;
-        init_signal <= 1;
+        start_core_in <= 1;
         #20;
-        init_signal <= 0;
+        start_core_in <= 0;
     end
 endmodule

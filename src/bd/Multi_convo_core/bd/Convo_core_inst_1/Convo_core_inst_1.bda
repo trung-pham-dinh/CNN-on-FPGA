@@ -25,18 +25,18 @@
       <data key="VT">BC</data>
     </node>
     <node id="n1">
-      <data key="VH">2</data>
-      <data key="VM">Convo_core_inst_1</data>
-      <data key="VT">VR</data>
-    </node>
-    <node id="n2">
       <data key="TU">active</data>
       <data key="VH">2</data>
       <data key="VT">PM</data>
     </node>
-    <edge id="e0" source="n0" target="n1">
+    <node id="n2">
+      <data key="VH">2</data>
+      <data key="VM">Convo_core_inst_1</data>
+      <data key="VT">VR</data>
+    </node>
+    <edge id="e0" source="n0" target="n2">
     </edge>
-    <edge id="e1" source="n1" target="n2">
+    <edge id="e1" source="n2" target="n1">
     </edge>
   </graph>
 </graphml>
